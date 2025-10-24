@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>grona.ai — Agentic CRO that actually ships</title>
+  <meta name="description" content="grona.ai is your agentic CRO copilot. Describe the outcome you want; it plans, ships, and learns — safely, without code." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="grona.ai — Agentic CRO that actually ships" />
+  <meta property="og:description" content="Describe the outcome you want; grona plans, ships, and learns — without code." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <style>
+    /* ========================================
+       BRAND TOKENS — tuned to your logo
+       ======================================== */
+    :root{
+      --green-900:#0f3e35;   /* deep evergreen */
+      --green-800:#0b6b53;   /* brand primary */
+      --green-400:#7fd97a;   /* leaf */
+      --ink:#0f172a;         /* headings */
+      --muted:#5b6475;       /* body */
+      --line:#e8ecef;        /* borders */
+      --bg:#ffffff;          /* page */
+      --bg-soft:#f6fbf8;     /* sections */
+      --radius:14px;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+      --shadow-md:0 10px 30px rgba(11,107,83,.10);
+      --max:1120px;
+      --space-1:8px; --space-2:12px; --space-3:16px; --space-4:24px; --space-5:32px; --space-6:48px; --space-7:64px; --space-8:92px;
+      --ff-display:'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+      --ff-body:'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    }
+
+    /* RESET */
+    *{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--muted);font-family:var(--ff-body);line-height:1.6}
+    img{max-width:100%;display:block}
+    a{color:var(--green-800);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--max);margin:0 auto;padding:0 var(--space-4)}
+    .section{padding:var(--space-8) 0}
+
+    h1,h2,h3{font-family:var(--ff-display);color:var(--ink);letter-spacing:-0.02em;margin:0 0 var(--space-3)}
+    h1{font-size:clamp(36px,4.5vw,56px);line-height:1.1}
+    h2{font-size:clamp(26px,3vw,34px)}
+    h3{font-size:clamp(20px,2.2vw,22px)}
+    p{margin:0 0 var(--space-3)}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 18px;border-radius:12px;border:1px solid transparent;font-weight:700;cursor:pointer;transition:transform .08s ease, box-shadow .2s ease}
+    .btn-primary{background:var(--green-800);color:#fff;box-shadow:var(--shadow-sm)}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
+    .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+
+    /* NAV */
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
+    .nav{display:flex;align-items:center;gap:16px;height:72px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{height:28px;width:auto}
+    .spacer{flex:1}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .nav-links a{color:var(--ink);font-weight:600}
+    .menu-btn{display:none;background:transparent;border:0;width:40px;height:40px}
+
+    /* HERO */
+    #hero{background:radial-gradient(1200px 400px at 50% -120px, var(--bg-soft), transparent 70%)}
+    .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--space-6);align-items:center}
+    .eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:12px;font-weight:700;color:var(--green-800);margin-bottom:10px}
+    .lead{font-size:clamp(18px,2vw,20px);color:#334155;max-width:58ch}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .trust{display:flex;gap:18px;align-items:center;margin-top:12px;color:#6b7280;font-size:13px}
+
+    /* PRODUCT MOCK */
+    .mock{border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-md);overflow:hidden;background:#fff}
+    .mock-top{height:40px;background:#f8faf9;display:flex;gap:6px;align-items:center;padding:0 10px;border-bottom:1px solid var(--line)}
+    .dot{width:10px;height:10px;border-radius:50%;background:#e5e7eb}
+    .mock-body{padding:16px;display:grid;gap:14px}
+    .prompt{border:1px dashed #d6e3dc;border-radius:12px;padding:12px;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;font-size:13px;color:#0f172a;background:#fbfefc}
+    .preview{border:1px solid var(--line);border-radius:12px;aspect-ratio:16/10;position:relative;background:linear-gradient(180deg,#fff, #f7fdf9)}
+    .preview .cta{position:absolute;right:16px;bottom:16px;background:var(--green-800);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700}
+
+    /* VALUE */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:var(--space-5)}
+    .icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(180deg,#ecfdf5,#f6fbf8);display:grid;place-items:center;margin-bottom:10px;color:var(--green-800);font-weight:900}
+
+    /* STEPS */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)}
+    .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:var(--space-5)}
+    .mini{border:1px dashed var(--line);border-radius:10px;padding:10px;margin-top:8px;font-size:14px;background:#fcfdfc}
+
+    /* SOCIAL PROOF */
+    .logos{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;align-items:center;filter:grayscale(1) contrast(.9) opacity(.8)}
+    .logos img,.logos svg{max-height:24px;justify-self:center}
+
+    /* CTA */
+    #cta{background:var(--bg-soft);text-align:center}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--line)}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4)}
+    .footer-col h4{margin-bottom:6px;font-size:14px;font-weight:800;font-family:var(--ff-display);color:var(--ink)}
+    .footer-col a{display:block;color:#334155;padding:6px 0}
+    .small{color:#6b7280;font-size:13px;margin-top:var(--space-4)}
+
+    /* RESPONSIVE */
+    @media (max-width:1024px){
+      .hero{grid-template-columns:1fr}
+      .cards,.steps{grid-template-columns:1fr}
+      .logos{grid-template-columns:repeat(3,1fr)}
+      .nav-links{display:none}
+      .menu-btn{display:block}
+    }
+    @media (max-width:560px){
+      .logos{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header id="top" role="banner" aria-label="Primary">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="grona home">
+        <picture>
+          <source srcset="/assets/logo-full.svg" type="image/svg+xml" />
+          <img src="/assets/logo-full.png" alt="grona" width="120" height="28" />
+        </picture>
+      </a>
+      <div class="spacer"></div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#how">How it works</a>
+        <a href="#value">Value</a>
+        <a href="#customers">Customers</a>
+        <a href="#learn">Learn</a>
+        <a class="btn btn-primary" href="#signup">Try free</a>
+      </nav>
+      <button class="menu-btn" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="section">
+    <div class="container hero">
+      <div>
+        <div class="eyebrow">Agentic CRO</div>
+        <h1>Describe the outcome. grona ships the test.</h1>
+        <p class="lead">Type what you want to improve — grona plans a safe experiment, launches the variant, and reports the lift. No code. No backlog.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#signup">Start free</a>
+          <a class="btn btn-ghost" href="#demo">See a 60‑sec demo</a>
+        </div>
+        <div class="trust">
+          <span>⚡ 2‑minute setup</span>
+          <span>•</span>
+          <span>Human‑in‑the‑loop approvals</span>
+        </div>
+      </div>
+      <div>
+        <div class="mock" aria-hidden="true">
+          <div class="mock-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="mock-body">
+            <div class="prompt">"Highlight free shipping for EU visitors and add a subtle urgency badge on PDP. Roll out to 20% of traffic."</div>
+            <div class="preview"><span class="cta">Add to cart</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section id="value" class="section">
+    <div class="container">
+      <h2>Why teams pick grona</h2>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <div class="icon">↑</div>
+          <h3>Real lift, fast</h3>
+          <p>Ship more experiments without engineering cycles. Increase add‑to‑cart and checkout completion.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="icon">⚙︎</div>
+          <h3>Safe by design</h3>
+          <p>Preview before launch, guardrails for rollout, and easy revert. Your team approves every change.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="icon">📊</div>
+          <h3>Decide with clarity</h3>
+          <p>Clear winners, lift intervals, and suggested next tests — so momentum never stalls.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section">
+    <div class="container">
+      <h2>Three steps</h2>
+      <div class="steps" role="list">
+        <article class="step" role="listitem">
+          <h3>1) Describe</h3>
+          <p>Tell grona what outcome you want.</p>
+          <div class="mini">e.g. “Personalize banner for EU buyers”</div>
+        </article>
+        <article class="step" role="listitem">
+          <h3>2) Launch</h3>
+          <p>Review the variant and roll out safely.</p>
+          <div class="mini">Preview → Approve → 20% rollout</div>
+        </article>
+        <article class="step" role="listitem">
+          <h3>3) Learn</h3>
+          <p>See the lift and next‑best test.</p>
+          <div class="mini">Winner call + next suggestion</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section id="examples" class="section">
+    <div class="container">
+      <h2>Ask grona to…</h2>
+      <div class="actions" style="gap:10px;flex-wrap:wrap">
+        <a class="btn btn-ghost" href="/templates">Add urgency badge</a>
+        <a class="btn btn-ghost" href="/templates">Personalize banner</a>
+        <a class="btn btn-ghost" href="/templates">Optimize PDP copy</a>
+        <a class="btn btn-ghost" href="/templates">Test checkout copy</a>
+        <a class="btn btn-ghost" href="/templates">Highlight free shipping</a>
+        <a class="btn btn-ghost" href="/templates">Geo‑target an offer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section id="customers" class="section">
+    <div class="container">
+      <h2>Trusted by modern teams</h2>
+      <div class="logos" aria-label="Customer logos">
+        <svg viewBox="0 0 120 24" aria-hidden="true"><rect width="120" height="24" fill="#E5E7EB" rx="4"/></svg>
+        <svg viewBox="0 0 120 24" aria-hidden="true"><rect width="120" height="24" fill="#E5E7EB" rx="4"/></svg>
+        <svg viewBox="0 0 120 24" aria-hidden="true"><rect width="120" height="24" fill="#E5E7EB" rx="4"/></svg>
+        <svg viewBox="0 0 120 24" aria-hidden="true"><rect width="120" height="24" fill="#E5E7EB" rx="4"/></svg>
+        <svg viewBox="0 0 120 24" aria-hidden="true"><rect width="120" height="24" fill="#E5E7EB" rx="4"/></svg>
+        <svg viewBox="0 0 120 24" aria-hidden="true"><rect width="120" height="24" fill="#E5E7EB" rx="4"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="section">
+    <div class="container">
+      <h2>Launch your first experiment in minutes</h2>
+      <a class="btn btn-primary" href="#signup">Start free</a>
+      <p class="small">No code. Cancel anytime.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="section" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#how">How it works</a>
+          <a href="/templates">Templates</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about">About</a>
+          <a href="/press">Press</a>
+        </div>
+        <div class="footer-col" id="learn">
+          <h4>Learn</h4>
+          <a href="/blog">Blog</a>
+          <a href="/changelog">Changelog</a>
+          <a href="/docs">Docs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+      <p class="small">© <span id="year"></span> grona.ai — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Invisible anchor until signup page exists -->
+  <div id="signup" aria-hidden="true"></div>
+
+  <script>
+    // year
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "grona.ai",
+    "url": "https://grona.ai/",
+    "logo": "https://grona.ai/assets/logo.svg",
+    "sameAs": ["https://www.linkedin.com/company/grona-ai", "https://x.com/grona_ai"],
+    "description": "Agentic CRO copilot that plans, launches, and learns from a simple prompt."
+  }
+  </script>
+</body>
+</html>
