@@ -144,6 +144,9 @@
 
     /* Headline - large and bold */
     .hero-headline{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;color:var(--hero-text);margin:0;text-wrap:balance;max-width:620px;animation:fadeUp 0.8s var(--ease-soft) 0.22s backwards}
+    .hero-headline .static-text{display:block;margin-bottom:.05em}
+    .headline-dynamic{display:inline-flex;align-items:baseline;gap:.3ch;flex-wrap:nowrap}
+    .headline-dynamic .leading-text{color:var(--hero-text)}
     
     .rotating-wrap{display:inline-flex;align-items:baseline;gap:.15ch}
     .rotating-word{display:inline-block;white-space:nowrap;font-weight:700;line-height:1.1;overflow:visible;position:relative;color:var(--rotating-green) !important;mix-blend-mode:normal;-webkit-text-fill-color:currentColor}
@@ -154,7 +157,6 @@
     }
     .rotating-caret{display:inline-block;width:.6ch;margin-left:.1ch;border-right:2px solid currentColor;color:var(--rotating-green);animation:caret-blink 1s steps(1) infinite}
     @keyframes caret-blink{50%{opacity:0}}
-    .rotating-period{color:var(--hero-text);transform:translateY(.03em)}
     
     /* Smart Email Form - centered and clean */
     .hero-form{width:100%;max-width:640px;margin:0 auto;animation:fadeUp 0.85s var(--ease-soft) 0.4s backwards}
@@ -443,12 +445,14 @@
         
         <!-- Main headline -->
         <h1 class="hero-headline">
-          <span class="static-text">Your website. Always</span>
-          <span class="rotating-wrap">
-            <span class="rotating-word shimmer">testing</span>
-            <span class="rotating-caret" aria-hidden="true"></span>
+          <span class="static-text">Your website.</span>
+          <span class="headline-dynamic">
+            <span class="leading-text">Always</span>
+            <span class="rotating-wrap">
+              <span class="rotating-word shimmer">testing.</span>
+              <span class="rotating-caret" aria-hidden="true"></span>
+            </span>
           </span>
-          <span class="rotating-period">.</span>
         </h1>
 
         <!-- Email form -->
@@ -933,7 +937,7 @@
     }
 
     if (rotatingWord) {
-      const words = ['learning', 'testing', 'optimizing', 'improving', 'growing'];
+      const words = ['growing.', 'learning.', 'optimizing.'];
       let currentIndex = 0;
       let currentWord = '';
       let timeoutId = null;
