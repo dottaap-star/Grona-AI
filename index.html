@@ -47,6 +47,11 @@
       --ff-body:'Oracle ABC', 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
       --carousel-interval:10s;
       --carousel-interval-ms:10000;
+      --hero-bg:radial-gradient(1000px 600px at 50% 0%, #eef6ff 0%, #f8fbff 40%, #ffffff 100%);
+      --hero-text:#0f172a;
+      --hero-muted:#475569;
+      --rotating-green:#16a34a;
+      --rotating-shimmer:rgba(22,163,74,.28);
     }
 
     /* Dark mode variables */
@@ -59,12 +64,17 @@
       --bg-soft:#1e293b;     /* sections - darker blue */
       --shadow-sm:0 1px 2px rgba(0,0,0,.3);
       --shadow-md:0 10px 30px rgba(0,0,0,.4);
+      --hero-bg:radial-gradient(1200px 700px at 50% -10%, #101826 0%, #0b1220 40%, #070c17 100%);
+      --hero-text:#f8fafc;
+      --hero-muted:#a6b0bf;
+      --rotating-green:#34d399;
+      --rotating-shimmer:rgba(52,211,153,.35);
     }
 
     /* RESET */
     *{box-sizing:border-box}
     html:focus-within{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--muted);font-family:var(--ff-body);line-height:1.6}
+    body{margin:0;background:var(--bg);color:var(--muted);font-family:var(--ff-body);line-height:1.6;overflow-x:hidden}
     img{max-width:100%;display:block}
     a{color:var(--green-800);text-decoration:none}
     a:hover{text-decoration:underline}
@@ -85,10 +95,18 @@
     .btn-ghost{background:var(--bg);border-color:var(--line);color:var(--ink)}
 
     /* NAV */
-    :root{--header-height:72px;--announcement-offset:0px;--ease-soft:cubic-bezier(.25,.1,.25,1);--ease-float:cubic-bezier(.55,.03,.25,.99)}
+    :root{
+      --header-height:80px;
+      --navbar-height:80px;
+      --banner-height:44px;
+      --announcement-offset:0px;
+      --ease-soft:cubic-bezier(.25,.1,.25,1);
+      --ease-float:cubic-bezier(.55,.03,.25,.99);
+    }
 
-    header{position:sticky;top:0;background:transparent;border-bottom:1px solid rgba(255,255,255,0);z-index:10}
-    .nav{display:flex;align-items:center;gap:16px;height:72px}
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(148,163,184,0.25)}
+    [data-theme="dark"] .navbar{background:rgba(15,23,42,0.82);border-bottom:1px solid rgba(51,65,85,0.62)}
+    .nav{display:flex;align-items:center;gap:16px;height:var(--navbar-height)}
     .brand{display:flex;align-items:center;gap:10px}
     .brand img{height:75px;width:auto}
     .spacer{flex:1}
@@ -99,55 +117,54 @@
     .theme-toggle:hover{background:var(--bg-soft)}
     [data-theme="dark"] .theme-toggle{color:#fff}
 
-    .announcement-wrapper{display:flex;justify-content:center;padding:18px 0 12px;position:relative;z-index:5}
-    .announcement-wrapper.is-hidden{display:none}
-    .announcement-banner{display:inline-flex;align-items:center;gap:12px;padding:10px 18px;background:rgba(255,255,255,0.9);border:1px solid rgba(148,163,184,0.25);border-radius:999px;color:#0f172a;font-weight:500;box-shadow:0 16px 40px rgba(15,23,42,0.12);backdrop-filter:blur(14px)}
+    .announcement-bar{display:flex;justify-content:center;align-items:center;padding:10px 16px;min-height:var(--banner-height);position:sticky;top:var(--navbar-height);z-index:999;background:transparent;pointer-events:none}
+    [data-theme="dark"] .announcement-bar{background:transparent}
+    .announcement-banner{display:inline-flex;align-items:center;gap:12px;padding:10px 18px;background:rgba(255,255,255,0.92);border:1px solid rgba(148,163,184,0.25);border-radius:999px;color:#0f172a;font-weight:500;box-shadow:0 16px 40px rgba(15,23,42,0.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;user-select:none;transition:box-shadow 0.25s var(--ease-soft),transform 0.25s var(--ease-soft);pointer-events:auto}
+    .announcement-banner:hover{transform:translateY(-1px);box-shadow:0 20px 48px rgba(15,23,42,0.16)}
+    .announcement-banner:focus-visible{outline:2px solid rgba(11,107,83,0.6);outline-offset:4px;box-shadow:0 22px 46px rgba(11,107,83,0.22)}
     .announcement-banner button{appearance:none;border:0;background:rgba(148,163,184,0.18);color:#0f172a;border-radius:999px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:background 0.2s ease, transform 0.2s ease;line-height:1}
     .announcement-banner button:hover{background:rgba(15,23,42,0.12);transform:translateY(-1px)}
-    [data-theme="dark"] .announcement-banner{background:rgba(15,23,42,0.85);border-color:rgba(148,163,184,0.35);color:#f8fafc;box-shadow:0 18px 42px rgba(2,6,23,0.55)}
+    [data-theme="dark"] .announcement-banner{background:rgba(15,23,42,0.9);border-color:rgba(148,163,184,0.35);color:#f8fafc;box-shadow:0 18px 42px rgba(2,6,23,0.55)}
     [data-theme="dark"] .announcement-banner button{background:rgba(148,163,184,0.22);color:#f8fafc}
     [data-theme="dark"] .announcement-banner button:hover{background:rgba(148,163,184,0.32)}
+    [data-theme="dark"] .announcement-banner:hover{box-shadow:0 22px 48px rgba(2,6,23,0.65)}
+    [data-theme="dark"] .announcement-banner:focus-visible{outline-color:rgba(190,242,100,0.65);box-shadow:0 24px 52px rgba(190,242,100,0.28)}
 
-    .nav-hero-shell{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,0.95) 0%,rgba(255,255,255,1) 48%,rgba(247,244,255,1) 100%)}
-    .nav-hero-shell::before{content:"";position:absolute;top:-45%;left:-20%;right:-20%;height:130%;background:radial-gradient(circle at 12% 18%,rgba(216,233,255,0.65) 0%,rgba(255,255,255,0) 55%),radial-gradient(circle at 78% 22%,rgba(255,231,222,0.6) 0%,rgba(255,255,255,0) 55%),radial-gradient(circle at 38% 68%,rgba(230,255,241,0.6) 0%,rgba(255,255,255,0) 65%);filter:blur(60px);opacity:0.85;animation:heroGlow 22s var(--ease-soft) infinite alternate;z-index:0}
-    .nav-hero-shell::after{content:"";position:absolute;left:50%;bottom:-28%;transform:translateX(-50%);width:150%;height:60%;background:radial-gradient(ellipse at top,rgba(255,255,255,0.92) 0%,rgba(248,250,252,0.7) 55%,rgba(248,250,252,0) 100%);filter:blur(14px);opacity:0.9;animation:heroGlow 26s var(--ease-soft) infinite alternate-reverse;z-index:0}
-    [data-theme="dark"] .nav-hero-shell{background:linear-gradient(180deg,#010617 0%,#0a1224 45%,#111a2f 100%)}
-    [data-theme="dark"] .nav-hero-shell::before{background:radial-gradient(circle at 18% 20%,rgba(84,140,255,0.4) 0%,rgba(1,6,23,0) 60%),radial-gradient(circle at 78% 24%,rgba(196,181,253,0.35) 0%,rgba(1,6,23,0) 60%),radial-gradient(circle at 44% 72%,rgba(87,235,170,0.32) 0%,rgba(1,6,23,0) 65%)}
-    [data-theme="dark"] .nav-hero-shell::after{background:radial-gradient(ellipse at top,rgba(6,15,38,0.88) 0%,rgba(3,7,18,0.65) 48%,rgba(3,7,18,0) 100%)}
-    .nav-hero-shell > *{position:relative;z-index:1}
+    .hero-shell{position:relative;isolation:isolate;background:var(--hero-bg);margin-top:calc(-1 * (var(--navbar-height) + var(--banner-height)));padding-top:calc(var(--navbar-height) + var(--banner-height));overflow:visible}
+    .hero-shell::before{content:"";position:absolute;inset:0;background:var(--hero-bg);z-index:0;pointer-events:none}
+    .hero-shell > *{position:relative;z-index:1}
 
     /* HERO - Apple-like minimal design */
-    #hero{position:relative;padding:clamp(120px,18vh,220px) 0 120px;min-height:calc(100vh - var(--header-height) - var(--announcement-offset, 0px));display:flex;align-items:center;justify-content:center;flex-direction:column;background:transparent}
+    #hero{position:relative;padding:clamp(120px,18vh,220px) 0 120px;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;background:transparent}
     .hero-new{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;text-align:center;width:100%}
-    .hero-content{max-width:720px;margin:0 auto;padding:0 min(5vw,48px);display:flex;flex-direction:column;align-items:center;gap:var(--space-5)}
+    .hero-content{max-width:720px;margin:0 auto;padding:0 min(5vw,48px);display:flex;flex-direction:column;align-items:center;gap:var(--space-5);position:relative;z-index:1;color:var(--hero-text)}
     
     /* Subheading - muted gray */
-    .hero-subheading{font-size:18px;font-weight:500;color:#64748b;margin:0;font-family:var(--ff-body);letter-spacing:0;text-transform:none;text-align:center;max-width:none;white-space:nowrap;animation:fadeUp 0.75s var(--ease-soft) 0.1s backwards}
-    [data-theme="dark"] .hero-subheading{color:#94a3b8}
+    .hero-subheading{font-size:18px;font-weight:500;color:var(--hero-muted);margin:0;font-family:var(--ff-body);letter-spacing:0;text-transform:none;text-align:center;max-width:none;white-space:nowrap;animation:fadeUp 0.75s var(--ease-soft) 0.1s backwards}
 
     /* Headline - large and bold */
-    .hero-headline{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;line-height:1.08;letter-spacing:-0.03em;color:#0b1120;margin:0;text-wrap:balance;max-width:620px;animation:fadeUp 0.8s var(--ease-soft) 0.22s backwards}
-    [data-theme="dark"] .hero-headline{color:#f8fafc}
+    .hero-headline{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;color:var(--hero-text);margin:0;text-wrap:balance;max-width:620px;animation:fadeUp 0.8s var(--ease-soft) 0.22s backwards}
     
-    /* Rotating Container - Fixed width to prevent shifting */
-    #rotate-container{display:inline-block;text-align:left;vertical-align:baseline;margin-left:0}
-    
-    /* Rotating Text */
-    #rotate-word{display:inline-block;white-space:nowrap;font-weight:700;vertical-align:baseline;line-height:1.1;overflow:visible;height:auto;position:relative;background:linear-gradient(90deg,#16a34a 0%,#7fd97a 40%,#16a34a 80%);background-size:180% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3.5s linear infinite}
-    [data-theme="dark"] #rotate-word{background:linear-gradient(90deg,#bbf7d0 0%,#a3e635 40%,#bbf7d0 80%)}
-
-    @keyframes shimmer{
-      0%{background-position:-120% 0}
-      100%{background-position:220% 0}
+    .rotating-wrap{display:inline-flex;align-items:baseline;gap:.15ch}
+    .rotating-word{display:inline-block;white-space:nowrap;font-weight:700;line-height:1.1;overflow:visible;position:relative;color:var(--rotating-green) !important;mix-blend-mode:normal;-webkit-text-fill-color:currentColor}
+    .rotating-word.shimmer{background-image:linear-gradient(90deg,transparent 0%,var(--rotating-shimmer) 45%,transparent 90%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;animation:rt-shimmer 2.2s linear infinite}
+    @keyframes rt-shimmer{
+      0%{background-position:200% 0}
+      100%{background-position:-200% 0}
     }
+    .rotating-caret{display:inline-block;width:.6ch;margin-left:.1ch;border-right:2px solid currentColor;color:var(--rotating-green);animation:caret-blink 1s steps(1) infinite}
+    @keyframes caret-blink{50%{opacity:0}}
+    .rotating-period{color:var(--hero-text);transform:translateY(.03em)}
     
     /* Smart Email Form - centered and clean */
     .hero-form{width:100%;max-width:640px;margin:0 auto;animation:fadeUp 0.85s var(--ease-soft) 0.4s backwards}
     
     .smart-url-light{position:relative;display:flex;flex-direction:column;gap:14px;background:rgba(255,255,255,0.92);border:1px solid rgba(226,232,240,0.7);border-radius:38px;padding:20px 24px;box-shadow:0 24px 48px rgba(15,23,42,0.08),0 6px 14px rgba(15,23,42,0.08);backdrop-filter:blur(22px);font-family:Inter,system-ui,-apple-system,sans-serif;transition:border-color 0.25s var(--ease-soft),box-shadow 0.25s var(--ease-soft);animation:floatCard 7s var(--ease-float) infinite alternate}
     .smart-url-light:focus-within{border-color:rgba(22,163,74,0.35);box-shadow:0 32px 70px rgba(22,163,74,0.12),0 6px 18px rgba(15,23,42,0.12)}
+    .smart-url-light.smart-url-highlight{border-color:rgba(22,163,74,0.55);box-shadow:0 0 0 4px rgba(22,163,74,0.18),0 32px 70px rgba(22,163,74,0.18),0 10px 24px rgba(15,23,42,0.12)}
     [data-theme="dark"] .smart-url-light{background:rgba(15,23,42,0.85);border-color:rgba(94,110,140,0.5);box-shadow:0 30px 60px rgba(2,6,23,0.65)}
     [data-theme="dark"] .smart-url-light:focus-within{border-color:rgba(190,242,100,0.45);box-shadow:0 34px 74px rgba(190,242,100,0.18)}
+    [data-theme="dark"] .smart-url-light.smart-url-highlight{border-color:rgba(190,242,100,0.65);box-shadow:0 0 0 4px rgba(190,242,100,0.24),0 34px 74px rgba(190,242,100,0.22),0 12px 26px rgba(3,7,18,0.45)}
 
     .smart-row{display:flex;align-items:center;gap:16px;width:100%}
     .input-icon{flex-shrink:0;width:24px;height:24px;color:#94a3b8;pointer-events:none}
@@ -171,15 +188,16 @@
     /* Helper text below input */
     .hero-helper{display:none}
 
-    .hero-cues{list-style:none;padding:0;margin:18px 0 0;display:flex;justify-content:center}
-    .hero-cue{font-size:14px;font-weight:500;color:#0f172a;display:flex;align-items:center;gap:6px;animation:fadeUp 0.8s var(--ease-soft) 0.55s backwards}
-    [data-theme="dark"] .hero-cue{color:#e2e8f0}
 
     /* USE CASES */
     .use-case-section{padding:clamp(70px,12vh,110px) 0;background:var(--bg);position:relative;overflow:hidden}
     .use-case-section--testing::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 120% at 120% -10%,rgba(125,211,252,0.12) 0%,rgba(255,255,255,0) 55%),radial-gradient(90% 90% at -10% 120%,rgba(248,113,113,0.1) 0%,rgba(255,255,255,0) 60%);pointer-events:none;z-index:0}
     .use-case-section--personalizing{background:#f0fdf4}
     .use-case-section--improving{background:#f6f7f7}
+    [data-theme="dark"] .use-case-section--testing{background:linear-gradient(180deg,rgba(15,23,42,0.98) 0%,rgba(11,17,32,0.94) 100%)}
+    [data-theme="dark"] .use-case-section--testing::before{background:radial-gradient(120% 120% at 120% -10%,rgba(59,130,246,0.18) 0%,rgba(15,23,42,0) 55%),radial-gradient(90% 90% at -10% 120%,rgba(45,212,191,0.16) 0%,rgba(15,23,42,0) 60%)}
+    [data-theme="dark"] .use-case-section--personalizing{background:rgba(15,118,110,0.22)}
+    [data-theme="dark"] .use-case-section--improving{background:rgba(30,41,59,0.72)}
     .use-cases-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:0 min(5vw,48px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
     .use-cases-title{font-size:clamp(1.8rem,3.6vw,2.1rem);font-weight:400;color:#0b1120;margin:0}
     [data-theme="dark"] .use-cases-title{color:#f8fafc}
@@ -357,12 +375,14 @@
     .footer-col a{display:block;color:#334155;padding:6px 0}
     /* RESPONSIVE */
     @media (max-width:1024px){
+      :root{--navbar-height:64px;--header-height:64px;--banner-height:44px}
       .cards{grid-template-columns:1fr}
       .nav-links{display:none}
       .menu-btn{display:block}
       .hero-content{padding:0 var(--space-4);gap:var(--space-4)}
     }
     @media (max-width:560px){
+      :root{--navbar-height:58px;--header-height:58px;--banner-height:40px}
       .footer-grid{grid-template-columns:1fr}
       .form-group{flex-direction:column;gap:12px}
       .form-group input{width:100%}
@@ -376,51 +396,46 @@
   </style>
 </head>
 <body>
-  <div class="nav-hero-shell">
-    <!-- NAV -->
-    <header id="top" role="banner" aria-label="Primary">
-      <div class="container nav">
-        <a class="brand" href="/" aria-label="grona home">
-          <img src="assets/logo.png" alt="grona" width="300" height="75" />
-        </a>
-        <div class="spacer"></div>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="how_it_works.html">How it works</a>
-          <a href="#value">Value</a>
-          <a href="#testing">Testing</a>
-          <a href="#personalizing">Personalizing</a>
-          <a href="#improving">Improving</a>
-          <a class="btn btn-primary" href="#signup">Try free</a>
-        </nav>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-        <button class="menu-btn" aria-label="Open menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-      </div>
-    </header>
-
-    <!-- Announcement -->
-    <div class="announcement-wrapper" id="announcement-wrapper">
-      <div class="announcement-banner" id="announcement-banner" role="status">
-        <span>Now in private beta — join the waitlist for early access.</span>
-        <button type="button" id="announcement-dismiss" aria-label="Dismiss announcement">×</button>
-      </div>
+  <header id="top" class="navbar" role="banner" aria-label="Primary">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="grona home">
+        <img src="assets/logo.png" alt="grona" width="300" height="75" />
+      </a>
+      <div class="spacer"></div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="how_it_works.html">How it works</a>
+        <a href="#testing">Features</a>
+        <a href="/pricing">pricing</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <button class="menu-btn" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
     </div>
+  </header>
 
+  <div class="announcement-bar" id="announcement-wrapper">
+    <div class="announcement-banner" id="announcement-banner" role="button" tabindex="0" aria-controls="waitlist-form" aria-label="Scroll to waitlist form">
+      <span>Now in private beta — join the waitlist for early access.</span>
+      <button type="button" id="announcement-dismiss" aria-label="Dismiss announcement">×</button>
+    </div>
+  </div>
+
+  <div class="hero-shell">
     <!-- HERO -->
-    <section id="hero" class="section">
+    <section id="hero" class="section hero-section">
       <div class="container hero-new">
         <div class="hero-content">
         <!-- Subheading -->
@@ -428,10 +443,12 @@
         
         <!-- Main headline -->
         <h1 class="hero-headline">
-          <span class="static-text">Your website. Always </span>
-          <span id="rotate-container">
-            <span id="rotate-word">testing.</span>
+          <span class="static-text">Your website. Always</span>
+          <span class="rotating-wrap">
+            <span class="rotating-word shimmer">testing</span>
+            <span class="rotating-caret" aria-hidden="true"></span>
           </span>
+          <span class="rotating-period">.</span>
         </h1>
 
         <!-- Email form -->
@@ -453,9 +470,6 @@
           <div class="form-message" id="form-message" role="status"></div>
         </form>
 
-        <ul class="hero-cues" aria-label="Key differentiators">
-          <li class="hero-cue">👥 Join the first 500 beta testers.</li>
-        </ul>
         </div>
       </div>
     </section>
@@ -770,8 +784,40 @@
     const announcementDismiss = document.getElementById('announcement-dismiss');
     
     if (announcementWrapper && announcementBanner) {
+      let highlightTimeout = null;
+      const preservedAnnouncementHeight = announcementWrapper.offsetHeight || parseFloat(getComputedStyle(announcementWrapper).minHeight) || 0;
+
+      const focusWaitlistField = () => {
+        const emailInput = document.getElementById('waitlist-email');
+        if (!emailInput) return;
+
+        const fieldWrapper = emailInput.closest('.smart-url-light');
+        const heroSection = document.getElementById('hero');
+        const rootStyle = getComputedStyle(document.documentElement);
+        const headerHeight = parseFloat(rootStyle.getPropertyValue('--header-height')) || 80;
+        const announcementHeight = preservedAnnouncementHeight || announcementWrapper.offsetHeight || 0;
+
+        if (heroSection) {
+          const heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
+          const offsetTarget = Math.max(heroTop - headerHeight - announcementHeight - 24, 0);
+          window.scrollTo({ top: offsetTarget, behavior: 'smooth' });
+        } else {
+          emailInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        window.setTimeout(() => {
+          emailInput.focus({ preventScroll: true });
+          if (!fieldWrapper) return;
+          fieldWrapper.classList.add('smart-url-highlight');
+          if (highlightTimeout) window.clearTimeout(highlightTimeout);
+          highlightTimeout = window.setTimeout(() => {
+            fieldWrapper.classList.remove('smart-url-highlight');
+          }, 1600);
+        }, 420);
+      };
+
       const updateAnnouncementOffset = () => {
-        const height = announcementWrapper.offsetHeight || 0;
+        const height = preservedAnnouncementHeight || announcementWrapper.offsetHeight || 0;
         document.documentElement.style.setProperty('--announcement-offset', `${height}px`);
       };
 
@@ -779,17 +825,60 @@
       window.addEventListener('load', updateAnnouncementOffset);
       window.addEventListener('resize', updateAnnouncementOffset);
 
+      announcementBanner.addEventListener('click', (event) => {
+        if (announcementDismiss && announcementDismiss.contains(event.target)) return;
+        focusWaitlistField();
+      });
+
+      announcementBanner.addEventListener('keydown', (event) => {
+        if (announcementDismiss && announcementDismiss.contains(event.target)) return;
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          focusWaitlistField();
+        }
+      });
+
       if (announcementDismiss) {
-        announcementDismiss.addEventListener('click', () => {
-          announcementWrapper.classList.add('is-hidden');
-          document.documentElement.style.setProperty('--announcement-offset', '0px');
+        announcementDismiss.addEventListener('click', (event) => {
+          event.stopPropagation();
+          if (highlightTimeout) {
+            window.clearTimeout(highlightTimeout);
+          }
+          const highlightedField = document.querySelector('.smart-url-light.smart-url-highlight');
+          if (highlightedField) {
+            highlightedField.classList.remove('smart-url-highlight');
+          }
+          announcementWrapper.style.visibility = 'hidden';
+          announcementWrapper.style.pointerEvents = 'none';
+          announcementWrapper.style.opacity = '0';
+          if (announcementBanner) {
+            announcementBanner.setAttribute('aria-hidden', 'true');
+            announcementBanner.setAttribute('tabindex', '-1');
+          }
+          if (preservedAnnouncementHeight) {
+            announcementWrapper.style.minHeight = `${preservedAnnouncementHeight}px`;
+          }
+          updateAnnouncementOffset();
         });
       }
+
+      window.addEventListener('beforeunload', () => {
+        if (highlightTimeout) window.clearTimeout(highlightTimeout);
+      });
     }
+
+    const html = document.documentElement;
+    const rotatingWord = document.querySelector('.rotating-word');
+    const recalcRotatingWidth = () => {
+      if (!rotatingWord) return;
+      requestAnimationFrame(() => {
+        rotatingWord.style.width = 'auto';
+        rotatingWord.style.width = `${rotatingWord.scrollWidth}px`;
+      });
+    };
 
     // Dark mode toggle
     const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
     
     if (!themeToggle) {
       console.error('Theme toggle button not found!');
@@ -827,6 +916,7 @@
       }
       
       updateIcon();
+      recalcRotatingWidth();
       
       // Add click listener
       themeToggle.addEventListener('click', () => {
@@ -836,14 +926,14 @@
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateIcon();
+        recalcRotatingWidth();
         themeToggle.classList.add('toggled');
         setTimeout(() => themeToggle.classList.remove('toggled'), 220);
       });
     }
 
-    const rotatingText = document.getElementById('rotate-word');
-    if (rotatingText) {
-      const words = ['learning.', 'testing.', 'optimizing.', 'improving.', 'growing.'];
+    if (rotatingWord) {
+      const words = ['learning', 'testing', 'optimizing', 'improving', 'growing'];
       let currentIndex = 0;
       let currentWord = '';
       let timeoutId = null;
@@ -852,6 +942,11 @@
       const DELETE_SPEED = 50;
       const HOLD_TIME = 1500;
 
+      const renderWord = () => {
+        rotatingWord.textContent = currentWord;
+        recalcRotatingWidth();
+      };
+
       const typeNext = () => {
         const target = words[currentIndex];
         let i = 0;
@@ -859,8 +954,8 @@
         const typeChar = () => {
           if (i < target.length) {
             currentWord += target[i];
-            rotatingText.textContent = currentWord;
             i += 1;
+            renderWord();
             timeoutId = setTimeout(typeChar, TYPE_SPEED);
           } else {
             timeoutId = setTimeout(deleteWord, HOLD_TIME);
@@ -873,7 +968,7 @@
       const deleteWord = () => {
         if (currentWord.length > 0) {
           currentWord = currentWord.slice(0, -1);
-          rotatingText.textContent = currentWord;
+          renderWord();
           timeoutId = setTimeout(deleteWord, DELETE_SPEED);
         } else {
           currentIndex = (currentIndex + 1) % words.length;
