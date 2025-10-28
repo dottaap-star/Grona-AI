@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Grona Brand Color System - Light Mode */
+  :root {
+    /* Primary Brand Colors */
+    --green-900: 15 62 53;    /* #0f3e35 - Deep evergreen */
+    --green-800: 11 107 83;   /* #0b6b53 - Brand primary */
+    --green-700: 69 180 155;  /* #45b49b - Lighter shade */
+    --green-600: 98 202 176;  /* #62cab0 - Mid green */
+    --green-400: 127 217 122; /* #7fd97a - Leaf green */
+    
+    /* Semantic Colors for shadcn/ui */
+    --background: 255 255 255;        /* #ffffff - Page background */
+    --foreground: 15 23 42;            /* #0f172a - Text color */
+    
+    --card: 255 255 255;              /* #ffffff - Card background */
+    --card-foreground: 15 23 42;       /* #0f172a - Card text */
+    
+    --popover: 255 255 255;            /* #ffffff - Popover background */
+    --popover-foreground: 15 23 42;    /* #0f172a - Popover text */
+    
+    --primary: 11 107 83;              /* #0b6b53 - Primary color */
+    --primary-foreground: 255 255 255;  /* #ffffff - Text on primary */
+    
+    --secondary: 246 251 248;           /* #f6fbf8 - Secondary background */
+    --secondary-foreground: 15 23 42;   /* #0f172a - Secondary text */
+    
+    --muted: 246 251 248;              /* #f6fbf8 - Muted background */
+    --muted-foreground: 91 100 117;    /* #5b6475 - Muted text */
+    
+    --accent: 127 217 122;             /* #7fd97a - Accent green */
+    --accent-foreground: 15 23 42;      /* #0f172a - Text on accent */
+    
+    --destructive: 239 68 68;          /* #ef4444 - Error/destructive */
+    --destructive-foreground: 255 255 255; /* #ffffff - Text on destructive */
+    
+    --border: 232 236 239;             /* #e8ecef - Borders */
+    --input: 232 236 239;              /* #e8ecef - Input borders */
+    --ring: 11 107 83;                 /* #0b6b53 - Focus ring */
+    
+    --radius: 0.875rem;                /* 14px - Border radius */
+  }
+
+  /* Grona Brand Color System - Dark Mode */
+  .dark {
+    /* Primary Brand Colors */
+    --green-900: 15 62 53;             /* #0f3e35 - Deep evergreen */
+    --green-800: 187 229 91;           /* #BBE55B - Vibrant light green */
+    --green-700: 133 199 93;           /* #85c75d - Lighter shade */
+    --green-600: 100 171 86;           /* #64ab56 - Mid green */
+    --green-400: 127 217 122;          /* #7fd97a - Leaf green */
+    
+    /* Semantic Colors for shadcn/ui */
+    --background: 15 23 42;            /* #0f172a - Page background */
+    --foreground: 248 250 252;         /* #f8fafc - Text color */
+    
+    --card: 30 41 59;                  /* #1e293b - Card background */
+    --card-foreground: 248 250 252;    /* #f8fafc - Card text */
+    
+    --popover: 30 41 59;               /* #1e293b - Popover background */
+    --popover-foreground: 248 250 252; /* #f8fafc - Popover text */
+    
+    --primary: 187 229 91;             /* #BBE55B - Primary color */
+    --primary-foreground: 15 23 42;    /* #0f172a - Text on primary */
+    
+    --secondary: 51 65 85;             /* #334155 - Secondary background */
+    --secondary-foreground: 248 250 252; /* #f8fafc - Secondary text */
+    
+    --muted: 51 65 85;                 /* #334155 - Muted background */
+    --muted-foreground: 148 163 184;   /* #94a3b8 - Muted text */
+    
+    --accent: 187 229 91;              /* #BBE55B - Accent green */
+    --accent-foreground: 15 23 42;     /* #0f172a - Text on accent */
+    
+    --destructive: 239 68 68;          /* #ef4444 - Error/destructive */
+    --destructive-foreground: 248 250 252; /* #f8fafc - Text on destructive */
+    
+    --border: 51 65 85;                /* #334155 - Borders */
+    --input: 51 65 85;                 /* #334155 - Input borders */
+    --ring: 187 229 91;                /* #BBE55B - Focus ring */
+  }
+
+  /* Base Styles */
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Oracle ABC', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oracle ABC', 'Poppins', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    @apply tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-bold leading-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  /* Custom Brand Colors */
+  .text-primary-green {
+    color: rgb(var(--green-800));
+  }
+
+  .bg-primary-green {
+    background-color: rgb(var(--green-800));
+  }
+
+  .border-primary-green {
+    border-color: rgb(var(--green-800));
+  }
+
+  /* Spacing Scale */
+  :root {
+    --spacing-1: 0.5rem;   /* 8px */
+    --spacing-2: 0.75rem;  /* 12px */
+    --spacing-3: 1rem;     /* 16px */
+    --spacing-4: 1.5rem;   /* 24px */
+    --spacing-5: 2rem;     /* 32px */
+    --spacing-6: 3rem;     /* 48px */
+    --spacing-7: 4rem;     /* 64px */
+    --spacing-8: 5.75rem;  /* 92px */
+    
+    --max-width: 70rem;    /* 1120px */
+  }
+
+  /* Shadows */
+  .shadow-brand-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-brand-md {
+    box-shadow: 0 10px 30px rgba(11, 107, 83, 0.1);
+  }
+
+  .dark .shadow-brand-md {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Focus Styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ring;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center h-12 px-5 rounded-xl font-bold cursor-pointer transition-all duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground shadow-brand-sm;
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-px shadow-brand-md;
+  }
+
+  .btn-ghost {
+    @apply bg-background border border-border text-foreground;
+  }
+
+  .btn-ghost:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-card border border-border rounded-2xl p-8;
+  }
+
+  /* Input Fields */
+  .input {
+    @apply w-full h-12 px-4 border border-input rounded-xl bg-background text-foreground;
+    @apply focus:outline-none focus:border-ring;
+  }
+
+  /* Container */
+  .container-grona {
+    @apply max-w-[1120px] mx-auto px-6;
+  }
+
+  /* Section Padding */
+  .section {
+    @apply py-20 md:py-24;
+  }
+}
+
+@layer utilities {
+  /* Text Utilities */
+  .text-brand-primary {
+    color: rgb(var(--green-800));
+  }
+
+  .text-brand-accent {
+    color: rgb(var(--green-400));
+  }
+
+  /* Background Utilities */
+  .bg-brand-primary {
+    background-color: rgb(var(--green-800));
+  }
+
+  .bg-brand-accent {
+    background-color: rgb(var(--green-400));
+  }
+
+  /* Gradient Utilities */
+  .gradient-brand {
+    background: linear-gradient(135deg, rgb(var(--green-800)), rgb(var(--green-400)));
+  }
+
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
