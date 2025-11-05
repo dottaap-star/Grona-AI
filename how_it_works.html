@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How it works — grona.ai</title>
+    <meta
+      name="description"
+      content="See how Grona turns a simple prompt into live, personalized experiments with AI agents that plan, design, and launch for you."
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="How it works — grona.ai" />
+    <meta
+      property="og:description"
+      content="From prompt to personalization. Learn how Grona's AI agents plan, design, and launch high-converting tests for you."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://grona.ai/how_it_works" />
+    <meta property="og:image" content="https://grona.ai/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://grona.ai/assets/og-image.png" />
+    <meta
+      name="keywords"
+      content="How Grona works, AI CRO workflow, agentic optimization, AI experimentation flow, personalization AI"
+    />
+    <meta name="author" content="Grona.ai" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://grona.ai/how_it_works" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NXBH5J6M");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="shared/shared.css" />
+
+    <style>
+      /* ========================================
+         HOW IT WORKS PAGE STYLES
+         ======================================== */
+
+      .how-hero {
+        position: relative;
+        background: var(--hero-bg);
+        padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-8);
+        overflow: hidden;
+      }
+
+      .how-hero-content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-6);
+        align-items: center;
+      }
+
+      .how-hero-copy h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.05;
+        color: var(--hero-text);
+        margin-bottom: var(--space-3);
+      }
+
+      .how-hero-tagline {
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        color: var(--hero-muted);
+        margin-bottom: var(--space-5);
+        max-width: 520px;
+      }
+
+      .intro-card {
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: var(--radius);
+        padding: var(--space-5);
+        box-shadow: var(--shadow-md);
+        backdrop-filter: blur(16px);
+      }
+
+      .intro-card h2 {
+        margin-bottom: var(--space-3);
+        color: var(--ink);
+      }
+
+      .intro-card p {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin-bottom: 0;
+      }
+
+      .how-hero-visual {
+        position: relative;
+      }
+
+      .hero-image-frame {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        box-shadow: 0 20px 45px rgba(11, 107, 83, 0.18);
+      }
+
+      .hero-quote {
+        position: absolute;
+        bottom: -24px;
+        right: 24px;
+        background: var(--bg);
+        border-radius: 16px;
+        padding: var(--space-3) var(--space-4);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-md);
+        max-width: 240px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .hero-quote span {
+        color: var(--green-800);
+        font-weight: 700;
+      }
+
+      [data-theme="dark"] .intro-card {
+        background: rgba(15, 23, 42, 0.82);
+        border-color: rgba(51, 65, 85, 0.5);
+      }
+
+      [data-theme="dark"] .hero-image-frame {
+        border-color: rgba(51, 65, 85, 0.6);
+        box-shadow: 0 20px 60px rgba(7, 11, 24, 0.6);
+      }
+
+      [data-theme="dark"] .hero-quote {
+        background: rgba(15, 23, 42, 0.92);
+        color: var(--hero-text);
+        border-color: rgba(51, 65, 85, 0.7);
+      }
+
+      .workflow-section {
+        padding: var(--space-8) 0;
+      }
+
+      .section-intro {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .section-intro p {
+        font-size: 1.05rem;
+        color: var(--muted);
+      }
+
+      .workflow-grid {
+        margin-top: var(--space-6);
+        display: grid;
+        gap: var(--space-4);
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .workflow-step {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-4);
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .workflow-step::before {
+        content: attr(data-step);
+        position: absolute;
+        top: -32px;
+        right: -16px;
+        font-size: 96px;
+        font-weight: 700;
+        color: rgba(11, 107, 83, 0.05);
+      }
+
+      .workflow-step h3 {
+        margin-bottom: var(--space-2);
+      }
+
+      .workflow-example {
+        margin-top: var(--space-3);
+        font-style: italic;
+        color: var(--green-800);
+        font-weight: 600;
+      }
+
+      .agents-section {
+        background: var(--bg-soft);
+        padding: var(--space-8) 0;
+      }
+
+      .agents-grid {
+        margin-top: var(--space-5);
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        background: var(--bg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .agents-row {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: var(--space-4);
+        padding: var(--space-4) var(--space-5);
+        border-bottom: 1px solid var(--line);
+        align-items: center;
+      }
+
+      .agents-row.header {
+        background: rgba(11, 107, 83, 0.08);
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .agents-row:last-child {
+        border-bottom: none;
+      }
+
+      .agents-visual {
+        margin-top: var(--space-5);
+        display: flex;
+        justify-content: center;
+      }
+
+      .agents-visual img {
+        max-width: 460px;
+        width: 100%;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-md);
+      }
+
+      .comparison-section {
+        padding: var(--space-8) 0;
+      }
+
+      .comparison-grid {
+        margin-top: var(--space-5);
+        display: grid;
+        gap: var(--space-4);
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .comparison-column {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-4);
+        background: var(--bg);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .comparison-column h3 {
+        margin-bottom: var(--space-3);
+      }
+
+      .comparison-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .comparison-column li {
+        display: flex;
+        gap: var(--space-2);
+        align-items: flex-start;
+        color: var(--muted);
+      }
+
+      .comparison-column li::before {
+        content: "•";
+        color: var(--green-800);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .loop-section {
+        background: var(--bg-soft);
+        padding: var(--space-8) 0;
+      }
+
+      .loop-content {
+        display: grid;
+        gap: var(--space-5);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        align-items: center;
+      }
+
+      .loop-card {
+        background: var(--bg);
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        padding: var(--space-5);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .loop-visual {
+        display: flex;
+        justify-content: center;
+      }
+
+      .loop-visual img {
+        max-width: 360px;
+        width: 100%;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-md);
+      }
+
+      .cta-section {
+        padding: var(--space-8) 0 var(--space-7);
+      }
+
+      .cta-shell {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .cta-actions {
+        margin-top: var(--space-4);
+        display: flex;
+        justify-content: center;
+        gap: var(--space-3);
+        flex-wrap: wrap;
+      }
+
+      .cta-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--green-800);
+        font-weight: 600;
+      }
+
+      .cta-secondary span {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 720px) {
+        .heroes-visual {
+          order: -1;
+        }
+
+        .hero-quote {
+          position: static;
+          margin-top: var(--space-3);
+        }
+
+        .agents-row {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+
+        .agents-grid {
+          border-radius: 12px;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .intro-card {
+          padding: var(--space-4);
+        }
+
+        .workflow-step::before {
+          font-size: 72px;
+          top: -24px;
+          right: -8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header id="top" class="navbar" role="banner" aria-label="Primary">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="grona home">
+          <img
+            src="assets/logo.png"
+            alt="Grona.ai - Agentic CRO platform logo"
+            width="300"
+            height="75"
+          />
+        </a>
+        <div class="spacer"></div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="how_it_works.html" aria-current="page">How it works</a>
+          <a href="features.html">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="menu-btn" aria-label="Open menu">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Section 1: Introduction – The Grona Difference -->
+      <section class="how-hero">
+        <div class="background-beams"></div>
+        <div class="container how-hero-content">
+          <div class="how-hero-copy">
+            <h1>From Prompt to Personalization</h1>
+            <p class="how-hero-tagline">
+              Launch high-converting tests with AI, not guesswork.
+            </p>
+            <div class="intro-card">
+              <h2>Skip the canvas. Just talk to your AI.</h2>
+              <p>
+                Grona works through a simple conversation. You describe the outcome
+                you want, the AI figures out how to get there. From page personalization
+                to A/B testing, Grona plans, builds, and launches your changes in one
+                chat thread.
+              </p>
+            </div>
+          </div>
+          <div class="how-hero-visual heroes-visual">
+            <div class="hero-image-frame">
+              <img
+                src="assets/placeholder.png"
+                alt="Chat-first interface showing the Grona co-pilot launching experiments"
+              />
+              <div class="hero-quote">
+                “Help me increase signups on the pricing page” <span>→ Watch it go.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: The Workflow – 4-Step AI Flow -->
+      <section class="workflow-section">
+        <div class="container">
+          <div class="section-intro">
+            <h2>The Workflow — 4-Step AI Flow</h2>
+            <p>
+              Visually styled like the Relevic “Prompt → Live Optimization” layout,
+              every step is handled for you while you stay in the loop.
+            </p>
+          </div>
+          <div class="workflow-grid">
+            <div class="workflow-step" data-step="01">
+              <h3>Ask</h3>
+              <p>
+                Tell Grona what you want to improve in plain English. No forms or tools
+                needed.
+              </p>
+              <p class="workflow-example">Example: “Increase demo bookings on homepage.”</p>
+            </div>
+            <div class="workflow-step" data-step="02">
+              <h3>Analyze</h3>
+              <p>
+                Grona’s agents review performance and detect bottlenecks. Heatmaps,
+                scroll depth, and visitor intent are mapped for you.
+              </p>
+            </div>
+            <div class="workflow-step" data-step="03">
+              <h3>Design</h3>
+              <p>
+                You get ready-to-ship variants, designed by AI and built for impact. No
+                need to use a visual editor unless you want to.
+              </p>
+            </div>
+            <div class="workflow-step" data-step="04">
+              <h3>Launch</h3>
+              <p>
+                Approve the idea and Grona rolls it out with tracking built in. Start
+                testing without touching a single line of code.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Under the Hood – Meet Your Optimization Agents -->
+      <section class="agents-section">
+        <div class="container">
+          <div class="section-intro">
+            <h2>A multi-agent team that never stops optimizing</h2>
+            <p>
+              Behind the scenes, Grona deploys AI agents that specialize in every step
+              of your test. They operate 24/7, reviewing results and proposing
+              improvements continuously.
+            </p>
+          </div>
+          <div class="agents-grid" role="table" aria-label="Grona optimization agents">
+            <div class="agents-row header" role="row">
+              <div role="columnheader">Agent Type</div>
+              <div role="columnheader">Role</div>
+            </div>
+            <div class="agents-row" role="row">
+              <div role="rowheader">Analytics Agent</div>
+              <div>
+                Identifies friction points and conversion drop-offs across journeys.
+              </div>
+            </div>
+            <div class="agents-row" role="row">
+              <div role="rowheader">Campaign Agent</div>
+              <div>
+                Crafts test hypotheses with measurable goals tailored to your KPIs.
+              </div>
+            </div>
+            <div class="agents-row" role="row">
+              <div role="rowheader">Page Agent</div>
+              <div>
+                Designs and implements page variants automatically, staying on brand.
+              </div>
+            </div>
+            <div class="agents-row" role="row">
+              <div role="rowheader">QA Agent</div>
+              <div>
+                Checks copy, layout, and user experience before anything ships live.
+              </div>
+            </div>
+          </div>
+          <div class="agents-visual">
+            <img
+              src="assets/placeholder.png"
+              alt="Illustration of Grona's multi-agent optimization team"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Why Not Just Use ChatGPT? -->
+      <section class="comparison-section">
+        <div class="container">
+          <div class="section-intro">
+            <h2>Chat is just the start. Execution is everything.</h2>
+            <p>
+              Grona is production-ready. ChatGPT is helpful brainstorming. Here’s how
+              they compare when it’s time to ship tests.
+            </p>
+          </div>
+          <div class="comparison-grid" role="table" aria-label="ChatGPT versus Grona">
+            <div class="comparison-column" role="row">
+              <h3 role="columnheader">ChatGPT</h3>
+              <ul>
+                <li>Writes suggestions</li>
+                <li>No site context</li>
+                <li>Needs your team</li>
+              </ul>
+            </div>
+            <div class="comparison-column" role="row">
+              <h3 role="columnheader">Grona</h3>
+              <ul>
+                <li>Designs and ships real tests</li>
+                <li>Uses real analytics and scroll data</li>
+                <li>Launches autonomously with guardrails</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Continuous Optimization Loop -->
+      <section class="loop-section">
+        <div class="container loop-content">
+          <div class="loop-card">
+            <h2>Grona doesn’t stop at one test.</h2>
+            <p>
+              Once launched, Grona monitors your variant and user response in real
+              time. If it sees a better opportunity, it suggests the next move. You
+              stay in control. The AI handles the heavy lifting.
+            </p>
+            <p>
+              Think in loops: Idea → Test → Learn → Retest. Grona keeps the cycle
+              running so you can keep focusing on strategy instead of setup.
+            </p>
+          </div>
+          <div class="loop-visual">
+            <img
+              src="assets/placeholder.png"
+              alt="Loop visual showing Idea to Test to Learn to Retest"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Call to Action -->
+      <section class="cta-section">
+        <div class="container cta-shell">
+          <h2>Ready to test without the mess?</h2>
+          <p>
+            Start a chat and let the AI co-pilot take the first experiment live.
+            You’ll always approve the final move.
+          </p>
+          <div class="cta-actions">
+            <a
+              href="index.html#waitlist-form"
+              class="btn btn-primary btn-sparkles magnetic-button"
+              data-sparkles="4"
+              >Start Chatting</a
+            >
+            <a class="cta-secondary" href="pricing.html">
+              See Pricing <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="final-footer scroll-reveal" role="contentinfo">
+      <div class="footer-inner">
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a class="link-underline" href="how_it_works.html" aria-current="page"
+            >How it works</a
+          >
+          <span>·</span>
+          <a class="link-underline" href="features.html">Features</a>
+          <span>·</span>
+          <a class="link-underline" href="pricing.html">Pricing</a>
+          <span>·</span>
+          <a class="link-underline" href="blog.html">Blog</a>
+          <span>·</span>
+          <a class="link-underline" href="/docs">Docs</a>
+          <span>·</span>
+          <a class="link-underline" href="/privacy">Privacy</a>
+          <span>·</span>
+          <a class="link-underline" href="/terms">Terms &amp; conditions</a>
+          <span>·</span>
+          <a
+            class="link-underline"
+            href="https://linkedin.com/company/grona-ai"
+            target="_blank"
+            rel="noreferrer"
+            >Linkedin</a
+          >
+        </nav>
+        <p class="footer-copy">
+          © <span id="year"></span> grona.ai — Built for teams that never stop testing.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="shared/shared.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "How it works — grona.ai",
+        "description": "See how Grona turns a simple prompt into live, personalized experiments with AI agents that plan, design, and launch for you.",
+        "url": "https://grona.ai/how_it_works"
+      }
+    </script>
+  </body>
+</html>

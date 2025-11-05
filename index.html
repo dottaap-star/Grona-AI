@@ -19,8 +19,14 @@
       content="Describe the outcome you want; grona plans, ships, and learns — without code."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/assets/og-image.png" />
+    <meta property="og:url" content="https://grona.ai/" />
+    <meta property="og:image" content="https://grona.ai/assets/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://grona.ai/assets/og-image.png" />
+    <meta name="keywords" content="AI CRO, conversion rate optimization, agentic CRO, A/B testing, website optimization, AI optimization, conversion optimization software, CRO platform, AI testing, personalization" />
+    <meta name="author" content="Grona.ai" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://grona.ai/" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -551,7 +557,7 @@
         line-height: 1.1;
         letter-spacing: -0.03em;
         color: var(--hero-text);
-        margin: 0;
+        margin: 0 auto;
         text-wrap: balance;
         max-width: 620px;
         animation: fadeUp 0.8s var(--ease-soft) 0.22s backwards;
@@ -559,15 +565,15 @@
       .hero-headline .static-text {
         display: block;
         margin-bottom: 0.05em;
+        white-space: nowrap;
+        text-align: center;
       }
       .headline-dynamic {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 0.3ch;
-        flex-wrap: nowrap;
-      }
-      .headline-dynamic .leading-text {
-        color: var(--hero-text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.05em;
+        width: 100%;
       }
 
       .rotating-wrap {
@@ -575,6 +581,7 @@
         align-items: baseline;
         gap: 0.15ch;
         min-width: 11ch;
+        margin: 0 auto;
       }
       .rotating-word {
         display: inline-block;
@@ -1705,13 +1712,13 @@
     <header id="top" class="navbar" role="banner" aria-label="Primary">
       <div class="container nav">
         <a class="brand" href="index.html" aria-label="grona home">
-          <img src="assets/logo.png" alt="grona" width="300" height="75" />
+          <img src="assets/logo.png" alt="Grona.ai - Agentic CRO platform logo" width="300" height="75" />
         </a>
         <div class="spacer"></div>
         <nav class="nav-links" aria-label="Main navigation">
           <a href="how_it_works.html">How it works</a>
-          <a href="#testing">Features</a>
-          <a href="pricing.html">pricing</a>
+          <a href="features.html">Features</a>
+          <a href="pricing.html">Pricing</a>
           <a href="blog.html">Blog</a>
         </nav>
         <button
@@ -1783,6 +1790,7 @@
     <div class="hero-shell">
       <!-- HERO -->
       <section id="hero" class="section hero-section">
+        <div class="background-beams"></div>
         <div class="container hero-new">
           <div class="hero-content">
             <!-- Subheading -->
@@ -1792,9 +1800,8 @@
 
             <!-- Main headline -->
             <h1 class="hero-headline">
-              <span class="static-text">Your website.</span>
+              <span class="static-text">Your website always</span>
               <span class="headline-dynamic">
-                <span class="leading-text">Always</span>
                 <span class="rotating-wrap">
                   <span class="rotating-word shimmer">testing.</span>
                   <span class="rotating-caret" aria-hidden="true"></span>
@@ -1835,9 +1842,10 @@
                   />
                   <button
                     type="submit"
-                    class="smart-send"
+                    class="smart-send btn-sparkles"
                     aria-label="Submit email"
                     id="smart-send-btn"
+                    data-sparkles="6"
                   >
                     <svg class="smart-send-icon" viewBox="0 0 24 24">
                       <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
@@ -1942,6 +1950,8 @@
               class="use-case-card use-case-card--product"
               role="group"
               aria-label="Product page optimization"
+              data-tooltip="Optimize product pages for better conversion rates"
+              data-tooltip-position="top"
             >
               <span class="use-case-meta badge badge-soft"
                 >Ecommerce · Shopify Store</span
@@ -1956,7 +1966,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="CTA test placeholder"
+                  alt="Product page CTA optimization example showing improved add-to-cart conversion rates"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -1970,6 +1980,8 @@
               class="use-case-card"
               role="group"
               aria-label="Landing page messaging"
+              data-tooltip="Test and optimize landing page headlines and CTAs"
+              data-tooltip-position="top"
             >
               <span class="use-case-meta badge badge-soft"
                 >Growth · Agencies</span
@@ -1984,7 +1996,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Landing page experiment placeholder"
+                  alt="Landing page headline and CTA optimization example showing increased click-through rates"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -1998,6 +2010,8 @@
               class="use-case-card"
               role="group"
               aria-label="Pricing and offer experiments"
+              data-tooltip="Test pricing strategies and trial offers"
+              data-tooltip-position="top"
             >
               <span class="use-case-meta badge badge-soft"
                 >SaaS · Founders</span
@@ -2012,7 +2026,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Pricing experiment placeholder"
+                  alt="Pricing page optimization example showing trial offer messaging and improved sign-up rates"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2039,7 +2053,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Layout experiment placeholder"
+                  alt="Website layout optimization example showing improved user experience and conversion rates"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2124,7 +2138,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Global personalization placeholder"
+                  alt="Global website personalization example showing location-based content and offers"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2152,7 +2166,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Ad messaging alignment placeholder"
+                  alt="Ad campaign messaging alignment example showing consistent messaging from ad to landing page"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2181,7 +2195,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Behavioral CTA placeholder"
+                  alt="Behavioral targeting example showing personalized CTAs based on visitor behavior"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2206,7 +2220,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Device optimization placeholder"
+                  alt="Mobile device optimization example showing responsive design improvements for better mobile conversion"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2294,7 +2308,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="AI experiment ideas placeholder"
+                  alt="AI-powered experiment suggestions dashboard showing automated test ideas and recommendations"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2319,7 +2333,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Safe rollouts placeholder"
+                  alt="Safe rollout feature showing gradual traffic distribution and risk management for A/B tests"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2344,7 +2358,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Performance insight placeholder"
+                  alt="Performance insights dashboard showing conversion rate metrics and optimization results"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2371,7 +2385,7 @@
               <div class="use-case-visual visual-product">
                 <img
                   src="assets/placeholder.png"
-                  alt="Predictive learning placeholder"
+                  alt="Predictive learning feature showing AI-powered optimization recommendations and future performance predictions"
                   class="carousel-image"
                 />
                 <p class="use-case-outcome">
@@ -2492,26 +2506,26 @@
     <footer class="final-footer scroll-reveal" role="contentinfo">
       <div class="footer-inner">
         <nav class="footer-links" aria-label="Footer navigation">
-          <a class="link-underline" href="how_it_works.html">how it works</a>
+          <a class="link-underline" href="how_it_works.html">How it works</a>
           <span>·</span>
-          <a class="link-underline" href="#testing">features</a>
+          <a class="link-underline" href="features.html">Features</a>
           <span>·</span>
           <a class="link-underline" href="pricing.html">Pricing</a>
           <span>·</span>
-          <a class="link-underline" href="blog.html">blog</a>
+          <a class="link-underline" href="blog.html">Blog</a>
           <span>·</span>
-          <a class="link-underline" href="/docs">docs</a>
+          <a class="link-underline" href="/docs">Docs</a>
           <span>·</span>
-          <a class="link-underline" href="/privacy">privacy</a>
+          <a class="link-underline" href="/privacy">Privacy</a>
           <span>·</span>
-          <a class="link-underline" href="/terms">terms &amp; conditions</a>
+          <a class="link-underline" href="/terms">Terms &amp; conditions</a>
           <span>·</span>
           <a
             class="link-underline"
             href="https://linkedin.com/company/grona-ai"
             target="_blank"
             rel="noreferrer"
-            >linkedin</a
+            >Linkedin</a
           >
         </nav>
         <p class="footer-copy">

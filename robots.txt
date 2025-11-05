@@ -1,0 +1,19 @@
+# robots.txt for grona.ai
+# Allow all search engines to crawl the entire site
+
+User-agent: *
+Allow: /
+
+# Allow Google's crawlers specifically
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Sitemap location
+Sitemap: https://grona.ai/sitemap.xml
+

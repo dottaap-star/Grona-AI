@@ -1,0 +1,149 @@
+/* Button Enhancements - Icon Button & Corner Accent Button */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.icon-button:hover {
+  background: rgba(var(--green-800-rgb, 11, 107, 83), 0.1);
+  transform: scale(1.05);
+}
+
+.icon-button:active {
+  transform: scale(0.95);
+}
+
+.icon-button svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .icon-button:hover {
+  background: rgba(187, 229, 91, 0.1);
+}
+
+/* Corner Accent Button */
+.corner-accent-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  overflow: hidden;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: var(--green-800);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.corner-accent-button:hover {
+  background: var(--green-900);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(11, 107, 83, 0.3);
+}
+
+[data-theme="dark"] .corner-accent-button {
+  background: var(--green-800);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .corner-accent-button:hover {
+  background: var(--green-400);
+  color: var(--ink);
+}
+
+/* Top right corner accent */
+.corner-accent-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--green-900);
+  border-radius: 0 8px 0 16px;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.corner-accent-button:hover::before {
+  transform: translate(4px, -4px);
+}
+
+[data-theme="dark"] .corner-accent-button::before {
+  background: var(--green-400);
+}
+
+/* Bottom left corner accent */
+.corner-accent-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--green-900);
+  border-radius: 16px 0 8px 0;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.corner-accent-button:hover::after {
+  transform: translate(-4px, 4px);
+}
+
+[data-theme="dark"] .corner-accent-button::after {
+  background: var(--green-400);
+}
+
+/* Button text */
+.corner-accent-button span,
+.corner-accent-button {
+  position: relative;
+  z-index: 2;
+}
+
+/* Sliding background effect */
+.corner-accent-button .sliding-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--green-900);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease 0.2s;
+  z-index: 0;
+}
+
+.corner-accent-button:hover .sliding-bg {
+  transform: translateX(0);
+}
+
+[data-theme="dark"] .corner-accent-button .sliding-bg {
+  background: var(--green-400);
+}
+
+/* Magnetic button effect (optional enhancement) */
+.magnetic-button {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.magnetic-button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
