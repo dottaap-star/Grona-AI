@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pricing — grona.ai</title>
+    <meta
+      name="description"
+      content="Choose the right plan for your optimization needs. Start free or scale with Growth, Scale, or Enterprise plans."
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Pricing — grona.ai" />
+    <meta
+      property="og:description"
+      content="Start optimizing. Scale with plans that match your experimentation needs."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+      /* ========================================
+       BRAND TOKENS — tuned to your logo
+       ======================================== */
+       
+      :root {
+        --green-900: #0f3e35;
+        --green-800: #0b6b53;
+        --green-400: #7fd97a;
+        --ink: #0f172a;
+        --muted: #5b6475;
+        --line: #e8ecef;
+        --bg: #ffffff;
+        --bg-soft: #f6fbf8;
+        --radius: 14px;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 10px 30px rgba(11, 107, 83, 0.1);
+        --max: 1120px;
+        --space-1: 8px;
+        --space-2: 12px;
+        --space-3: 16px;
+        --space-4: 24px;
+        --space-5: 32px;
+        --space-6: 48px;
+        --space-7: 64px;
+        --space-8: 92px;
+        --ff-display: "Oracle ABC", "Poppins", ui-sans-serif, system-ui,
+          -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans",
+          sans-serif;
+        --ff-body: "Oracle ABC", "Inter", ui-sans-serif, system-ui,
+          -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans",
+          sans-serif;
+        --pricing-accent: #064E3D;
+      }
+
+      /* Dark mode variables */
+      [data-theme="dark"] {
+        --green-800: #bbe55b;
+        --ink: #f8fafc;
+        --muted: #94a3b8;
+        --line: #334155;
+        --bg: #0f172a;
+        --bg-soft: #1e293b;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+        --pricing-accent: #BCE55D;
+      }
+
+      /* RESET */
+      * {
+        box-sizing: border-box;
+      }
+      html:focus-within {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--muted);
+        font-family: var(--ff-body);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: var(--green-800);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+      }
+      .section {
+        padding: var(--space-8) 0;
+      }
+
+      h1, h2, h3 {
+        font-family: var(--ff-display);
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        margin: 0 0 var(--space-3);
+      }
+      h1 {
+        font-size: clamp(36px, 4.5vw, 56px);
+        line-height: 1.1;
+      }
+      h2 {
+        font-size: clamp(26px, 3vw, 34px);
+      }
+      h3 {
+        font-size: clamp(20px, 2.2vw, 22px);
+      }
+      p {
+        margin: 0 0 var(--space-3);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        padding: 0 18px;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.08s ease, box-shadow 0.2s ease;
+      }
+      .btn-primary {
+        background: var(--pricing-accent);
+        color: #fff !important;
+        font-weight: 700;
+        box-shadow: var(--shadow-sm);
+      }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+        text-decoration: none;
+      }
+      .btn-ghost {
+        background: var(--bg);
+        border-color: var(--line);
+        color: var(--ink);
+      }
+      .btn-ghost:hover {
+        text-decoration: none;
+      }
+
+      /* NAV */
+      :root {
+        --header-height: 80px;
+        --navbar-height: 80px;
+      }
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: transparent;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      }
+      [data-theme="dark"] .navbar {
+        background: transparent;
+        border-bottom: 1px solid rgba(51, 65, 85, 0.62);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: var(--navbar-height);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .brand img {
+        height: 75px;
+        width: auto;
+      }
+      .spacer {
+        flex: 1;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .nav-links a {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .menu-btn {
+        display: none;
+        background: transparent;
+        border: 0;
+        width: 40px;
+        height: 40px;
+      }
+      .theme-toggle {
+        background: transparent;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .theme-toggle:hover {
+        background: var(--bg-soft);
+      }
+      [data-theme="dark"] .theme-toggle {
+        color: #fff;
+      }
+
+      /* HERO */
+      .pricing-hero {
+        text-align: center;
+        padding: var(--space-8) 0;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .pricing-hero h1 {
+        margin-bottom: var(--space-4);
+      }
+      .pricing-hero p {
+        font-size: 20px;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      /* BILLING TOGGLE */
+      .billing-toggle-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-3);
+        margin: var(--space-6) 0;
+      }
+      .billing-toggle-label {
+        font-weight: 500;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .billing-toggle {
+        position: relative;
+        display: inline-block;
+        width: 56px;
+        height: 32px;
+      }
+      .billing-toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .billing-toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--line);
+        transition: 0.3s;
+        border-radius: 32px;
+      }
+      .billing-toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 24px;
+        width: 24px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.3s;
+        border-radius: 50%;
+      }
+      .billing-toggle input:checked + .billing-toggle-slider {
+        background-color: var(--pricing-accent);
+      }
+      .billing-toggle input:checked + .billing-toggle-slider:before {
+        transform: translateX(24px);
+      }
+      .billing-toggle input:focus-visible + .billing-toggle-slider {
+        outline: 2px solid var(--pricing-accent);
+        outline-offset: 2px;
+      }
+      .savings-badge {
+        display: inline-block;
+        background: var(--pricing-accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-left: var(--space-2);
+      }
+
+      /* PRICING TIERS */
+      .pricing-tiers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-4);
+        margin: var(--space-8) 0;
+      }
+      .pricing-card {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-5);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .pricing-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+      [data-theme="dark"] .pricing-card {
+        background: var(--bg-soft);
+        border-color: var(--line);
+      }
+      .pricing-card.featured {
+        border: 2px solid var(--pricing-accent);
+        position: relative;
+      }
+      .pricing-card.featured::before {
+        content: "Popular";
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--pricing-accent);
+        color: #fff;
+        padding: 4px 16px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .pricing-card-header {
+        margin-bottom: var(--space-4);
+        min-height: 140px;
+      }
+      .pricing-card-name {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--ink);
+        margin: 0 0 var(--space-2);
+      }
+      .pricing-card-price {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--pricing-accent);
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+        gap: var(--space-1);
+        flex-wrap: wrap;
+        min-height: 48px;
+      }
+      .pricing-card-price small {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--muted);
+      }
+      .pricing-card-price .period {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--muted);
+      }
+      .pricing-card-price .savings-badge {
+        display: inline-block;
+        width: 100%;
+        margin-top: var(--space-1);
+        margin-left: 0;
+      }
+      .pricing-card-target {
+        font-size: 14px;
+        color: var(--muted);
+        margin-top: var(--space-2);
+        min-height: 40px;
+      }
+      .pricing-card-features {
+        flex: 1;
+        margin: var(--space-4) 0;
+      }
+      .pricing-card-features ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .pricing-card-features li {
+        padding: var(--space-2) 0;
+        font-size: 15px;
+        color: var(--muted);
+        display: flex;
+        align-items: start;
+        gap: var(--space-2);
+      }
+      .pricing-card-features li::before {
+        content: "✓";
+        color: var(--pricing-accent);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .pricing-card-cta {
+        margin-top: var(--space-4);
+      }
+
+      /* FEATURE COMPARISON TABLE */
+      .feature-table-section {
+        margin: var(--space-8) 0;
+      }
+      .feature-table-wrapper {
+        overflow-x: auto;
+        margin: var(--space-6) 0;
+      }
+      .feature-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+      }
+      .feature-table th,
+      .feature-table td {
+        padding: var(--space-3);
+        text-align: left;
+        border-bottom: 1px solid var(--line);
+      }
+      .feature-table th {
+        font-weight: 700;
+        color: var(--ink);
+        background: var(--bg-soft);
+        position: sticky;
+        top: 0;
+      }
+      [data-theme="dark"] .feature-table th {
+        background: var(--bg);
+      }
+      .feature-table td {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .feature-table .plan-name {
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .feature-table .plan-price {
+        font-weight: 700;
+        color: var(--pricing-accent);
+      }
+      .feature-table .check {
+        color: var(--pricing-accent);
+        font-weight: 700;
+      }
+
+      /* FAQ */
+      .faq-section {
+        background: var(--bg);
+        padding: 120px 0 140px;
+      }
+      [data-theme="dark"] .faq-section {
+        background: #0f172a;
+      }
+      .faq-container {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .faq-container h2 {
+        text-align: center;
+        margin-bottom: var(--space-6);
+      }
+      .accordion {
+        display: grid;
+        gap: 12px;
+      }
+      .accordion-item {
+        border: 1px solid rgba(203, 213, 225, 0.6);
+        border-radius: 16px;
+        background: #fff;
+        overflow: hidden;
+        transition: border 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      [data-theme="dark"] .accordion-item {
+        background: rgba(15, 23, 42, 0.92);
+        border-color: rgba(94, 110, 140, 0.45);
+      }
+      .accordion-trigger {
+        width: 100%;
+        position: relative;
+        background: none;
+        border: 0;
+        padding: 20px 56px 20px 24px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--ink);
+        cursor: pointer;
+        font-family: var(--ff-body);
+      }
+      [data-theme="dark"] .accordion-trigger {
+        color: #f1f5f9;
+      }
+      .accordion-trigger:focus-visible {
+        outline: 2px solid var(--pricing-accent);
+        outline-offset: 4px;
+      }
+      .accordion-trigger .chevron {
+        position: absolute;
+        right: 24px;
+        font-size: 18px;
+        transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .accordion-item.active .chevron {
+        transform: rotate(180deg);
+      }
+      .accordion-item.active {
+        border-left: 4px solid var(--pricing-accent);
+      }
+      .accordion-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+        padding: 0 24px;
+      }
+      .accordion-item.active .accordion-panel {
+        padding-bottom: 20px;
+      }
+      .accordion-panel p {
+        margin: 0;
+        color: #475569;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      [data-theme="dark"] .accordion-panel p {
+        color: #cbd5f5;
+      }
+      .accordion-panel ul {
+        margin: var(--space-3) 0;
+        padding-left: var(--space-4);
+      }
+      .accordion-panel li {
+        margin: var(--space-2) 0;
+        color: #475569;
+      }
+      [data-theme="dark"] .accordion-panel li {
+        color: #cbd5f5;
+      }
+
+      /* CTA SECTION */
+      .cta-section {
+        text-align: center;
+        padding: var(--space-8) 0;
+        background: var(--bg-soft);
+        border-radius: var(--radius);
+        margin: var(--space-8) 0;
+      }
+      .cta-section h2 {
+        margin-bottom: var(--space-4);
+      }
+      .cta-section p {
+        font-size: 18px;
+        color: var(--muted);
+        margin-bottom: var(--space-5);
+      }
+      .cta-buttons {
+        display: flex;
+        gap: var(--space-3);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* FOOTER */
+      .final-footer {
+        background: #f6f7f7;
+        padding: 64px 0 80px;
+      }
+      [data-theme="dark"] .final-footer {
+        background: #0a0f1a;
+      }
+      .footer-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+        text-align: center;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: var(--space-4);
+      }
+      .footer-links a {
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .footer-links a:hover,
+      .footer-links a:focus-visible {
+        color: var(--pricing-accent);
+      }
+      .link-underline {
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+      }
+      .link-underline:hover {
+        text-decoration: none;
+        border-bottom-color: var(--pricing-accent);
+      }
+      .footer-copy {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0;
+      }
+
+      /* SCROLL REVEAL */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .scroll-reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1200px) {
+        .pricing-tiers {
+          grid-template-columns: repeat(4, 280px);
+          overflow-x: auto;
+          padding-bottom: var(--space-2);
+        }
+      }
+      @media (max-width: 768px) {
+        :root {
+          --navbar-height: 64px;
+          --header-height: 64px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .menu-btn {
+          display: block;
+        }
+        .pricing-tiers {
+          grid-template-columns: repeat(4, 280px);
+          overflow-x: auto;
+          padding-bottom: var(--space-2);
+        }
+        .feature-table-wrapper {
+          margin-left: calc(var(--space-4) * -1);
+          margin-right: calc(var(--space-4) * -1);
+        }
+        .pricing-hero {
+          padding: var(--space-6) 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="top" class="navbar" role="banner" aria-label="Primary">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="grona home">
+          <img src="assets/logo.png" alt="grona" width="300" height="75" />
+        </a>
+        <div class="spacer"></div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="how_it_works.html">How it works</a>
+          <a href="index.html#testing">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="menu-btn" aria-label="Open menu">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="pricing-hero scroll-reveal">
+      <div class="container">
+        <h1>Pricing</h1>
+        <p>Start optimizing. Scale with plans that match your experimentation needs.</p>
+      </div>
+    </section>
+
+    <section class="pricing-tiers-section scroll-reveal">
+      <div class="container">
+        <div class="billing-toggle-wrapper">
+          <span class="billing-toggle-label">Monthly</span>
+          <label class="billing-toggle">
+            <input type="checkbox" id="billing-toggle" aria-label="Toggle between monthly and annual billing">
+            <span class="billing-toggle-slider"></span>
+          </label>
+          <span class="billing-toggle-label">Annual <span style="color: var(--pricing-accent); font-weight: 700;">(Save 2 months)</span></span>
+        </div>
+        <div class="pricing-tiers">
+          <!-- Starter Plan -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-name">Starter</h3>
+              <p class="pricing-card-price">Free</p>
+              <p class="pricing-card-target">Beginners exploring AI CRO</p>
+            </div>
+            <div class="pricing-card-features">
+              <ul>
+                <li>1 Website / Domain</li>
+                <li>1,000 Monthly Pageviews</li>
+                <li>300 AI Credits / Month</li>
+                <li>1 Active Optimization</li>
+                <li>Basic Issue Detection</li>
+                <li>Visual No-Code Editor</li>
+                <li>1 Team Seat</li>
+                <li>Standard Email Support (72h)</li>
+              </ul>
+            </div>
+            <div class="pricing-card-cta">
+              <a href="/" class="btn btn-primary" style="width: 100%;">Get Started Free</a>
+            </div>
+          </div>
+
+          <!-- Growth Plan -->
+          <div class="pricing-card featured" data-plan="growth">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-name">Growth</h3>
+              <p class="pricing-card-price">
+                <span class="price-amount">$25</span>
+                <span class="period">/mo</span>
+                <span class="savings-badge" style="display: none;">Save $50</span>
+              </p>
+              <p class="pricing-card-target">Small Shopify / SaaS teams growing efficiently</p>
+            </div>
+            <div class="pricing-card-features">
+              <ul>
+                <li>1 Website / Domain</li>
+                <li>15,000 Monthly Pageviews</li>
+                <li>1,500 AI Credits / Month</li>
+                <li>3 Active Optimizations</li>
+                <li>Drop-Off Patterns + Opportunity Ranking</li>
+                <li>AI Variation Generator (Copy / CTA)</li>
+                <li>Basic Segmentation</li>
+                <li>Visual No-Code Editor</li>
+                <li>Up to 3 Team Seats</li>
+                <li>Priority Email & Chat (24–48h)</li>
+                <li>GA4 / Clarity / HubSpot Integrations</li>
+                <li>Layout & Tone Safety</li>
+              </ul>
+            </div>
+            <div class="pricing-card-cta">
+              <a href="/" class="btn btn-primary" style="width: 100%;">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Scale Plan -->
+          <div class="pricing-card" data-plan="scale">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-name">Scale</h3>
+              <p class="pricing-card-price">
+                <span class="price-amount">$40</span>
+                <span class="period">/mo</span>
+                <span class="savings-badge" style="display: none;">Save $80</span>
+              </p>
+              <p class="pricing-card-target">Teams scaling always-on optimization</p>
+            </div>
+            <div class="pricing-card-features">
+              <ul>
+                <li>3 Websites / Domains</li>
+                <li>30,000 Monthly Pageviews</li>
+                <li>3,500 AI Credits / Month</li>
+                <li>10 Active Optimizations</li>
+                <li>Full Multi-Agent Optimization Loop</li>
+                <li>AI Variation Generator (Copy + Layout + Offer)</li>
+                <li>Advanced Segments (UTM, Geo, Device, Behavioral)</li>
+                <li>Visual No-Code Editor</li>
+                <li>Up to 10 Team Seats</li>
+                <li>Priority Chat Support (<12h)</li>
+                <li>GA4 / Clarity / HubSpot Integrations</li>
+                <li>Multi-Device + Brand Consistency</li>
+              </ul>
+            </div>
+            <div class="pricing-card-cta">
+              <a href="/" class="btn btn-primary" style="width: 100%;">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-name">Enterprise</h3>
+              <p class="pricing-card-price">Custom</p>
+              <p class="pricing-card-target">Agencies, Mid-Market, Multi-brand companies</p>
+            </div>
+            <div class="pricing-card-features">
+              <ul>
+                <li>Unlimited Websites / Domains</li>
+                <li>Custom Monthly Pageviews</li>
+                <li>Custom AI Credits</li>
+                <li>Unlimited Active Optimizations</li>
+                <li>Custom Fine-Tuned AI Agents + Playbooks</li>
+                <li>Fully Customized Variation Models</li>
+                <li>Predictive Personalization</li>
+                <li>Multi-team & Multi-site Workspaces</li>
+                <li>Unlimited Team Seats</li>
+                <li>Dedicated Success Manager</li>
+                <li>Custom Integrations</li>
+                <li>Custom Brand Style Model</li>
+              </ul>
+            </div>
+            <div class="pricing-card-cta">
+              <a href="/" class="btn btn-primary" style="width: 100%;">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-table-section scroll-reveal">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--space-4);">Compare Plans</h2>
+        <div class="feature-table-wrapper">
+          <table class="feature-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Starter (Free)</th>
+                <th>Growth ($25/mo)</th>
+                <th>Scale ($40/mo)</th>
+                <th>Enterprise (Custom)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Websites / Domains</strong></td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td><strong>Monthly Pageviews Included</strong></td>
+                <td><strong>1,000</strong></td>
+                <td><strong>15,000</strong></td>
+                <td><strong>30,000</strong></td>
+                <td>Custom (High Traffic / Multi-site)</td>
+              </tr>
+              <tr>
+                <td><strong>AI Credits / Month</strong></td>
+                <td><strong>300 credits</strong></td>
+                <td><strong>1,500 credits</strong></td>
+                <td><strong>3,500 credits</strong></td>
+                <td>Custom (Dedicated AI Capacity)</td>
+              </tr>
+              <tr>
+                <td><strong>Active Optimizations</strong></td>
+                <td>1</td>
+                <td>3</td>
+                <td>10</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td><strong>AI Analytics Agent</strong></td>
+                <td>Basic Issue Detection</td>
+                <td>Drop-Off Patterns + Opportunity Ranking</td>
+                <td>Full Multi-Agent Optimization Loop</td>
+                <td>Custom Fine-Tuned AI Agents + Playbooks</td>
+              </tr>
+              <tr>
+                <td><strong>AI Variation Generator</strong></td>
+                <td>✗</td>
+                <td class="check">✓ (Copy / CTA Variants)</td>
+                <td class="check">✓ (Copy + Layout + Offer Strategy)</td>
+                <td>Fully Customized Variation Models + On-Brand Language Training</td>
+              </tr>
+              <tr>
+                <td><strong>Personalization</strong></td>
+                <td>✗</td>
+                <td>Basic Segmentation (New vs Returning)</td>
+                <td>Advanced Segments (UTM, Geo, Device, Behavioral)</td>
+                <td>Predictive Personalization (Intent + Lifetime Value Signals)</td>
+              </tr>
+              <tr>
+                <td><strong>Visual No-Code Editor</strong></td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td>✓ (Multi-team & Multi-site Workspaces)</td>
+              </tr>
+              <tr>
+                <td><strong>Shopify / Webflow / WooCommerce Plugins</strong></td>
+                <td>Coming Soon</td>
+                <td>Coming Soon</td>
+                <td>Coming Soon</td>
+                <td>Coming Soon + Priority Early Access</td>
+              </tr>
+              <tr>
+                <td><strong>GA4 / Clarity / HubSpot Integrations</strong></td>
+                <td>✗</td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td>✓ + Custom Integrations (Salesforce, Segment, CDP, etc.)</td>
+              </tr>
+              <tr>
+                <td><strong>Variation QA Guardrails</strong></td>
+                <td>✗</td>
+                <td>Layout & Tone Safety</td>
+                <td>Multi-Device + Brand Consistency</td>
+                <td>Custom Brand Style Model + Legal/Compliance Guardrails</td>
+              </tr>
+              <tr>
+                <td><strong>Team Seats</strong></td>
+                <td>1</td>
+                <td>Up to 3</td>
+                <td>Up to 10</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td><strong>Support Level</strong></td>
+                <td>Standard Email (72h)</td>
+                <td>Priority Email & Chat (24–48h)</td>
+                <td>Priority Chat (<12h)</td>
+                <td>Dedicated Success Manager + Strategy Reviews</td>
+              </tr>
+              <tr>
+                <td><strong>Best For</strong></td>
+                <td>Beginners exploring AI CRO</td>
+                <td>Small Shopify / SaaS teams growing efficiently</td>
+                <td>Teams scaling always-on optimization</td>
+                <td>Agencies, Mid-Market, Multi-brand companies needing autonomy & scale</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section scroll-reveal" id="faq">
+      <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion" role="list">
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              What are AI Credits and how are they used?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>
+                AI Credits are the "fuel" that powers autonomous optimization.
+                They're used when Grona.ai:
+              </p>
+              <ul>
+                <li>Analyzes a page for drop-offs</li>
+                <li>Generates copy, layout, or offer variations</li>
+                <li>Runs experiment cycles</li>
+                <li>Applies personalization logic</li>
+              </ul>
+              <p>Your credits refresh every month based on your plan.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              Do AI Credits roll over?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>No — AI Credits reset every month.</p>
+              <p>This ensures:</p>
+              <ul>
+                <li>Your optimization cycles stay fresh and continuous</li>
+                <li>The AI regularly re-evaluates performance rather than hoarding or batching</li>
+              </ul>
+              <p>If you're consistently using all your credits, that's a sign you're growing into a higher tier.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              What happens if I run out of AI Credits before the month ends?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>
+                Your current experiments continue running normally.
+                You just won't be able to create new variations until your credits refresh or you upgrade.
+                We never shut down active tests mid-cycle.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              What if my website exceeds the pageview limit?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>
+                No interruptions.
+                Your site keeps optimizing — we simply notify you if your traffic consistently stays above your plan's range so we can recommend the best fit.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              Do I need a developer to install Grona.ai?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>
+                No.
+                Add one script tag — or use Shopify / Webflow / WooCommerce integrations (Coming Soon).
+                Then make changes visually with the no-code editor.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              What makes Grona.ai different from traditional CRO tools or agencies?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>Traditional CRO requires:</p>
+              <ul>
+                <li>Analysts</li>
+                <li>Designers</li>
+                <li>Developers</li>
+                <li>Linear testing cycles</li>
+              </ul>
+              <p>Grona.ai runs the entire optimization loop autonomously:</p>
+              <ul>
+                <li>Detects opportunity</li>
+                <li>Generates variants</li>
+                <li>Tests continuously</li>
+                <li>Improves results over time</li>
+              </ul>
+              <p>You get always-on optimization, without needing a CRO team.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              Does Grona.ai work for both ecommerce and SaaS?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>Yes.</p>
+              <p>Our AI agents are trained to optimize:</p>
+              <ul>
+                <li>Product detail pages</li>
+                <li>Collection/category pages</li>
+                <li>Landing pages & hero sections</li>
+                <li>Pricing & signup flows</li>
+                <li>Checkout steps</li>
+              </ul>
+              <p>If your website has a goal — Grona can optimize toward it.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              Is my data secure?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>
+                Yes — your data is encrypted and never shared or sold.
+                Enterprise plans include stricter data controls and custom compliance support.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              Can agencies use Grona.ai for multiple client sites?
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>Yes — that's what the Enterprise plan is designed for.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion-item>
+            <button class="accordion-trigger" data-accordion-trigger>
+              GDPR Compliance
+              <span class="chevron">⌄</span>
+            </button>
+            <div class="accordion-panel" data-accordion-panel>
+              <p>
+                Grona.ai is GDPR compliant and committed to data protection.
+                We encrypt all data and never share or sell your information.
+                You have full control over your data and can request deletion at any time.
+                Enterprise plans include additional compliance support and data residency options.
+                For more details, see our <a href="/privacy" style="color: var(--pricing-accent);">Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section scroll-reveal">
+      <div class="container">
+        <h2>Ready to start optimizing?</h2>
+        <p>Join teams that are already using Grona.ai to accelerate their optimization.</p>
+        <div class="cta-buttons">
+          <a href="/" class="btn btn-primary">Get Started Free</a>
+          <a href="/" class="btn btn-ghost">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="final-footer scroll-reveal" role="contentinfo">
+      <div class="footer-inner">
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a class="link-underline" href="how_it_works.html">how it works</a>
+          <span>·</span>
+          <a class="link-underline" href="index.html#testing">features</a>
+          <span>·</span>
+          <a class="link-underline" href="pricing.html">Pricing</a>
+          <span>·</span>
+          <a class="link-underline" href="blog.html">blog</a>
+          <span>·</span>
+          <a class="link-underline" href="/docs">docs</a>
+          <span>·</span>
+          <a class="link-underline" href="/privacy">privacy</a>
+          <span>·</span>
+          <a class="link-underline" href="/terms">terms &amp; conditions</a>
+          <span>·</span>
+          <a
+            class="link-underline"
+            href="https://linkedin.com/company/grona-ai"
+            target="_blank"
+            rel="noreferrer"
+            >linkedin</a
+          >
+        </nav>
+        <p class="footer-copy">
+          © <span id="year"></span> grona.ai — Built for teams that never stop
+          testing.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // year
+      document.querySelector("#year").textContent = new Date().getFullYear();
+
+      // Billing toggle (Monthly/Annual)
+      const billingToggle = document.getElementById("billing-toggle");
+      const pricingPlans = {
+        growth: { monthly: 25, yearly: 250, savings: 50 },
+        scale: { monthly: 40, yearly: 400, savings: 80 }
+      };
+
+      function updatePricing(isAnnual) {
+        Object.keys(pricingPlans).forEach(planName => {
+          const planCard = document.querySelector(`[data-plan="${planName}"]`);
+          if (!planCard) return;
+
+          const priceAmount = planCard.querySelector(".price-amount");
+          const period = planCard.querySelector(".period");
+          const savingsBadge = planCard.querySelector(".savings-badge");
+          const plan = pricingPlans[planName];
+
+          if (isAnnual) {
+            // Calculate per-month equivalent (yearly / 12) and round to nearest dollar
+            const monthlyEquivalent = Math.round(plan.yearly / 12);
+            const savingsPercentage = Math.round(((plan.monthly - monthlyEquivalent) / plan.monthly) * 100);
+            
+            priceAmount.textContent = `$${monthlyEquivalent}`;
+            period.textContent = "/mo";
+            if (savingsBadge) {
+              savingsBadge.textContent = `Save ${savingsPercentage}%`;
+              savingsBadge.style.display = "inline-block";
+            }
+          } else {
+            priceAmount.textContent = `$${plan.monthly}`;
+            period.textContent = "/mo";
+            if (savingsBadge) {
+              savingsBadge.style.display = "none";
+            }
+          }
+        });
+      }
+
+      if (billingToggle) {
+        billingToggle.addEventListener("change", function() {
+          updatePricing(this.checked);
+        });
+      }
+
+      // Dark mode toggle
+      const html = document.documentElement;
+      const themeToggle = document.getElementById("theme-toggle");
+
+      if (themeToggle) {
+        const currentTheme = localStorage.getItem("theme") || "light";
+        html.setAttribute("data-theme", currentTheme);
+
+        function updateIcon() {
+          const isDark = html.getAttribute("data-theme") === "dark";
+          const logoImg = document.querySelector(".brand img");
+
+          themeToggle.innerHTML = isDark
+            ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>`
+            : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>`;
+
+          if (logoImg) {
+            logoImg.src = isDark ? "assets/Grona_light.png" : "assets/logo.png";
+          }
+        }
+
+        updateIcon();
+
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = html.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+          html.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+          updateIcon();
+        });
+      }
+
+      // Accordion functionality
+      const accordionItems = Array.from(
+        document.querySelectorAll("[data-accordion-item]")
+      );
+      if (accordionItems.length) {
+        const accordions = accordionItems
+          .map((item, index) => {
+            const trigger = item.querySelector("[data-accordion-trigger]");
+            const panel = item.querySelector("[data-accordion-panel]");
+            if (!trigger || !panel) return null;
+
+            const triggerId = trigger.id || `accordion-trigger-${index + 1}`;
+            const panelId = panel.id || `accordion-panel-${index + 1}`;
+
+            trigger.id = triggerId;
+            panel.id = panelId;
+
+            trigger.setAttribute("type", "button");
+            trigger.setAttribute("aria-controls", panelId);
+            trigger.setAttribute("aria-expanded", "false");
+
+            panel.setAttribute("role", "region");
+            panel.setAttribute("aria-labelledby", triggerId);
+            panel.setAttribute("aria-hidden", "true");
+            panel.style.maxHeight = "0px";
+
+            return { item, trigger, panel };
+          })
+          .filter(Boolean);
+
+        const closeAccordion = (accordion, { immediate = false } = {}) => {
+          if (!accordion || !accordion.item.classList.contains("active"))
+            return;
+          const { item, trigger, panel } = accordion;
+
+          trigger.setAttribute("aria-expanded", "false");
+          panel.setAttribute("aria-hidden", "true");
+
+          const finishClose = () => {
+            item.classList.remove("active");
+            panel.removeEventListener("transitionend", onTransitionEnd);
+          };
+
+          const onTransitionEnd = (event) => {
+            if (event.propertyName !== "max-height") return;
+            finishClose();
+          };
+
+          if (immediate) {
+            panel.style.maxHeight = "0px";
+            finishClose();
+            return;
+          }
+
+          panel.addEventListener("transitionend", onTransitionEnd);
+          panel.style.maxHeight = `${panel.scrollHeight}px`;
+          requestAnimationFrame(() => {
+            panel.style.maxHeight = "0px";
+          });
+        };
+
+        const openAccordion = (accordion) => {
+          if (!accordion) return;
+          const { item, trigger, panel } = accordion;
+          if (item.classList.contains("active")) {
+            panel.style.maxHeight = `${panel.scrollHeight}px`;
+            panel.setAttribute("aria-hidden", "false");
+            trigger.setAttribute("aria-expanded", "true");
+            return;
+          }
+
+          accordions.forEach((other) => {
+            if (other !== accordion) {
+              closeAccordion(other);
+            }
+          });
+
+          item.classList.add("active");
+          trigger.setAttribute("aria-expanded", "true");
+          panel.setAttribute("aria-hidden", "false");
+          panel.style.maxHeight = `${panel.scrollHeight}px`;
+        };
+
+        const toggleAccordion = (accordion) => {
+          if (!accordion) return;
+          if (accordion.item.classList.contains("active")) {
+            closeAccordion(accordion);
+          } else {
+            openAccordion(accordion);
+          }
+        };
+
+        accordions.forEach((accordion, index) => {
+          const { trigger } = accordion;
+
+          trigger.addEventListener("click", () => toggleAccordion(accordion));
+
+          trigger.addEventListener("keydown", (event) => {
+            switch (event.key) {
+              case "Enter":
+              case " ":
+                event.preventDefault();
+                toggleAccordion(accordion);
+                break;
+              case "ArrowDown":
+              case "ArrowRight": {
+                event.preventDefault();
+                const next = accordions[(index + 1) % accordions.length];
+                next?.trigger.focus();
+                break;
+              }
+              case "ArrowUp":
+              case "ArrowLeft": {
+                event.preventDefault();
+                const previous =
+                  accordions[
+                    (index - 1 + accordions.length) % accordions.length
+                  ];
+                previous?.trigger.focus();
+                break;
+              }
+              case "Home":
+                event.preventDefault();
+                accordions[0]?.trigger.focus();
+                break;
+              case "End":
+                event.preventDefault();
+                accordions[accordions.length - 1]?.trigger.focus();
+                break;
+            }
+          });
+        });
+
+        const onAccordionResize = () => {
+          accordions.forEach((accordion) => {
+            if (accordion?.item.classList.contains("active")) {
+              accordion.panel.style.maxHeight = `${accordion.panel.scrollHeight}px`;
+            }
+          });
+        };
+
+        window.addEventListener("resize", onAccordionResize);
+      }
+
+      // Scroll reveal
+      const revealElements = document.querySelectorAll(".scroll-reveal");
+      if (revealElements.length) {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        revealElements.forEach((el) => revealObserver.observe(el));
+      }
+    </script>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "grona.ai",
+        "url": "https://grona.ai/",
+        "logo": "https://grona.ai/assets/logo.svg",
+        "sameAs": [
+          "https://www.linkedin.com/company/grona-ai",
+          "https://x.com/grona_ai"
+        ],
+        "description": "Agentic CRO copilot that plans, launches, and learns from a simple prompt."
+      }
+    </script>
+  </body>
+</html>
+
