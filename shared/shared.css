@@ -281,6 +281,11 @@ p {
   color: #94a3b8;
 }
 
+/* Mobile Menu - Hidden by default on non-mobile viewports */
+.mobile-menu {
+  display: none;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   :root {
@@ -304,6 +309,7 @@ p {
   
   /* Mobile Menu Overlay */
   .mobile-menu {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
