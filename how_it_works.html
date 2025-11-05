@@ -1656,7 +1656,7 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
         </button>
-        <button class="menu-btn" aria-label="Open menu">
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
           <svg
             width="22"
             height="22"
@@ -2353,13 +2353,34 @@
       (function() {
         const alertBanner = document.querySelector('.alert-banner');
         const dismissBtn = document.querySelector('.alert-banner-dismiss');
+        const storage = window.__gronaStorage || null;
+
+        function markDismissed() {
+          if (!storage) return;
+          try {
+            storage.setItem('alertBannerDismissed', 'true');
+          } catch (err) {
+            console.warn('Unable to store alert banner dismissal state.', err);
+          }
+        }
+
+        function wasDismissed() {
+          if (!storage) return false;
+          try {
+            return storage.getItem('alertBannerDismissed') === 'true';
+          } catch (err) {
+            console.warn('Unable to read alert banner dismissal state.', err);
+            return false;
+          }
+        }
+
         if (dismissBtn && alertBanner) {
           dismissBtn.addEventListener('click', function() {
             alertBanner.classList.add('hidden');
-            localStorage.setItem('alertBannerDismissed', 'true');
+            markDismissed();
           });
           // Check if already dismissed
-          if (localStorage.getItem('alertBannerDismissed') === 'true') {
+          if (wasDismissed()) {
             alertBanner.classList.add('hidden');
           }
         }
