@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Features — grona.ai</title>
+    <meta
+      name="description"
+      content="Learn how Grona uses AI chat to run conversion optimization and personalization without visual editors or CRO consultants."
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Features — grona.ai" />
+    <meta
+      property="og:description"
+      content="Your Website. Self-Optimizing. Talk to your site. Grona plans, tests, and personalizes in real time."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://grona.ai/features" />
+    <meta property="og:image" content="https://grona.ai/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://grona.ai/assets/og-image.png" />
+    <meta name="keywords" content="AI CRO features, conversational CRO, AI conversion optimization, website personalization, AI chat assistant, automated testing, conversion optimization features, CRO platform features" />
+    <meta name="author" content="Grona.ai" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://grona.ai/features" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NXBH5J6M');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="shared/shared.css" />
+    <style>
+      /* ========================================
+       FEATURES PAGE STYLES
+       ======================================== */
+      
+      .features-hero {
+        position: relative;
+        background: var(--hero-bg);
+        padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-8);
+        overflow: hidden;
+      }
+
+      .features-hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .features-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: var(--space-4);
+        color: var(--hero-text);
+      }
+
+      .features-hero .subheadline {
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        color: var(--hero-muted);
+        margin-bottom: var(--space-6);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features-hero-ctas {
+        display: flex;
+        gap: var(--space-3);
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: var(--space-8);
+      }
+
+      .features-hero-visual {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .features-hero-visual img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+      }
+
+      /* Feature Section Styles */
+      .feature-section {
+        padding: var(--space-8) 0;
+      }
+
+      .feature-section:nth-child(even) {
+        background: var(--bg-soft);
+      }
+
+      .feature-section-content {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+      }
+
+      .feature-section-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto var(--space-6);
+      }
+
+      .feature-section-header h2 {
+        margin-bottom: var(--space-3);
+      }
+
+      .feature-section-header p {
+        font-size: 1.125rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      /* Example Prompts */
+      .example-prompts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        justify-content: center;
+        margin-bottom: var(--space-6);
+      }
+
+      .prompt-chip {
+        display: inline-block;
+        padding: var(--space-2) var(--space-4);
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--ink);
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .prompt-chip:hover {
+        border-color: var(--green-800);
+        background: var(--bg-soft);
+        transform: translateY(-2px);
+      }
+
+      [data-theme="dark"] .prompt-chip {
+        background: var(--bg-soft);
+        border-color: var(--line);
+      }
+
+      [data-theme="dark"] .prompt-chip:hover {
+        background: var(--bg);
+        border-color: var(--green-800);
+      }
+
+      /* Chat Flow Visual */
+      .chat-flow-visual {
+        max-width: 900px;
+        margin: var(--space-6) auto 0;
+      }
+
+      .chat-flow-visual img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+      }
+
+      /* Personalization Cards */
+      .personalization-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--space-5);
+        margin-top: var(--space-6);
+      }
+
+      .personalization-card {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-5);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .personalization-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-4px);
+      }
+
+      [data-theme="dark"] .personalization-card {
+        background: var(--bg-soft);
+        border-color: var(--line);
+      }
+
+      .personalization-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-2);
+        color: var(--ink);
+      }
+
+      .personalization-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: var(--space-3);
+      }
+
+      .personalization-card img {
+        width: 100%;
+        height: auto;
+        border-radius: calc(var(--radius) - 4px);
+        margin-top: var(--space-3);
+      }
+
+      /* Side-by-side Layout */
+      .side-by-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+        align-items: center;
+        margin-top: var(--space-6);
+      }
+
+      .side-by-side-item {
+        position: relative;
+      }
+
+      .side-by-side-item img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+      }
+
+      /* Quality Checks Grid */
+      .quality-checks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-5);
+        margin-top: var(--space-6);
+      }
+
+      .quality-check-card {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-5);
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .quality-check-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-4px);
+      }
+
+      [data-theme="dark"] .quality-check-card {
+        background: var(--bg-soft);
+        border-color: var(--line);
+      }
+
+      .quality-check-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto var(--space-3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-soft);
+        border-radius: 50%;
+        color: var(--green-800);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      [data-theme="dark"] .quality-check-icon {
+        background: var(--bg);
+        color: var(--green-800);
+      }
+
+      .quality-check-card h3 {
+        font-size: 1.125rem;
+        margin-bottom: var(--space-2);
+      }
+
+      /* CTA Section */
+      .features-cta-section {
+        background: linear-gradient(135deg, var(--green-800), var(--green-400));
+        color: white;
+        padding: var(--space-8) 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      [data-theme="dark"] .features-cta-section {
+        background: linear-gradient(135deg, var(--green-800), var(--green-400));
+      }
+
+      .features-cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+        position: relative;
+        z-index: 1;
+      }
+
+      .features-cta-content h2 {
+        color: white;
+        margin-bottom: var(--space-3);
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      .features-cta-content p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.125rem;
+        margin-bottom: var(--space-6);
+      }
+
+      .features-cta-buttons {
+        display: flex;
+        gap: var(--space-3);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .features-cta-section .btn-primary {
+        background: white;
+        color: var(--green-800);
+      }
+
+      .features-cta-section .btn-primary:hover {
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(-2px);
+      }
+
+      .features-cta-section .btn-ghost {
+        background: transparent;
+        border-color: white;
+        color: white;
+      }
+
+      .features-cta-section .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .side-by-side {
+          grid-template-columns: 1fr;
+        }
+
+        .personalization-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .quality-checks-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .features-hero-ctas {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .features-hero-ctas .btn {
+          width: 100%;
+        }
+
+        .features-cta-buttons {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .features-cta-buttons .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <header id="top" class="navbar" role="banner" aria-label="Primary">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="grona home">
+          <img src="assets/logo.png" alt="Grona.ai - Agentic CRO platform logo" width="300" height="75" />
+        </a>
+        <div class="spacer"></div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="how_it_works.html">How it works</a>
+          <a href="features.html">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="menu-btn" aria-label="Open menu">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Section 1: Hero — AI-Powered Optimization -->
+      <section class="features-hero">
+        <div class="background-beams"></div>
+        <div class="features-hero-content">
+          <h1>Your Website. Self-Optimizing.</h1>
+          <p class="subheadline">
+            Talk to your site. Grona plans, tests, and personalizes in real time.
+          </p>
+          <div class="features-hero-ctas">
+            <a href="/" class="btn btn-primary btn-sparkles magnetic-button" data-sparkles="4">Try for Free</a>
+            <a href="/" class="btn btn-ghost magnetic-button">Book a Demo</a>
+          </div>
+          <div class="features-hero-visual">
+            <img
+              src="assets/placeholder.png"
+              alt="AI chat flow showing typing a prompt, AI suggesting a variation, and test launching in one click"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Grona Co-Pilot — Conversational CRO -->
+      <section class="feature-section">
+        <div class="feature-section-content">
+          <div class="feature-section-header">
+            <h2>Tell Grona what to improve. It handles the rest.</h2>
+            <p>
+              Forget visual canvases and spreadsheets. Grona listens to your goals and gets to work.
+            </p>
+          </div>
+          
+          <div class="example-prompts">
+            <span class="prompt-chip" data-tooltip="Test shorter copy on mobile devices" data-tooltip-position="top">"Test shorter copy on mobile"</span>
+            <span class="prompt-chip" data-tooltip="Reduce drop-offs on the pricing page" data-tooltip-position="top">"Reduce drop-offs on the pricing page"</span>
+            <span class="prompt-chip" data-tooltip="Offer a discount to Instagram visitors" data-tooltip-position="top">"Offer a discount to Instagram visitors"</span>
+          </div>
+
+          <p style="text-align: center; color: var(--muted); margin-bottom: var(--space-6);">
+            The AI handles analysis, test design, and launch. You review everything before it goes live.
+          </p>
+
+          <div class="chat-flow-visual">
+            <img
+              src="assets/placeholder.png"
+              alt="Chat flow diagram showing: Prompt → AI suggests changes → You approve → Test runs"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Personalization Without Setup -->
+      <section class="feature-section">
+        <div class="feature-section-content">
+          <div class="feature-section-header">
+            <h2>Smart Variants for the Right People.</h2>
+            <p>
+              Grona finds personalization opportunities for you. It targets by ad source (UTM tags), visitor behavior, geography and device, and product interest. No need to define segments or rules. Grona suggests who to personalize for and what to change. You stay in control.
+            </p>
+          </div>
+
+          <div class="personalization-cards">
+            <div class="personalization-card" data-3d-card>
+              <h3>NYC Visitor</h3>
+              <p>Sees local delivery option</p>
+              <img
+                src="assets/placeholder.png"
+                alt="Example showing NYC visitor seeing local delivery option"
+              />
+            </div>
+            <div class="personalization-card" data-3d-card>
+              <h3>Email Subscriber</h3>
+              <p>Sees early access offer</p>
+              <img
+                src="assets/placeholder.png"
+                alt="Example showing email subscriber seeing early access offer"
+              />
+            </div>
+            <div class="personalization-card" data-3d-card>
+              <h3>Returning Viewer</h3>
+              <p>Sees urgency copy</p>
+              <img
+                src="assets/placeholder.png"
+                alt="Example showing returning viewer seeing urgency copy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Edit Manually If You Want -->
+      <section class="feature-section">
+        <div class="feature-section-content">
+          <div class="feature-section-header">
+            <h2>You Can Still Use the Visual Editor.</h2>
+            <p>
+              Most users work through chat. But manual editing is always available. Make quick changes to headlines and body copy, CTAs and images, and section layouts. Use the editor when you want pixel-level control. Or stay in chat and let the co-pilot do the work.
+            </p>
+          </div>
+
+          <div class="side-by-side">
+            <div class="side-by-side-item">
+              <img
+                src="assets/placeholder.png"
+                alt="Chat interface showing conversational AI assistant"
+              />
+            </div>
+            <div class="side-by-side-item">
+              <img
+                src="assets/placeholder.png"
+                alt="Visual editor interface with pixel-level control"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Quality Checks -->
+      <section class="feature-section">
+        <div class="feature-section-content">
+          <div class="feature-section-header">
+            <h2>Stable. Secure. On Brand.</h2>
+            <p>
+              Every variation goes through automated checks. Grona reviews layout integrity on all screen sizes, brand tone and content consistency, test conflicts and technical safety. Nothing gets published without your confirmation. Your site stays polished at all times.
+            </p>
+          </div>
+
+          <div class="quality-checks-grid">
+            <div class="quality-check-card">
+              <div class="quality-check-icon">✓</div>
+              <h3>Layout Checks</h3>
+              <p>Ensures layout integrity across all devices and screen sizes</p>
+            </div>
+            <div class="quality-check-card">
+              <div class="quality-check-icon">✓</div>
+              <h3>Tone Review</h3>
+              <p>Maintains brand tone and content consistency</p>
+            </div>
+            <div class="quality-check-card">
+              <div class="quality-check-icon">✓</div>
+              <h3>Mobile Preview</h3>
+              <p>Preview and test on mobile devices automatically</p>
+            </div>
+            <div class="quality-check-card">
+              <div class="quality-check-icon">✓</div>
+              <h3>Conflict Scan</h3>
+              <p>Detects test conflicts and technical safety issues</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: CTA Section -->
+      <section class="features-cta-section">
+        <div class="features-cta-content">
+          <h2>Ready to optimize with AI?</h2>
+          <p>
+            Start optimizing your website today. No credit card required.
+          </p>
+          <div class="features-cta-buttons">
+            <a href="/" class="btn btn-primary btn-sparkles magnetic-button" data-sparkles="4">Try for Free</a>
+            <a href="/" class="btn btn-ghost magnetic-button">Book a Demo</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="final-footer scroll-reveal" role="contentinfo">
+      <div class="footer-inner">
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a class="link-underline" href="how_it_works.html">How it works</a>
+          <span>·</span>
+          <a class="link-underline" href="features.html">Features</a>
+          <span>·</span>
+          <a class="link-underline" href="pricing.html">Pricing</a>
+          <span>·</span>
+          <a class="link-underline" href="blog.html">Blog</a>
+          <span>·</span>
+          <a class="link-underline" href="/docs">Docs</a>
+          <span>·</span>
+          <a class="link-underline" href="/privacy">Privacy</a>
+          <span>·</span>
+          <a class="link-underline" href="/terms">Terms &amp; conditions</a>
+          <span>·</span>
+          <a
+            class="link-underline"
+            href="https://linkedin.com/company/grona-ai"
+            target="_blank"
+            rel="noreferrer"
+            >Linkedin</a
+          >
+        </nav>
+        <p class="footer-copy">
+          © <span id="year"></span> grona.ai — Built for teams that never stop
+          testing.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="shared/shared.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Features — grona.ai",
+        "description": "Learn how Grona uses AI chat to run conversion optimization and personalization without visual editors or CRO consultants.",
+        "url": "https://grona.ai/features"
+      }
+    </script>
+  </body>
+</html>
+

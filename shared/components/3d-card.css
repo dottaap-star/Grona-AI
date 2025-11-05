@@ -1,0 +1,41 @@
+/* 3D Card Component */
+.card-3d-container {
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.card-3d-wrapper {
+  position: relative;
+  transition: transform 0.2s ease-linear;
+  transform-style: preserve-3d;
+}
+
+.card-3d-body {
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-3d-item {
+  transition: transform 0.2s ease-linear;
+  will-change: transform;
+}
+
+/* Pricing cards with 3D effect */
+.pricing-card.card-3d-enabled {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.pricing-card.card-3d-enabled:hover {
+  z-index: 10;
+}
+
+/* Feature cards with 3D effect */
+.use-case-card.card-3d-enabled {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+

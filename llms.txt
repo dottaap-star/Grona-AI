@@ -1,0 +1,37 @@
+# llms.txt for grona.ai
+# This file provides information about the website for AI language models and crawlers
+
+# Site Information
+Site: https://grona.ai
+Name: Grona.ai
+Description: Agentic CRO (Conversion Rate Optimization) platform that uses AI chat to run conversion optimization and personalization without visual editors or CRO consultants.
+
+# Main Pages
+Pages:
+- https://grona.ai/
+- https://grona.ai/features
+- https://grona.ai/pricing
+- https://grona.ai/blog
+- https://grona.ai/how_it_works.html
+
+# Company Information
+Company: Grona.ai
+Tagline: Agentic CRO that actually ships
+Mission: Enable websites to self-optimize through AI-powered conversion optimization and personalization
+
+# Key Features
+Features:
+- AI-powered conversion optimization
+- Conversational CRO assistant
+- Automated personalization
+- Visual editor for manual control
+- Quality checks and safety features
+- Real-time optimization
+
+# Technology
+Technology: AI, Machine Learning, Conversion Rate Optimization, A/B Testing, Personalization
+
+# Contact
+Support: Email support available
+Documentation: https://grona.ai/docs
+
