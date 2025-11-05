@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terms & Conditions — grona.ai</title>
+    <meta
+      name="description"
+      content="Terms and Conditions for Grona.ai. Learn about the terms of service that govern your use of our platform."
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Terms & Conditions — grona.ai" />
+    <meta
+      property="og:description"
+      content="Terms and Conditions for Grona.ai. Learn about the terms of service that govern your use of our platform."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://grona.ai/terms-conditions" />
+    <meta property="og:image" content="https://grona.ai/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://grona.ai/assets/og-image.png" />
+    <meta name="keywords" content="Grona terms and conditions, terms of service, user agreement, legal terms" />
+    <meta name="author" content="Grona.ai" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://grona.ai/terms-conditions" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NXBH5J6M');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="shared/shared.css" />
+    <style>
+      /* Terms & Conditions Page Styles */
+      .terms-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: calc(var(--navbar-height) + var(--space-6)) var(--space-4) var(--space-8);
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: var(--space-6);
+        align-items: start;
+      }
+
+      .terms-sidebar {
+        position: sticky;
+        top: calc(var(--navbar-height) + var(--space-4));
+        max-height: calc(100vh - var(--navbar-height) - var(--space-8));
+        overflow-y: auto;
+      }
+
+      .terms-sidebar .table-of-contents {
+        background: var(--bg-soft);
+        border-radius: var(--radius);
+        padding: var(--space-4);
+        border: 1px solid var(--line);
+      }
+
+      .terms-sidebar .table-of-contents h3 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: var(--space-3);
+        color: var(--ink);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+      }
+
+      .terms-sidebar .table-of-contents ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .terms-sidebar .table-of-contents li {
+        margin-bottom: var(--space-2);
+      }
+
+      .terms-sidebar .table-of-contents a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        display: block;
+        padding: var(--space-1) 0;
+        transition: color 0.2s ease;
+      }
+
+      .terms-sidebar .table-of-contents a:hover {
+        color: var(--green-800);
+      }
+
+      .terms-content {
+        max-width: 800px;
+      }
+
+      .terms-content h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: var(--space-2);
+        color: var(--ink);
+      }
+
+      .terms-content .effective-date {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: var(--space-6);
+      }
+
+      .terms-content h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-top: var(--space-7);
+        margin-bottom: var(--space-4);
+        color: var(--ink);
+        border-top: 1px solid var(--line);
+        padding-top: var(--space-4);
+        scroll-margin-top: calc(var(--navbar-height) + var(--space-4));
+      }
+
+      .terms-content h3 {
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        margin-top: var(--space-5);
+        margin-bottom: var(--space-3);
+        color: var(--ink);
+      }
+
+      .terms-content h4 {
+        font-size: clamp(1.1rem, 2vw, 1.25rem);
+        margin-top: var(--space-4);
+        margin-bottom: var(--space-2);
+        color: var(--ink);
+      }
+
+      .terms-content p {
+        margin-bottom: var(--space-3);
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .terms-content ul,
+      .terms-content ol {
+        margin-bottom: var(--space-3);
+        padding-left: var(--space-5);
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .terms-content li {
+        margin-bottom: var(--space-2);
+      }
+
+      .terms-content strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .terms-content a {
+        color: var(--green-800);
+        text-decoration: underline;
+      }
+
+      .terms-content a:hover {
+        color: var(--green-900);
+      }
+
+      @media (max-width: 968px) {
+        .terms-container {
+          grid-template-columns: 1fr;
+          gap: var(--space-5);
+        }
+
+        .terms-sidebar {
+          position: relative;
+          top: 0;
+          max-height: none;
+        }
+
+        .terms-sidebar .table-of-contents {
+          position: relative;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .terms-container {
+          padding: calc(var(--navbar-height) + var(--space-4)) var(--space-3) var(--space-6);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <header id="top" class="navbar" role="banner" aria-label="Primary">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="grona home">
+          <img src="assets/logo.png" alt="Grona.ai - Agentic CRO platform logo" width="300" height="75" />
+        </a>
+        <div class="spacer"></div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="how_it_works.html">How it works</a>
+          <a href="features.html">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="menu-btn" aria-label="Open menu">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="terms-container">
+        <aside class="terms-sidebar">
+          <nav class="table-of-contents" aria-label="Table of contents">
+            <h3>Table of contents</h3>
+            <ul>
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#communications">2. Communications</a></li>
+              <li><a href="#purchases">3. Purchases</a></li>
+              <li><a href="#contests">4. Contests, Sweepstakes and Promotions</a></li>
+              <li><a href="#subscriptions">5. Subscriptions</a></li>
+              <li><a href="#free-trial">6. Free Trial</a></li>
+              <li><a href="#fee-changes">7. Fee Changes</a></li>
+              <li><a href="#refunds">8. Refunds</a></li>
+              <li><a href="#content">9. Content</a></li>
+              <li><a href="#prohibited-uses">10. Prohibited Uses</a></li>
+              <li><a href="#analytics">11. Analytics</a></li>
+              <li><a href="#intellectual-property">12. Intellectual Property</a></li>
+              <li><a href="#error-reporting">13. Error Reporting and Feedback</a></li>
+              <li><a href="#links">18. Links To Other Web Sites</a></li>
+              <li><a href="#disclaimer">19. Disclaimer Of Warranty</a></li>
+              <li><a href="#limitation">20. Limitation Of Liability</a></li>
+              <li><a href="#termination">21. Termination</a></li>
+              <li><a href="#governing-law">22. Governing Law</a></li>
+              <li><a href="#changes-service">23. Changes To Service</a></li>
+              <li><a href="#amendments">24. Amendments To Terms</a></li>
+              <li><a href="#waiver">25. Waiver And Severability</a></li>
+              <li><a href="#acknowledgement">26. Acknowledgement</a></li>
+              <li><a href="#contact">27. Contact Us</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <article class="terms-content">
+          <h1>Terms & Conditions</h1>
+          <p class="effective-date">Effective date: 2024-01-01</p>
+
+          <h2 id="introduction">Introduction</h2>
+          <p>
+            Welcome to <strong>Grona Ltd.</strong> ("Company", "we", "our", "us")!
+          </p>
+          <p>
+            These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at <strong>https://www.grona.ai</strong> (together or individually "Service") operated by <strong>Grona Ltd.</strong>.
+          </p>
+          <p>
+            Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages.
+          </p>
+          <p>
+            Your agreement with us includes these Terms and our Privacy Policy ("Agreements"). You acknowledge that you have read and understood Agreements, and agree to be bound of them.
+          </p>
+          <p>
+            If you do not agree with (or cannot comply with) Agreements, then you may not use the Service, but please let us know by emailing at <strong>support@grona.ai</strong> so we can try to find a solution. These Terms apply to all visitors, users and others who wish to access or use Service.
+          </p>
+
+          <h2 id="communications">2. Communications</h2>
+          <p>
+            By using our Service, you agree to subscribe to newsletters, marketing or promotional materials and other information we may send. However, you may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or by emailing at support@grona.ai.
+          </p>
+
+          <h2 id="purchases">3. Purchases</h2>
+          <p>
+            If you wish to purchase any product or service made available through Service ("Purchase"), you may be asked to supply certain information relevant to your Purchase including but not limited to, your credit or debit card number, the expiration date of your card, your billing address, and your shipping information.
+          </p>
+          <p>You represent and warrant that:</p>
+          <ol>
+            <li>you have the legal right to use any card(s) or other payment method(s) in connection with any Purchase; and that</li>
+            <li>the information you supply to us is true, correct and complete.</li>
+          </ol>
+          <p>
+            We may employ the use of third party services for the purpose of facilitating payment and the completion of Purchases. By submitting your information, you grant us the right to provide the information to these third parties subject to our Privacy Policy.
+          </p>
+          <p>
+            We reserve the right to refuse or cancel your order at any time for reasons including but not limited to: product or service availability, errors in the description or price of the product or service, error in your order or other reasons.
+          </p>
+          <p>
+            We reserve the right to refuse or cancel your order if fraud or an unauthorized or illegal transaction is suspected.
+          </p>
+
+          <h2 id="contests">4. Contests, Sweepstakes and Promotions</h2>
+          <p>
+            Any contests, sweepstakes or other promotions (collectively, "Promotions") made available through Service may be governed by rules that are separate from these Terms of Service. If you participate in any Promotions, please review the applicable rules as well as our Privacy Policy. If the rules for a Promotion conflict with these Terms of Service, Promotion rules will apply.
+          </p>
+
+          <h2 id="subscriptions">5. Subscriptions</h2>
+          <p>
+            Some parts of Service are billed on a subscription basis ("Subscription(s)"). You will be billed in advance on a recurring and periodic basis ("Billing Cycle"). Billing cycles will be set depending on the type of subscription plan you select when purchasing a Subscription.
+          </p>
+          <p>
+            At the end of each Billing Cycle, your Subscription will automatically renew under the exact same conditions unless you cancel it or Grona Ltd. cancels it. You may cancel your Subscription renewal either through your online account management page or by contacting support@grona.ai customer support team.
+          </p>
+          <p>
+            A valid payment method is required to process the payment for your subscription. You shall provide Grona Ltd. with accurate and complete billing information that may include but not limited to full name, address, state, postal or zip code, telephone number, and a valid payment method information. By submitting such payment information, you automatically authorize Grona Ltd. to charge all Subscription fees incurred through your account to any such payment instruments.
+          </p>
+          <p>
+            Should automatic billing fail to occur for any reason, Grona Ltd. reserves the right to terminate your access to the Service with immediate effect.
+          </p>
+
+          <h2 id="free-trial">6. Free Trial</h2>
+          <p>
+            Grona Ltd. may, at its sole discretion, offer a Subscription with a free trial for a limited period of time ("Free Trial").
+          </p>
+          <p>
+            You may be required to enter your billing information in order to sign up for Free Trial.
+          </p>
+          <p>
+            If you do enter your billing information when signing up for Free Trial, you will not be charged by Grona Ltd. until Free Trial has expired. On the last day of Free Trial period, unless you cancelled your Subscription, you will be automatically charged the applicable Subscription fees for the type of Subscription you have selected.
+          </p>
+          <p>
+            At any time and without notice, Grona Ltd. reserves the right to (i) modify Terms of Service of Free Trial offer, or (ii) cancel such Free Trial offer.
+          </p>
+
+          <h2 id="fee-changes">7. Fee Changes</h2>
+          <p>
+            Grona Ltd., in its sole discretion and at any time, may modify Subscription fees for the Subscriptions. Any Subscription fee change will become effective at the end of the then-current Billing Cycle.
+          </p>
+          <p>
+            Grona Ltd. will provide you with a reasonable prior notice of any change in Subscription fees to give you an opportunity to terminate your Subscription before such change becomes effective.
+          </p>
+          <p>
+            Your continued use of Service after Subscription fee change comes into effect constitutes your agreement to pay the modified Subscription fee amount.
+          </p>
+
+          <h2 id="refunds">8. Refunds</h2>
+          <p>
+            We issue refunds for Contracts within <strong>30 days</strong> of the original purchase of the Contract.
+          </p>
+
+          <h2 id="content">9. Content</h2>
+          <p>
+            Our Service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material ("Content"). You are responsible for Content that you post on or through Service, including its legality, reliability, and appropriateness.
+          </p>
+          <p>By posting Content on or through Service, You represent and warrant that:</p>
+          <ol>
+            <li>Content is yours (you own it) and/or you have the right to use it and the right to grant us the rights and license as provided in these Terms, and</li>
+            <li>that the posting of your Content on or through Service does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person or entity.</li>
+          </ol>
+          <p>
+            We reserve the right to terminate the account of anyone found to be infringing on a copyright.
+          </p>
+          <p>
+            You retain any and all of your rights to any Content you submit, post or display on or through Service and you are responsible for protecting those rights. We take no responsibility and assume no liability for Content you or any third party posts on or through Service. However, by posting Content using Service you grant us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through Service. You agree that this license includes the right for us to make your Content available to other users of Service, who may also use your Content subject to these Terms.
+          </p>
+          <p>
+            Grona Ltd. has the right but not the obligation to monitor and edit all Content provided by users.
+          </p>
+          <p>
+            In addition, Content found on or through this Service are the property of Grona Ltd. or used with permission. You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole or in part, for commercial purposes or for personal gain, without express advance written permission from us.
+          </p>
+
+          <h2 id="prohibited-uses">10. Prohibited Uses</h2>
+          <p>
+            You may use Service only for lawful purposes and in accordance with Terms. You agree not to use Service:
+          </p>
+          <ol>
+            <li>In any way that violates any applicable national or international law or regulation.</li>
+            <li>For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way by exposing them to inappropriate content or otherwise.</li>
+            <li>To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail", "chain letter," "spam," or any other similar solicitation.</li>
+            <li>To impersonate or attempt to impersonate Company, a Company employee, another user, or any other person or entity.</li>
+            <li>In any way that infringes upon the rights of others, or in any way is illegal, threatening, fraudulent, or harmful, or in connection with any unlawful, illegal, fraudulent, or harmful purpose or activity.</li>
+            <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of Service, or which, as determined by us, may harm or offend Company or users of Service or expose them to liability.</li>
+          </ol>
+          <p>
+            Additionally, you agree not to:
+          </p>
+          <ol>
+            <li>Use Service in any manner that could disable, overburden, damage, or impair Service or interfere with any other party's use of Service, including their ability to engage in real time activities through Service.</li>
+            <li>Use any robot, spider or other automatic device, process or means to access Service for any purpose, including monitoring or copying any of the material on Service.</li>
+            <li>Use any manual process to monitor or copy any of the material on Service or for any other unauthorized purpose without our prior written consent.</li>
+            <li>Use any device, software or routine that interferes with the proper working of Service.</li>
+            <li>Introduce any viruses, trojan horses, worms, logic bombs or other material which is malicious or technologically harmful.</li>
+            <li>Attempt to gain unauthorized access to, interfere with, damage or disrupt any parts of Service, the server on which Service is stored, or any server, computer or database connected to Service.</li>
+            <li>Attack Service via a denial-of-service attack or a distributed denial-of-service attack.</li>
+            <li>Take any action that may damage or falsify Company rating.</li>
+            <li>Otherwise attempt to interfere with the proper working of Service.</li>
+          </ol>
+
+          <h2 id="analytics">11. Analytics</h2>
+          <p>
+            We may use third-party Service Providers to monitor and analyze the use of our Service.
+          </p>
+
+          <h2 id="intellectual-property">12. Intellectual Property</h2>
+          <p>
+            Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of Grona Ltd. and its licensors. Service is protected by copyright, trademark, and other laws of United Kingdom. Our trademarks may not be used in connection with any product or service without the prior written consent of Grona Ltd.
+          </p>
+
+          <h2 id="error-reporting">13. Error Reporting and Feedback</h2>
+          <p>
+            You may provide us either directly at support@grona.ai or via third party sites and tools with information and feedback concerning errors, suggestions for improvements, ideas, problems, complaints, and other matters related to our Service ("Feedback"). You acknowledge and agree that:
+          </p>
+          <ol>
+            <li>you shall not retain, acquire or assert any intellectual property right or other right, title or interest in or to the Feedback;</li>
+            <li>Company may have development ideas similar to the Feedback;</li>
+            <li>Feedback does not contain confidential information or proprietary information from you or any third party; and</li>
+            <li>Company is not under any obligation of confidentiality with respect to the Feedback. In the event the transfer of the ownership to the Feedback is not possible due to applicable mandatory laws, you grant Company and its affiliates an exclusive, transferable, irrevocable, free-of-charge, sub-licensable, unlimited and perpetual right to use (including copy, modify, create derivative works, publish, distribute and commercialize) Feedback in any manner and for any purpose.</li>
+          </ol>
+
+          <h2 id="links">18. Links To Other Web Sites</h2>
+          <p>
+            Our Service may contain links to third party web sites or services that are not owned or controlled by Grona Ltd..
+          </p>
+          <p>
+            Grona Ltd. has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.
+          </p>
+          <p>
+            YOU ACKNOWLEDGE AND AGREE THAT COMPANY SHALL NOT BE RESPONSIBLE OR LIABLE, DIRECTLY OR INDIRECTLY, FOR ANY DAMAGE OR LOSS CAUSED OR ALLEGED TO BE CAUSED BY OR IN CONNECTION WITH USE OF OR RELIANCE ON ANY SUCH CONTENT, GOODS OR SERVICES AVAILABLE ON OR THROUGH ANY SUCH THIRD PARTY WEB SITES OR SERVICES.
+          </p>
+          <p>
+            WE STRONGLY ADVISE YOU TO READ THE TERMS OF SERVICE AND PRIVACY POLICIES OF ANY THIRD PARTY WEB SITES OR SERVICES THAT YOU VISIT.
+          </p>
+
+          <h2 id="disclaimer">19. Disclaimer Of Warranty</h2>
+          <p>
+            THESE SERVICES ARE PROVIDED BY COMPANY ON AN "AS IS" AND "AS AVAILABLE" BASIS. COMPANY MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE OPERATION OF THEIR SERVICES, OR THE INFORMATION, CONTENT OR MATERIALS INCLUDED THEREIN. YOU EXPRESSLY AGREE THAT YOUR USE OF THESE SERVICES, THEIR CONTENT, AND ANY SERVICES OR ITEMS OBTAINED FROM US IS AT YOUR SOLE RISK.
+          </p>
+          <p>
+            NEITHER COMPANY NOR ANY PERSON ASSOCIATED WITH COMPANY MAKES ANY WARRANTY OR REPRESENTATION WITH RESPECT TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY, ACCURACY, OR AVAILABILITY OF THE SERVICES. WITHOUT LIMITING THE FOREGOING, NEITHER COMPANY NOR ANYONE ASSOCIATED WITH COMPANY REPRESENTS OR WARRANTS THAT THE SERVICES, THEIR CONTENT, OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE SERVICES WILL BE ACCURATE, RELIABLE, ERROR-FREE, OR UNINTERRUPTED, THAT DEFECTS WILL BE CORRECTED, THAT THE SERVICES OR THE SERVER THAT MAKES IT AVAILABLE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS OR THAT THE SERVICES OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE SERVICES WILL OTHERWISE MEET YOUR NEEDS OR EXPECTATIONS.
+          </p>
+          <p>
+            COMPANY HEREBY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR PARTICULAR PURPOSE.
+          </p>
+          <p>
+            THE FOREGOING DOES NOT AFFECT ANY WARRANTIES WHICH CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.
+          </p>
+
+          <h2 id="limitation">20. Limitation Of Liability</h2>
+          <p>
+            EXCEPT AS PROHIBITED BY LAW, YOU WILL HOLD US AND OUR OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS HARMLESS FOR ANY INDIRECT, PUNITIVE, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGE, HOWEVER IT ARISES (INCLUDING ATTORNEYS' FEES AND ALL RELATED COSTS AND EXPENSES OF LITIGATION AND ARBITRATION, OR AT TRIAL OR ON APPEAL, IF ANY, WHETHER OR NOT LITIGATION OR ARBITRATION IS INSTITUTED), WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE, OR OTHER TORTIOUS ACTION, OR ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT, INCLUDING WITHOUT LIMITATION ANY CLAIM FOR PERSONAL INJURY OR PROPERTY DAMAGE, ARISING FROM THIS AGREEMENT AND ANY VIOLATION BY YOU OF ANY FEDERAL, STATE, OR LOCAL LAWS, STATUTES, RULES, OR REGULATIONS, EVEN IF COMPANY HAS BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. EXCEPT AS PROHIBITED BY LAW, IF THERE IS LIABILITY FOUND ON THE PART OF COMPANY, IT WILL BE LIMITED TO THE AMOUNT PAID FOR THE PRODUCTS AND/OR SERVICES, AND UNDER NO CIRCUMSTANCES WILL THERE BE CONSEQUENTIAL OR PUNITIVE DAMAGES. SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF PUNITIVE, INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE PRIOR LIMITATION OR EXCLUSION MAY NOT APPLY TO YOU.
+          </p>
+
+          <h2 id="termination">21. Termination</h2>
+          <p>
+            We may terminate or suspend your account and bar access to Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of Terms.
+          </p>
+          <p>
+            If you wish to terminate your account, you may simply discontinue using Service.
+          </p>
+          <p>
+            All provisions of Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+          </p>
+
+          <h2 id="governing-law">22. Governing Law</h2>
+          <p>
+            These Terms shall be governed and construed in accordance with the laws of United Kingdom, which governing law applies to agreement without regard to its conflict of law provisions.
+          </p>
+          <p>
+            Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service and supersede and replace any prior agreements we might have had between us regarding Service.
+          </p>
+
+          <h2 id="changes-service">23. Changes To Service</h2>
+          <p>
+            We reserve the right to withdraw or amend our Service, and any service or material we provide via Service, in our sole discretion without notice. We will not be liable if for any reason all or any part of Service is unavailable at any time or for any period. From time to time, we may restrict access to some parts of Service, or the entire Service, to users, including registered users.
+          </p>
+
+          <h2 id="amendments">24. Amendments To Terms</h2>
+          <p>
+            We may amend Terms at any time by posting the amended terms on this site. It is your responsibility to review these Terms periodically.
+          </p>
+          <p>
+            Your continued use of the Platform following the posting of revised Terms means that you accept and agree to the changes. You are expected to check this page frequently so you are aware of any changes, as they are binding on you.
+          </p>
+          <p>
+            By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use Service.
+          </p>
+
+          <h2 id="waiver">25. Waiver And Severability</h2>
+          <p>
+            No waiver by Company of any term or condition set forth in Terms shall be deemed a further or continuing waiver of such term or condition or a waiver of any other term or condition, and any failure of Company to assert a right or provision under Terms shall not constitute a waiver of such right or provision.
+          </p>
+          <p>
+            If any provision of Terms is held by a court or other tribunal of competent jurisdiction to be invalid, illegal or unenforceable for any reason, such provision shall be eliminated or limited to the minimum extent such that the remaining provisions of Terms will continue in full force and effect.
+          </p>
+
+          <h2 id="acknowledgement">26. Acknowledgement</h2>
+          <p>
+            BY USING SERVICE OR OTHER SERVICES PROVIDED BY US, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS OF SERVICE AND AGREE TO BE BOUND BY THEM.
+          </p>
+
+          <h2 id="contact">27. Contact Us</h2>
+          <p>
+            Please send your feedback, comments, requests for technical support by email: <strong>support@grona.ai</strong>.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="final-footer scroll-reveal" role="contentinfo">
+      <div class="footer-inner">
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a class="link-underline" href="how_it_works.html">How it works</a>
+          <span>·</span>
+          <a class="link-underline" href="features.html">Features</a>
+          <span>·</span>
+          <a class="link-underline" href="pricing.html">Pricing</a>
+          <span>·</span>
+          <a class="link-underline" href="blog.html">Blog</a>
+          <span>·</span>
+          <a class="link-underline" href="/docs">Docs</a>
+          <span>·</span>
+          <a class="link-underline" href="privacy-policy.html">Privacy Policy</a>
+          <span>·</span>
+          <a class="link-underline" href="terms-conditions.html">Terms &amp; conditions</a>
+          <span>·</span>
+          <a
+            class="link-underline"
+            href="https://linkedin.com/company/grona-ai"
+            target="_blank"
+            rel="noreferrer"
+            >Linkedin</a
+          >
+        </nav>
+        <p class="footer-copy">
+          © <span id="year"></span> grona.ai — Built for teams that never stop
+          testing.
+        </p>
+      </div>
+    </footer>
+
+    <script src="shared/shared.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Terms & Conditions — grona.ai",
+        "description": "Terms and Conditions for Grona.ai. Learn about the terms of service that govern your use of our platform.",
+        "url": "https://grona.ai/terms-conditions"
+      }
+    </script>
+  </body>
+</html>
+
