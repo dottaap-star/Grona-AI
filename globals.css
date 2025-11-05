@@ -9,6 +9,7 @@
     --green-700: 69 180 155;  /* #45b49b - Lighter shade */
     --green-600: 98 202 176;  /* #62cab0 - Mid green */
     --green-400: 127 217 122; /* #7fd97a - Leaf green */
+    --brand-green: 11 107 83; /* #0b6b53 - Brand accent */
     
     /* Semantic Colors for shadcn/ui */
     --background: 255 255 255;        /* #ffffff - Page background */
@@ -29,8 +30,8 @@
     --muted: 246 251 248;              /* #f6fbf8 - Muted background */
     --muted-foreground: 91 100 117;    /* #5b6475 - Muted text */
     
-    --accent: 127 217 122;             /* #7fd97a - Accent green */
-    --accent-foreground: 15 23 42;      /* #0f172a - Text on accent */
+    --accent: 11 107 83;               /* #0b6b53 - Accent */
+    --accent-foreground: 255 255 255;  /* Text on accent */
     
     --destructive: 239 68 68;          /* #ef4444 - Error/destructive */
     --destructive-foreground: 255 255 255; /* #ffffff - Text on destructive */
@@ -46,39 +47,40 @@
   .dark {
     /* Primary Brand Colors */
     --green-900: 15 62 53;             /* #0f3e35 - Deep evergreen */
-    --green-800: 187 229 91;           /* #BBE55B - Vibrant light green */
-    --green-700: 133 199 93;           /* #85c75d - Lighter shade */
-    --green-600: 100 171 86;           /* #64ab56 - Mid green */
-    --green-400: 127 217 122;          /* #7fd97a - Leaf green */
+    --green-800: 133 199 93;           /* #85c75d - Brand primary */
+    --green-700: 100 171 86;           /* Supporting shade */
+    --green-600: 75 140 78;            /* Supporting shade */
+    --green-400: 120 190 110;          /* Supporting tint */
+    --brand-green: 133 199 93;         /* Brand accent */
     
     /* Semantic Colors for shadcn/ui */
-    --background: 15 23 42;            /* #0f172a - Page background */
+    --background: 15 15 16;            /* #0F0F10 - Page background */
     --foreground: 248 250 252;         /* #f8fafc - Text color */
     
-    --card: 30 41 59;                  /* #1e293b - Card background */
+    --card: 20 22 24;                  /* #141618 - Card background */
     --card-foreground: 248 250 252;    /* #f8fafc - Card text */
-    
-    --popover: 30 41 59;               /* #1e293b - Popover background */
+
+    --popover: 20 22 24;               /* #141618 - Popover background */
     --popover-foreground: 248 250 252; /* #f8fafc - Popover text */
     
-    --primary: 187 229 91;             /* #BBE55B - Primary color */
-    --primary-foreground: 15 23 42;    /* #0f172a - Text on primary */
+    --primary: 133 199 93;             /* Brand primary */
+    --primary-foreground: 12 18 24;    /* Text on primary */
     
-    --secondary: 51 65 85;             /* #334155 - Secondary background */
+    --secondary: 20 22 24;             /* #141618 - Secondary background */
     --secondary-foreground: 248 250 252; /* #f8fafc - Secondary text */
-    
-    --muted: 51 65 85;                 /* #334155 - Muted background */
-    --muted-foreground: 148 163 184;   /* #94a3b8 - Muted text */
-    
-    --accent: 187 229 91;              /* #BBE55B - Accent green */
-    --accent-foreground: 15 23 42;     /* #0f172a - Text on accent */
+
+    --muted: 28 30 33;                 /* Muted background */
+    --muted-foreground: 186 194 205;   /* Muted text */
+
+    --accent: 133 199 93;              /* Brand accent */
+    --accent-foreground: 12 18 24;     /* Text on accent */
     
     --destructive: 239 68 68;          /* #ef4444 - Error/destructive */
     --destructive-foreground: 248 250 252; /* #f8fafc - Text on destructive */
     
-    --border: 51 65 85;                /* #334155 - Borders */
-    --input: 51 65 85;                 /* #334155 - Input borders */
-    --ring: 187 229 91;                /* #BBE55B - Focus ring */
+    --border: 32 35 38;                /* Border */
+    --input: 32 35 38;                 /* Input borders */
+    --ring: 133 199 93;                /* Focus ring */
   }
 
   /* Base Styles */

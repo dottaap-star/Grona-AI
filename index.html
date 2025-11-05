@@ -78,8 +78,8 @@
         );
         --hero-text: #0f172a;
         --hero-muted: #475569;
-        --rotating-green: #16a34a;
-        --rotating-shimmer: rgba(22, 163, 74, 0.28);
+        --rotating-green: #064E3D;
+        --rotating-shimmer: rgba(6, 78, 61, 0.28);
       }
 
       /* Dark mode variables */
@@ -100,8 +100,8 @@
         );
         --hero-text: #f8fafc;
         --hero-muted: #a6b0bf;
-        --rotating-green: #34d399;
-        --rotating-shimmer: rgba(52, 211, 153, 0.35);
+        --rotating-green: #BCE55D;
+        --rotating-shimmer: rgba(188, 229, 93, 0.35);
       }
 
       /* RESET */
@@ -1693,14 +1693,15 @@
   <body>
     <header id="top" class="navbar" role="banner" aria-label="Primary">
       <div class="container nav">
-        <a class="brand" href="/" aria-label="grona home">
+        <a class="brand" href="index.html" aria-label="grona home">
           <img src="assets/logo.png" alt="grona" width="300" height="75" />
         </a>
         <div class="spacer"></div>
         <nav class="nav-links" aria-label="Main navigation">
           <a href="how_it_works.html">How it works</a>
           <a href="#testing">Features</a>
-          <a href="/pricing">pricing</a>
+          <a href="pricing.html">pricing</a>
+          <a href="blog.html">Blog</a>
         </nav>
         <button
           class="theme-toggle"
@@ -2484,7 +2485,9 @@
           <span>·</span>
           <a class="link-underline" href="#testing">features</a>
           <span>·</span>
-          <a class="link-underline" href="/pricing">pricing</a>
+          <a class="link-underline" href="pricing.html">Pricing</a>
+          <span>·</span>
+          <a class="link-underline" href="blog.html">blog</a>
           <span>·</span>
           <a class="link-underline" href="/docs">docs</a>
           <span>·</span>
@@ -2694,7 +2697,7 @@
       }
 
       if (rotatingWord) {
-        const words = ["growing.", "learning.", "optimizing."];
+        const words = ["testing.", "personalizing.", "improving."];
         let currentIndex = 0;
         let currentWord = "";
         let timeoutId = null;
