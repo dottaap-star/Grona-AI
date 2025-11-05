@@ -294,8 +294,82 @@ p {
     display: none;
   }
   .menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
   }
+  
+  /* Mobile Menu Overlay */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg);
+    z-index: 1200;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: calc(var(--navbar-height) + var(--space-6)) var(--space-6) var(--space-6);
+    max-width: 100%;
+  }
+  
+  .mobile-nav-links a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--line);
+    transition: color 0.2s ease;
+  }
+  
+  .mobile-nav-links a:hover,
+  .mobile-nav-links a:focus-visible {
+    color: var(--green-800);
+  }
+  
+  /* Menu Button Animation */
+  .menu-btn svg {
+    transition: opacity 0.3s ease;
+  }
+  
+  .menu-btn.open svg line {
+    transition: all 0.3s ease;
+  }
+  
+  .menu-btn.open svg line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+    transform-origin: center;
+  }
+  
+  .menu-btn.open svg line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-btn.open svg line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+    transform-origin: center;
+  }
+}
+
+[data-theme="dark"] .mobile-menu {
+  background: var(--bg);
 }
 
 /* ========================================
@@ -686,4 +760,3 @@ p {
     background-position: 100% 50%;
   }
 }
-
