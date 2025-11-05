@@ -8,13 +8,29 @@
 
   const html = document.documentElement;
 
+  function getSafeStorage() {
+    try {
+      const storage = window.localStorage;
+      const testKey = '__grona_storage_test__';
+      storage.setItem(testKey, testKey);
+      storage.removeItem(testKey);
+      return storage;
+    } catch (err) {
+      console.warn('Local storage is unavailable; continuing without persistence.', err);
+      return null;
+    }
+  }
+
+  const safeStorage = getSafeStorage();
+  window.__gronaStorage = safeStorage;
+
   // Theme Toggle Functionality
   function initThemeToggle() {
     const themeToggle = document.getElementById("theme-toggle");
     if (!themeToggle) return;
 
     // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem("theme") || "light";
+    const currentTheme = (safeStorage && safeStorage.getItem("theme")) || "light";
     html.setAttribute("data-theme", currentTheme);
 
     // Update icon and logo based on current theme
@@ -53,7 +69,13 @@
       const newTheme = currentTheme === "dark" ? "light" : "dark";
 
       html.setAttribute("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
+      if (safeStorage) {
+        try {
+          safeStorage.setItem("theme", newTheme);
+        } catch (err) {
+          console.warn('Unable to persist theme selection.', err);
+        }
+      }
       updateIcon();
       themeToggle.classList.add("toggled");
       setTimeout(() => themeToggle.classList.remove("toggled"), 220);
@@ -284,6 +306,84 @@
     container.appendChild(sparklesContainer);
   }
 
+  // Mobile Menu Toggle Functionality
+  function initMobileMenu() {
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
+    
+    if (!menuBtn || !navLinks) return;
+    
+    // Create mobile menu overlay if it doesn't exist
+    let mobileMenu = document.querySelector('.mobile-menu');
+    if (!mobileMenu) {
+      mobileMenu = document.createElement('div');
+      mobileMenu.className = 'mobile-menu';
+      
+      // Clone the nav links
+      const mobileNav = document.createElement('nav');
+      mobileNav.className = 'nav-links mobile-nav-links';
+      mobileNav.setAttribute('aria-label', 'Mobile navigation');
+      
+      // Clone all links from original nav
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(function(link) {
+        const clonedLink = link.cloneNode(true);
+        mobileNav.appendChild(clonedLink);
+      });
+      
+      mobileMenu.appendChild(mobileNav);
+      body.appendChild(mobileMenu);
+    }
+    
+    // Toggle menu
+    function toggleMenu() {
+      const isOpen = mobileMenu.classList.contains('open');
+      
+      if (isOpen) {
+        mobileMenu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        menuBtn.setAttribute('aria-label', 'Open menu');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+      } else {
+        mobileMenu.classList.add('open');
+        menuBtn.classList.add('open');
+        menuBtn.setAttribute('aria-label', 'Close menu');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        body.style.overflow = 'hidden';
+      }
+    }
+    
+    // Close menu when clicking overlay (not on the nav itself)
+    mobileMenu.addEventListener('click', function(e) {
+      if (e.target === mobileMenu || e.target.classList.contains('mobile-menu')) {
+        toggleMenu();
+      }
+    });
+    
+    // Close menu when clicking a link
+    const mobileNavLinks = mobileMenu.querySelectorAll('.nav-links a');
+    mobileNavLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        toggleMenu();
+      });
+    });
+    
+    // Toggle menu on button click
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleMenu();
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        toggleMenu();
+      }
+    });
+  }
+
   // Initialize all components
   function initComponents() {
     // Background beams
@@ -309,12 +409,13 @@
     document.addEventListener('DOMContentLoaded', function() {
       initThemeToggle();
       initFooterYear();
+      initMobileMenu();
       initComponents();
     });
   } else {
     initThemeToggle();
     initFooterYear();
+    initMobileMenu();
     initComponents();
   }
 })();
-
