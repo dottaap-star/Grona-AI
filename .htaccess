@@ -1,13 +1,25 @@
-# Default homepage - serve index.html
+# Default homepage - serve index.html without showing it in URL
 DirectoryIndex index.html
 
-# Redirect to index.html for root requests
+# Remove .html extension from URLs
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
   
-  # Redirect root to index.html if requesting directory
+  # Remove trailing slash
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+  
+  # Remove .html extension if present
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+  
+  # Add .html extension internally (for clean URLs)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ /$1.html [L]
+  
+  # Root URL serves index.html
   RewriteRule ^$ index.html [L]
 </IfModule>

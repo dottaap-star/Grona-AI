@@ -1,9 +1,12 @@
+# Rewrite root to index.html (status 200 keeps URL clean - shows as grona.ai)
 [[redirects]]
   from = "/"
   to = "/index.html"
   status = 200
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Handle 404s - fallback to index.html for SPA routing (optional)
+# Uncomment if you want client-side routing
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 404
