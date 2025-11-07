@@ -281,6 +281,11 @@ p {
   color: #94a3b8;
 }
 
+/* Mobile Nav Links - Hidden by default on non-mobile viewports */
+.mobile-nav-links {
+  display: none;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   :root {
@@ -328,6 +333,11 @@ p {
     gap: var(--space-4);
     padding: calc(var(--navbar-height) + var(--space-6)) var(--space-6) var(--space-6);
     max-width: 100%;
+  }
+  
+  /* Show mobile-nav-links when inside mobile-menu */
+  .mobile-menu .mobile-nav-links {
+    display: flex;
   }
   
   .mobile-nav-links a {

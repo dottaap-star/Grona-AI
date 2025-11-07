@@ -561,30 +561,28 @@
         max-width: 620px;
         animation: fadeUp 0.8s var(--ease-soft) 0.22s backwards;
       }
-      .hero-headline .static-text {
-        display: block;
-        margin-bottom: 0.05em;
-        white-space: nowrap;
+      .hero-rotating-line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
       }
-      .headline-dynamic {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0.05em;
-        width: 100%;
+
+      .hero-static-text {
+        white-space: nowrap;
       }
 
       .rotating-wrap {
         display: inline-flex;
-        align-items: baseline;
+        justify-content: center;
+        align-items: center;
         gap: 0.15ch;
-        min-width: 11ch;
-        margin: 0 auto;
       }
       .rotating-word {
         display: inline-block;
         white-space: nowrap;
+        width: 14ch; /* fits personalizing., testing., improving. */
+        text-align: center;
         font-weight: 700;
         line-height: 1.1;
         overflow: visible;
@@ -1799,13 +1797,15 @@
 
             <!-- Main headline -->
             <h1 class="hero-headline">
-              <span class="static-text">Your website always</span>
-              <span class="headline-dynamic">
-                <span class="rotating-wrap">
-                  <span class="rotating-word shimmer">testing.</span>
-                  <span class="rotating-caret" aria-hidden="true"></span>
-                </span>
-              </span>
+              <div class="hero-rotating-line">
+                <div class="hero-static-text">Your website always</div>
+                <div class="hero-rotating-text">
+                  <span class="rotating-wrap">
+                    <span class="rotating-word shimmer">personalizing.</span>
+                    <span class="rotating-caret" aria-hidden="true"></span>
+                  </span>
+                </div>
+              </div>
             </h1>
 
             <!-- Email form -->
@@ -2657,13 +2657,6 @@
 
       const html = document.documentElement;
       const rotatingWord = document.querySelector(".rotating-word");
-      const recalcRotatingWidth = () => {
-        if (!rotatingWord) return;
-        requestAnimationFrame(() => {
-          rotatingWord.style.width = "auto";
-          rotatingWord.style.width = `${rotatingWord.scrollWidth}px`;
-        });
-      };
 
       // Dark mode toggle
       const themeToggle = document.getElementById("theme-toggle");
@@ -2704,7 +2697,6 @@
         }
 
         updateIcon();
-        recalcRotatingWidth();
 
         // Add click listener
         themeToggle.addEventListener("click", () => {
@@ -2714,7 +2706,6 @@
           html.setAttribute("data-theme", newTheme);
           localStorage.setItem("theme", newTheme);
           updateIcon();
-          recalcRotatingWidth();
           themeToggle.classList.add("toggled");
           setTimeout(() => themeToggle.classList.remove("toggled"), 220);
         });
@@ -2732,7 +2723,6 @@
 
         const renderWord = () => {
           rotatingWord.textContent = currentWord;
-          recalcRotatingWidth();
         };
 
         const typeNext = () => {
