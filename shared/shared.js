@@ -36,7 +36,6 @@
     // Update icon and logo based on current theme
     function updateIcon() {
       const isDark = html.getAttribute("data-theme") === "dark";
-      const logoImg = document.querySelector(".brand img");
 
       // Update theme toggle icon
       themeToggle.innerHTML = isDark
@@ -55,12 +54,23 @@
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>`;
 
-      // Update logo
-      if (logoImg) {
-        logoImg.src = isDark ? "assets/Grona_light.png" : "assets/logo.png";
+      // Update logos across the page
+      const themedLogos = document.querySelectorAll("[data-theme-logo]");
+      if (themedLogos.length) {
+        themedLogos.forEach((logo) => {
+          const lightSrc = logo.getAttribute("data-logo-light") || "assets/logo.png";
+          const darkSrc = logo.getAttribute("data-logo-dark") || "assets/Grona_light.png";
+          logo.setAttribute("src", isDark ? darkSrc : lightSrc);
+        });
+      } else {
+        const logoImg = document.querySelector(".brand img");
+        if (logoImg) {
+          logoImg.src = isDark ? "assets/Grona_light.png" : "assets/logo.png";
+        }
       }
     }
 
+    window.__gronaRefreshTheme = updateIcon;
     updateIcon();
 
     // Add click listener
@@ -83,11 +93,110 @@
   }
 
   // Footer Year
-  function initFooterYear() {
-    const yearElement = document.getElementById("year");
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
+  function initFooterYear(root) {
+    const context = root || document;
+    const yearElements = context.querySelectorAll("[data-footer-year]");
+    if (!yearElements.length) return;
+    const year = new Date().getFullYear();
+    yearElements.forEach((el) => {
+      el.textContent = year;
+    });
+  }
+
+  const INLINE_FOOTER_HTML = `
+<footer class="final-footer scroll-reveal" role="contentinfo">
+  <div class="footer-shell container">
+    <div class="footer-columns">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html" aria-label="grona home">
+          <img
+            src="assets/logo.png"
+            alt="Grona.ai wordmark"
+            width="180"
+            height="48"
+            data-theme-logo
+            data-logo-light="assets/logo.png"
+            data-logo-dark="assets/Grona_light.png"
+          />
+        </a>
+        <p class="footer-tagline">Smarter Websites. Higher Sales.</p>
+        <a class="footer-link footer-cta" href="#waitlist-form">Join the private beta →</a>
+      </div>
+      <div class="footer-column" aria-labelledby="footer-product-heading">
+        <p id="footer-product-heading" class="footer-heading">Product</p>
+        <ul class="footer-list">
+          <li><a class="footer-link" href="how_it_works.html">How it works</a></li>
+          <li><a class="footer-link" href="features.html">Features</a></li>
+          <li><a class="footer-link" href="pricing.html">Pricing</a></li>
+          <li><a class="footer-link" href="/docs">Docs</a></li>
+        </ul>
+      </div>
+      <div class="footer-column" aria-labelledby="footer-company-heading">
+        <p id="footer-company-heading" class="footer-heading">Company</p>
+        <ul class="footer-list">
+          <li><a class="footer-link" href="blog.html">Blog</a></li>
+          <li><a class="footer-link" href="mailto:hello@grona.ai">Contact</a></li>
+          <li>
+            <a
+              class="footer-link"
+              href="https://linkedin.com/company/grona-ai"
+              target="_blank"
+              rel="noreferrer"
+            >LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-column" aria-labelledby="footer-legal-heading">
+        <p id="footer-legal-heading" class="footer-heading">Legal</p>
+        <ul class="footer-list">
+          <li><a class="footer-link" href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a class="footer-link" href="terms-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a class="footer-link" href="privacy-policy.html#data-security">Data &amp; Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-footer-year></span> grona.ai — Built for teams that never stop testing.</p>
+    </div>
+  </div>
+</footer>
+`.trim();
+
+  function initSharedFooter() {
+    const mounts = document.querySelectorAll("[data-footer]");
+    if (!mounts.length) return;
+
+    const applyFooter = (html) => {
+      mounts.forEach((mount) => {
+        mount.innerHTML = html;
+        initFooterYear(mount);
+      });
+      if (window.__gronaRefreshTheme) {
+        window.__gronaRefreshTheme();
+      }
+    };
+
+    const handleFailure = (error) => {
+      if (error) {
+        console.warn("Falling back to inline footer template:", error);
+      }
+      applyFooter(INLINE_FOOTER_HTML);
+    };
+
+    if (typeof fetch !== "function") {
+      handleFailure();
+      return;
     }
+
+    fetch("shared/footer.html", { cache: "no-cache" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load footer");
+        }
+        return response.text();
+      })
+      .then((html) => applyFooter(html))
+      .catch((error) => handleFailure(error));
   }
 
   // ========================================
@@ -311,30 +420,62 @@
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
+    const iconMap = {
+      'how_it_works.html': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 8.67 19a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4 15.4a1.65 1.65 0 0 0-1.51-1H2a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4 8.67a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8.6 4a1.65 1.65 0 0 0 1-1.51V2a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15.33 4a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 8.6a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.4z"></path></svg>',
+      'features.html': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.09 5.26L19 8l-4 3.5L16.18 17 12 14.5 7.82 17 9 11.5 5 8l4.91-.74L12 2z"></path></svg>',
+      'pricing.html': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"></path><path d="M7 7h.01"></path></svg>',
+      'blog.html': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>',
+      'default': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"></path></svg>'
+    };
+
+    const getIconMarkup = (href) => {
+      if (!href) return iconMap.default;
+      const normalized = href.replace(/^\.\//, '').split(/[?#]/)[0];
+      return iconMap[normalized] || iconMap.default;
+    };
     
-    if (!menuBtn || !navLinks) return;
+    // Only require menuBtn - navLinks is optional (some pages might not have it)
+    if (!menuBtn) {
+      console.warn('Mobile menu button not found');
+      return;
+    }
     
     // Create mobile menu overlay if it doesn't exist
     let mobileMenu = document.querySelector('.mobile-menu');
     if (!mobileMenu) {
       mobileMenu = document.createElement('div');
       mobileMenu.className = 'mobile-menu';
+      const menuPanel = document.createElement('div');
+      menuPanel.className = 'mobile-menu-panel';
+      mobileMenu.appendChild(menuPanel);
       
-      // Clone the nav links
-      const mobileNav = document.createElement('nav');
-      mobileNav.className = 'nav-links mobile-nav-links';
-      mobileNav.setAttribute('aria-label', 'Mobile navigation');
+      // Clone the nav links if they exist
+      if (navLinks) {
+        const mobileNav = document.createElement('nav');
+        mobileNav.className = 'nav-links mobile-nav-links';
+        mobileNav.setAttribute('aria-label', 'Mobile navigation');
+        
+        // Clone all links from original nav
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(function(link) {
+          const clonedLink = document.createElement('a');
+          Array.from(link.attributes).forEach(function(attr) {
+            clonedLink.setAttribute(attr.name, attr.value);
+          });
+          const iconMarkup = getIconMarkup(link.getAttribute('href'));
+          const label = link.textContent.trim();
+          clonedLink.innerHTML = '<span class="mobile-nav-icon" aria-hidden="true">' + iconMarkup + '</span><span class="mobile-nav-label">' + label + '</span>';
+          mobileNav.appendChild(clonedLink);
+        });
+        
+        menuPanel.appendChild(mobileNav);
+      } else {
+        menuPanel.innerHTML = '<div class="mobile-nav-links"></div>';
+      }
       
-      // Clone all links from original nav
-      const links = navLinks.querySelectorAll('a');
-      links.forEach(function(link) {
-        const clonedLink = link.cloneNode(true);
-        mobileNav.appendChild(clonedLink);
-      });
-      
-      mobileMenu.appendChild(mobileNav);
       body.appendChild(mobileMenu);
     }
+    const menuPanel = mobileMenu.querySelector('.mobile-menu-panel') || mobileMenu;
     
     // Toggle menu
     function toggleMenu() {
@@ -357,24 +498,25 @@
     
     // Close menu when clicking overlay (not on the nav itself)
     mobileMenu.addEventListener('click', function(e) {
-      if (e.target === mobileMenu || e.target.classList.contains('mobile-menu')) {
+      if (e.target === mobileMenu) {
         toggleMenu();
       }
     });
     
     // Close menu when clicking a link
-    const mobileNavLinks = mobileMenu.querySelectorAll('.nav-links a');
+    const mobileNavLinks = menuPanel.querySelectorAll('.nav-links a');
     mobileNavLinks.forEach(function(link) {
       link.addEventListener('click', function() {
         toggleMenu();
       });
     });
     
-    // Toggle menu on button click
+    // Toggle menu on button click - use capture phase to ensure it fires
     menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
       e.stopPropagation();
       toggleMenu();
-    });
+    }, true);
     
     // Close menu on escape key
     document.addEventListener('keydown', function(e) {
@@ -409,12 +551,14 @@
     document.addEventListener('DOMContentLoaded', function() {
       initThemeToggle();
       initFooterYear();
+      initSharedFooter();
       initMobileMenu();
       initComponents();
     });
   } else {
     initThemeToggle();
     initFooterYear();
+    initSharedFooter();
     initMobileMenu();
     initComponents();
   }

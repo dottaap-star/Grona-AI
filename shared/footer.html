@@ -1,39 +1,57 @@
-<!-- Shared Footer -->
-<!-- This file contains the footer that should be included in all pages -->
-<!-- Include this before the closing </body> tag -->
-
 <footer class="final-footer scroll-reveal" role="contentinfo">
-  <div class="footer-inner">
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a class="link-underline" href="how_it_works.html">How it works</a>
-      <span>·</span>
-      <a class="link-underline" href="features.html">Features</a>
-      <span>·</span>
-      <a class="link-underline" href="pricing.html">Pricing</a>
-      <span>·</span>
-      <a class="link-underline" href="blog.html">Blog</a>
-      <span>·</span>
-      <a class="link-underline" href="privacy-policy.html">Privacy Policy</a>
-      <span>·</span>
-      <a class="link-underline" href="terms-conditions.html">Terms &amp; conditions</a>
-      <span>·</span>
-      <a
-        class="link-underline"
-        href="https://linkedin.com/company/grona-ai"
-        target="_blank"
-        rel="noreferrer"
-        >Linkedin</a
-      >
-    </nav>
-    <p class="footer-copy">
-      © <span id="year"></span> grona.ai — Built for teams that never stop
-      testing.
-    </p>
+  <div class="footer-shell container">
+    <div class="footer-columns">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html" aria-label="grona home">
+          <img
+            src="assets/logo.png"
+            alt="Grona.ai wordmark"
+            width="180"
+            height="48"
+            data-theme-logo
+            data-logo-light="assets/logo.png"
+            data-logo-dark="assets/Grona_light.png"
+          />
+        </a>
+        <p class="footer-tagline">Smarter Websites. Higher Sales.</p>
+        <a class="footer-link footer-cta" href="#waitlist-form">Join the private beta →</a>
+      </div>
+      <div class="footer-column" aria-labelledby="footer-product-heading">
+        <p id="footer-product-heading" class="footer-heading">Product</p>
+        <ul class="footer-list">
+          <li><a class="footer-link" href="how_it_works.html">How it works</a></li>
+          <li><a class="footer-link" href="features.html">Features</a></li>
+          <li><a class="footer-link" href="pricing.html">Pricing</a></li>
+          <li><a class="footer-link" href="/docs">Docs</a></li>
+        </ul>
+      </div>
+      <div class="footer-column" aria-labelledby="footer-company-heading">
+        <p id="footer-company-heading" class="footer-heading">Company</p>
+        <ul class="footer-list">
+          <li><a class="footer-link" href="blog.html">Blog</a></li>
+          <li><a class="footer-link" href="mailto:hello@grona.ai">Contact</a></li>
+          <li>
+            <a
+              class="footer-link"
+              href="https://linkedin.com/company/grona-ai"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer-column" aria-labelledby="footer-legal-heading">
+        <p id="footer-legal-heading" class="footer-heading">Legal</p>
+        <ul class="footer-list">
+          <li><a class="footer-link" href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a class="footer-link" href="terms-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a class="footer-link" href="privacy-policy.html#data-security">Data &amp; Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-footer-year></span> grona.ai — Built for teams that never stop testing.</p>
+    </div>
   </div>
 </footer>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-

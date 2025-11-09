@@ -4,6 +4,12 @@
   to = "/index.html"
   status = 200
 
+# Redirect /index.html to root to keep URLs clean
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
 # Handle 404s - fallback to index.html for SPA routing (optional)
 # Uncomment if you want client-side routing
 # [[redirects]]

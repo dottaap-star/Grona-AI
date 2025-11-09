@@ -6,12 +6,19 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /
   
+  # Redirect /index.html to root to keep URLs clean
+  RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+  
   # Remove trailing slash
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.+)/$ /$1 [R=301,L]
   
-  # Remove .html extension if present
+  # Remove .html extension if present (except for index.html which is handled above)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteCond %{REQUEST_URI} !^/index\.html$ [NC]
   RewriteRule ^(.+)\.html$ /$1 [R=301,L]
   
   # Add .html extension internally (for clean URLs)
@@ -20,6 +27,7 @@ DirectoryIndex index.html
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+)$ /$1.html [L]
   
-  # Root URL serves index.html
+  # Root URL serves index.html (without redirect, keeps URL as /)
+  RewriteCond %{REQUEST_URI} ^/$
   RewriteRule ^$ index.html [L]
 </IfModule>
