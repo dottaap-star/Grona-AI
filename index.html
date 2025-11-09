@@ -41,6 +41,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/Grona-favicon-v1.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/Grona-favicon-v1.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/Grona-favicon-v1.png" />
+
+    <link rel="stylesheet" href="shared/shared.css" />
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -301,6 +303,7 @@
       .announcement-banner {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 12px;
         padding: 10px 18px;
         background: rgba(255, 255, 255, 0.92);
@@ -308,6 +311,7 @@
         border-radius: 999px;
         color: #0f172a;
         font-weight: 500;
+        text-align: center;
         box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
@@ -341,6 +345,11 @@
         cursor: pointer;
         transition: background 0.2s ease, transform 0.2s ease;
         line-height: 1;
+      }
+      .announcement-banner span {
+        flex: 1;
+        text-align: center;
+        min-width: 0;
       }
       .announcement-banner button:hover {
         background: rgba(15, 23, 42, 0.12);
@@ -1242,47 +1251,6 @@
       [data-theme="dark"] .accordion-panel p {
         color: #cbd5f5;
       }
-      .final-footer {
-        background: #f6f7f7;
-        padding: 64px 0 80px;
-      }
-      [data-theme="dark"] .final-footer {
-        background: #0f172a;
-      }
-      .final-footer .footer-inner {
-        max-width: 760px;
-        margin: 0 auto;
-        text-align: center;
-        display: grid;
-        gap: 32px;
-      }
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        font-size: 15px;
-        color: #4b5563;
-      }
-      [data-theme="dark"] .footer-links {
-        color: #cbd5f5;
-      }
-      .footer-links a {
-        color: inherit;
-        opacity: 0.65;
-      }
-      .footer-links a:hover,
-      .footer-links a:focus-visible {
-        opacity: 1;
-      }
-      .footer-copy {
-        margin: 0;
-        color: #6b7280;
-        font-size: 14px;
-      }
-      [data-theme="dark"] .footer-copy {
-        color: #94a3b8;
-      }
 
       .visual-layout {
         display: flex;
@@ -1622,27 +1590,6 @@
         font-weight: 900;
       }
 
-      /* FOOTER */
-      footer {
-        border-top: 1px solid var(--line);
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--space-4);
-      }
-      .footer-col h4 {
-        margin-bottom: 6px;
-        font-size: 14px;
-        font-weight: 800;
-        font-family: var(--ff-display);
-        color: var(--ink);
-      }
-      .footer-col a {
-        display: block;
-        color: #334155;
-        padding: 6px 0;
-      }
       /* RESPONSIVE */
       @media (max-width: 1024px) {
         :root {
@@ -1663,6 +1610,14 @@
           padding: 0 var(--space-4);
           gap: var(--space-4);
         }
+        .footer-columns {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: var(--space-4);
+        }
+        .footer-brand {
+          grid-column: 1 / -1;
+          padding-right: 0;
+        }
       }
       @media (max-width: 560px) {
         :root {
@@ -1670,7 +1625,7 @@
           --header-height: 58px;
           --banner-height: 40px;
         }
-        .footer-grid {
+        .footer-columns {
           grid-template-columns: 1fr;
         }
         .form-group {
@@ -1709,7 +1664,15 @@
     <header id="top" class="navbar" role="banner" aria-label="Primary">
       <div class="container nav">
         <a class="brand" href="index.html" aria-label="grona home">
-          <img src="assets/logo.png" alt="Grona.ai - Agentic CRO platform logo" width="300" height="75" />
+          <img
+            src="assets/logo.png"
+            alt="Grona.ai - Agentic CRO platform logo"
+            width="300"
+            height="75"
+            data-theme-logo
+            data-logo-light="assets/logo.png"
+            data-logo-dark="assets/Grona_light.png"
+          />
         </a>
         <div class="spacer"></div>
         <nav class="nav-links" aria-label="Main navigation">
@@ -1744,7 +1707,7 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
         </button>
-        <button class="menu-btn" aria-label="Open menu">
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
           <svg
             width="22"
             height="22"
@@ -2502,45 +2465,14 @@
       </div>
     </section>
 
-    <footer class="final-footer scroll-reveal" role="contentinfo">
-      <div class="footer-inner">
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a class="link-underline" href="how_it_works.html">How it works</a>
-          <span>·</span>
-          <a class="link-underline" href="features.html">Features</a>
-          <span>·</span>
-          <a class="link-underline" href="pricing.html">Pricing</a>
-          <span>·</span>
-          <a class="link-underline" href="blog.html">Blog</a>
-          <span>·</span>
-          <a class="link-underline" href="/docs">Docs</a>
-          <span>·</span>
-          <a class="link-underline" href="privacy-policy.html">Privacy Policy</a>
-          <span>·</span>
-          <a class="link-underline" href="terms-conditions.html">Terms &amp; conditions</a>
-          <span>·</span>
-          <a
-            class="link-underline"
-            href="https://linkedin.com/company/grona-ai"
-            target="_blank"
-            rel="noreferrer"
-            >Linkedin</a
-          >
-        </nav>
-        <p class="footer-copy">
-          © <span id="year"></span> grona.ai — Built for teams that never stop
-          testing.
-        </p>
-      </div>
-    </footer>
+    
+    <div data-footer></div>
+
 
     <!-- Invisible anchor until signup page exists -->
     <div id="signup" aria-hidden="true"></div>
 
     <script>
-      // year
-      document.querySelector("#year").textContent = new Date().getFullYear();
-
       // Announcement banner handling: measure height for layout + dismiss action
       const announcementWrapper = document.getElementById(
         "announcement-wrapper"
@@ -2655,61 +2587,7 @@
         });
       }
 
-      const html = document.documentElement;
       const rotatingWord = document.querySelector(".rotating-word");
-
-      // Dark mode toggle
-      const themeToggle = document.getElementById("theme-toggle");
-
-      if (!themeToggle) {
-        console.error("Theme toggle button not found!");
-      } else {
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem("theme") || "light";
-        html.setAttribute("data-theme", currentTheme);
-
-        // Update icon and logo based on current theme
-        function updateIcon() {
-          const isDark = html.getAttribute("data-theme") === "dark";
-          const logoImg = document.querySelector(".brand img");
-
-          // Update theme toggle icon
-          themeToggle.innerHTML = isDark
-            ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>`
-            : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>`;
-
-          // Update logo
-          if (logoImg) {
-            logoImg.src = isDark ? "assets/Grona_light.png" : "assets/logo.png";
-          }
-        }
-
-        updateIcon();
-
-        // Add click listener
-        themeToggle.addEventListener("click", () => {
-          const currentTheme = html.getAttribute("data-theme");
-          const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-          html.setAttribute("data-theme", newTheme);
-          localStorage.setItem("theme", newTheme);
-          updateIcon();
-          themeToggle.classList.add("toggled");
-          setTimeout(() => themeToggle.classList.remove("toggled"), 220);
-        });
-      }
 
       if (rotatingWord) {
         const words = ["testing.", "personalizing.", "improving."];
@@ -3156,5 +3034,8 @@
         "description": "Agentic CRO copilot that plans, launches, and learns from a simple prompt."
       }
     </script>
+
+    <!-- Shared JavaScript -->
+    <script src="shared/shared.js"></script>
   </body>
 </html>

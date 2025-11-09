@@ -39,6 +39,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/Grona-favicon-v1.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/Grona-favicon-v1.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/Grona-favicon-v1.png" />
+
+    <link rel="stylesheet" href="shared/shared.css" />
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -449,6 +451,7 @@
       .announcement-banner {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 12px;
         padding: 10px 18px;
         background: rgba(255, 255, 255, 0.92);
@@ -456,6 +459,7 @@
         border-radius: 999px;
         color: #0f172a;
         font-weight: 500;
+        text-align: center;
         box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
@@ -627,7 +631,7 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
         </button>
-        <button class="menu-btn" aria-label="Open menu">
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
           <svg
             width="22"
             height="22"
@@ -984,84 +988,11 @@
       </article>
     </main>
 
-    <footer role="contentinfo">
-      <div class="footer-inner">
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a class="link-underline" href="how_it_works.html">How it works</a>
-          <span>·</span>
-          <a class="link-underline" href="features.html">Features</a>
-          <span>·</span>
-          <a class="link-underline" href="pricing.html">Pricing</a>
-          <span>·</span>
-          <a class="link-underline" href="blog.html">Blog</a>
-          <span>·</span>
-          <a class="link-underline" href="/docs">Docs</a>
-          <span>·</span>
-          <a class="link-underline" href="privacy-policy.html">Privacy Policy</a>
-          <span>·</span>
-          <a class="link-underline" href="terms-conditions.html">Terms &amp; conditions</a>
-          <span>·</span>
-          <a
-            class="link-underline"
-            href="https://linkedin.com/company/grona-ai"
-            target="_blank"
-            rel="noreferrer"
-            >Linkedin</a
-          >
-        </nav>
-        <p class="footer-copy">
-          © <span id="year"></span> grona.ai — Built for teams that never stop
-          testing.
-        </p>
-      </div>
-    </footer>
+    
+    <div data-footer></div>
+
 
     <script>
-      document.querySelector("#year").textContent = new Date().getFullYear();
-
-      const html = document.documentElement;
-      const themeToggle = document.getElementById("theme-toggle");
-
-      if (themeToggle) {
-        const currentTheme = localStorage.getItem("theme") || "light";
-        html.setAttribute("data-theme", currentTheme);
-
-        function updateIcon() {
-          const isDark = html.getAttribute("data-theme") === "dark";
-          const logoImg = document.querySelector(".brand img");
-
-          themeToggle.innerHTML = isDark
-            ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>`
-            : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>`;
-
-          if (logoImg) {
-            logoImg.src = isDark ? "assets/Grona_light.png" : "assets/logo.png";
-          }
-        }
-
-        updateIcon();
-
-        themeToggle.addEventListener("click", () => {
-          const currentTheme = html.getAttribute("data-theme");
-          const newTheme = currentTheme === "dark" ? "light" : "dark";
-          html.setAttribute("data-theme", newTheme);
-          localStorage.setItem("theme", newTheme);
-          updateIcon();
-        });
-      }
-
       // Announcement banner handling
       const announcementWrapper = document.getElementById("announcement-wrapper");
       const announcementBanner = document.getElementById("announcement-banner");
@@ -1104,5 +1035,8 @@
         }
       }
     </script>
+
+    <!-- Shared JavaScript -->
+    <script src="shared/shared.js"></script>
   </body>
 </html>
