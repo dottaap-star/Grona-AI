@@ -887,3 +887,19 @@ p {
     background-position: 100% 50%;
   }
 }
+
+.form-embed-crop {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+  height: 700px;
+}
+
+.form-embed-crop iframe {
+  display: block;
+  transform: translateY(-85px);
+  height: 850px;
+}
