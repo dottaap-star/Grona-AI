@@ -134,7 +134,6 @@
       <div class="footer-column" aria-labelledby="footer-company-heading">
         <p id="footer-company-heading" class="footer-heading">Company</p>
         <ul class="footer-list">
-          <li><a class="footer-link" href="blog.html">Blog</a></li>
           <li><a class="footer-link" href="mailto:hello@grona.ai">Contact</a></li>
           <li>
             <a
@@ -151,7 +150,6 @@
         <ul class="footer-list">
           <li><a class="footer-link" href="privacy-policy.html">Privacy Policy</a></li>
           <li><a class="footer-link" href="terms-conditions.html">Terms &amp; Conditions</a></li>
-          <li><a class="footer-link" href="privacy-policy.html#data-security">Data &amp; Security</a></li>
         </ul>
       </div>
     </div>
