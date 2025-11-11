@@ -213,6 +213,29 @@ p {
   color: var(--ink);
   font-weight: 700;
 }
+.nav-cta-join-beta {
+  border: 1.5px solid var(--green-400, #a6e35f);
+  color: var(--green-400, #a6e35f);
+  padding: 8px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 16px;
+  background: rgba(166, 227, 95, 0.08);
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.nav-cta-join-beta:hover {
+  background: rgba(166, 227, 95, 0.15);
+  border-color: var(--green-300, #c4f78d);
+  color: var(--green-300, #c4f78d);
+  transform: translateY(-1px);
+}
+html.light .nav-cta-join-beta:hover,
+html[data-theme="light"] .nav-cta-join-beta:hover {
+  background: rgba(166, 227, 95, 0.16);
+}
 .menu-btn {
   display: none;
   background: transparent;

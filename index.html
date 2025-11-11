@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" data-shared-auto-load>
   <head>
-    <script src="shared/loader.js"></script>
-    <link rel="stylesheet" href="shared/shared.css" />
+    <script src="/shared/loader.js"></script>
+    <link rel="stylesheet" href="/shared/shared.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>grona.ai — Agentic CRO that actually ships</title>
@@ -40,9 +40,9 @@
     <!-- TODO: Replace Oracle ABC placeholder with actual hosted font -->
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/Grona-favicon-v1.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/Grona-favicon-v1.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/Grona-favicon-v1.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/Grona-favicon-v1.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/Grona-favicon-v1.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/Grona-favicon-v1.png" />
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -783,6 +783,25 @@
       /* Helper text below input */
       .hero-helper {
         display: none;
+      }
+
+      .hero-waitlist-cta {
+        margin-top: 18px;
+        font-size: 14px;
+        text-align: center;
+        opacity: 0.85;
+      }
+
+      .hero-waitlist-cta a {
+        color: var(--green-800);
+        font-weight: 500;
+        text-decoration: none;
+        transition: opacity 0.18s ease, color 0.18s ease;
+      }
+
+      .hero-waitlist-cta a:hover {
+        opacity: 1;
+        color: var(--green-400);
       }
 
       /* USE CASES */
@@ -1963,22 +1982,23 @@
     <!-- End Google Tag Manager (noscript) -->
     <header id="top" class="navbar" role="banner" aria-label="Primary">
       <div class="container nav">
-        <a class="brand" href="index.html" aria-label="grona home">
+        <a class="brand" href="/" aria-label="grona home">
           <img
-            src="assets/logo.png"
+            src="/assets/logo.png"
             alt="Grona.ai - Agentic CRO platform logo"
             width="300"
             height="75"
             data-theme-logo
-            data-logo-light="assets/logo.png"
-            data-logo-dark="assets/Grona_light.png"
+            data-logo-light="/assets/logo.png"
+            data-logo-dark="/assets/Grona_light.png"
           />
         </a>
         <div class="spacer"></div>
         <nav class="nav-links" aria-label="Main navigation">
-          <a href="how_it_works.html">How it works</a>
-          <a href="features.html">Features</a>
-          <a href="pricing.html">Pricing</a>
+          <a href="/how-it-works/">How it works</a>
+          <a href="/features/">Features</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="https://grona.ai/beta-access/" class="nav-cta-join-beta">Join Beta</a>
         </nav>
         <button
           class="theme-toggle"
@@ -2035,7 +2055,7 @@
         aria-controls="waitlist-form"
         aria-label="Scroll to waitlist form"
       >
-        <span>Now in private beta — join the waitlist for early access.</span>
+        <span>Lets audit your website & find the easiest wins.</span>
         <button
           type="button"
           id="announcement-dismiss"
@@ -2082,24 +2102,19 @@
                     stroke-width="1.8"
                     aria-hidden="true"
                   >
-                    <rect
-                      x="3"
-                      y="5"
-                      width="18"
-                      height="14"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <polyline points="3,7 12,13 21,7"></polyline>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    ></path>
                   </svg>
                   <input
-                    type="email"
-                    id="waitlist-email"
+                    type="text"
+                    id="waitlist-website"
                     class="smart-input"
-                    placeholder="Join the waitlist"
-                    required
-                    aria-label="Email address"
-                    autocomplete="email"
+                    placeholder="Enter your website (e.g. yoursite.com)"
+                    aria-label="Website URL"
+                    autocomplete="url"
                   />
                   <button
                     type="submit"
@@ -2113,6 +2128,10 @@
                     </svg>
                   </button>
                 </div>
+              </div>
+              <div class="hero-waitlist-cta">
+                <span>Access is invite-only. </span>
+                <a href="/beta-access/">Request early access →</a>
               </div>
               <div class="form-message" id="form-message" role="status"></div>
             </form>
@@ -2371,7 +2390,7 @@
           privacy-safe analytics.
         </p>
         <div class="privacy-link">
-          <a class="link-underline" href="privacy-policy.html"
+          <a class="link-underline" href="/privacy-policy/"
             >Learn more about privacy →</a
           >
         </div>
@@ -2472,10 +2491,10 @@
           0;
 
         const focusWaitlistField = () => {
-          const emailInput = document.getElementById("waitlist-email");
-          if (!emailInput) return;
+          const websiteInput = document.getElementById("waitlist-website");
+          if (!websiteInput) return;
 
-          const fieldWrapper = emailInput.closest(".smart-url-light");
+          const fieldWrapper = websiteInput.closest(".smart-url-light");
           const heroSection = document.getElementById("hero");
           const rootStyle = getComputedStyle(document.documentElement);
           const headerHeight =
@@ -2494,11 +2513,11 @@
             );
             window.scrollTo({ top: offsetTarget, behavior: "smooth" });
           } else {
-            emailInput.scrollIntoView({ behavior: "smooth", block: "center" });
+            websiteInput.scrollIntoView({ behavior: "smooth", block: "center" });
           }
 
           window.setTimeout(() => {
-            emailInput.focus({ preventScroll: true });
+            websiteInput.focus({ preventScroll: true });
             if (!fieldWrapper) return;
             fieldWrapper.classList.add("smart-url-highlight");
             if (highlightTimeout) window.clearTimeout(highlightTimeout);
@@ -2917,15 +2936,16 @@
         carouselCleanups.push(() => revealObserver.disconnect());
       }
 
-      // Waitlist form handler - Smart URL Input style
+      // Waitlist form handler - Website capture + redirect
       const waitlistForm = document.getElementById("waitlist-form");
       const formMessage = document.getElementById("form-message");
       const smartSendBtn = document.getElementById("smart-send-btn");
 
       if (waitlistForm) {
-        const emailInput = document.getElementById("waitlist-email");
+        const websiteInput = document.getElementById("waitlist-website");
 
         function showMessage(text, isSuccess) {
+          if (!formMessage) return;
           formMessage.textContent = text;
           formMessage.className = `form-message ${
             isSuccess ? "success" : "error"
@@ -2935,67 +2955,68 @@
           }, 4000);
         }
 
-        waitlistForm.addEventListener("submit", async (e) => {
+        function normalizeWebsite(input) {
+          let value = input.trim();
+
+          if (!value || !value.includes(".")) {
+            throw new Error("invalid");
+          }
+
+          if (!/^https?:\/\//i.test(value)) {
+            value = `https://${value}`;
+          }
+
+          let parsed;
+          try {
+            parsed = new URL(value);
+          } catch (error) {
+            throw new Error("invalid");
+          }
+
+          if (!parsed.hostname || !parsed.hostname.includes(".")) {
+            throw new Error("invalid");
+          }
+
+          return parsed.toString();
+        }
+
+        waitlistForm.addEventListener("submit", (e) => {
           e.preventDefault();
-          const email = emailInput.value.trim();
+          if (!websiteInput) return;
 
-          // Validate email format
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const websiteValue = websiteInput.value.trim();
 
-          if (!email) {
-            showMessage("Please enter your work email.", false);
+          if (!websiteValue) {
+            showMessage("Please enter your website URL.", false);
             return;
           }
 
-          if (!emailRegex.test(email)) {
-            showMessage("Please enter a valid email address.", false);
+          let normalizedUrl;
+          try {
+            normalizedUrl = normalizeWebsite(websiteValue);
+          } catch (error) {
+            showMessage("Please enter a valid website URL.", false);
             return;
           }
 
-          // Disable send button during submission
           smartSendBtn.disabled = true;
           smartSendBtn.style.opacity = "0.5";
+          showMessage("Redirecting...", true);
 
-          try {
-            // Submit directly to Google Apps Script Web App (Google Sheet backend)
-            const response = await fetch('https://script.google.com/macros/s/AKfycbyrmRwaYFTqxnfW_wTBD6bgH_-tKMJYQX1mPb_5Cdf4Qr2B6Sx4LDijkIXElogQKY35/exec', {
-              method: 'POST',
-              mode: 'no-cors', // bypass browser CORS checks; response will be opaque
-              // Send as form-encoded to avoid CORS preflight (no custom headers)
-              body: new URLSearchParams({ email })
-            });
+          const redirectUrl = `https://app.grona.ai/try/edit/newCampaign/?url=${encodeURIComponent(
+            normalizedUrl
+          )}`;
+          window.location.href = redirectUrl;
+        });
 
-            // Attempt to read JSON, but don't fail if response is plain text
-            let result = null;
-            try {
-              result = await response.json();
-            } catch (_) {
-              try {
-                const text = await response.text();
-                result = { message: text };
-              } catch (_) {}
-            }
-
-            // In no-cors mode, response is opaque (status 0), so treat it as success
-            if (response.type !== 'opaque' && !response.ok) {
-              const message = (result && (result.error || result.message)) || 'Submission failed';
-              throw new Error(message);
-            }
-
-            // Success
-            showMessage("Thanks - you're on the list!", true);
-            smartSendBtn.classList.add("smart-send-animate");
-            setTimeout(
-              () => smartSendBtn.classList.remove("smart-send-animate"),
-              550
-            );
-            emailInput.value = "";
-          } catch (error) {
-            console.error('Form submission error:', error);
-            showMessage("Something went wrong. Please try again.", false);
-          } finally {
+        websiteInput?.addEventListener("input", () => {
+          if (smartSendBtn.disabled) {
             smartSendBtn.disabled = false;
             smartSendBtn.style.opacity = "1";
+          }
+          if (formMessage) {
+            formMessage.textContent = "";
+            formMessage.className = "form-message";
           }
         });
       }
@@ -3018,6 +3039,6 @@
     </script>
 
     <!-- Shared JavaScript -->
-    <script src="shared/shared.js"></script>
+    <script src="/shared/shared.js"></script>
   </body>
 </html>

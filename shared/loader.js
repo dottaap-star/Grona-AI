@@ -8,7 +8,7 @@
   'use strict';
 
   // Configuration
-  const SHARED_PATH = 'shared/';
+  const SHARED_PATH = '/shared/';
   const COMPONENTS = {
     head: 'head-content.html',
     header: 'header.html',
@@ -119,4 +119,3 @@
     autoLoadComponents();
   }
 })();
-
