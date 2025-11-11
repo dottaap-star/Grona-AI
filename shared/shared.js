@@ -58,14 +58,14 @@
       const themedLogos = document.querySelectorAll("[data-theme-logo]");
       if (themedLogos.length) {
         themedLogos.forEach((logo) => {
-          const lightSrc = logo.getAttribute("data-logo-light") || "assets/logo.png";
-          const darkSrc = logo.getAttribute("data-logo-dark") || "assets/Grona_light.png";
+          const lightSrc = logo.getAttribute("data-logo-light") || "/assets/logo.png";
+          const darkSrc = logo.getAttribute("data-logo-dark") || "/assets/Grona_light.png";
           logo.setAttribute("src", isDark ? darkSrc : lightSrc);
         });
-      } else {
+        } else {
         const logoImg = document.querySelector(".brand img");
         if (logoImg) {
-          logoImg.src = isDark ? "assets/Grona_light.png" : "assets/logo.png";
+          logoImg.src = isDark ? "/assets/Grona_light.png" : "/assets/logo.png";
         }
       }
     }
@@ -108,15 +108,15 @@
   <div class="footer-shell container">
     <div class="footer-columns">
       <div class="footer-brand">
-        <a class="footer-logo" href="index.html" aria-label="grona home">
+        <a class="footer-logo" href="/" aria-label="grona home">
           <img
-            src="assets/logo.png"
+            src="/assets/logo.png"
             alt="Grona.ai wordmark"
             width="180"
             height="48"
             data-theme-logo
-            data-logo-light="assets/logo.png"
-            data-logo-dark="assets/Grona_light.png"
+            data-logo-light="/assets/logo.png"
+            data-logo-dark="/assets/Grona_light.png"
           />
         </a>
         <p class="footer-tagline">Smarter Websites. Higher Sales.</p>
@@ -125,9 +125,9 @@
       <div class="footer-column" aria-labelledby="footer-product-heading">
         <p id="footer-product-heading" class="footer-heading">Product</p>
         <ul class="footer-list">
-          <li><a class="footer-link" href="how_it_works.html">How it works</a></li>
-          <li><a class="footer-link" href="features.html">Features</a></li>
-          <li><a class="footer-link" href="pricing.html">Pricing</a></li>
+          <li><a class="footer-link" href="/how-it-works/">How it works</a></li>
+          <li><a class="footer-link" href="/features/">Features</a></li>
+          <li><a class="footer-link" href="/pricing/">Pricing</a></li>
         </ul>
       </div>
       <div class="footer-column" aria-labelledby="footer-company-heading">
@@ -147,8 +147,8 @@
       <div class="footer-column" aria-labelledby="footer-legal-heading">
         <p id="footer-legal-heading" class="footer-heading">Legal</p>
         <ul class="footer-list">
-          <li><a class="footer-link" href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a class="footer-link" href="terms-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a class="footer-link" href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a class="footer-link" href="/terms-conditions/">Terms &amp; Conditions</a></li>
         </ul>
       </div>
     </div>
@@ -185,7 +185,7 @@
       return;
     }
 
-    fetch("shared/footer.html", { cache: "no-cache" })
+    fetch("/shared/footer.html", { cache: "no-cache" })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load footer");
@@ -418,16 +418,19 @@
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
     const iconMap = {
-      'how_it_works.html': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 8.67 19a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4 15.4a1.65 1.65 0 0 0-1.51-1H2a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4 8.67a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8.6 4a1.65 1.65 0 0 0 1-1.51V2a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15.33 4a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 8.6a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.4z"></path></svg>',
-      'features.html': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.09 5.26L19 8l-4 3.5L16.18 17 12 14.5 7.82 17 9 11.5 5 8l4.91-.74L12 2z"></path></svg>',
-      'pricing.html': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"></path><path d="M7 7h.01"></path></svg>',
-      'blog.html': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>',
+      'how-it-works/': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 8.67 19a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4 15.4a1.65 1.65 0 0 0-1.51-1H2a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4 8.67a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8.6 4a1.65 1.65 0 0 0 1-1.51V2a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15.33 4a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 8.6a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.4z"></path></svg>',
+      'features/': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.09 5.26L19 8l-4 3.5L16.18 17 12 14.5 7.82 17 9 11.5 5 8l4.91-.74L12 2z"></path></svg>',
+      'pricing/': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"></path><path d="M7 7h.01"></path></svg>',
+      'blog/': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>',
       'default': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"></path></svg>'
     };
 
     const getIconMarkup = (href) => {
       if (!href) return iconMap.default;
-      const normalized = href.replace(/^\.\//, '').split(/[?#]/)[0];
+      const normalized = href
+        .replace(/^\.\//, '')
+        .replace(/^\//, '')
+        .split(/[?#]/)[0];
       return iconMap[normalized] || iconMap.default;
     };
     

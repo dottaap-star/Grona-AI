@@ -27,8 +27,8 @@ Add `data-shared-auto-load` to your `<html>` tag and use data attributes to mark
 <html lang="en" data-shared-auto-load>
   <head>
     <!-- Shared head content will be loaded automatically -->
-    <script src="shared/loader.js"></script>
-    <link rel="stylesheet" href="shared/shared.css" />
+    <script src="/shared/loader.js"></script>
+    <link rel="stylesheet" href="/shared/shared.css" />
   </head>
   <body>
     <!-- Header will be inserted here -->
@@ -39,7 +39,7 @@ Add `data-shared-auto-load` to your `<html>` tag and use data attributes to mark
     <!-- Footer will be inserted here -->
     <div data-shared-footer></div>
     
-    <script src="shared/shared.js"></script>
+    <script src="/shared/shared.js"></script>
   </body>
 </html>
 ```
@@ -52,8 +52,8 @@ Call `loadSharedComponents()` manually:
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="shared/loader.js"></script>
-    <link rel="stylesheet" href="shared/shared.css" />
+    <script src="/shared/loader.js"></script>
+    <link rel="stylesheet" href="/shared/shared.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
@@ -62,7 +62,7 @@ Call `loadSharedComponents()` manually:
     
     <div id="footer-placeholder"></div>
     
-    <script src="shared/shared.js"></script>
+    <script src="/shared/shared.js"></script>
     <script>
       // Load components manually
       loadSharedComponents({
@@ -129,10 +129,10 @@ Edit `shared/header.html` to update navigation links:
 
 ```html
 <nav class="nav-links" aria-label="Main navigation">
-  <a href="how_it_works.html">How it works</a>
-  <a href="index.html#testing">Features</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="blog.html">Blog</a>
+  <a href="/how-it-works/">How it works</a>
+  <a href="/#testing">Features</a>
+  <a href="/pricing/">Pricing</a>
+  <a href="/blog/">Blog</a>
 </nav>
 ```
 
@@ -184,4 +184,3 @@ Edit CSS variables in `shared/shared.css`:
 **Theme toggle not working?**
 - Ensure `shared/shared.js` is included before closing `</body>`
 - Check that the theme toggle button has `id="theme-toggle"`
-

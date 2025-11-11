@@ -9,10 +9,10 @@ Description: Agentic CRO (Conversion Rate Optimization) platform that uses AI ch
 # Main Pages
 Pages:
 - https://grona.ai/
-- https://grona.ai/features
-- https://grona.ai/pricing
-- https://grona.ai/blog
-- https://grona.ai/how_it_works.html
+- https://grona.ai/features/
+- https://grona.ai/pricing/
+- https://grona.ai/blog/
+- https://grona.ai/how-it-works/
 
 # Company Information
 Company: Grona.ai
@@ -34,4 +34,3 @@ Technology: AI, Machine Learning, Conversion Rate Optimization, A/B Testing, Per
 # Contact
 Support: Email support available
 Documentation: https://grona.ai/docs
-
