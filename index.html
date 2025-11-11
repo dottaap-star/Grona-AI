@@ -95,6 +95,13 @@
         --hero-muted: #475569;
         --rotating-green: #064E3D;
         --rotating-shimmer: rgba(6, 78, 61, 0.28);
+        --grona-green: rgb(74, 155, 127);
+        --grona-dark-green: rgb(30, 95, 78);
+        --grona-light-green: rgb(200, 230, 216);
+        --grona-yellow: rgb(255, 184, 77);
+        --grona-purple: rgb(217, 70, 166);
+        --grona-teal: rgb(8, 145, 178);
+        --grona-pink: rgb(236, 72, 153);
       }
 
       /* Dark mode variables */
@@ -1655,6 +1662,298 @@
           white-space: normal;
         }
       }
+
+      /* Workflow Section Styles */
+      .workflow-section {
+        padding: var(--space-8) 0;
+      }
+
+      .section-intro {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .section-intro p {
+        font-size: 1.05rem;
+        color: var(--muted);
+      }
+
+      .workflow-grid {
+        margin-top: var(--space-6);
+        display: grid;
+        gap: var(--space-4);
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .workflow-step {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-4);
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .workflow-step:hover {
+        border-color: var(--grona-green);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      .workflow-step-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: var(--space-3);
+      }
+
+      .workflow-step-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .workflow-step-number {
+        font-size: 0.875rem;
+        font-weight: 700;
+        margin-bottom: var(--space-2);
+      }
+
+      .workflow-step h3 {
+        margin-bottom: var(--space-2);
+        position: relative;
+        z-index: 1;
+      }
+
+      .workflow-step p {
+        position: relative;
+        z-index: 1;
+      }
+
+      .tooltip-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip-content {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-8px);
+        margin-bottom: 8px;
+        background: var(--ink);
+        color: var(--bg);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 100;
+      }
+
+      .tooltip-wrapper:hover .tooltip-content {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+      }
+
+      [data-theme="dark"] .tooltip-content {
+        background: var(--bg-soft);
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+
+      /* Agents Section Styles */
+      .agents-section {
+        background: var(--bg-soft);
+        padding: var(--space-8) 0;
+      }
+
+      .agents-grid {
+        margin-top: var(--space-6);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+      }
+
+      @media (min-width: 768px) {
+        .agents-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .agent-card {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-5);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+        display: flex;
+        gap: var(--space-6);
+        align-items: flex-start;
+      }
+
+      .agent-card:hover {
+        border-color: var(--grona-green);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transform: translateY(-4px);
+      }
+
+      .agent-icon-wrapper {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+      }
+
+      .agent-card:hover .agent-icon-wrapper {
+        transform: scale(1.1) rotate(3deg);
+      }
+
+      .agent-icon-wrapper svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .agent-content {
+        flex: 1;
+      }
+
+      .agent-role-badge-container {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        margin-bottom: 4px;
+      }
+
+      .agent-role {
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      .agent-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: var(--space-3);
+      }
+
+      .agent-description {
+        color: var(--muted);
+        margin-bottom: var(--space-6);
+        line-height: 1.6;
+      }
+
+      .agent-capabilities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .agent-capability-badge {
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        border: 1px solid;
+      }
+
+      [data-theme="dark"] .agents-section {
+        background: var(--bg-soft);
+      }
+
+      /* Comparison Section Styles */
+      .comparison-section {
+        padding: var(--space-8) 0;
+        background: linear-gradient(to bottom, var(--bg-soft), var(--bg));
+      }
+
+      .comparison-grid {
+        margin-top: var(--space-6);
+        display: grid;
+        gap: var(--space-5);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .comparison-column {
+        border: 2px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-5);
+        background: var(--bg);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .comparison-column.highlight {
+        background: linear-gradient(to bottom, rgba(200, 230, 216, 0.3), var(--bg));
+        border-color: var(--grona-green);
+        box-shadow: var(--shadow-md);
+        transform: scale(1.05);
+      }
+
+      .comparison-column-icon {
+        font-size: 2.5rem;
+        margin-bottom: var(--space-4);
+      }
+
+      .comparison-column h3 {
+        margin-bottom: var(--space-4);
+        font-size: 1.5rem;
+      }
+
+      .comparison-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: var(--space-3);
+      }
+
+      .comparison-column li {
+        display: flex;
+        gap: var(--space-3);
+        align-items: flex-start;
+        color: var(--muted);
+      }
+
+      .comparison-column li::before {
+        content: "•";
+        color: var(--green-800);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-top: 4px;
+      }
+
+      .comparison-column.highlight li::before {
+        content: "✓";
+        color: var(--grona-green);
+      }
+
+      .comparison-column.highlight li {
+        color: var(--ink);
+        font-weight: 500;
+      }
+
+      [data-theme="dark"] .comparison-section {
+        background: linear-gradient(to bottom, var(--bg-soft), var(--bg));
+      }
+
+      [data-theme="dark"] .comparison-column.highlight {
+        background: linear-gradient(to bottom, rgba(74, 155, 127, 0.15), var(--bg));
+        border-color: var(--green-800);
+      }
     </style>
   </head>
   <body>
@@ -1763,10 +2062,10 @@
               <div class="hero-rotating-line">
                 <div class="hero-static-text">Your website always</div>
                 <div class="hero-rotating-text">
-                  <span class="rotating-wrap">
+                <span class="rotating-wrap">
                     <span class="rotating-word shimmer">personalizing.</span>
-                    <span class="rotating-caret" aria-hidden="true"></span>
-                  </span>
+                  <span class="rotating-caret" aria-hidden="true"></span>
+                </span>
                 </div>
               </div>
             </h1>
@@ -1821,549 +2120,233 @@
         </div>
     </div>
 
-    <section id="value" class="section section-benefits scroll-reveal">
+    <section class="workflow-section">
       <div class="container">
-        <h2>Why marketing teams pick grona</h2>
-        <div class="cards" role="list">
-          <article class="card" role="listitem">
-            <div class="icon">↑</div>
-            <h3>Real lift, fast</h3>
-            <p>
-              Ship more experiments without engineering cycles. Increase
-              add‑to‑cart and checkout completion.
-            </p>
-          </article>
-          <article class="card" role="listitem">
-            <div class="icon">⚙︎</div>
-            <h3>Safe by design</h3>
-            <p>
-              Preview before launch, guardrails for rollout, and easy revert.
-              Your team approves every change.
-            </p>
-          </article>
-          <article class="card" role="listitem">
-            <div class="icon">📊</div>
-            <h3>Decide with clarity</h3>
-            <p>
-              Clear winners, lift intervals, and suggested next tests — so
-              momentum never stalls.
-            </p>
-          </article>
+        <div class="section-intro">
+          <span class="badge badge-outline" style="margin-bottom: var(--space-4); display: inline-block;">Deep Dive</span>
+          <h2>The Complete Optimization Journey</h2>
+          <p>
+            Behind the simple interface, Grona's AI agents orchestrate a sophisticated optimization workflow.
+          </p>
         </div>
-      </div>
-    </section>
-
-    <section
-      id="testing"
-      class="use-case-section use-case-section--testing scroll-reveal"
-      data-carousel
-    >
-      <div class="use-cases-inner">
-        <h2 class="use-cases-title">Grona is for Testing</h2>
-        <p class="use-cases-sub">
-          Turn more visitors into customers with A/B tests — all without
-          developers or delays.
-        </p>
-
-        <div
-          class="use-case-controls"
-          role="group"
-          aria-label="Testing carousel controls"
-        >
-          <button
-            class="use-case-nav"
-            data-carousel-prev
-            aria-label="Previous testing slide"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <div class="use-case-dots" data-carousel-dots></div>
-          <button
-            class="use-case-nav"
-            data-carousel-next
-            aria-label="Next testing slide"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-        </div>
-
-        <div class="use-case-carousel" aria-live="polite">
-          <div class="use-case-track" data-carousel-track>
-            <article
-              class="use-case-card use-case-card--product"
-              role="group"
-              aria-label="Product page optimization"
-              data-tooltip="Optimize product pages for better conversion rates"
-              data-tooltip-position="top"
-            >
-              <span class="use-case-meta badge badge-soft"
-                >Ecommerce · Shopify Store</span
-              >
-              <h3 class="use-case-heading use-case-heading-center">
-                Boost add-to-cart rates
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Test CTA text and urgency messaging &amp; instantly roll out
-                what converts.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Product page CTA optimization example showing improved add-to-cart conversion rates"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome: <span class="highlight">+8–15% lift</span> in
-                  add-to-cart rate in days.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Landing page messaging"
-              data-tooltip="Test and optimize landing page headlines and CTAs"
-              data-tooltip-position="top"
-            >
-              <span class="use-case-meta badge badge-soft"
-                >Growth · Agencies</span
-              >
-              <h3 class="use-case-heading use-case-heading-center">
-                Increase landing-page clicks
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Test headlines &amp; call-to-actions to instantly find what
-                motivates visitors.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Landing page headline and CTA optimization example showing increased click-through rates"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome: <span class="highlight">+10–18% more clicks</span> —
-                  shipped in minutes.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Pricing and offer experiments"
-              data-tooltip="Test pricing strategies and trial offers"
-              data-tooltip-position="top"
-            >
-              <span class="use-case-meta badge badge-soft"
-                >SaaS · Founders</span
-              >
-              <h3 class="use-case-heading use-case-heading-center">
-                Lift sign-ups with smarter pricing
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Test trials &amp; offer messaging to discover the most
-                profitable plan.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Pricing page optimization example showing trial offer messaging and improved sign-up rates"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome:
-                  <span class="highlight">+8–20% higher sign-ups</span> — no
-                  engineering needed.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Homepage layout testing"
-            >
-              <span class="use-case-meta badge badge-soft">Universal · UX</span>
-              <h3 class="use-case-heading use-case-heading-center">
-                Reduce bounce &amp; increase engagement
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Move CTAs, reviews, &amp; trust signals to pinpoint what keeps
-                users exploring.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Website layout optimization example showing improved user experience and conversion rates"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome: <span class="highlight">+10% engagement lift</span> —
-                  AI-verified.
-                </p>
-              </div>
-            </article>
+        <div class="workflow-grid">
+          <div class="tooltip-wrapper workflow-step" data-step="01">
+            <div class="workflow-step-icon" style="background-color: rgba(74, 155, 127, 0.2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--grona-green);">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 6 16 14 8 14"></polygon>
+              </svg>
+            </div>
+            <div class="workflow-step-number" style="color: var(--grona-green);">STEP 01</div>
+            <h3>Define Goal</h3>
+            <p>
+              Tell Grona what you want to achieve in plain language. No complex forms or technical setup required.
+            </p>
+            <div class="tooltip-content">Hover for more details about this step</div>
+          </div>
+          <div class="workflow-step" data-step="02">
+            <div class="workflow-step-icon" style="background-color: rgba(8, 145, 178, 0.2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--grona-teal);">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <div class="workflow-step-number" style="color: var(--grona-teal);">STEP 02</div>
+            <h3>AI Analysis</h3>
+            <p>
+              Our agents analyze user behavior, identify friction points, and uncover optimization opportunities automatically.
+            </p>
+          </div>
+          <div class="workflow-step" data-step="03">
+            <div class="workflow-step-icon" style="background-color: rgba(217, 70, 166, 0.2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--grona-purple);">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+              </svg>
+            </div>
+            <div class="workflow-step-number" style="color: var(--grona-purple);">STEP 03</div>
+            <h3>Generate Variants</h3>
+            <p>
+              AI designs multiple high-impact variants tailored to your brand and optimized for conversion.
+            </p>
+          </div>
+          <div class="workflow-step" data-step="04">
+            <div class="workflow-step-icon" style="background-color: rgba(255, 184, 77, 0.2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--grona-yellow);">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="workflow-step-number" style="color: var(--grona-yellow);">STEP 04</div>
+            <h3>Deploy & Learn</h3>
+            <p>
+              Review, approve, and launch. Grona monitors results and suggests the next optimization automatically.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section
-      id="personalizing"
-      class="use-case-section use-case-section--personalizing scroll-reveal"
-      data-carousel
-    >
-      <div class="use-cases-inner">
-        <h2 class="use-cases-title">Grona is for Personalizing</h2>
-        <p class="use-cases-sub">
-          Show the right message to every visitor — automatically.
-        </p>
-
-        <div
-          class="use-case-controls"
-          role="group"
-          aria-label="Personalizing carousel controls"
-        >
-          <button
-            class="use-case-nav"
-            data-carousel-prev
-            aria-label="Previous personalization slide"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <div class="use-case-dots" data-carousel-dots></div>
-          <button
-            class="use-case-nav"
-            data-carousel-next
-            aria-label="Next personalization slide"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
+    <section class="agents-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="badge badge-outline" style="margin-bottom: var(--space-4); display: inline-block;">Meet Your Team</span>
+          <h2>Your 24/7 Optimization Team</h2>
+          <p>
+            Specialized AI agents work in harmony, each mastering a critical aspect of conversion optimization.
+          </p>
         </div>
-
-        <div class="use-case-carousel" aria-live="polite">
-          <div class="use-case-track" data-carousel-track>
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Global personalization"
-            >
-              <span class="use-case-meta badge badge-soft"
-                >Global · Ecommerce</span
-              >
-              <h3 class="use-case-heading use-case-heading-center">
-                Sell globally with local context
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Auto-adapt currency, shipping, &amp; language based on visitor
-                region.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Global website personalization example showing location-based content and offers"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome:
-                  <span class="highlight">+12% more completed purchases</span>
-                  globally.
-                </p>
+        <div class="agents-grid">
+          <div class="agent-card">
+            <div class="agent-icon-wrapper" style="background-color: rgba(8, 145, 178, 0.2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--grona-teal);">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <div class="agent-content">
+              <div class="agent-role-badge-container">
+                <div class="agent-role" style="color: var(--grona-teal);">Data Detective</div>
+                <span class="badge badge-outline" style="font-size: 0.75rem; border-color: var(--grona-teal); color: var(--grona-teal);">Active</span>
               </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Ad alignment personalization"
-            >
-              <span class="use-case-meta badge badge-soft"
-                >Marketing · Paid Traffic</span
-              >
-              <h3 class="use-case-heading use-case-heading-center">
-                Match messaging to your ads
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Align headlines to each ad campaign for higher relevance.
+              <h3 class="agent-name">Analytics Agent</h3>
+              <p class="agent-description">
+                Continuously monitors user behavior, identifies friction points, and uncovers hidden conversion opportunities across your entire customer journey.
               </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Ad campaign messaging alignment example showing consistent messaging from ad to landing page"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome:
-                  <span class="highlight">+10–14% more conversions</span> from
-                  paid clicks.
-                </p>
+              <div class="agent-capabilities">
+                <span class="agent-capability-badge" style="border-color: rgba(8, 145, 178, 0.4); background-color: rgba(8, 145, 178, 0.1); color: var(--grona-teal);">Heatmap Analysis</span>
+                <span class="agent-capability-badge" style="border-color: rgba(8, 145, 178, 0.4); background-color: rgba(8, 145, 178, 0.1); color: var(--grona-teal);">Funnel Tracking</span>
+                <span class="agent-capability-badge" style="border-color: rgba(8, 145, 178, 0.4); background-color: rgba(8, 145, 178, 0.1); color: var(--grona-teal);">Behavioral Patterns</span>
+                <span class="agent-capability-badge" style="border-color: rgba(8, 145, 178, 0.4); background-color: rgba(8, 145, 178, 0.1); color: var(--grona-teal);">Drop-off Detection</span>
               </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Behavior personalization"
-            >
-              <span class="use-case-meta badge badge-soft"
-                >Intent · Behavior</span
-              >
-              <h3 class="use-case-heading use-case-heading-center">
-                Change CTAs based on engagement
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Highlight urgency or social proof when visitors show buying
-                intent.
+            </div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-icon-wrapper" style="background-color: rgba(74, 155, 127, 0.2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--grona-green);">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="22"></line>
+                <line x1="8" y1="22" x2="16" y2="22"></line>
+              </svg>
+            </div>
+            <div class="agent-content">
+              <div class="agent-role-badge-container">
+                <div class="agent-role" style="color: var(--grona-green);">Hypothesis Generator</div>
+                <span class="badge badge-outline" style="font-size: 0.75rem; border-color: var(--grona-green); color: var(--grona-green);">Active</span>
+              </div>
+              <h3 class="agent-name">Strategy Agent</h3>
+              <p class="agent-description">
+                Crafts data-driven test hypotheses with clear success metrics, ensuring every experiment is aligned with your business objectives.
               </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Behavioral targeting example showing personalized CTAs based on visitor behavior"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome:
-                  <span class="highlight">+9% tap-through lift</span> on mobile.
-                </p>
+              <div class="agent-capabilities">
+                <span class="agent-capability-badge" style="border-color: rgba(74, 155, 127, 0.4); background-color: rgba(74, 155, 127, 0.1); color: var(--grona-green);">Goal Alignment</span>
+                <span class="agent-capability-badge" style="border-color: rgba(74, 155, 127, 0.4); background-color: rgba(74, 155, 127, 0.1); color: var(--grona-green);">Hypothesis Creation</span>
+                <span class="agent-capability-badge" style="border-color: rgba(74, 155, 127, 0.4); background-color: rgba(74, 155, 127, 0.1); color: var(--grona-green);">Success Metrics</span>
+                <span class="agent-capability-badge" style="border-color: rgba(74, 155, 127, 0.4); background-color: rgba(74, 155, 127, 0.1); color: var(--grona-green);">Priority Ranking</span>
               </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Device personalization"
-            >
-              <span class="use-case-meta badge badge-soft">Device · UX</span>
-              <h3 class="use-case-heading use-case-heading-center">
-                Optimize for mobile &amp; desktop automatically
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Deliver layout elements where each screen performs best.
+            </div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-icon-wrapper" style="background-color: rgba(217, 70, 166, 0.2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--grona-purple);">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+              </svg>
+            </div>
+            <div class="agent-content">
+              <div class="agent-role-badge-container">
+                <div class="agent-role" style="color: var(--grona-purple);">Creative Engine</div>
+                <span class="badge badge-outline" style="font-size: 0.75rem; border-color: var(--grona-purple); color: var(--grona-purple);">Active</span>
+              </div>
+              <h3 class="agent-name">Design Agent</h3>
+              <p class="agent-description">
+                Generates on-brand variants automatically, applying proven conversion principles while maintaining your unique visual identity.
               </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Mobile device optimization example showing responsive design improvements for better mobile conversion"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome: <span class="highlight">–18% bounce rate</span> on
-                  mobile shoppers.
-                </p>
+              <div class="agent-capabilities">
+                <span class="agent-capability-badge" style="border-color: rgba(217, 70, 166, 0.4); background-color: rgba(217, 70, 166, 0.1); color: var(--grona-purple);">Variant Generation</span>
+                <span class="agent-capability-badge" style="border-color: rgba(217, 70, 166, 0.4); background-color: rgba(217, 70, 166, 0.1); color: var(--grona-purple);">Brand Consistency</span>
+                <span class="agent-capability-badge" style="border-color: rgba(217, 70, 166, 0.4); background-color: rgba(217, 70, 166, 0.1); color: var(--grona-purple);">Copy Optimization</span>
+                <span class="agent-capability-badge" style="border-color: rgba(217, 70, 166, 0.4); background-color: rgba(217, 70, 166, 0.1); color: var(--grona-purple);">Layout Design</span>
               </div>
-            </article>
+            </div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-icon-wrapper" style="background-color: rgba(255, 184, 77, 0.2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--grona-yellow);">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="agent-content">
+              <div class="agent-role-badge-container">
+                <div class="agent-role" style="color: var(--grona-yellow);">Guardian</div>
+                <span class="badge badge-outline" style="font-size: 0.75rem; border-color: var(--grona-yellow); color: var(--grona-yellow);">Active</span>
+              </div>
+              <h3 class="agent-name">Quality Agent</h3>
+              <p class="agent-description">
+                Reviews every detail before launch—copy, layout, user experience, and technical implementation—ensuring flawless execution.
+              </p>
+              <div class="agent-capabilities">
+                <span class="agent-capability-badge" style="border-color: rgba(255, 184, 77, 0.4); background-color: rgba(255, 184, 77, 0.1); color: var(--grona-yellow);">UX Validation</span>
+                <span class="agent-capability-badge" style="border-color: rgba(255, 184, 77, 0.4); background-color: rgba(255, 184, 77, 0.1); color: var(--grona-yellow);">Copy Review</span>
+                <span class="agent-capability-badge" style="border-color: rgba(255, 184, 77, 0.4); background-color: rgba(255, 184, 77, 0.1); color: var(--grona-yellow);">Technical QA</span>
+                <span class="agent-capability-badge" style="border-color: rgba(255, 184, 77, 0.4); background-color: rgba(255, 184, 77, 0.1); color: var(--grona-yellow);">Cross-browser Testing</span>
+              </div>
+            </div>
           </div>
         </div>
-
-        <p class="carousel-helper">
-          One script — infinite personalization possibilities.
-        </p>
       </div>
     </section>
 
-    <section
-      id="improving"
-      class="use-case-section use-case-section--improving scroll-reveal"
-      data-carousel
-    >
-      <div class="use-cases-inner">
-        <h2 class="use-cases-title">Grona is for Improving</h2>
-        <p class="use-cases-sub">
-          Every test and change makes your site smarter — automatically.
-        </p>
-
-        <div
-          class="use-case-controls"
-          role="group"
-          aria-label="Improving carousel controls"
-        >
-          <button
-            class="use-case-nav"
-            data-carousel-prev
-            aria-label="Previous improvement slide"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <div class="use-case-dots" data-carousel-dots></div>
-          <button
-            class="use-case-nav"
-            data-carousel-next
-            aria-label="Next improvement slide"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Beyond Brainstorming</h2>
+          <p>
+            While other tools stop at suggestions, Grona ships real results.
+          </p>
         </div>
-
-        <div class="use-case-carousel" aria-live="polite">
-          <div class="use-case-track" data-carousel-track>
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="AI experiment ideas"
-            >
-              <span class="use-case-meta badge badge-soft"
-                >AI · Experiment Ideas</span
-              >
-              <h3 class="use-case-heading use-case-heading-center">
-                Let AI suggest your next winning test
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Automatically find high-impact opportunities.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="AI-powered experiment suggestions dashboard showing automated test ideas and recommendations"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome:
-                  <span class="highlight">Ship improvements 4× faster.</span>
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Safe rollouts"
-            >
-              <span class="use-case-meta badge badge-soft">Safe Rollouts</span>
-              <h3 class="use-case-heading use-case-heading-center">
-                Scale winners without risk
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Protect revenue while winners ramp automatically.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Safe rollout feature showing gradual traffic distribution and risk management for A/B tests"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome:
-                  <span class="highlight">Zero costly test failures.</span>
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Clear insights"
-            >
-              <span class="use-case-meta badge badge-soft">Clear Insight</span>
-              <h3 class="use-case-heading use-case-heading-center">
-                Know what drives the lift
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Transparent reporting on why a variant won.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Performance insights dashboard showing conversion rate metrics and optimization results"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome:
-                  <span class="highlight">Decisions without guesswork.</span>
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="use-case-card"
-              role="group"
-              aria-label="Predictive learning"
-            >
-              <span class="use-case-meta badge badge-soft"
-                >Predictive Learning</span
-              >
-              <h3 class="use-case-heading use-case-heading-center">
-                Optimize by audience segments
-              </h3>
-              <p class="use-case-subheading use-case-subheading-center">
-                Your site adapts to each visitor over time.
-              </p>
-              <div class="use-case-visual visual-product">
-                <img
-                  src="assets/placeholder.png"
-                  alt="Predictive learning feature showing AI-powered optimization recommendations and future performance predictions"
-                  class="carousel-image"
-                />
-                <p class="use-case-outcome">
-                  Outcome:
-                  <span class="highlight">+7–13% improvement</span>
-                  ML-validated.
-                </p>
-              </div>
-            </article>
+        <div class="comparison-grid">
+          <div class="comparison-column">
+            <div class="comparison-column-icon">🛠️</div>
+            <h3>Traditional Tools</h3>
+            <ul>
+              <li>Manual test creation</li>
+              <li>Requires technical skills</li>
+              <li>Time-consuming setup</li>
+              <li>Limited insights</li>
+              <li>Static recommendations</li>
+            </ul>
+          </div>
+          <div class="comparison-column">
+            <div class="comparison-column-icon">💬</div>
+            <h3>ChatGPT & AI Assistants</h3>
+            <ul>
+              <li>Helpful suggestions</li>
+              <li>No site context</li>
+              <li>Can't implement changes</li>
+              <li>Requires your team</li>
+              <li>One-time advice</li>
+            </ul>
+          </div>
+          <div class="comparison-column highlight">
+            <div class="comparison-column-icon">✨</div>
+            <h3>Grona</h3>
+            <ul>
+              <li>Designs & ships real tests</li>
+              <li>Uses your analytics data</li>
+              <li>Autonomous deployment</li>
+              <li>Continuous optimization</li>
+              <li>Built-in guardrails</li>
+            </ul>
           </div>
         </div>
-
-        <p class="carousel-helper">
-          Your website learns — so you don’t have to guess.
-        </p>
       </div>
     </section>
+
+
+
 
     <section class="privacy-section scroll-reveal">
       <div class="privacy-card">
@@ -2388,7 +2371,7 @@
           privacy-safe analytics.
         </p>
         <div class="privacy-link">
-          <a class="link-underline" href="#privacy"
+          <a class="link-underline" href="privacy-policy.html"
             >Learn more about privacy →</a
           >
         </div>
