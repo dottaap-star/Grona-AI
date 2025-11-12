@@ -221,7 +221,7 @@
       :root {
         --header-height: 80px;
         --navbar-height: 80px;
-        --banner-height: 44px;
+        --banner-height: 0px;
         --announcement-offset: 0px;
         --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
         --ease-float: cubic-bezier(0.55, 0.03, 0.25, 0.99);
@@ -1622,7 +1622,7 @@
         :root {
           --navbar-height: 64px;
           --header-height: 64px;
-          --banner-height: 44px;
+          --banner-height: 0px;
         }
         .cards {
           grid-template-columns: 1fr;
@@ -1650,7 +1650,7 @@
         :root {
           --navbar-height: 58px;
           --header-height: 58px;
-          --banner-height: 40px;
+          --banner-height: 0px;
         }
         .footer-columns {
           grid-template-columns: 1fr;
@@ -1998,7 +1998,7 @@
           <a href="/how-it-works/">How it works</a>
           <a href="/features/">Features</a>
           <a href="/pricing/">Pricing</a>
-          <a href="https://grona.ai/beta-access/" class="nav-cta-join-beta">Join Beta</a>
+          <a href="https://grona.ai/beta-access/" class="nav-cta-join-beta btn-beta">Join Beta</a>
         </nav>
         <button
           class="theme-toggle"
@@ -2045,26 +2045,6 @@
         </button>
       </div>
     </header>
-
-    <div class="announcement-bar" id="announcement-wrapper">
-      <div
-        class="announcement-banner"
-        id="announcement-banner"
-        role="button"
-        tabindex="0"
-        aria-controls="waitlist-form"
-        aria-label="Scroll to waitlist form"
-      >
-        <span>Lets audit your website & find the easiest wins.</span>
-        <button
-          type="button"
-          id="announcement-dismiss"
-          aria-label="Dismiss announcement"
-        >
-          ×
-        </button>
-      </div>
-    </div>
 
     <div class="hero-shell">
       <!-- HERO -->
@@ -2591,7 +2571,7 @@
       const rotatingWord = document.querySelector(".rotating-word");
 
       if (rotatingWord) {
-        const words = ["testing.", "personalizing.", "improving."];
+        const words = ["testing.", "personalizing.", "improving.", "optimizing.", "converting."];
         let currentIndex = 0;
         let currentWord = "";
         let timeoutId = null;
