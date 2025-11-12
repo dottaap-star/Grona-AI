@@ -8,6 +8,8 @@
   --green-900: #0f3e35; /* deep evergreen */
   --green-800: #0b6b53; /* brand primary */
   --green-400: #7fd97a; /* leaf */
+  --brand-lime: #bce55d; /* Bright lime used in hero "improving." */
+  --brand-lime-rgb: 188, 229, 93; /* #bce55d converted for rgba usage */
   --ink: #0f172a; /* headings */
   --muted: #5b6475; /* body */
   --line: #e8ecef; /* borders */
@@ -54,6 +56,7 @@
 /* Dark mode variables */
 [data-theme="dark"] {
   --green-800: #bbe55b; /* vibrant light green - matches logo exactly */
+  --brand-lime: #bce55d; /* Keep hero lime consistent in dark mode */
   --ink: #f8fafc; /* headings - light */
   --muted: #94a3b8; /* body - lighter gray */
   --line: #334155; /* borders - dark gray */
@@ -214,27 +217,71 @@ p {
   font-weight: 700;
 }
 .nav-cta-join-beta {
-  border: 1.5px solid var(--green-400, #a6e35f);
-  color: var(--green-400, #a6e35f);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 8px 20px;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
   margin-left: 16px;
-  background: rgba(166, 227, 95, 0.08);
-  backdrop-filter: blur(6px);
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  border: 1.5px solid transparent;
+  background: transparent;
+  color: inherit;
+  transition: all 0.18s ease-out;
+  will-change: transform, box-shadow;
 }
-.nav-cta-join-beta:hover {
-  background: rgba(166, 227, 95, 0.15);
-  border-color: var(--green-300, #c4f78d);
-  color: var(--green-300, #c4f78d);
-  transform: translateY(-1px);
+.nav-cta-join-beta:active,
+.btn-beta:active {
+  transform: scale(0.97);
 }
-html.light .nav-cta-join-beta:hover,
-html[data-theme="light"] .nav-cta-join-beta:hover {
-  background: rgba(166, 227, 95, 0.16);
+/* Brand primary green: Light mode #0b6b53 (--green-800), Dark mode #bbe55b (--green-800) */
+/* This matches the rotating text "improving." color in dark mode */
+html:not(.dark) .btn-beta,
+html[data-theme="light"] .btn-beta {
+  background: transparent;
+  color: var(--green-800); /* #0b6b53 - brand primary green */
+  border: 1.5px solid var(--green-800); /* #0b6b53 - brand primary green */
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: none;
+  transition: all 0.18s ease-out;
+}
+html:not(.dark) .btn-beta:hover,
+html[data-theme="light"] .btn-beta:hover {
+  background: var(--green-800); /* #0b6b53 - brand primary green */
+  color: #ffffff;
+  border-color: var(--green-800); /* #0b6b53 - brand primary green */
+}
+html.dark .btn-beta,
+html[data-theme="dark"] .btn-beta {
+  /* Dark mode uses --green-800 which is #bbe55b - bright lime green matching "improving." */
+  background: rgba(187, 229, 91, 0.08);
+  border: 1.5px solid rgba(187, 229, 91, 0.55);
+  color: var(--green-800); /* #bbe55b - bright lime green */
+  border-radius: 8px;
+  font-weight: 500;
+  animation: betaPulse 3.2s ease-in-out infinite;
+  box-shadow: 0 0 16px rgba(187, 229, 91, 0.45);
+  transition: all 0.18s ease-out;
+}
+html.dark .btn-beta:hover,
+html[data-theme="dark"] .btn-beta:hover {
+  background: rgba(187, 229, 91, 0.2);
+  border-color: rgba(187, 229, 91, 0.85);
+  color: #ffffff;
+}
+@keyframes betaPulse {
+  0% {
+    box-shadow: 0 0 16px rgba(187, 229, 91, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(187, 229, 91, 0.55);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(187, 229, 91, 0.45);
+  }
 }
 .menu-btn {
   display: none;
