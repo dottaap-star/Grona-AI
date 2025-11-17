@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" data-shared-auto-load>
+  <head>
+    <script src="/shared/loader.js"></script>
+    <link rel="stylesheet" href="/shared/shared.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Book a Demo — grona.ai</title>
+    <meta
+      name="description"
+      content="See how Grona's AI-powered CRO platform can optimize your website. Book a personalized demo today."
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Book a Demo — grona.ai" />
+    <meta
+      property="og:description"
+      content="See how Grona's AI-powered CRO platform can optimize your website. Book a personalized demo today."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://grona.ai/demo-call/" />
+    <meta property="og:image" content="https://grona.ai/assets/Grona_OpenGraph.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://grona.ai/assets/Grona_OpenGraph.png" />
+    <meta
+      name="keywords"
+      content="grona demo, AI CRO demo, conversion optimization demo, book demo, CRO platform demo"
+    />
+    <meta name="author" content="Grona.ai" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://grona.ai/demo-call/" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/Grona-favicon-v1.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/Grona-favicon-v1.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/Grona-favicon-v1.png" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NXBH5J6M");
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+    <style>
+      /* ========================================
+         DEMO CALL PAGE STYLES
+         ======================================== */
+
+      .demo-hero {
+        position: relative;
+        background: var(--hero-bg);
+        padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-8);
+        overflow: hidden;
+      }
+
+      .demo-hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .demo-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.05;
+        color: var(--hero-text);
+        margin-bottom: var(--space-4);
+      }
+
+      .demo-hero p {
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        color: var(--hero-muted);
+        margin-bottom: var(--space-6);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .demo-section {
+        padding: var(--space-8) 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .demo-container {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+      }
+
+      .demo-calendar-wrapper {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-6);
+        box-shadow: var(--shadow-md);
+        min-height: 600px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+
+      .testimonials-section {
+        background: var(--bg-soft);
+        padding: var(--space-8) 0;
+        margin-top: var(--space-8);
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-6);
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+      }
+
+      .testimonial-card {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-5);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .testimonial-rating {
+        color: var(--green-800);
+        font-size: 1.25rem;
+        margin-bottom: var(--space-3);
+      }
+
+      .testimonial-text {
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: var(--space-4);
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+      }
+
+      .testimonial-author-info {
+        flex: 1;
+      }
+
+      .testimonial-author-name {
+        font-weight: 700;
+        color: var(--ink);
+        font-size: 0.9375rem;
+      }
+
+      .testimonial-author-role {
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+
+      .testimonial-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--green-800);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .cta-section {
+        background: var(--bg-soft);
+        padding: var(--space-8) 0;
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .cta-content h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: var(--space-4);
+        color: var(--ink);
+      }
+
+      .cta-content p {
+        font-size: 1.125rem;
+        color: var(--muted);
+        margin-bottom: var(--space-6);
+      }
+
+      /* Cal.com iframe styling */
+      #my-cal-inline-30min {
+        width: 100%;
+        height: 100%;
+        min-height: 600px;
+        border: none;
+      }
+
+      /* Dark mode adjustments */
+      [data-theme="dark"] .demo-calendar-wrapper {
+        background: var(--bg-soft);
+        border-color: var(--line);
+      }
+
+      [data-theme="dark"] .testimonial-card {
+        background: var(--bg);
+      }
+
+        /* Responsive */
+      @media (max-width: 768px) {
+        .demo-hero {
+          padding: calc(var(--navbar-height) + var(--space-6)) 0 var(--space-6);
+        }
+
+        .demo-container {
+          max-width: 100%;
+        }
+
+        .demo-calendar-wrapper {
+          padding: var(--space-4);
+        }
+
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header id="top" class="navbar" role="banner" aria-label="Primary">
+      <div class="container nav">
+        <a class="brand" href="/" aria-label="grona home">
+          <img
+            src="/assets/logo.png"
+            alt="Grona.ai - Agentic CRO platform logo"
+            width="300"
+            height="75"
+          />
+        </a>
+        <div class="spacer"></div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/how-it-works/">How it works</a>
+          <a href="/features/">Features</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="https://grona.ai/beta-access/" class="nav-cta-join-beta btn-beta">Join Beta</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="demo-hero">
+        <div class="background-beams"></div>
+        <div class="container">
+          <div class="demo-hero-content">
+            <h1>Don't Miss Out</h1>
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem); color: var(--green-800); margin-bottom: var(--space-4);">
+              Reserve Your Spot Now!
+            </h2>
+            <p>
+              Start optimizing instantly with AI-powered insights, testing and
+              personalization.
+            </p>
+            <p style="font-size: 1rem; margin-top: var(--space-2);">
+              No tech setup, no designers, no CRO experts needed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo Booking Section -->
+      <section class="demo-section">
+        <div class="demo-container">
+          <div class="demo-calendar-wrapper">
+            <!-- Cal inline embed code begins -->
+            <div
+              style="width: 100%; height: 100%; overflow: scroll"
+              id="my-cal-inline-30min"
+            ></div>
+
+            <script type="text/javascript">
+              (function (C, A, L) {
+                let p = function (a, ar) {
+                  a.q.push(ar);
+                };
+                let d = C.document;
+                C.Cal =
+                  C.Cal ||
+                  function () {
+                    let cal = C.Cal;
+                    let ar = arguments;
+                    if (!cal.loaded) {
+                      cal.ns = {};
+                      cal.q = cal.q || [];
+                      d.head
+                        .appendChild(d.createElement("script"))
+                        .src = A;
+                      cal.loaded = true;
+                    }
+                    if (ar[0] === L) {
+                      const api = function () {
+                        p(api, arguments);
+                      };
+                      const namespace = ar[1];
+                      api.q = api.q || [];
+                      if (typeof namespace === "string") {
+                        cal.ns[namespace] = cal.ns[namespace] || api;
+                        p(cal.ns[namespace], ar);
+                        p(cal, ["initNamespace", namespace]);
+                      } else p(cal, ar);
+                      return;
+                    }
+                    p(cal, ar);
+                  });
+              })(window, "https://app.cal.com/embed/embed.js", "init");
+
+              Cal("init", "30min", { origin: "https://app.cal.com" });
+
+              Cal.ns["30min"]("inline", {
+                elementOrSelector: "#my-cal-inline-30min",
+                config: { layout: "month_view" },
+                calLink: "relevic/30min",
+              });
+
+              // Updated brand colors to match Grona's green (#0b6b53 for light, #bbe55b for dark)
+              Cal.ns["30min"]("ui", {
+                cssVarsPerTheme: {
+                  light: { "cal-brand": "#0b6b53" },
+                  dark: { "cal-brand": "#bbe55b" },
+                },
+                hideEventTypeDetails: false,
+                layout: "month_view",
+              });
+            </script>
+            <!-- Cal inline embed code ends -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials-section">
+        <div class="container">
+          <h2 style="text-align: center; margin-bottom: var(--space-6); color: var(--ink);">
+            Success Stories from Grona Users
+          </h2>
+          <div class="testimonials-grid">
+              <div class="testimonial-card">
+                <div class="testimonial-rating">5.0</div>
+                <p class="testimonial-text">
+                  Partnering with Grona to build and implement split tests has
+                  been a seamless and rewarding experience. The team was super
+                  responsive, always went the extra mile, and were just
+                  genuinely kind throughout. We saw real, actionable results
+                  from the split tests they helped us run.
+                </p>
+                <div class="testimonial-author">
+                  <div class="testimonial-icon">P</div>
+                  <div class="testimonial-author-info">
+                    <div class="testimonial-author-name">Peter Lavelle</div>
+                    <div class="testimonial-author-role">
+                      Co Director of SEO, King Edward First
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="testimonial-rating">5.0</div>
+                <p class="testimonial-text">
+                  Using Grona, we have noticed a significant boost in our sales
+                  conversion (up by 34%). The tool makes it easy to test
+                  different user experience ideas without needing any technical
+                  skills. It has been a game changer, saving us valuable time
+                  and effort.
+                </p>
+                <div class="testimonial-author">
+                  <div class="testimonial-icon">A</div>
+                  <div class="testimonial-author-info">
+                    <div class="testimonial-author-name">Amardeep Singh</div>
+                    <div class="testimonial-author-role">
+                      Founder / Product Lead
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="testimonial-rating">5.0</div>
+                <p class="testimonial-text">
+                  We were initially skeptical about AI-powered optimization, but
+                  Grona proved its value. Higher engagement and conversions
+                  convinced us to double down on our optimization efforts. This
+                  has been a valuable addition to our strategy.
+                </p>
+                <div class="testimonial-author">
+                  <div class="testimonial-icon">A</div>
+                  <div class="testimonial-author-info">
+                    <div class="testimonial-author-name">Anna Smith</div>
+                    <div class="testimonial-author-role">Marketing Lead</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Unlock Higher Conversions Today</h2>
+            <p>Build amazing experiences that convert more visitors</p>
+            <a href="#my-cal-inline-30min" class="btn btn-primary">
+              Get My Demo
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+    <div data-shared-footer data-footer></div>
+
+    <!-- Shared JavaScript -->
+    <script src="/shared/shared.js"></script>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

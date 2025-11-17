@@ -1,0 +1,13 @@
+{
+  "name": "grona-site",
+  "version": "1.0.0",
+  "description": "Local development server for grona.ai",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "express": "^4.18.2"
+  }
+}
+

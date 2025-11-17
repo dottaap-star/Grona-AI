@@ -1,18 +1,107 @@
-# Rewrite root to index.html (status 200 keeps URL clean - shows as grona.ai)
+# Root
 [[redirects]]
   from = "/"
-  to = "/index.html"
+  to = "/home.html"
   status = 200
 
-# Redirect /index.html to root to keep URLs clean
 [[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
 
-# Handle 404s - fallback to index.html for SPA routing (optional)
-# Uncomment if you want client-side routing
+# Top-level pages
+[[redirects]]
+  from = "/how-it-works"
+  to = "/how-it-works/how-it-works.html"
+  status = 200
+[[redirects]]
+  from = "/how-it-works/"
+  to = "/how-it-works/how-it-works.html"
+  status = 200
+
+[[redirects]]
+  from = "/features"
+  to = "/features/features.html"
+  status = 200
+[[redirects]]
+  from = "/features/"
+  to = "/features/features.html"
+  status = 200
+
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing/pricing.html"
+  status = 200
+[[redirects]]
+  from = "/pricing/"
+  to = "/pricing/pricing.html"
+  status = 200
+
+[[redirects]]
+  from = "/beta-access"
+  to = "/beta-access/beta-access.html"
+  status = 200
+[[redirects]]
+  from = "/beta-access/"
+  to = "/beta-access/beta-access.html"
+  status = 200
+
+[[redirects]]
+  from = "/demo-call"
+  to = "/demo-call/demo-call.html"
+  status = 200
+[[redirects]]
+  from = "/demo-call/"
+  to = "/demo-call/demo-call.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/blog.html"
+  status = 200
+[[redirects]]
+  from = "/blog/"
+  to = "/blog/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog-agentic-cro"
+  to = "/blog-agentic-cro/agentic-cro.html"
+  status = 200
+[[redirects]]
+  from = "/blog-agentic-cro/"
+  to = "/blog-agentic-cro/agentic-cro.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog-google-ads-for-cro"
+  to = "/blog-google-ads-for-cro/google-ads-cro.html"
+  status = 200
+[[redirects]]
+  from = "/blog-google-ads-for-cro/"
+  to = "/blog-google-ads-for-cro/google-ads-cro.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy/privacy-policy.html"
+  status = 200
+[[redirects]]
+  from = "/privacy-policy/"
+  to = "/privacy-policy/privacy-policy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms-conditions"
+  to = "/terms-conditions/terms-conditions.html"
+  status = 200
+[[redirects]]
+  from = "/terms-conditions/"
+  to = "/terms-conditions/terms-conditions.html"
+  status = 200
+
+# Handle 404s - fallback to home.html for SPA routing (optional)
 # [[redirects]]
 #   from = "/*"
-#   to = "/index.html"
+#   to = "/home.html"
 #   status = 404

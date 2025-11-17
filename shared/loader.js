@@ -43,20 +43,6 @@
     const autoLoad = document.documentElement.hasAttribute('data-shared-auto-load');
     
     if (autoLoad) {
-      // Load head content (insert into head)
-      const temp = document.createElement('div');
-      fetch(`${SHARED_PATH}${COMPONENTS.head}`)
-        .then(response => response.ok ? response.text() : null)
-        .then(html => {
-          if (html) {
-            temp.innerHTML = html;
-            Array.from(temp.children).forEach(node => {
-              document.head.appendChild(node);
-            });
-          }
-        })
-        .catch(err => console.warn('Failed to load head content:', err));
-      
       // Load header (look for data-shared-header attribute)
       const headerTarget = document.querySelector('[data-shared-header]') || document.body;
       if (headerTarget) {
