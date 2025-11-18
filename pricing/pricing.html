@@ -264,12 +264,15 @@
       .savings-badge {
         display: inline-block;
         background: var(--pricing-accent);
-        color: #fff;
+        color: var(--ink);
         padding: 2px 8px;
         border-radius: 999px;
         font-size: 12px;
         font-weight: 700;
         margin-left: var(--space-2);
+      }
+      [data-theme="dark"] .savings-badge {
+        color: #0f172a;
       }
 
       /* PRICING TIERS */
