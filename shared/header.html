@@ -2,10 +2,18 @@
 <!-- This file contains the header/navbar that should be included in all pages -->
 <!-- Include this right after the opening <body> tag -->
 
-<header id="top" class="navbar" role="banner" aria-label="Primary">
+<header id="top" class="navbar" role="banner" aria-label="Primary" data-shared-header-loaded>
   <div class="container nav">
     <a class="brand" href="/" aria-label="grona home">
-      <img src="/assets/logo.png" alt="grona" width="300" height="75" />
+      <img
+        src="/assets/logo.png"
+        alt="Grona.ai - Agentic CRO platform logo"
+        width="300"
+        height="75"
+        data-theme-logo
+        data-logo-light="/assets/logo.png"
+        data-logo-dark="/assets/Grona_light.png"
+      />
     </a>
     <div class="spacer"></div>
     <nav class="nav-links" aria-label="Main navigation">
@@ -40,7 +48,7 @@
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
       </svg>
     </button>
-    <button class="menu-btn" aria-label="Open menu">
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
       <svg
         width="22"
         height="22"

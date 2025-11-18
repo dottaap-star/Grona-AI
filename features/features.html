@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en" data-shared-auto-load>
+  <head>
+    <script src="/shared/loader.js"></script>
+    <link rel="stylesheet" href="/shared/shared.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Features — grona.ai</title>
+    <meta
+      name="description"
+      content="Explore how Grona's AI keeps testing, personalizing, and improving every experience without engineers."
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Features — grona.ai" />
+    <meta
+      property="og:description"
+      content="AI-powered optimization that never stops learning — see the features that let Grona ship experiments for you."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://grona.ai/features/" />
+    <meta property="og:image" content="https://grona.ai/assets/Grona_OpenGraph.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://grona.ai/assets/Grona_OpenGraph.png" />
+    <meta
+      name="keywords"
+      content="AI CRO features, conversational CRO, AI conversion optimization, website personalization, AI assistant, autonomous testing"
+    />
+    <meta name="author" content="Grona.ai" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://grona.ai/features/" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/Grona-favicon-v1.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/Grona-favicon-v1.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/Grona-favicon-v1.png" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NXBH5J6M');</script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+      /* Grona Brand Colors */
+      :root {
+        --grona-green: rgb(74, 155, 127);
+        --grona-dark-green: rgb(30, 95, 78);
+        --grona-light-green: rgb(200, 230, 216);
+        --grona-yellow: rgb(255, 184, 77);
+        --grona-purple: rgb(217, 70, 166);
+        --grona-teal: rgb(8, 145, 178);
+        --grona-pink: rgb(236, 72, 153);
+      }
+
+      .features-hero {
+        position: relative;
+        background: var(--hero-bg);
+        padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-7);
+        overflow: hidden;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--space-6);
+        align-items: center;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(11, 107, 83, 0.3);
+        color: var(--green-800);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: var(--space-3);
+      }
+
+      .hero-headline {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: var(--space-4);
+        color: var(--hero-text);
+      }
+
+      .hero-subhead {
+        font-size: clamp(1.1rem, 2vw, 1.45rem);
+        color: var(--hero-muted);
+        margin-bottom: var(--space-5);
+        max-width: 560px;
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin-bottom: var(--space-4);
+      }
+
+      .hero-cta .btn-ghost {
+        border-color: var(--line);
+        color: var(--ink);
+      }
+
+      [data-theme="dark"] .hero-cta .btn-ghost {
+        color: var(--hero-text);
+      }
+
+      .hero-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .hero-list li {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .hero-list li span {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        background: var(--bg-soft);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--green-800);
+        font-weight: 700;
+      }
+
+      .section-shell {
+        padding: var(--space-8) 0;
+      }
+
+      .section-alt {
+        background: var(--bg-soft);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto var(--space-6);
+      }
+
+      .section-header h2 {
+        margin-bottom: var(--space-3);
+      }
+
+      .section-header p {
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
+
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: var(--space-4);
+      }
+
+      .pillar-card,
+      .system-card,
+      .variant-card,
+      .step-card {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-5);
+        box-shadow: var(--shadow-sm);
+        height: 100%;
+      }
+
+      [data-theme="dark"] .pillar-card,
+      [data-theme="dark"] .system-card,
+      [data-theme="dark"] .variant-card,
+      [data-theme="dark"] .step-card {
+        background: var(--bg-soft);
+        border-color: var(--line);
+      }
+
+      .pillar-card:hover,
+      .system-card:hover,
+      .variant-card:hover,
+      .step-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: var(--space-4) 0 0;
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .feature-list li {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: var(--ink);
+        font-weight: 500;
+      }
+
+      .feature-list li::before {
+        content: "•";
+        color: var(--green-800);
+        font-size: 1.25rem;
+      }
+
+      .example-commands {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        margin-top: var(--space-4);
+      }
+
+      .command-chip {
+        padding: var(--space-2) var(--space-3);
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--bg);
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      [data-theme="dark"] .command-chip {
+        background: var(--bg-soft);
+        color: var(--hero-muted);
+      }
+
+      .systems-grid,
+      .variant-grid,
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: var(--space-4);
+      }
+
+      .variant-card strong {
+        display: block;
+        font-size: 1.25rem;
+        margin-bottom: var(--space-1);
+        color: var(--ink);
+      }
+
+      .variant-card span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .step-number {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--bg-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: var(--green-800);
+        margin-bottom: var(--space-3);
+      }
+
+      .cta-final {
+        text-align: center;
+        padding: 96px 24px;
+        background: var(--bg-soft);
+        position: relative;
+        overflow: hidden;
+      }
+
+      [data-theme="dark"] .cta-final {
+        background: #0f172a;
+      }
+
+      .cta-final::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(11, 107, 83, 0.18) 0%, transparent 65%);
+        pointer-events: none;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 1;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .cta-content h2 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: var(--space-3);
+      }
+
+      .cta-content p {
+        color: var(--hero-muted);
+        font-size: 1.1rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .cta-buttons .btn-primary {
+        padding: 14px 32px;
+        background: var(--green-800);
+        border-radius: 12px;
+        font-weight: 600;
+        color: #111;
+        border: none;
+      }
+
+      .cta-buttons .btn-primary:hover {
+        background: #14b072;
+      }
+
+      .cta-buttons .btn-secondary {
+        padding: 14px 32px;
+        border-radius: 12px;
+        border: 1.5px solid rgba(15, 23, 42, 0.5);
+        font-weight: 600;
+        color: var(--ink);
+        background: transparent;
+      }
+
+      [data-theme="dark"] .cta-buttons .btn-secondary {
+        border-color: rgba(148, 163, 184, 0.8);
+        color: #e2e8f0;
+      }
+
+      .cta-buttons .btn-secondary:hover {
+        border-color: var(--ink);
+      }
+
+      [data-theme="dark"] .cta-buttons .btn-secondary:hover {
+        border-color: #f1f5f9;
+      }
+
+      .cta-note {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* Tabs Styles */
+      .tabs-container {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      .tabs-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        background: var(--bg-soft);
+        border-radius: 12px;
+        padding: 4px;
+        margin-bottom: var(--space-6);
+        border: 1px solid var(--line);
+      }
+
+      .tabs-trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--muted);
+        background: transparent;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        gap: 8px;
+        position: relative;
+      }
+
+      .tabs-trigger:hover {
+        color: var(--ink);
+      }
+
+      .tabs-trigger.active {
+        background: var(--bg);
+        color: var(--ink);
+        box-shadow: var(--shadow-sm);
+      }
+
+      [data-theme="dark"] .tabs-trigger.active {
+        background: var(--bg-soft);
+      }
+
+      /* Brand-colored active states for each tab */
+      .tabs-trigger[data-tab="conversational"].active {
+        color: var(--grona-green);
+      }
+
+      .tabs-trigger[data-tab="autonomous"].active {
+        color: var(--grona-teal);
+      }
+
+      .tabs-trigger[data-tab="personalization"].active {
+        color: var(--grona-purple);
+      }
+
+      .tabs-trigger svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        transition: color 0.2s ease;
+      }
+
+      .tabs-trigger[data-tab="conversational"].active svg {
+        color: var(--grona-green);
+      }
+
+      .tabs-trigger[data-tab="autonomous"].active svg {
+        color: var(--grona-teal);
+      }
+
+      .tabs-trigger[data-tab="personalization"].active svg {
+        color: var(--grona-purple);
+      }
+
+      .tabs-content {
+        display: none;
+      }
+
+      .tabs-content.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .tab-card {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-6);
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
+
+      [data-theme="dark"] .tab-card {
+        background: var(--bg-soft);
+      }
+
+      /* Brand-colored border accents for each tab content */
+      #tab-conversational .tab-card {
+        border-top: 3px solid var(--grona-green);
+      }
+
+      #tab-autonomous .tab-card {
+        border-top: 3px solid var(--grona-teal);
+      }
+
+      #tab-personalization .tab-card {
+        border-top: 3px solid var(--grona-purple);
+      }
+
+      .tab-card-header {
+        margin-bottom: var(--space-5);
+      }
+
+      .tab-card-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-bottom: var(--space-2);
+        color: var(--ink);
+      }
+
+      /* Brand-colored titles */
+      #tab-conversational .tab-card-title {
+        background: linear-gradient(to right, var(--grona-green), var(--grona-dark-green));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      #tab-autonomous .tab-card-title {
+        background: linear-gradient(to right, var(--grona-teal), var(--grona-green));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      #tab-personalization .tab-card-title {
+        background: linear-gradient(to right, var(--grona-purple), var(--grona-pink));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tab-card-description {
+        font-size: 1.125rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .tab-card-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--space-6);
+      }
+
+      .tab-features h4,
+      .tab-metrics h4,
+      .tab-targeting h4,
+      .tab-examples h4 {
+        font-weight: 600;
+        margin-bottom: var(--space-3);
+        color: var(--ink);
+      }
+
+      .tab-features ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .tab-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-2);
+        color: var(--ink);
+      }
+
+      .tab-features li svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* Brand-colored checkmarks for each tab */
+      #tab-conversational .tab-features li svg {
+        color: var(--grona-green);
+      }
+
+      #tab-autonomous .tab-features li svg {
+        color: var(--grona-teal);
+      }
+
+      #tab-personalization .tab-features li svg {
+        color: var(--grona-purple);
+      }
+
+      .tab-metrics {
+        display: grid;
+        gap: var(--space-4);
+      }
+
+      .metric-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: var(--space-2);
+        font-size: 0.875rem;
+      }
+
+      .metric-item span:first-child {
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      .metric-item span:last-child {
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .progress-bar {
+        height: 8px;
+        background: var(--bg-soft);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        border-radius: 999px;
+        transition: width 0.3s ease;
+      }
+
+      /* Brand-colored progress bars for autonomous tab */
+      #tab-autonomous .progress-fill {
+        background: linear-gradient(to right, var(--grona-teal), var(--grona-green));
+      }
+
+      .targeting-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-3);
+      }
+
+      .targeting-item {
+        padding: var(--space-4);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--bg);
+        transition: all 0.2s ease;
+      }
+
+      [data-theme="dark"] .targeting-item {
+        background: var(--bg-soft);
+      }
+
+      .targeting-item:hover {
+        border-color: var(--grona-purple);
+        box-shadow: 0 2px 8px rgba(217, 70, 166, 0.1);
+      }
+
+      [data-theme="dark"] .targeting-item:hover {
+        box-shadow: 0 2px 8px rgba(217, 70, 166, 0.2);
+      }
+
+      .targeting-item h5 {
+        font-weight: 600;
+        margin-bottom: var(--space-1);
+        color: var(--ink);
+      }
+
+      .targeting-item p {
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+
+      .example-commands-tab {
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .example-commands-tab code {
+        display: block;
+        padding: var(--space-3);
+        background: var(--bg-soft);
+        border-radius: var(--radius);
+        font-size: 0.875rem;
+        color: var(--ink);
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        border-left: 3px solid var(--grona-green);
+        transition: all 0.2s ease;
+      }
+
+      [data-theme="dark"] .example-commands-tab code {
+        background: var(--bg);
+        border-left-color: var(--grona-green);
+      }
+
+      .example-commands-tab code:hover {
+        background: rgba(200, 230, 216, 0.2);
+        border-left-color: var(--grona-dark-green);
+      }
+
+      [data-theme="dark"] .example-commands-tab code:hover {
+        background: rgba(74, 155, 127, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .hero-cta {
+          flex-direction: column;
+        }
+
+        .section-shell {
+          padding: var(--space-6) 0;
+        }
+
+        .tabs-list {
+          grid-template-columns: 1fr;
+        }
+
+        .tab-card-content {
+          grid-template-columns: 1fr;
+        }
+
+        .targeting-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+<main>
+      <section class="features-hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="hero-eyebrow">AI-powered optimization</p>
+            <h1 class="hero-headline">AI-Powered Optimization That Never Stops Learning</h1>
+            <p class="hero-subhead">
+              From conversational commands to autonomous testing—Grona transforms how you optimize your website. No developers needed.
+            </p>
+            <div class="hero-cta">
+              <a href="/#waitlist-form" class="btn btn-primary btn-sparkles" data-sparkles="4">Start Free Trial</a>
+              <a href="/how-it-works/" class="btn btn-ghost">See how it works</a>
+            </div>
+            <ul class="hero-list">
+              <li><span>01</span>Natural language control</li>
+              <li><span>02</span>Automatic variant generation</li>
+              <li><span>03</span>Safe, autonomous rollouts</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="container">
+          <div class="section-header">
+            <p class="hero-eyebrow" style="margin-bottom: var(--space-2);">Pillars</p>
+            <h2>Three Pillars of Grona</h2>
+            <p>Everything you need to optimize your website, powered by AI.</p>
+          </div>
+
+          <div class="tabs-container">
+            <div class="tabs-list" role="tablist">
+              <button
+                class="tabs-trigger active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tab-conversational"
+                id="trigger-conversational"
+                data-tab="conversational"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Conversational
+              </button>
+              <button
+                class="tabs-trigger"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tab-autonomous"
+                id="trigger-autonomous"
+                data-tab="autonomous"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                </svg>
+                Autonomous
+              </button>
+              <button
+                class="tabs-trigger"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tab-personalization"
+                id="trigger-personalization"
+                data-tab="personalization"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Personalization
+              </button>
+            </div>
+
+            <div id="tab-conversational" class="tabs-content active" role="tabpanel" aria-labelledby="trigger-conversational">
+              <div class="tab-card">
+                <div class="tab-card-header">
+                  <h3 class="tab-card-title">Just Tell Grona What You Want</h3>
+                  <p class="tab-card-description">
+                    Skip the complexity of traditional CRO tools. Grona understands natural language commands and turns your ideas into live experiments in minutes. Whether you want to test mobile copy, reduce checkout friction, or personalize for specific audiences—just ask.
+                  </p>
+                </div>
+                <div class="tab-card-content">
+                  <div class="tab-features">
+                    <h4>Key Features</h4>
+                    <ul>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>Natural language test creation</span>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>Automatic variant generation</span>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>AI-powered hypothesis validation</span>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>One-click experiment launch</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-examples">
+                    <h4>Example Commands</h4>
+                    <div class="example-commands-tab">
+                      <code>"Test shorter headlines on mobile devices"</code>
+                      <code>"Show discount banner to first-time visitors from Instagram"</code>
+                      <code>"Reduce form fields on pricing page and measure impact"</code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="tab-autonomous" class="tabs-content" role="tabpanel" aria-labelledby="trigger-autonomous">
+              <div class="tab-card">
+                <div class="tab-card-header">
+                  <h3 class="tab-card-title">AI That Runs Your Tests End-to-End</h3>
+                  <p class="tab-card-description">
+                    Grona doesn't just help you set up tests—it manages the entire lifecycle. From statistical analysis to traffic allocation, winner detection to automatic rollout, the AI handles what used to require data science expertise.
+                  </p>
+                </div>
+                <div class="tab-card-content">
+                  <div class="tab-features">
+                    <h4>Autonomous Features</h4>
+                    <ul>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>Automated statistical significance detection</span>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>Dynamic traffic allocation</span>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>Multi-armed bandit optimization</span>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>Automatic winner rollout with safety controls</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-metrics">
+                    <h4>Performance Metrics</h4>
+                    <div class="metric-item">
+                      <span>Test velocity vs manual</span>
+                      <span>4x faster</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                    <div class="metric-item">
+                      <span>Statistical confidence</span>
+                      <span>95%+</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 95%"></div>
+                    </div>
+                    <div class="metric-item">
+                      <span>Failed deployments</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="tab-personalization" class="tabs-content" role="tabpanel" aria-labelledby="trigger-personalization">
+              <div class="tab-card">
+                <div class="tab-card-header">
+                  <h3 class="tab-card-title">The Right Message for Every Visitor</h3>
+                  <p class="tab-card-description">
+                    Grona automatically discovers personalization opportunities by analyzing visitor behavior, traffic sources, geography, and device types. No manual segment creation required—the AI suggests who to target and what to change.
+                  </p>
+                </div>
+                <div class="tab-card-content" style="grid-template-columns: 1fr;">
+                  <div class="tab-targeting">
+                    <h4>Targeting Capabilities</h4>
+                    <div class="targeting-grid">
+                      <div class="targeting-item">
+                        <h5>UTM Matching</h5>
+                        <p>Source and campaign targeting</p>
+                      </div>
+                      <div class="targeting-item">
+                        <h5>Geographic</h5>
+                        <p>Location and language detection</p>
+                      </div>
+                      <div class="targeting-item">
+                        <h5>Device Type</h5>
+                        <p>Browser and device optimization</p>
+                      </div>
+                      <div class="targeting-item">
+                        <h5>Behavioral</h5>
+                        <p>Intent signal detection</p>
+                      </div>
+                      <div class="targeting-item">
+                        <h5>Visitor Type</h5>
+                        <p>New vs. returning logic</p>
+                      </div>
+                      <div class="targeting-item">
+                        <h5>Time-based</h5>
+                        <p>Temporal patterns</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell section-alt">
+        <div class="container">
+          <div class="section-header">
+            <h2>Everything You Need to Optimize</h2>
+            <p>Powerful features that work together seamlessly.</p>
+          </div>
+          <div class="systems-grid">
+            <article class="system-card">
+              <h3>Cross-device layout validation</h3>
+              <p>Ensure every change looks perfect on desktop, tablet, and mobile with automated snapshots.</p>
+            </article>
+            <article class="system-card">
+              <h3>Brand tone analysis</h3>
+              <p>Grona rewrites copy that still sounds like you—no off-brand surprises.</p>
+            </article>
+            <article class="system-card">
+              <h3>Mobile preview automation</h3>
+              <p>Preview and approve the mobile experience before anything ships.</p>
+            </article>
+            <article class="system-card">
+              <h3>Test conflict detection</h3>
+              <p>Automatic QA scans highlight conflicting tests and technical risks before launch.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="container">
+          <div class="section-header">
+            <h2>Smart Variants for the Right People</h2>
+            <p>Grona finds personalization opportunities for you—no manual segmentation required.</p>
+          </div>
+          <div class="variant-grid">
+            <article class="variant-card">
+              <strong>🗽 Same-day delivery in NYC</strong>
+              <span>+12% conversion in metro areas</span>
+            </article>
+            <article class="variant-card">
+              <strong>✉️ Exclusive early access</strong>
+              <span>+15% click-through from campaigns</span>
+            </article>
+            <article class="variant-card">
+              <strong>⏰ Limited time offer</strong>
+              <span>+18% conversion on second visit</span>
+            </article>
+            <article class="variant-card">
+              <strong>📱 One-tap checkout</strong>
+              <span>-25% cart abandonment on mobile</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell section-alt">
+        <div class="container">
+          <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Get started in minutes, see results in days.</p>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card">
+              <div class="step-number">1</div>
+              <h3>Connect & state your goals</h3>
+              <p>Sync your site, analytics, and guardrails once. Share the outcomes that matter most.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-number">2</div>
+              <h3>Describe the change</h3>
+              <p>Use natural language prompts to request experiments, personalizations, or QA reviews.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-number">3</div>
+              <h3>Approve & learn</h3>
+              <p>Review AI-generated variants, launch safely, and watch Grona report the lift automatically.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-final">
+        <div class="cta-content">
+          <h2>Let AI Optimize Your Website</h2>
+          <div class="cta-buttons">
+            <a href="https://grona.ai/beta-access/" class="btn-primary">Join Waitlist</a>
+          </div>
+        </div>
+      </section>
+    </main>
+<!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="/shared/shared.js"></script>
+    <script>
+      // Tab functionality
+      (function() {
+        const tabTriggers = document.querySelectorAll('.tabs-trigger');
+        const tabContents = document.querySelectorAll('.tabs-content');
+
+        tabTriggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const targetTab = trigger.getAttribute('data-tab');
+
+            // Remove active class from all triggers and contents
+            tabTriggers.forEach(t => {
+              t.classList.remove('active');
+              t.setAttribute('aria-selected', 'false');
+            });
+            tabContents.forEach(c => {
+              c.classList.remove('active');
+            });
+
+            // Add active class to clicked trigger and corresponding content
+            trigger.classList.add('active');
+            trigger.setAttribute('aria-selected', 'true');
+            const targetContent = document.getElementById(`tab-${targetTab}`);
+            if (targetContent) {
+              targetContent.classList.add('active');
+            }
+          });
+        });
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Features — grona.ai",
+        "description": "Explore how Grona's AI keeps testing, personalizing, and improving every experience without engineers.",
+        "url": "https://grona.ai/features/"
+      }
+    </script>
+  </body>
+</html>

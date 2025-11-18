@@ -4,7 +4,7 @@
     <script src="/shared/loader.js"></script>
     <link rel="stylesheet" href="/shared/shared.css" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>grona.ai — Agentic CRO that actually ships</title>
     <meta
       name="description"
@@ -760,6 +760,8 @@
         color: #fff;
         stroke: currentColor;
         stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
         fill: none;
       }
       [data-theme="dark"] .smart-send {
@@ -1662,74 +1664,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXBH5J6M"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <header id="top" class="navbar" role="banner" aria-label="Primary">
-      <div class="container nav">
-        <a class="brand" href="/" aria-label="grona home">
-          <img
-            src="/assets/logo.png"
-            alt="Grona.ai - Agentic CRO platform logo"
-            width="300"
-            height="75"
-            data-theme-logo
-            data-logo-light="/assets/logo.png"
-            data-logo-dark="/assets/Grona_light.png"
-          />
-        </a>
-        <div class="spacer"></div>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="/how-it-works/">How it works</a>
-          <a href="/features/">Features</a>
-          <a href="/pricing/">Pricing</a>
-          <a href="/blog/">Blog</a>
-          <a href="https://grona.ai/beta-access/" class="nav-cta-join-beta btn-beta">Join Beta</a>
-        </nav>
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          aria-label="Toggle dark mode"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-        <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <div class="announcement-bar" id="announcement-wrapper">
+<div class="announcement-bar" id="announcement-wrapper">
       <div
         class="announcement-banner"
         id="announcement-banner"
@@ -1807,12 +1742,14 @@
                   <button
                     type="submit"
                     class="smart-send btn-sparkles"
-                    aria-label="Submit email"
+                    aria-label="Submit website"
                     id="smart-send-btn"
                     data-sparkles="6"
                   >
-                    <svg class="smart-send-icon" viewBox="0 0 24 24">
-                      <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                    <svg class="smart-send-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="3" y="5" width="18" height="14" rx="3"></rect>
+                      <path d="M8 12h6"></path>
+                      <path d="M13 9l4 3-4 3"></path>
                     </svg>
                   </button>
                 </div>
@@ -2465,12 +2402,7 @@
         </div>
       </div>
     </section>
-
-    
-    <div data-shared-footer data-footer></div>
-
-
-    <!-- Invisible anchor until signup page exists -->
+<!-- Invisible anchor until signup page exists -->
     <div id="signup" aria-hidden="true"></div>
 
     <script>

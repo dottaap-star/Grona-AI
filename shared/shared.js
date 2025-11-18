@@ -28,6 +28,9 @@
   function initThemeToggle() {
     const themeToggle = document.getElementById("theme-toggle");
     if (!themeToggle) return;
+    
+    // Check if already initialized to avoid duplicate listeners
+    if (themeToggle.dataset.initialized === 'true') return;
 
     // Check for saved theme preference or default to light mode
     const currentTheme = (safeStorage && safeStorage.getItem("theme")) || "light";
@@ -90,7 +93,13 @@
       themeToggle.classList.add("toggled");
       setTimeout(() => themeToggle.classList.remove("toggled"), 220);
     });
+    
+    // Mark as initialized
+    themeToggle.dataset.initialized = 'true';
   }
+  
+  // Make initThemeToggle available globally for re-initialization
+  window.initThemeToggle = initThemeToggle;
 
   // Footer Year
   function initFooterYear(root) {
@@ -102,9 +111,10 @@
       el.textContent = year;
     });
   }
+  window.__gronaInitFooterYear = initFooterYear;
 
   const INLINE_FOOTER_HTML = `
-<footer class="final-footer scroll-reveal" role="contentinfo">
+<footer class="final-footer" role="contentinfo">
   <div class="footer-shell container">
     <div class="footer-columns">
       <div class="footer-brand">
@@ -531,8 +541,7 @@
     // Background beams
     document.querySelectorAll('.background-beams').forEach(initBackgroundBeams);
     
-    // 3D cards
-    document.querySelectorAll('.pricing-card').forEach(init3DCard);
+    // 3D cards (excluding pricing cards)
     document.querySelectorAll('.use-case-card').forEach(init3DCard);
     document.querySelectorAll('[data-3d-card]').forEach(init3DCard);
     
@@ -551,14 +560,12 @@
     document.addEventListener('DOMContentLoaded', function() {
       initThemeToggle();
       initFooterYear();
-      initSharedFooter();
       initMobileMenu();
       initComponents();
     });
   } else {
     initThemeToggle();
     initFooterYear();
-    initSharedFooter();
     initMobileMenu();
     initComponents();
   }

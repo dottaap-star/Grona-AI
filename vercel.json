@@ -2,7 +2,87 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/index.html"
+      "destination": "/home.html"
+    },
+    {
+      "source": "/features",
+      "destination": "/features/features.html"
+    },
+    {
+      "source": "/features/",
+      "destination": "/features/features.html"
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/how-it-works/how-it-works.html"
+    },
+    {
+      "source": "/how-it-works/",
+      "destination": "/how-it-works/how-it-works.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing/pricing.html"
+    },
+    {
+      "source": "/pricing/",
+      "destination": "/pricing/pricing.html"
+    },
+    {
+      "source": "/beta-access",
+      "destination": "/beta-access/beta-access.html"
+    },
+    {
+      "source": "/beta-access/",
+      "destination": "/beta-access/beta-access.html"
+    },
+    {
+      "source": "/demo-call",
+      "destination": "/demo-call/demo-call.html"
+    },
+    {
+      "source": "/demo-call/",
+      "destination": "/demo-call/demo-call.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/blog.html"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog/blog.html"
+    },
+    {
+      "source": "/blog-agentic-cro",
+      "destination": "/blog-agentic-cro/agentic-cro.html"
+    },
+    {
+      "source": "/blog-agentic-cro/",
+      "destination": "/blog-agentic-cro/agentic-cro.html"
+    },
+    {
+      "source": "/blog-google-ads-for-cro",
+      "destination": "/blog-google-ads-for-cro/google-ads-cro.html"
+    },
+    {
+      "source": "/blog-google-ads-for-cro/",
+      "destination": "/blog-google-ads-for-cro/google-ads-cro.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy/privacy-policy.html"
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/privacy-policy/privacy-policy.html"
+    },
+    {
+      "source": "/terms-conditions",
+      "destination": "/terms-conditions/terms-conditions.html"
+    },
+    {
+      "source": "/terms-conditions/",
+      "destination": "/terms-conditions/terms-conditions.html"
     }
   ],
   "redirects": [
