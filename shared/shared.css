@@ -368,6 +368,13 @@ html[data-theme="dark"] .btn-beta:hover {
   text-decoration: none;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  margin-top: 10px;
+}
 .footer-link:hover,
 .footer-link:focus-visible {
   color: var(--green-400);
