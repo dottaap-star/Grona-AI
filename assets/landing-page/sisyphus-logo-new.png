@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 24.1667 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logomark">
+<rect id="Shape" y="16" width="7.99999" height="7.99999" fill="var(--fill-0, #039855)"/>
+<rect id="Shape_2" x="24" y="24" width="8" height="7.99999" transform="rotate(180 24 24)" fill="var(--fill-0, #027A48)"/>
+<path id="Shape_3" d="M7.99999 16L16 7.99999V16L7.99999 24V16Z" fill="var(--fill-0, #A6F4C5)"/>
+<path id="Shape_4" d="M16 24L7.99999 32L7.99999 24L16 16L16 24Z" fill="var(--fill-0, #6CE9A6)"/>
+<path id="Shape_5" d="M0 16L16 0V7.99999L7.99999 16H0Z" fill="var(--fill-0, #32D583)"/>
+<path id="Shape_6" d="M24 24L7.99998 40L7.99998 32L16 24L24 24Z" fill="var(--fill-0, #12B76A)"/>
+</g>
+</svg>
