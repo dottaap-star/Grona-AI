@@ -34,6 +34,10 @@ ROUTES = {
     '/privacy-policy/': 'privacy-policy/privacy-policy.html',
     '/terms-conditions': 'terms-conditions/terms-conditions.html',
     '/terms-conditions/': 'terms-conditions/terms-conditions.html',
+    '/landing-page': 'landing-page.html',
+    '/landing-page/': 'landing-page.html',
+    '/staging': 'landing-page.html',
+    '/staging/': 'landing-page.html',
 }
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):

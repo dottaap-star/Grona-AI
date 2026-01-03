@@ -100,6 +100,15 @@
   to = "/terms-conditions/terms-conditions.html"
   status = 200
 
+[[redirects]]
+  from = "/staging"
+  to = "/landing-page.html"
+  status = 200
+[[redirects]]
+  from = "/staging/"
+  to = "/landing-page.html"
+  status = 200
+
 # Handle 404s - fallback to home.html for SPA routing (optional)
 # [[redirects]]
 #   from = "/*"

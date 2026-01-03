@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Grona — Beautiful Analytics Landing Page</title>
+    <meta name="description" content="Beautiful analytics to grow smarter. Powerful, self-serve product and growth analytics." />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Hero Header Section -->
+    <div class="bg-white flex flex-col items-center overflow-hidden relative w-full">
+      <!-- Navigation -->
+      <header class="border-b border-gray-100 h-20 relative w-full z-10">
+        <div class="absolute flex flex-col h-20 items-center justify-center left-0 right-0 top-0">
+          <div class="flex items-center justify-between px-8 py-0 relative w-full max-w-[1280px]">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+                <div class="w-4 h-4 bg-white rounded-sm"></div>
+              </div>
+              <span class="ml-2 text-lg font-semibold text-gray-900">Untitled UI</span>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex gap-8 items-center">
+              <a href="#" class="font-semibold text-base text-gray-600 hover:text-gray-900">Product</a>
+              <a href="#" class="font-semibold text-base text-gray-600 hover:text-gray-900">Service</a>
+              <a href="#" class="font-semibold text-base text-gray-600 hover:text-gray-900">Resources</a>
+              <a href="#" class="font-semibold text-base text-gray-600 hover:text-gray-900">Pricing</a>
+            </nav>
+            <!-- Actions -->
+            <div class="flex gap-3 items-center">
+              <button class="px-4 py-2 text-base font-semibold text-gray-600 hover:text-gray-900">Sign in</button>
+              <button class="px-4 py-2 bg-purple-600 text-white text-base font-semibold rounded-lg hover:bg-purple-700">Sign up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Content -->
+      <section class="flex flex-col gap-16 items-center pb-0 pt-24 px-8 relative w-full max-w-[1280px]">
+        <div class="flex flex-col gap-12 items-center relative w-full">
+          <!-- Badge and Heading -->
+          <div class="flex flex-col gap-6 items-center relative w-full max-w-[1024px]">
+            <div class="bg-purple-50 flex gap-3 items-center px-3 py-1 rounded-2xl">
+              <span class="bg-white border border-purple-200 px-2.5 py-0.5 rounded-2xl text-sm font-medium text-purple-700">New feature</span>
+              <span class="text-sm font-medium text-purple-700">Check out the team dashboard</span>
+              <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+            <h1 class="font-semibold leading-tight text-gray-900 text-6xl text-center tracking-tight max-w-4xl">
+              Beautiful analytics to grow smarter
+            </h1>
+            <p class="font-normal leading-relaxed text-gray-600 text-xl text-center max-w-2xl">
+              Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups.
+            </p>
+          </div>
+          <!-- CTA Buttons -->
+          <div class="flex gap-3 items-center">
+            <button class="bg-white border border-gray-300 flex gap-2 items-center justify-center px-5 py-3 rounded-lg shadow-sm font-semibold text-base text-gray-700 hover:bg-gray-50">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Learn more
+            </button>
+            <button class="bg-purple-600 border border-purple-600 flex items-center justify-center px-5 py-3 rounded-lg shadow-sm font-semibold text-base text-white hover:bg-purple-700">
+              Get started
+            </button>
+          </div>
+        </div>
+        <!-- MacBook Mockup -->
+        <div class="w-full mt-16">
+          <div class="relative max-w-6xl mx-auto">
+            <div class="aspect-video bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
+              <div class="w-full h-full bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-gray-900 mb-2">Dashboard Preview</div>
+                  <div class="text-gray-600">Analytics interface would appear here</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Social Proof Section -->
+    <section class="bg-white py-24 px-8">
+      <div class="max-w-7xl mx-auto">
+        <p class="text-center text-base font-medium text-gray-600 mb-8">
+          Trusted by over 4,000 startups
+        </p>
+        <div class="flex items-center justify-between flex-wrap gap-8">
+          <div class="text-2xl font-bold text-gray-400">Layers</div>
+          <div class="text-2xl font-bold text-gray-400">Sisyphus</div>
+          <div class="text-2xl font-bold text-gray-400">Circooles</div>
+          <div class="text-2xl font-bold text-gray-400">Catalog</div>
+          <div class="text-2xl font-bold text-gray-400">Quotient</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section 1 -->
+    <section class="bg-white py-24 px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-base font-semibold text-purple-600 mb-3">Features</p>
+          <h2 class="text-4xl font-semibold text-gray-900 mb-4">
+            Analytics that feels like magic
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users.
+          </p>
+        </div>
+        <!-- Feature Grid Row 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-gray-900 mb-2">Share team inboxes</h3>
+            <p class="text-base text-gray-600">
+              Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-gray-900 mb-2">Deliver instant answers</h3>
+            <p class="text-base text-gray-600">
+              An all-in-one customer service platform that helps you balance everything your customers need to be happy.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-gray-900 mb-2">Manage your team with reports</h3>
+            <p class="text-base text-gray-600">
+              Measure what matters with Untitled's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Grid Row 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-gray-900 mb-2">Connect with customers</h3>
+            <p class="text-base text-gray-600">
+              Solve a problem or close a sale in real-time with chat. If no one is available, customers are seamlessly routed to email without confusion.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-gray-900 mb-2">Connect the tools you already use</h3>
+            <p class="text-base text-gray-600">
+              Explore 100+ integrations that make your day-to-day workflow more efficient and familiar. Plus, our extensive developer tools.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-gray-900 mb-2">Our people make the difference</h3>
+            <p class="text-base text-gray-600">
+              We're an extension of your customer service team, and all of our resources are free. Chat to our friendly team 24/7 when you need help.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="bg-gray-50 py-24 px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8">
+          <div class="text-2xl font-bold text-gray-400 inline-block mb-8">Sisyphus</div>
+        </div>
+        <blockquote class="text-5xl font-medium text-gray-900 mb-8 leading-tight">
+          We've been using Untitled to kick start every new project and can't imagine working without it.
+        </blockquote>
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-purple-200 mb-4"></div>
+          <p class="text-lg font-medium text-gray-900">Candice Wu</p>
+          <p class="text-base text-gray-600">Product Manager, Sisyphus</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section 2 with Mockups -->
+    <section class="bg-white py-24 px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="inline-block bg-purple-50 px-3 py-1 rounded-2xl text-sm font-medium text-purple-700 mb-4">Features</span>
+          <h2 class="text-4xl font-semibold text-gray-900 mb-4">
+            Cutting-edge features for advanced analytics
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users.
+          </p>
+        </div>
+        <!-- Mockup Section -->
+        <div class="relative h-[600px] mb-16">
+          <div class="absolute right-0 top-0 w-3/4 h-full bg-gray-900 rounded-lg shadow-2xl"></div>
+          <div class="absolute left-0 top-16 w-1/4 h-4/5 bg-gray-800 rounded-lg shadow-xl"></div>
+        </div>
+        <!-- Feature Cards with Learn More -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Share team inboxes</h3>
+            <p class="text-base text-gray-600 mb-4">
+              Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.
+            </p>
+            <a href="#" class="inline-flex items-center gap-2 text-purple-600 font-semibold text-base hover:text-purple-700">
+              Learn more
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Deliver instant answers</h3>
+            <p class="text-base text-gray-600 mb-4">
+              An all-in-one customer service platform that helps you balance everything your customers need to be happy.
+            </p>
+            <a href="#" class="inline-flex items-center gap-2 text-purple-600 font-semibold text-base hover:text-purple-700">
+              Learn more
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Manage your team with reports</h3>
+            <p class="text-base text-gray-600 mb-4">
+              Measure what matters with Untitled's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.
+            </p>
+            <a href="#" class="inline-flex items-center gap-2 text-purple-600 font-semibold text-base hover:text-purple-700">
+              Learn more
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-white py-24 px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-semibold text-gray-900 mb-4">
+            Frequently asked questions
+          </h2>
+          <p class="text-xl text-gray-600">
+            Everything you need to know about the product and billing.
+          </p>
+        </div>
+        <div class="space-y-6">
+          <div class="border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Is there a free trial available?</h3>
+                <p class="text-base text-gray-600">
+                  Yes, you can try us for free for 30 days. If you want, we'll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.
+                </p>
+              </div>
+              <button class="ml-4 text-purple-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between">
+              <h3 class="text-lg font-semibold text-gray-900 flex-1">Can I change my plan later?</h3>
+              <button class="ml-4 text-purple-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between">
+              <h3 class="text-lg font-semibold text-gray-900 flex-1">What is your cancellation policy?</h3>
+              <button class="ml-4 text-purple-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between">
+              <h3 class="text-lg font-semibold text-gray-900 flex-1">Can other info be added to an invoice?</h3>
+              <button class="ml-4 text-purple-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-medium text-gray-900 flex-1">How does billing work?</h3>
+              <button class="ml-4 text-purple-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-medium text-gray-900 flex-1">How do I change my account email?</h3>
+              <button class="ml-4 text-purple-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Still have questions CTA -->
+        <div class="bg-gray-50 rounded-2xl p-8 mt-16 text-center">
+          <div class="flex items-center justify-center gap-2 mb-6">
+            <div class="w-12 h-12 rounded-full bg-green-200"></div>
+            <div class="w-14 h-14 rounded-full bg-purple-200 -ml-4"></div>
+            <div class="w-12 h-12 rounded-full bg-pink-200 -ml-4"></div>
+          </div>
+          <h3 class="text-xl font-medium text-gray-900 mb-2">Still have questions?</h3>
+          <p class="text-lg text-gray-600 mb-6">
+            Can't find the answer you're looking for? Please chat to our friendly team.
+          </p>
+          <button class="bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700">
+            Get in touch
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="bg-white py-24 px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-base font-semibold text-purple-600 mb-3">Launch faster</p>
+            <h2 class="text-4xl font-semibold text-gray-900 mb-4">
+              Build something great
+            </h2>
+            <p class="text-xl text-gray-600 mb-12">
+              We've done all the heavy lifting so you don't have to — get all the data you need to launch and grow your business faster.
+            </p>
+            <div class="grid grid-cols-2 gap-8">
+              <div>
+                <div class="text-6xl font-semibold text-purple-600 mb-2">4,000+</div>
+                <p class="text-lg font-medium text-gray-900 mb-1">Global customers</p>
+                <p class="text-base text-gray-600">We've helped over 4,000 amazing global companies.</p>
+              </div>
+              <div>
+                <div class="text-6xl font-semibold text-purple-600 mb-2">600%</div>
+                <p class="text-lg font-medium text-gray-900 mb-1">Return on investment</p>
+                <p class="text-base text-gray-600">Our customers have reported an average of ~600% ROI.</p>
+              </div>
+              <div>
+                <div class="text-6xl font-semibold text-purple-600 mb-2">10k</div>
+                <p class="text-lg font-medium text-gray-900 mb-1">Global downloads</p>
+                <p class="text-base text-gray-600">Our app has been downloaded over 10k times.</p>
+              </div>
+              <div>
+                <div class="text-6xl font-semibold text-purple-600 mb-2">200+</div>
+                <p class="text-lg font-medium text-gray-900 mb-1">5-star reviews</p>
+                <p class="text-base text-gray-600">We're proud of our 5-star rating with over 200 reviews.</p>
+              </div>
+            </div>
+          </div>
+          <div class="h-[560px] bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gray-50 py-24 px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-semibold text-gray-900 mb-4">
+          Start your free trial
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Join over 4,000+ startups already growing with Untitled.
+        </p>
+        <div class="flex gap-3 justify-center">
+          <button class="bg-white border border-gray-300 px-5 py-3 rounded-lg shadow-sm font-semibold text-base text-gray-700 hover:bg-gray-50">
+            Learn more
+          </button>
+          <button class="bg-purple-600 border border-purple-600 px-5 py-3 rounded-lg shadow-sm font-semibold text-base text-white hover:bg-purple-700">
+            Get started
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-16 px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
+          <!-- Product -->
+          <div>
+            <h4 class="text-sm font-semibold text-gray-500 mb-4">Product</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Overview</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Features</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900 flex items-center gap-2">Solutions <span class="bg-green-50 text-green-700 text-xs px-2 py-0.5 rounded-full">New</span></a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Tutorials</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Pricing</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Releases</a></li>
+            </ul>
+          </div>
+          <!-- Company -->
+          <div>
+            <h4 class="text-sm font-semibold text-gray-500 mb-4">Company</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">About us</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Careers</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Press</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">News</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Media kit</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Resources -->
+          <div>
+            <h4 class="text-sm font-semibold text-gray-500 mb-4">Resources</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Blog</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Newsletter</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Events</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Help centre</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Tutorials</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Support</a></li>
+            </ul>
+          </div>
+          <!-- Use cases -->
+          <div>
+            <h4 class="text-sm font-semibold text-gray-500 mb-4">Use cases</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Startups</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Enterprise</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Government</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">SaaS</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Marketplaces</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Ecommerce</a></li>
+            </ul>
+          </div>
+          <!-- Social -->
+          <div>
+            <h4 class="text-sm font-semibold text-gray-500 mb-4">Social</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Twitter</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">LinkedIn</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Facebook</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">GitHub</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">AngelList</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Dribbble</a></li>
+            </ul>
+          </div>
+          <!-- Legal -->
+          <div>
+            <h4 class="text-sm font-semibold text-gray-500 mb-4">Legal</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Terms</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Privacy</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Cookies</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Licenses</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Settings</a></li>
+              <li><a href="#" class="text-base font-semibold text-gray-700 hover:text-gray-900">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-200 pt-8 flex items-center justify-between">
+          <div class="flex items-center">
+            <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+              <div class="w-4 h-4 bg-white rounded-sm"></div>
+            </div>
+            <span class="ml-2 text-base font-semibold text-gray-900">Untitled UI</span>
+          </div>
+          <p class="text-base text-gray-500">
+            © 2077 Untitled UI. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
