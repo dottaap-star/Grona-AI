@@ -7,7 +7,6 @@ import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialog
 import { Button } from "@/components/base/buttons/button";
 import { ThemeToggle } from "@/components/base/theme-toggle/theme-toggle";
 import { GronaLogo } from "@/components/foundations/logo/grona-logo";
-import { GronaLogoMinimal } from "@/components/foundations/logo/grona-logo-minimal";
 import { cx } from "@/utils/cx";
 import { DropdownMenuFeatureCard } from "./dropdown-menu-feature-card";
 import { DropdownMenuSimpleWithFooter } from "./dropdown-menu-simple-with-footer";
@@ -111,7 +110,7 @@ export const Header = ({ items = headerNavItems, isFullWidth, isFloating, classN
             ref={headerRef}
             className={cx(
                 "sticky top-0 z-50 flex h-18 w-full items-center justify-center md:h-20",
-                isFloating && "h-16 md:h-19 md:pt-3",
+                isFloating && "h-16 md:h-19 md:pt-4",
                 isFullWidth && !isFloating ? "has-aria-expanded:bg-primary" : "max-md:has-aria-expanded:bg-primary",
                 className,
             )}
@@ -119,8 +118,8 @@ export const Header = ({ items = headerNavItems, isFullWidth, isFloating, classN
             <div className="flex size-full max-w-container flex-1 items-center pr-3 pl-4 md:px-8">
                 <div
                     className={cx(
-                        "flex w-full justify-between gap-4",
-                        isFloating && "ring-secondary_alt md:rounded-2xl md:bg-primary md:py-3 md:pr-3 md:pl-4 md:shadow-xs md:ring-1",
+                        "flex w-full justify-between gap-4 transition-shadow duration-300",
+                        isFloating && "backdrop-blur-lg backdrop-saturate-150 bg-primary/80 ring-secondary_alt md:rounded-2xl md:bg-primary md:py-3 md:pr-3 md:pl-4 md:shadow-lg md:ring-1 md:hover:shadow-xl",
                     )}
                 >
                     <div className="flex flex-1 items-center gap-5">
@@ -129,14 +128,7 @@ export const Header = ({ items = headerNavItems, isFullWidth, isFloating, classN
                             href="/"
                             className="rounded-xs outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2"
                         >
-                            <GronaLogo className="md:max-lg:hidden" />
-                        </a>
-                        <a
-                            aria-label="Go to homepage"
-                            href="/"
-                            className="rounded-xs outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2"
-                        >
-                            <GronaLogoMinimal className="hidden h-8 md:inline-block lg:hidden" />
+                            <GronaLogo />
                         </a>
 
                         {/* Desktop navigation */}

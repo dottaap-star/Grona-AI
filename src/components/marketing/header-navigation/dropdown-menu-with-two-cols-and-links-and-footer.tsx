@@ -25,7 +25,7 @@ const columns: MenuColumn[] = [
             {
                 title: "Blogs",
                 subtitle: "The latest industry new and guides curated by our expert team.",
-                href: "/",
+                href: "/blog",
                 Icon: BookClosed,
             },
             {

@@ -509,7 +509,7 @@ const FooterLarge04 = () => {
 const AboutPage10 = () => {
     return (
         <div className="bg-primary">
-            <Header className="bg-secondary" />
+            <Header isFloating />
 
             <HeaderCenteredButtons />
 

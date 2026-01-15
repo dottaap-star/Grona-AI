@@ -204,7 +204,7 @@ const FooterLarge01 = () => {
 const ContactPage01 = () => {
     return (
         <div className="bg-primary">
-            <Header />
+            <Header isFloating />
 
             <ContactFormAndImage01 />
 

@@ -37,6 +37,23 @@ type Article = {
 
 const articles: Article[] = [
     {
+        id: "article-cro-software",
+        title: "A/B Testing & Personalization: The Must-Have CRO Software for Marketers",
+        summary: "Discover the best CRO software for A/B testing and personalization. Compare top tools like Grona, Optimizely, Hotjar, and more to boost your conversion rates.",
+        href: "/blog/cro-software-for-marketers",
+        category: { name: "Marketing", href: "#" },
+        thumbnailUrl: "/assets/images/blogs/feature-cro.png",
+        publishedAt: "14 Jan 2026",
+        readingTime: "10 min read",
+        author: { name: "Grona Team", href: "#", avatarUrl: "/assets/images/blogs/author.jpeg" },
+        tags: [
+            { name: "CRO", color: "brand", href: "#" },
+            { name: "A/B Testing", color: "indigo", href: "#" },
+            { name: "Personalization", color: "pink", href: "#" },
+        ],
+        isFeatured: true,
+    },
+    {
         id: "article-1",
         title: "UX review presentations",
         summary: "How do you create compelling presentations that wow your colleagues and impress your managers?",
@@ -51,7 +68,7 @@ const articles: Article[] = [
             { name: "Research", color: "indigo", href: "#" },
             { name: "Presentation", color: "pink", href: "#" },
         ],
-        isFeatured: true,
+        isFeatured: false,
     },
     {
         id: "article-2",

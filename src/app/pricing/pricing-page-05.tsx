@@ -750,7 +750,7 @@ const FooterLarge01 = () => {
 const PricingPage05 = () => {
     return (
         <div className="bg-primary">
-            <Header />
+            <Header isFloating />
 
             <PricingLargeTable01 />
 

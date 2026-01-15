@@ -484,7 +484,7 @@ const FooterLarge16 = () => {
 const TermsAndConditionsPage01 = () => {
     return (
         <div className="bg-primary">
-            <Header />
+            <Header isFloating />
 
             <HeaderCentered />
 

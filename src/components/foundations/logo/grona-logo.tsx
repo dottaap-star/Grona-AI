@@ -37,13 +37,13 @@ export const GronaLogo = ({ minimal = false, className, ...props }: GronaLogoPro
             <img
                 src="/assets/logo/Light_logo.svg"
                 alt="Grona"
-                className="hidden h-full w-auto md:block dark:md:hidden"
+                className="hidden h-full w-auto md:block dark:hidden"
             />
             {/* Dark mode logo (hidden in light mode and on mobile) - has white text for dark backgrounds */}
             <img
                 src="/assets/logo/Dark_logo.svg"
                 alt="Grona"
-                className="hidden h-full w-auto dark:md:block"
+                className="hidden h-full w-auto dark:block max-md:dark:hidden"
             />
         </div>
     );

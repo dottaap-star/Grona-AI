@@ -96,9 +96,9 @@ const HeroScreenWithURLInput = () => {
     };
 
     return (
-        <div className="relative overflow-hidden bg-primary min-h-screen flex flex-col">
+        <div className="relative bg-primary min-h-screen flex flex-col">
             {/* Animated shimmer background gradient - runs once on load */}
-            <div className="absolute inset-0 -z-0">
+            <div className="absolute inset-0 -z-0 overflow-hidden">
                 <motion.div
                     className="absolute inset-0 opacity-[0.08] dark:opacity-[0.12]"
                     style={{
@@ -136,8 +136,6 @@ const HeroScreenWithURLInput = () => {
                 />
             </div>
 
-            <Header isFloating />
-
             <section className="relative w-full flex-1 flex items-center justify-center z-10 py-16 md:py-24">
                 <div className="mx-auto w-full max-w-4xl px-4 md:px-8">
                     <div className="flex flex-col items-center text-center gap-12 md:gap-16">
@@ -165,7 +163,7 @@ const HeroScreenWithURLInput = () => {
                                 const url = formData.get("website-url") as string;
                                 if (!url) return;
                                 const normalizedUrl = normalizeUrl(url);
-                                window.location.href = `https://app.grona.ai?url=${encodeURIComponent(normalizedUrl)}`;
+                                window.location.href = `https://app.grona.ai/campaigns/edit/6966b3c40d27b3a250a105ec?url=${encodeURIComponent(normalizedUrl)}`;
                             }}
                             className="w-full max-w-2xl"
                         >
@@ -281,7 +279,7 @@ const ROICalculatorSection = () => {
     ];
 
     return (
-        <section className="bg-gradient-to-br from-orange-100/40 to-red-100/30 dark:from-orange-900/30 dark:to-red-900/20 py-24 md:py-32">
+        <section className="relative z-0 bg-gradient-to-br from-orange-100/40 to-red-100/30 dark:from-orange-900/30 dark:to-red-900/20 py-24 md:py-32">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="mx-auto max-w-6xl">
                     {/* Header */}
@@ -298,47 +296,23 @@ const ROICalculatorSection = () => {
                     <div className="grid lg:grid-cols-3 gap-8">
                         {/* Left: Inputs + Pricing */}
                         <div className="lg:col-span-2 space-y-6">
-                            {/* Industry Select */}
-                            <div>
-                                <Select
-                                    selectedKey={industry}
-                                    onSelectionChange={(key) => setIndustry(key as string)}
-                                    items={industries}
-                                    label="Industry"
-                                    size="md"
-                                >
-                                    {(item) => <SelectItem id={item.id}>{item.label}</SelectItem>}
-                                </Select>
-                            </div>
-
-                            {/* Monthly Visitors Slider */}
-                            <div>
-                                <Label>Monthly Visitors</Label>
-                                <div className="mt-2">
-                                    <Slider
-                                        value={[monthlyVisitors]}
-                                        onChange={(values) => {
-                                            const val = Array.isArray(values) ? values[0] : values;
-                                            setMonthlyVisitors(typeof val === 'number' ? val : monthlyVisitors);
-                                        }}
-                                        minValue={1000}
-                                        maxValue={100000}
-                                        step={1000}
-                                        labelFormatter={(value) => formatNumber(value)}
-                                        formatOptions={{
-                                            style: "decimal",
-                                            maximumFractionDigits: 0,
-                                        }}
-                                        labelPosition="top-floating"
-                                    />
-                                    <div className="mt-2 text-right text-sm font-medium text-brand">
-                                        {formatNumber(monthlyVisitors)}
-                                    </div>
+                            {/* Industry Select and Conversion Rate/AOV in same row */}
+                            <div className="grid md:grid-cols-3 gap-6">
+                                {/* Industry Select */}
+                                <div>
+                                    <Select
+                                        selectedKey={industry}
+                                        onSelectionChange={(key) => setIndustry(key as string)}
+                                        items={industries}
+                                        label="Industry"
+                                        size="md"
+                                    >
+                                        {(item) => <SelectItem id={item.id}>{item.label}</SelectItem>}
+                                    </Select>
                                 </div>
-                            </div>
 
-                            {/* Two Column Grid for Conversion Rate and AOV */}
-                            <div className="grid md:grid-cols-2 gap-6">
+                                {/* Two Column Grid for Conversion Rate and AOV */}
+                                <div className="grid md:grid-cols-2 gap-6 md:col-span-2">
                                 {/* Current Conversion Rate */}
                                 <div>
                                     <Label>Current Conversion Rate (%)</Label>
@@ -410,6 +384,30 @@ const ROICalculatorSection = () => {
                                         </Button>
                                     </div>
                                 </div>
+                                </div>
+                            </div>
+
+                            {/* Monthly Visitors Slider */}
+                            <div>
+                                <Label>Monthly Visitors</Label>
+                                <div className="mt-2">
+                                    <Slider
+                                        value={[monthlyVisitors]}
+                                        onChange={(values) => {
+                                            const val = Array.isArray(values) ? values[0] : values;
+                                            setMonthlyVisitors(typeof val === 'number' ? val : monthlyVisitors);
+                                        }}
+                                        minValue={1000}
+                                        maxValue={100000}
+                                        step={1000}
+                                        labelFormatter={(value) => formatNumber(value)}
+                                        formatOptions={{
+                                            style: "decimal",
+                                            maximumFractionDigits: 0,
+                                        }}
+                                        labelPosition="top-floating"
+                                    />
+                                </div>
                             </div>
                         </div>
 
@@ -423,9 +421,6 @@ const ROICalculatorSection = () => {
                                 <div className="text-center space-y-2">
                                     <div className="text-3xl font-bold text-green-700 dark:text-green-400">
                                         {formatCurrency(results.additionalMonthly)} / month
-                                    </div>
-                                    <div className="text-2xl font-semibold text-green-600 dark:text-green-500">
-                                        {formatCurrency(results.additionalAnnual)} / year
                                     </div>
                                     <div className="mt-4 pt-4 border-t border-green-200 dark:border-green-800 text-sm text-tertiary">
                                         Expected Uplift: +{results.uplift.toFixed(0)}% → New CR: {results.newConversionRate}%
@@ -461,7 +456,7 @@ const ROICalculatorSection = () => {
 
 const SocialProofFullWidth = () => {
     return (
-        <section className="bg-primary py-16 md:py-24">
+        <section className="relative z-0 bg-primary py-16 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex flex-col gap-6">
                     <p className="text-center text-sm font-medium text-tertiary md:text-md">Trusted by marketers at leading companies</p>
@@ -548,7 +543,7 @@ const FeatureTextFeaturedIconTopCentered = ({
 
 const FeaturesSimpleIcons02 = () => {
     return (
-        <section className="bg-primary py-24 md:py-32">
+        <section className="relative z-0 bg-primary py-24 md:py-32">
             <div className="mx-auto w-full max-w-container px-4 md:px-8">
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                     <h2 className="text-display-sm font-semibold text-primary md:text-display-md">Everything you need</h2>
@@ -619,7 +614,7 @@ const HowItWorksSection = () => {
     ];
 
     return (
-        <section className="bg-secondary py-24 md:py-32">
+        <section className="relative z-0 bg-secondary py-24 md:py-32">
             <div className="mx-auto w-full max-w-container px-4 md:px-8">
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                     <h2 className="text-display-sm font-semibold text-primary md:text-display-md">How it works</h2>
@@ -653,7 +648,7 @@ const HowItWorksSection = () => {
 
 const MetricsSimpleCenteredText = () => {
     return (
-        <section className="bg-primary py-16 md:py-24">
+        <section className="relative z-0 bg-primary py-16 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex flex-col gap-12 md:gap-16">
                     <div className="flex w-full flex-col items-center self-center text-center md:max-w-3xl">
@@ -685,7 +680,7 @@ const MetricsSimpleCenteredText = () => {
 
 const UseCasesSection = () => {
     return (
-        <section className="bg-secondary py-16 md:py-24">
+        <section className="relative z-0 bg-secondary py-16 md:py-24">
             <div className="mx-auto w-full max-w-container px-4 md:px-8">
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                     <span className="text-sm font-semibold text-brand-secondary md:text-md">Use cases</span>
@@ -732,7 +727,7 @@ const UseCasesSection = () => {
 
 const CTACardHorizontal = () => {
     return (
-        <section className="bg-primary pb-16 md:pb-24">
+        <section className="relative z-0 bg-primary pb-16 md:pb-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex flex-col gap-x-8 gap-y-8 rounded-2xl bg-secondary px-6 py-10 lg:flex-row lg:p-16">
                     <div className="flex max-w-3xl flex-1 flex-col">
@@ -1067,7 +1062,7 @@ const Simple01Vertical = ({ article, imageClassName }: { article: Article; image
 
 const BlogSectionSimpleLeftAligned01 = () => {
     return (
-        <section className="bg-primary py-16 md:py-24">
+        <section className="relative z-0 bg-primary py-16 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex flex-col items-start justify-between lg:flex-row">
                     <div className="max-w-3xl">
@@ -1140,7 +1135,7 @@ const FAQAccordion01 = () => {
     };
 
     return (
-        <section className="bg-primary py-24 md:py-32">
+        <section className="relative z-0 bg-primary py-24 md:py-32">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                     <h2 className="text-display-sm font-semibold text-primary md:text-display-md">Frequently asked questions</h2>
@@ -1322,6 +1317,8 @@ const FooterLarge01 = () => {
 export const HomeScreen = () => {
     return (
         <div className="bg-primary">
+            <Header isFloating />
+            
             <HeroScreenWithURLInput />
 
             <ROICalculatorSection />

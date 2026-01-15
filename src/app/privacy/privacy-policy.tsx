@@ -486,7 +486,7 @@ const FooterLarge16 = () => {
 const PrivacyPolicy = () => {
     return (
         <div className="bg-primary">
-            <Header />
+            <Header isFloating />
 
             <HeaderCentered />
 
