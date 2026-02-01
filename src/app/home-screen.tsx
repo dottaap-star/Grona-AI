@@ -460,7 +460,7 @@ const SocialProofFullWidth = () => {
         { alt: "Growth Rocks", src: "/assets/images/homepage/growthrocks.svg", className: "h-6 md:h-8" },
         { alt: "Growth Rocks WebP", src: "/assets/images/homepage/growth-rocks.webp", className: "h-8 md:h-10" },
         { alt: "TechMateTech", src: "/assets/images/homepage/techmatetech.svg", className: "h-12 md:h-16" },
-        { alt: "Web Summit", src: "/assets/images/homepage/websummit.webp", className: "h-10 md:h-14 -mx-4" },
+        { alt: "Web Summit", src: "/assets/images/homepage/websummit.webp", className: "h-10 md:h-14 -mx-12 scale-[1.8]" },
         { alt: "Slush", src: "/assets/images/homepage/slush.svg", className: "h-7 md:h-9" },
     ];
 

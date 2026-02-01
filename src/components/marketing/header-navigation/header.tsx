@@ -15,7 +15,6 @@ const MobileMenu = () => {
             <Button color="link-gray" size="lg">
                 Log in
             </Button>
-            <Button size="lg">Sign up</Button>
         </div>
     );
 };
@@ -63,9 +62,6 @@ export const Header = ({ isFloating, className }: HeaderProps) => {
                         </Button>
                         <Button color="link-gray" size={isFloating ? "md" : "lg"}>
                             Log in
-                        </Button>
-                        <Button color="primary" size={isFloating ? "md" : "lg"}>
-                            Sign up
                         </Button>
                     </div>
 
