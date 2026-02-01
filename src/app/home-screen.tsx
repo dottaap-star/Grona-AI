@@ -23,7 +23,6 @@ import {
 } from "@untitledui/icons";
 import { Select } from "@/components/base/select/select";
 import { SelectItem } from "@/components/base/select/select-item";
-import { RadioGroupIconSimple } from "@/components/base/radio-groups/radio-group-icon-simple";
 import { Slider } from "@/components/base/slider/slider";
 import { Label } from "@/components/base/input/label";
 import { motion } from "motion/react";
@@ -38,6 +37,7 @@ import { Input } from "@/components/base/input/input";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { GronaLogo } from "@/components/foundations/logo/grona-logo";
 import { Header } from "@/components/marketing/header-navigation/header";
+import { FeaturesTabsMockup07 } from "@/components/marketing/features/features-tabs-mockup-07";
 import { SectionDivider } from "@/components/shared-assets/section-divider";
 import { cx } from "@/utils/cx";
 
@@ -182,6 +182,7 @@ const HeroScreenWithURLInput = () => {
                                         type="submit"
                                         size="lg"
                                         iconTrailing={ArrowUpRight}
+                                        className="[&>*[data-icon]]:text-white"
                                     />
                                 </div>
                             </div>
@@ -259,25 +260,6 @@ const ROICalculatorSection = () => {
         return new Intl.NumberFormat("en-US").format(value);
     };
 
-    const [selectedPlan, setSelectedPlan] = useState("growth");
-
-    const pricingPlans = [
-        {
-            value: "growth",
-            title: "Growth",
-            secondaryTitle: "$25/mo",
-            description: "15k monthly pageviews, 3 Active Optimizations, 1,500 AI credits",
-            icon: ZapFast,
-        },
-        {
-            value: "scale",
-            title: "Scale",
-            secondaryTitle: "$40/mo",
-            description: "30k monthly pageviews, 10 Active Optimizations, 3,500 AI credits",
-            icon: Rocket01,
-        },
-    ];
-
     return (
         <section className="relative z-0 bg-gradient-to-br from-orange-100/40 to-red-100/30 dark:from-orange-900/30 dark:to-red-900/20 py-24 md:py-32">
             <div className="mx-auto max-w-container px-4 md:px-8">
@@ -294,12 +276,18 @@ const ROICalculatorSection = () => {
 
                     {/* Calculator Grid */}
                     <div className="grid lg:grid-cols-3 gap-8">
-                        {/* Left: Inputs + Pricing */}
-                        <div className="lg:col-span-2 space-y-6">
-                            {/* Industry Select and Conversion Rate/AOV in same row */}
-                            <div className="grid md:grid-cols-3 gap-6">
-                                {/* Industry Select */}
-                                <div>
+                        {/* Left: Guided Inputs */}
+                        <div className="lg:col-span-2 space-y-8">
+                            {/* Step 1: Industry */}
+                            <div className="rounded-2xl border border-secondary bg-primary p-6 md:p-8">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex size-9 items-center justify-center rounded-full bg-brand-secondary text-white text-sm font-semibold">1</div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-semibold text-primary">What industry are you in?</h3>
+                                        <p className="mt-1 text-sm text-tertiary">Pick the closest match so we can estimate your expected uplift.</p>
+                                    </div>
+                                </div>
+                                <div className="mt-6 grid gap-4 md:grid-cols-2">
                                     <Select
                                         selectedKey={industry}
                                         onSelectionChange={(key) => setIndustry(key as string)}
@@ -309,118 +297,143 @@ const ROICalculatorSection = () => {
                                     >
                                         {(item) => <SelectItem id={item.id}>{item.label}</SelectItem>}
                                     </Select>
-                                </div>
-
-                                {/* Two Column Grid for Conversion Rate and AOV */}
-                                <div className="grid md:grid-cols-2 gap-6 md:col-span-2">
-                                {/* Current Conversion Rate */}
-                                <div>
-                                    <Label>Current Conversion Rate (%)</Label>
-                                    <div className="mt-2 flex items-center gap-2">
-                                        <Button
-                                            type="button"
-                                            size="sm"
-                                            color="secondary"
-                                            onClick={() => setConversionRate(Math.max(0.1, conversionRate - 0.1))}
-                                            className="shrink-0"
-                                        >
-                                            −
-                                        </Button>
-                                        <Input
-                                            type="number"
-                                            value={conversionRate.toString()}
-                                            onChange={(value) => {
-                                                const val = parseFloat(value);
-                                                if (!isNaN(val) && val >= 0) setConversionRate(val);
-                                            }}
-                                            wrapperClassName="flex-1"
-                                            inputClassName="text-center"
-                                        />
-                                        <div className="text-tertiary shrink-0">%</div>
-                                        <Button
-                                            type="button"
-                                            size="sm"
-                                            color="secondary"
-                                            onClick={() => setConversionRate(Math.min(100, conversionRate + 0.1))}
-                                            className="shrink-0"
-                                        >
-                                            +
-                                        </Button>
+                                    <div className="rounded-xl border border-secondary bg-secondary_alt px-4 py-3">
+                                        <p className="text-xs font-medium uppercase tracking-wide text-tertiary">Expected uplift</p>
+                                        <p className="mt-1 text-lg font-semibold text-primary">+{results.uplift.toFixed(0)}% for {industry}</p>
+                                        <p className="mt-1 text-xs text-tertiary">Personalization + testing benchmarks.</p>
                                     </div>
-                                </div>
-
-                                {/* Average Order Value */}
-                                <div>
-                                    <Label>Average Order Value</Label>
-                                    <div className="mt-2 flex items-center gap-2">
-                                        <Button
-                                            type="button"
-                                            size="sm"
-                                            color="secondary"
-                                            onClick={() => setAverageOrderValue(Math.max(1, averageOrderValue - 10))}
-                                            className="shrink-0"
-                                        >
-                                            −
-                                        </Button>
-                                        <Input
-                                            type="number"
-                                            value={averageOrderValue.toString()}
-                                            onChange={(value) => {
-                                                const val = parseFloat(value);
-                                                if (!isNaN(val) && val >= 1) setAverageOrderValue(val);
-                                            }}
-                                            wrapperClassName="flex-1"
-                                            inputClassName="text-center"
-                                        />
-                                        <div className="text-tertiary shrink-0">$</div>
-                                        <Button
-                                            type="button"
-                                            size="sm"
-                                            color="secondary"
-                                            onClick={() => setAverageOrderValue(averageOrderValue + 10)}
-                                            className="shrink-0"
-                                        >
-                                            +
-                                        </Button>
-                                    </div>
-                                </div>
                                 </div>
                             </div>
 
-                            {/* Monthly Visitors Slider */}
-                            <div>
-                                <Label>Monthly Visitors</Label>
-                                <div className="mt-2">
-                                    <Slider
-                                        value={[monthlyVisitors]}
-                                        onChange={(values) => {
-                                            const val = Array.isArray(values) ? values[0] : values;
-                                            setMonthlyVisitors(typeof val === 'number' ? val : monthlyVisitors);
-                                        }}
-                                        minValue={1000}
-                                        maxValue={100000}
-                                        step={1000}
-                                        labelFormatter={(value) => formatNumber(value)}
-                                        formatOptions={{
-                                            style: "decimal",
-                                            maximumFractionDigits: 0,
-                                        }}
-                                        labelPosition="top-floating"
-                                    />
+                            {/* Step 2: Current metrics */}
+                            <div className="rounded-2xl border border-secondary bg-primary p-6 md:p-8">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex size-9 items-center justify-center rounded-full bg-brand-secondary text-white text-sm font-semibold">2</div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-semibold text-primary">What are your current numbers?</h3>
+                                        <p className="mt-1 text-sm text-tertiary">We use these to estimate incremental revenue.</p>
+                                    </div>
+                                </div>
+                                <div className="mt-6 grid md:grid-cols-2 gap-6">
+                                    {/* Current Conversion Rate */}
+                                    <div>
+                                        <Label>Current Conversion Rate (%)</Label>
+                                        <div className="mt-2 flex items-center gap-2">
+                                            <Button
+                                                type="button"
+                                                size="sm"
+                                                color="secondary"
+                                                onClick={() => setConversionRate(Math.max(0.1, conversionRate - 0.1))}
+                                                className="shrink-0"
+                                            >
+                                                −
+                                            </Button>
+                                            <Input
+                                                type="number"
+                                                value={conversionRate.toString()}
+                                                onChange={(value) => {
+                                                    const val = parseFloat(value);
+                                                    if (!isNaN(val) && val >= 0) setConversionRate(val);
+                                                }}
+                                                wrapperClassName="flex-1"
+                                                inputClassName="text-center"
+                                            />
+                                            <div className="text-tertiary shrink-0">%</div>
+                                            <Button
+                                                type="button"
+                                                size="sm"
+                                                color="secondary"
+                                                onClick={() => setConversionRate(Math.min(100, conversionRate + 0.1))}
+                                                className="shrink-0"
+                                            >
+                                                +
+                                            </Button>
+                                        </div>
+                                    </div>
+
+                                    {/* Average Order Value */}
+                                    <div>
+                                        <Label>Average Order Value</Label>
+                                        <div className="mt-2 flex items-center gap-2">
+                                            <Button
+                                                type="button"
+                                                size="sm"
+                                                color="secondary"
+                                                onClick={() => setAverageOrderValue(Math.max(1, averageOrderValue - 10))}
+                                                className="shrink-0"
+                                            >
+                                                −
+                                            </Button>
+                                            <Input
+                                                type="number"
+                                                value={averageOrderValue.toString()}
+                                                onChange={(value) => {
+                                                    const val = parseFloat(value);
+                                                    if (!isNaN(val) && val >= 1) setAverageOrderValue(val);
+                                                }}
+                                                wrapperClassName="flex-1"
+                                                inputClassName="text-center"
+                                            />
+                                            <div className="text-tertiary shrink-0">$</div>
+                                            <Button
+                                                type="button"
+                                                size="sm"
+                                                color="secondary"
+                                                onClick={() => setAverageOrderValue(averageOrderValue + 10)}
+                                                className="shrink-0"
+                                            >
+                                                +
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Step 3: Traffic */}
+                            <div className="rounded-2xl border border-secondary bg-primary p-6 md:p-8">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex size-9 items-center justify-center rounded-full bg-brand-secondary text-white text-sm font-semibold">3</div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-semibold text-primary">How much traffic do you get?</h3>
+                                        <p className="mt-1 text-sm text-tertiary">Monthly visitors helps us estimate total impact.</p>
+                                    </div>
+                                </div>
+                                <div className="mt-6">
+                                    <Label>Monthly Visitors</Label>
+                                    <div className="mt-2">
+                                        <Slider
+                                            value={[monthlyVisitors]}
+                                            onChange={(values) => {
+                                                const val = Array.isArray(values) ? values[0] : values;
+                                                setMonthlyVisitors(typeof val === 'number' ? val : monthlyVisitors);
+                                            }}
+                                            minValue={1000}
+                                            maxValue={100000}
+                                            step={1000}
+                                            labelFormatter={(value) => formatNumber(value)}
+                                            formatOptions={{
+                                                style: "decimal",
+                                                maximumFractionDigits: 0,
+                                            }}
+                                            labelPosition="top-floating"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Right: Results */}
-                        <div className="space-y-6">
-                            {/* Results Box */}
-                            <div className="rounded-2xl bg-green-50 dark:bg-green-950/20 p-6 border border-green-200 dark:border-green-800">
+                        <div className="space-y-6 lg:pt-2">
+                            <div className="rounded-2xl bg-green-50 dark:bg-green-950/20 p-6 border border-green-200 dark:border-green-800 lg:sticky lg:top-24">
                                 <h3 className="text-sm font-medium text-tertiary text-center mb-4">
-                                    Your Site Could Earn:
+                                    Your Estimated Lift
                                 </h3>
                                 <div className="text-center space-y-2">
                                     <div className="text-3xl font-bold text-green-700 dark:text-green-400">
                                         {formatCurrency(results.additionalMonthly)} / month
+                                    </div>
+                                    <div className="text-sm text-tertiary">
+                                        ≈ {formatCurrency(results.additionalAnnual)} / year
                                     </div>
                                     <div className="mt-4 pt-4 border-t border-green-200 dark:border-green-800 text-sm text-tertiary">
                                         Expected Uplift: +{results.uplift.toFixed(0)}% → New CR: {results.newConversionRate}%
@@ -430,19 +443,6 @@ const ROICalculatorSection = () => {
                         </div>
                     </div>
 
-                    {/* Pricing Plans - Below the grid */}
-                    <div className="mt-12">
-                        <h3 className="text-lg font-semibold text-primary mb-6 text-center">Choose Your Plan</h3>
-                        <div className="max-w-4xl mx-auto">
-                            <RadioGroupIconSimple
-                                value={selectedPlan}
-                                onChange={setSelectedPlan}
-                                items={pricingPlans}
-                                size="md"
-                                className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                            />
-                        </div>
-                    </div>
 
                     {/* Disclaimer */}
                     <p className="text-center text-sm text-tertiary mt-8">
@@ -455,51 +455,32 @@ const ROICalculatorSection = () => {
 };
 
 const SocialProofFullWidth = () => {
+    const logos = [
+        { alt: "Aruhma", src: "/assets/images/homepage/aruhma.svg", className: "h-7 md:h-9" },
+        { alt: "Growth Rocks", src: "/assets/images/homepage/growthrocks.svg", className: "h-6 md:h-8" },
+        { alt: "Growth Rocks WebP", src: "/assets/images/homepage/growth-rocks.webp", className: "h-8 md:h-10" },
+        { alt: "TechMateTech", src: "/assets/images/homepage/techmatetech.svg", className: "h-12 md:h-16" },
+        { alt: "Web Summit", src: "/assets/images/homepage/websummit.webp", className: "h-10 md:h-14 -mx-4" },
+        { alt: "Slush", src: "/assets/images/homepage/slush.svg", className: "h-7 md:h-9" },
+    ];
+
     return (
         <section className="relative z-0 bg-primary py-16 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-10 md:gap-14">
                     <p className="text-center text-sm font-medium text-tertiary md:text-md">Trusted by marketers at leading companies</p>
-                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-6">
-                        {/* Light mode images (hidden in dark mode) */}
-                        <img alt="Odeaolabs" src="https://www.untitledui.com/logos/logotype/color/odeaolabs.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Kintsugi" src="https://www.untitledui.com/logos/logotype/color/kintsugi.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Stackedlab" src="https://www.untitledui.com/logos/logotype/color/stackedlab.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Magnolia" src="https://www.untitledui.com/logos/logotype/color/magnolia.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Warpspeed" src="https://www.untitledui.com/logos/logotype/color/warpspeed.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Sisyphus" src="https://www.untitledui.com/logos/logotype/color/sisyphus.svg" className="h-9 md:h-12 dark:hidden" />
-
-                        {/* Dark mode images (hidden in light mode) */}
-                        <img
-                            alt="Odeaolabs"
-                            src="https://www.untitledui.com/logos/logotype/white/odeaolabs.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Kintsugi"
-                            src="https://www.untitledui.com/logos/logotype/white/kintsugi.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Stackedlab"
-                            src="https://www.untitledui.com/logos/logotype/white/stackedlab.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Magnolia"
-                            src="https://www.untitledui.com/logos/logotype/white/magnolia.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Warpspeed"
-                            src="https://www.untitledui.com/logos/logotype/white/warpspeed.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Sisyphus"
-                            src="https://www.untitledui.com/logos/logotype/white/sisyphus.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
+                    <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 lg:gap-x-16">
+                        {logos.map((logo) => (
+                            <img
+                                key={logo.src}
+                                alt={logo.alt}
+                                src={logo.src}
+                                className={cx(
+                                    "w-auto grayscale brightness-0 opacity-70 dark:grayscale-0 dark:brightness-100 dark:opacity-100 transition-opacity hover:opacity-100",
+                                    logo.className
+                                )}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -541,50 +522,6 @@ const FeatureTextFeaturedIconTopCentered = ({
     </div>
 );
 
-const FeaturesSimpleIcons02 = () => {
-    return (
-        <section className="relative z-0 bg-primary py-24 md:py-32">
-            <div className="mx-auto w-full max-w-container px-4 md:px-8">
-                <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-                    <h2 className="text-display-sm font-semibold text-primary md:text-display-md">Everything you need</h2>
-                    <p className="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">Chat-first features that help you convert more visitors—no coding required.</p>
-                </div>
-
-                <div className="mt-12 md:mt-16">
-                    <ul className="grid w-full grid-cols-1 justify-items-center gap-x-8 gap-y-10 sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
-                        {[
-                            {
-                                title: "Chat-first interface",
-                                subtitle: "Describe what you want in plain English. No coding, no complicated dashboards—just tell us what you want to improve.",
-                                icon: MessageChatCircle,
-                            },
-                            {
-                                title: "AI designs & deploys",
-                                subtitle: "Our AI analyzes your site and creates improvements automatically using industry best practices and trained models.",
-                                icon: Zap,
-                            },
-                            {
-                                title: "Live preview",
-                                subtitle: "See changes side-by-side before deploying. Compare variations in real-time and choose what works best for you.",
-                                icon: PlayCircle,
-                            },
-                            {
-                                title: "One-click deployment",
-                                subtitle: "Install in seconds with a simple copy-paste. Start seeing results immediately with clear, measurable ROI.",
-                                icon: CheckCircle,
-                            },
-                        ].map((item) => (
-                            <li key={item.title}>
-                                <FeatureTextFeaturedIconTopCentered icon={item.icon} title={item.title} subtitle={item.subtitle} />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </section>
-    );
-};
-
 const HowItWorksSection = () => {
     const steps = [
         {
@@ -614,7 +551,7 @@ const HowItWorksSection = () => {
     ];
 
     return (
-        <section className="relative z-0 bg-secondary py-24 md:py-32">
+        <section id="how-it-works" className="relative z-0 bg-secondary py-24 md:py-32">
             <div className="mx-auto w-full max-w-container px-4 md:px-8">
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                     <h2 className="text-display-sm font-semibold text-primary md:text-display-md">How it works</h2>
@@ -1231,83 +1168,64 @@ const footerNavList = [
     {
         label: "Product",
         items: [
-            { label: "Overview", href: "#" },
-            { label: "Features", href: "#" },
-            { label: "How It Works", href: "#" },
-            { label: "Use Cases", href: "#" },
+            { label: "How it works", href: "#how-it-works" },
+            { label: "Features", href: "/features" },
             { label: "Pricing", href: "/pricing" },
         ],
     },
     {
         label: "Company",
         items: [
-            { label: "About us", href: "/about-us" },
-            { label: "Careers", href: "#" },
-            { label: "Press", href: "#" },
-            { label: "News", href: "#" },
-            { label: "Media kit", href: "#" },
-            { label: "Contact", href: "#" },
-        ],
-    },
-    {
-        label: "Resources",
-        items: [
-            { label: "Blog", href: "#" },
-            { label: "Newsletter", href: "#" },
-            { label: "Events", href: "#" },
-            { label: "Help centre", href: "#" },
-            { label: "Tutorials", href: "#" },
-            { label: "Support", href: "#" },
-        ],
-    },
-    {
-        label: "Use cases",
-        items: [
-            { label: "Landing Pages", href: "#" },
-            { label: "E-commerce", href: "#" },
-            { label: "Forms", href: "#" },
-            { label: "Content", href: "#" },
-            { label: "Checkout", href: "#" },
-            { label: "Product Pages", href: "#" },
+            { label: "Contact", href: "mailto:hello@grona.ai" },
+            { label: "LinkedIn", href: "https://linkedin.com/company/grona-ai" },
         ],
     },
     {
         label: "Legal",
         items: [
-            { label: "Terms", href: "/terms" },
-            { label: "Privacy", href: "/privacy" },
-            { label: "Cookies", href: "#" },
-            { label: "Licenses", href: "#" },
-            { label: "Settings", href: "#" },
+            { label: "Privacy Policy", href: "/privacy" },
+            { label: "Terms & Conditions", href: "/terms" },
         ],
     },
 ];
 
 const FooterLarge01 = () => {
     return (
-        <footer className="bg-primary py-12 md:pt-16">
+        <footer className="bg-primary py-12 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <nav>
-                    <ul className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
-                        {footerNavList.map((category) => (
-                            <li key={category.label}>
-                                <h4 className="text-sm font-semibold text-quaternary">{category.label}</h4>
-                                <ul className="mt-4 flex flex-col gap-3">
-                                    {category.items.map((item) => (
-                                        <li key={item.label}>
-                                            <Button color="link-gray" size="lg" href={item.href} className="gap-1">
-                                                {item.label}
-                                            </Button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-                <div className="mt-12 flex flex-col justify-between gap-6 border-t border-secondary pt-8 md:mt-16 md:flex-row md:items-center">
-                    <GronaLogo className="w-min" />
-                    <p className="text-md text-quaternary">© {new Date().getFullYear()} Grona Ltd. All rights reserved.</p>
+                <div className="flex flex-col gap-12 md:gap-16 lg:flex-row lg:justify-between">
+                    <div className="flex flex-col gap-6 md:gap-8 max-w-xs">
+                        <GronaLogo />
+                        <p className="text-md text-tertiary">Smarter Websites. Higher Sales.</p>
+                        <Button color="link-color" size="lg" href="#waitlist-form" className="w-fit">
+                            Join the private beta →
+                        </Button>
+                    </div>
+
+                    <nav>
+                        <ul className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:gap-12">
+                            {footerNavList.map((category) => (
+                                <li key={category.label}>
+                                    <h4 className="text-sm font-semibold text-quaternary">{category.label}</h4>
+                                    <ul className="mt-4 flex flex-col gap-3">
+                                        {category.items.map((item) => (
+                                            <li key={item.label}>
+                                                <Button color="link-gray" size="lg" href={item.href} className="gap-1 p-0">
+                                                    {item.label}
+                                                </Button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+
+                <div className="mt-12 border-t border-secondary pt-8 md:mt-16 text-center">
+                    <p className="text-md text-quaternary">
+                        © {new Date().getFullYear()} grona.ai — Built for teams that never stop testing.
+                    </p>
                 </div>
             </div>
         </footer>
@@ -1323,7 +1241,7 @@ export const HomeScreen = () => {
 
             <ROICalculatorSection />
 
-            <FeaturesSimpleIcons02 />
+            <FeaturesTabsMockup07 />
 
             <SocialProofFullWidth />
 

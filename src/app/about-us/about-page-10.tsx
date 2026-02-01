@@ -394,37 +394,7 @@ const SimpleCentered = () => {
 };
 
 const navList = [
-    {
-        label: "Product",
-        items: [
-            { label: "Overview", href: "#" },
-            { label: "Features", href: "#" },
-            {
-                label: "Solutions",
-                href: "#",
-                badge: (
-                    <Badge size="sm" type="modern" className="ml-1">
-                        New
-                    </Badge>
-                ),
-            },
-            { label: "Tutorials", href: "#" },
-            { label: "Pricing", href: "#" },
-            { label: "Releases", href: "#" },
-        ],
-    },
 
-    {
-        label: "Resources",
-        items: [
-            { label: "Blog", href: "#" },
-            { label: "Newsletter", href: "#" },
-            { label: "Events", href: "#" },
-            { label: "Help centre", href: "#" },
-            { label: "Tutorials", href: "#" },
-            { label: "Support", href: "#" },
-        ],
-    },
 ];
 
 const FooterLarge04 = () => {
@@ -488,7 +458,6 @@ const FooterLarge04 = () => {
                         {[
                             { label: "Terms", href: "#" },
                             { label: "Privacy", href: "#" },
-                            { label: "Cookies", href: "#" },
                         ].map(({ label, href }) => (
                             <li key={label}>
                                 <a

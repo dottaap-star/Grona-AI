@@ -1,6 +1,6 @@
 "use client";
 
-import { BookClosed, FileCode01, LifeBuoy01, PlayCircle, Stars02 } from "@untitledui/icons";
+import { BookClosed, Stars02 } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { NavMenuItemLink } from "./base-components/nav-menu-item";
 
@@ -16,24 +16,6 @@ const items = [
         subtitle: "Learn how our customers are using Untitled UI to 10x their growth.",
         href: "/customer-stories",
         Icon: Stars02,
-    },
-    {
-        title: "Video tutorials",
-        subtitle: "Get up and running on our newest features and in-depth guides.",
-        href: "/tutorials",
-        Icon: PlayCircle,
-    },
-    {
-        title: "Documentation",
-        subtitle: "In-depth articles on our tools and technologies to empower teams.",
-        href: "/docs",
-        Icon: FileCode01,
-    },
-    {
-        title: "Help and support",
-        subtitle: "Need help with something? Our expert team is here to help 24/7.",
-        href: "/help",
-        Icon: LifeBuoy01,
     },
 ];
 

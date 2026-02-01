@@ -26,44 +26,12 @@ const footerSocials = [
 
 const footerNavList = [
     {
-        label: "Product",
-        items: [
-            { label: "Overview", href: "#" },
-            { label: "Features", href: "#" },
-            {
-                label: "Solutions",
-                href: "#",
-                badge: (
-                    <Badge color="gray" type="modern" size="sm" className="ml-1">
-                        New
-                    </Badge>
-                ),
-            },
-            { label: "Tutorials", href: "#" },
-            { label: "Pricing", href: "/pricing" },
-            { label: "Releases", href: "#" },
-        ],
-    },
-    {
         label: "Company",
         items: [
             { label: "About us", href: "/about-us" },
-            { label: "Careers", href: "#" },
-            { label: "Press", href: "#" },
-            { label: "News", href: "#" },
-            { label: "Media kit", href: "#" },
-            { label: "Contact", href: "#" },
-        ],
-    },
-    {
-        label: "Resources",
-        items: [
+            { label: "Features", href: "#" },
+            { label: "Pricing", href: "/pricing" },
             { label: "Blog", href: "#" },
-            { label: "Newsletter", href: "#" },
-            { label: "Events", href: "#" },
-            { label: "Help centre", href: "#" },
-            { label: "Tutorials", href: "#" },
-            { label: "Support", href: "#" },
         ],
     },
     {
@@ -82,9 +50,6 @@ const footerNavList = [
         items: [
             { label: "Terms", href: "/terms" },
             { label: "Privacy", href: "/privacy" },
-            { label: "Cookies", href: "#" },
-            { label: "Licenses", href: "#" },
-            { label: "Settings", href: "#" },
             { label: "Contact", href: "#" },
         ],
     },
@@ -161,54 +126,24 @@ const HeroScreenMockup01 = () => {
 
 const logos = [
     {
-        name: "Odeaolabs",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/odeaolabs.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/odeaolabs.svg",
+        name: "Aruhma",
+        imageUrl: "/assets/images/homepage/aruhma.svg",
+        darkModeImageUrl: "/assets/images/homepage/aruhma.svg",
     },
     {
-        name: "Kintsugi",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/kintsugi.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/kintsugi.svg",
+        name: "Growth Rocks",
+        imageUrl: "/assets/images/homepage/growthrocks.svg",
+        darkModeImageUrl: "/assets/images/homepage/growthrocks.svg",
     },
     {
-        name: "Stackedlab",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/stackedlab.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/stackedlab.svg",
+        name: "TechMateTech",
+        imageUrl: "/assets/images/homepage/techmatetech.svg",
+        darkModeImageUrl: "/assets/images/homepage/techmatetech.svg",
     },
     {
-        name: "Magnolia",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/magnolia.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/magnolia.svg",
-    },
-    {
-        name: "Powersurge",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/powersurge.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/powersurge.svg",
-    },
-    {
-        name: "Warpspeed",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/warpspeed.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/warpspeed.svg",
-    },
-    {
-        name: "Leapyear",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/leapyear.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/leapyear.svg",
-    },
-    {
-        name: "Easytax",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/easytax.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/easytax.svg",
-    },
-    {
-        name: "Sisyphus",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/sisyphus.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/sisyphus.svg",
-    },
-    {
-        name: "Catalog",
-        imageUrl: "https://www.untitledui.com/logos/logotype/color/catalog.svg",
-        darkModeImageUrl: "https://www.untitledui.com/logos/logotype/white/catalog.svg",
+        name: "Web Summit",
+        imageUrl: "/assets/images/homepage/websummit.webp",
+        darkModeImageUrl: "/assets/images/homepage/websummit.webp",
     },
 ];
 

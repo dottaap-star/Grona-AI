@@ -675,7 +675,7 @@ const FooterLarge11 = () => {
                                     { title: "Overview", href: "#" },
                                     { title: "Features", href: "#" },
                                     { title: "Pricing", href: "#" },
-                                    { title: "Careers", href: "#" },
+                                    { title: "Blog", href: "#" },
                                     { title: "Help", href: "#" },
                                     { title: "Privacy", href: "#" },
                                 ].map((item) => (

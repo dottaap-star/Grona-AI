@@ -6,65 +6,6 @@ import { Input } from "@/components/base/input/input";
 import { UntitledLogo } from "@/components/foundations/logo/untitledui-logo";
 
 const footerNavList = [
-    {
-        label: "Product",
-        items: [
-            {
-                label: "Overview",
-                href: "#",
-            },
-            {
-                label: "Features",
-                href: "#",
-            },
-            {
-                label: "Solutions",
-                href: "#",
-                badge: <span className="ml-1 rounded-md bg-white/10 px-1.5 py-0.5 text-xs font-medium text-white ring-1 ring-white/30 ring-inset">New</span>,
-            },
-            {
-                label: "Tutorials",
-                href: "#",
-            },
-            {
-                label: "Pricing",
-                href: "#",
-            },
-            {
-                label: "Releases",
-                href: "#",
-            },
-        ],
-    },
-    {
-        label: "Resources",
-        items: [
-            {
-                label: "Blog",
-                href: "#",
-            },
-            {
-                label: "Newsletter",
-                href: "#",
-            },
-            {
-                label: "Events",
-                href: "#",
-            },
-            {
-                label: "Help centre",
-                href: "#",
-            },
-            {
-                label: "Tutorials",
-                href: "#",
-            },
-            {
-                label: "Support",
-                href: "#",
-            },
-        ],
-    },
 ];
 
 export const FooterLarge04Brand = () => {
@@ -138,10 +79,6 @@ export const FooterLarge04Brand = () => {
                             },
                             {
                                 label: "Privacy",
-                                href: "#",
-                            },
-                            {
-                                label: "Cookies",
                                 href: "#",
                             },
                         ].map(({ label, href }) => (

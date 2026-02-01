@@ -232,55 +232,12 @@ const faqsExtended = [
 
 const footerNavList = [
     {
-        label: "Product",
-        items: [
-            { label: "Overview", href: "#" },
-            { label: "Features", href: "#" },
-            {
-                label: "Solutions",
-                href: "#",
-                badge: (
-                    <Badge color="gray" type="modern" size="sm" className="ml-1">
-                        New
-                    </Badge>
-                ),
-            },
-            { label: "Tutorials", href: "#" },
-            { label: "Pricing", href: "#" },
-            { label: "Releases", href: "#" },
-        ],
-    },
-    {
         label: "Company",
         items: [
             { label: "About us", href: "/about-us" },
-            { label: "Careers", href: "#" },
-            { label: "Press", href: "#" },
-            { label: "News", href: "#" },
-            { label: "Media kit", href: "#" },
-            { label: "Contact", href: "#" },
-        ],
-    },
-    {
-        label: "Resources",
-        items: [
+            { label: "Features", href: "#" },
+            { label: "Pricing", href: "/pricing" },
             { label: "Blog", href: "#" },
-            { label: "Newsletter", href: "#" },
-            { label: "Events", href: "#" },
-            { label: "Help centre", href: "#" },
-            { label: "Tutorials", href: "#" },
-            { label: "Support", href: "#" },
-        ],
-    },
-    {
-        label: "Use cases",
-        items: [
-            { label: "Startups", href: "#" },
-            { label: "Enterprise", href: "#" },
-            { label: "Government", href: "#" },
-            { label: "SaaS centre", href: "#" },
-            { label: "Marketplaces", href: "#" },
-            { label: "Ecommerce", href: "#" },
         ],
     },
     {
@@ -299,9 +256,6 @@ const footerNavList = [
         items: [
             { label: "Terms", href: "/terms" },
             { label: "Privacy", href: "/privacy" },
-            { label: "Cookies", href: "#" },
-            { label: "Licenses", href: "#" },
-            { label: "Settings", href: "#" },
             { label: "Contact", href: "#" },
         ],
     },
@@ -509,23 +463,6 @@ const PricingLargeTable01 = () => {
                                 </Fragment>
                             ))}
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th className="sr-only" scope="row">
-                                    Choose your plan
-                                </th>
-                                {tiers.map((tier) => (
-                                    <td key={tier.name} className="px-6 pt-10 pb-8">
-                                        <div className="flex flex-col gap-3">
-                                            <Button size="xl">Get started</Button>
-                                            <Button color="secondary" size="xl">
-                                                Chat to sales
-                                            </Button>
-                                        </div>
-                                    </td>
-                                ))}
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -642,45 +579,10 @@ const SocialProofFullWidth = () => {
                 <div className="flex flex-col gap-8">
                     <p className="text-center text-md font-medium text-tertiary">Join 4,000+ companies already growing</p>
                     <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-6">
-                        {/* Light mode images (hidden in dark mode) */}
-                        <img alt="Odeaolabs" src="https://www.untitledui.com/logos/logotype/color/odeaolabs.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Kintsugi" src="https://www.untitledui.com/logos/logotype/color/kintsugi.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Stackedlab" src="https://www.untitledui.com/logos/logotype/color/stackedlab.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Magnolia" src="https://www.untitledui.com/logos/logotype/color/magnolia.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Warpspeed" src="https://www.untitledui.com/logos/logotype/color/warpspeed.svg" className="h-9 md:h-12 dark:hidden" />
-                        <img alt="Sisyphus" src="https://www.untitledui.com/logos/logotype/color/sisyphus.svg" className="h-9 md:h-12 dark:hidden" />
-
-                        {/* Dark mode images (hidden in light mode) */}
-                        <img
-                            alt="Odeaolabs"
-                            src="https://www.untitledui.com/logos/logotype/white/odeaolabs.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Kintsugi"
-                            src="https://www.untitledui.com/logos/logotype/white/kintsugi.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Stackedlab"
-                            src="https://www.untitledui.com/logos/logotype/white/stackedlab.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Magnolia"
-                            src="https://www.untitledui.com/logos/logotype/white/magnolia.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Warpspeed"
-                            src="https://www.untitledui.com/logos/logotype/white/warpspeed.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
-                        <img
-                            alt="Sisyphus"
-                            src="https://www.untitledui.com/logos/logotype/white/sisyphus.svg"
-                            className="h-9 opacity-85 not-dark:hidden md:h-12"
-                        />
+                        <img alt="Aruhma" src="/assets/images/homepage/aruhma.svg" className="h-9 md:h-12" />
+                        <img alt="Growth Rocks" src="/assets/images/homepage/growthrocks.svg" className="h-9 md:h-12" />
+                        <img alt="TechMateTech" src="/assets/images/homepage/techmatetech.svg" className="h-9 md:h-12" />
+                        <img alt="Web Summit" src="/assets/images/homepage/websummit.webp" className="h-9 md:h-12" />
                     </div>
                 </div>
             </div>

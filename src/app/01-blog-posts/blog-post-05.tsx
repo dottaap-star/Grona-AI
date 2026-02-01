@@ -557,14 +557,14 @@ const FooterLarge16 = () => {
                     <UntitledLogo className="h-8 w-min shrink-0" />
                     <nav>
                         <ul className="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-[repeat(6,max-content)]">
-                            {[
-                                { title: "Overview", href: "#" },
-                                { title: "Features", href: "#" },
-                                { title: "Pricing", href: "#" },
-                                { title: "Careers", href: "#" },
-                                { title: "Help", href: "#" },
-                                { title: "Privacy", href: "#" },
-                            ].map((item) => (
+                                {[
+                                    { title: "Overview", href: "#" },
+                                    { title: "Features", href: "#" },
+                                    { title: "Pricing", href: "#" },
+                                    { title: "Blog", href: "#" },
+                                    { title: "Help", href: "#" },
+                                    { title: "Privacy", href: "#" },
+                                ].map((item) => (
                                 <li key={item.title}>
                                     <Button color="link-gray" size="lg" href={item.href}>
                                         {item.title}

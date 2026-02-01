@@ -6,9 +6,10 @@ export function Theme({ children }: { children: React.ReactNode }) {
     return (
         <ThemeProvider
             attribute="class"
-            value={{ light: "light", dark: "dark" }}
-            enableSystem
+            value={{ light: "light" }}
+            enableSystem={false}
             defaultTheme="light"
+            forcedTheme="light"
             storageKey="grona-theme"
         >
             {children}

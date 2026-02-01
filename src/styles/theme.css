@@ -121,18 +121,18 @@
     --color-alpha-white: rgb(255 255 255);
     --color-alpha-black: rgb(0 0 0);
 
-    --color-brand-25: rgb(255 250 249);
-    --color-brand-50: rgb(255 245 243);
-    --color-brand-100: rgb(255 235 230);
-    --color-brand-200: rgb(255 215 205);
-    --color-brand-300: rgb(255 195 180);
-    --color-brand-400: rgb(255 175 155);
-    --color-brand-500: rgb(246 167 155);
-    --color-brand-600: rgb(220 140 125);
-    --color-brand-700: rgb(194 113 95);
-    --color-brand-800: rgb(168 86 65);
-    --color-brand-900: rgb(142 59 35);
-    --color-brand-950: rgb(116 32 5);
+    --color-brand-25: rgb(246 253 250);
+    --color-brand-50: rgb(236 250 245);
+    --color-brand-100: rgb(217 245 235);
+    --color-brand-200: rgb(178 230 212);
+    --color-brand-300: rgb(130 210 183);
+    --color-brand-400: rgb(82 185 152);
+    --color-brand-500: rgb(42 150 118);
+    --color-brand-600: rgb(5 75 58);
+    --color-brand-700: rgb(4 63 49);
+    --color-brand-800: rgb(3 52 40);
+    --color-brand-900: rgb(2 42 33);
+    --color-brand-950: rgb(1 28 22);
 
     --color-error-25: rgb(255 251 250);
     --color-error-50: rgb(254 243 242);
@@ -1007,18 +1007,18 @@
         --color-utility-orange-700: var(--color-orange-300);
 
         /* BRAND COLORS - Dark Mode Override */
-        --color-brand-25: rgb(60 20 18);
-        --color-brand-50: rgb(70 25 22);
-        --color-brand-100: rgb(80 30 26);
-        --color-brand-200: rgb(90 35 30);
-        --color-brand-300: rgb(100 40 34);
-        --color-brand-400: rgb(110 35 32);
-        --color-brand-500: rgb(129 42 38);
-        --color-brand-600: rgb(148 49 44);
-        --color-brand-700: rgb(167 56 50);
-        --color-brand-800: rgb(186 63 56);
-        --color-brand-900: rgb(205 70 62);
-        --color-brand-950: rgb(224 77 68);
+        --color-brand-25: rgb(1 20 16);
+        --color-brand-50: rgb(1 28 22);
+        --color-brand-100: rgb(2 36 28);
+        --color-brand-200: rgb(2 45 35);
+        --color-brand-300: rgb(3 55 43);
+        --color-brand-400: rgb(4 65 51);
+        --color-brand-500: rgb(5 75 58);
+        --color-brand-600: rgb(42 150 118);
+        --color-brand-700: rgb(82 185 152);
+        --color-brand-800: rgb(130 210 183);
+        --color-brand-900: rgb(178 230 212);
+        --color-brand-950: rgb(217 245 235);
 
         --color-utility-blue-dark-50: var(--color-blue-dark-950);
         --color-utility-blue-dark-100: var(--color-blue-dark-900);

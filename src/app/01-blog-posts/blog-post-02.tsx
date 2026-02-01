@@ -453,37 +453,7 @@ const NewsletterSimpleLeftBrand = () => {
 };
 
 const navList = [
-    {
-        title: "Product",
-        items: [
-            { label: "Overview", href: "#" },
-            { label: "Features", href: "#" },
-            {
-                label: "Solutions",
-                href: "#",
-                badge: (
-                    <Badge size="sm" type="modern" className="ml-1">
-                        New
-                    </Badge>
-                ),
-            },
-            { label: "Tutorials", href: "#" },
-            { label: "Pricing", href: "#" },
-            { label: "Releases", href: "#" },
-        ],
-    },
 
-    {
-        title: "Resources",
-        items: [
-            { label: "Blog", href: "#" },
-            { label: "Newsletter", href: "#" },
-            { label: "Events", href: "#" },
-            { label: "Help centre", href: "#" },
-            { label: "Tutorials", href: "#" },
-            { label: "Support", href: "#" },
-        ],
-    },
 ];
 
 const FooterLarge04 = () => {
@@ -547,7 +517,6 @@ const FooterLarge04 = () => {
                         {[
                             { title: "Terms", href: "#" },
                             { title: "Privacy", href: "#" },
-                            { title: "Cookies", href: "#" },
                         ].map(({ title, href }) => (
                             <li key={title}>
                                 <a href={href} className="text-md text-quaternary transition duration-100 ease-linear hover:text-tertiary">

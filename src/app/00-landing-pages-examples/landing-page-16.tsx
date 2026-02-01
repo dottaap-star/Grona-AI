@@ -534,7 +534,6 @@ const FooterLarge13 = () => {
                         {[
                             { label: "Terms", href: "#" },
                             { label: "Privacy", href: "#" },
-                            { label: "Cookies", href: "#" },
                         ].map(({ label, href }) => (
                             <li key={label}>
                                 <a

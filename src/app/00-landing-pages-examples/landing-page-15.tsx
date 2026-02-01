@@ -325,7 +325,7 @@ const FooterLarge08 = () => {
                                     { label: "Overview", href: "#" },
                                     { label: "Features", href: "#" },
                                     { label: "Pricing", href: "#" },
-                                    { label: "Careers", href: "#" },
+                                    { label: "Blog", href: "#" },
                                     { label: "Help", href: "#" },
                                     { label: "Privacy", href: "#" },
                                 ].map((item) => (
@@ -373,7 +373,6 @@ const FooterLarge08 = () => {
                         {[
                             { label: "Terms", href: "#" },
                             { label: "Privacy", href: "#" },
-                            { label: "Cookies", href: "#" },
                         ].map(({ label, href }) => (
                             <li key={label}>
                                 <a

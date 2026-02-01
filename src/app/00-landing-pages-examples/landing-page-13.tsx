@@ -580,7 +580,7 @@ const FooterLarge11Brand = () => {
                                     { label: "Overview", href: "#" },
                                     { label: "Features", href: "#" },
                                     { label: "Pricing", href: "#" },
-                                    { label: "Careers", href: "#" },
+                                    { label: "Blog", href: "#" },
                                     { label: "Help", href: "#" },
                                     { label: "Privacy", href: "#" },
                                 ].map((item) => (

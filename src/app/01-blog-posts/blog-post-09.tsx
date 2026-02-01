@@ -415,7 +415,7 @@ const FooterLarge08 = () => {
                                     { title: "Overview", href: "#" },
                                     { title: "Features", href: "#" },
                                     { title: "Pricing", href: "#" },
-                                    { title: "Careers", href: "#" },
+                                    { title: "Blog", href: "#" },
                                     { title: "Help", href: "#" },
                                     { title: "Privacy", href: "#" },
                                 ].map((item) => (
@@ -463,7 +463,6 @@ const FooterLarge08 = () => {
                         {[
                             { title: "Terms", href: "#" },
                             { title: "Privacy", href: "#" },
-                            { title: "Cookies", href: "#" },
                         ].map(({ title, href }) => (
                             <li key={title}>
                                 <a href={href} className="text-md text-quaternary transition duration-100 ease-linear hover:text-tertiary">

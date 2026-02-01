@@ -26,24 +26,12 @@ export const GronaLogo = ({ minimal = false, className, ...props }: GronaLogoPro
     }
 
     return (
-        <div {...props} className={cx("flex h-8 md:h-[50px] w-max items-center justify-start", className)}>
-            {/* Favicon for reduced viewport (mobile/small screens) */}
+        <div {...props} className={cx("flex h-[47px] md:h-[50px] w-max items-center justify-start", className)}>
+            {/* Logo for both mobile and desktop */}
             <img
-                src="/g_favicon.svg"
+                src="/assets/logo/Light_logo (green).svg"
                 alt="Grona"
-                className="h-full w-auto md:hidden"
-            />
-            {/* Light mode logo (hidden in dark mode and on mobile) - has black text for light backgrounds */}
-            <img
-                src="/assets/logo/Light_logo.svg"
-                alt="Grona"
-                className="hidden h-full w-auto md:block dark:hidden"
-            />
-            {/* Dark mode logo (hidden in light mode and on mobile) - has white text for dark backgrounds */}
-            <img
-                src="/assets/logo/Dark_logo.svg"
-                alt="Grona"
-                className="hidden h-full w-auto dark:block max-md:dark:hidden"
+                className="h-full w-auto"
             />
         </div>
     );

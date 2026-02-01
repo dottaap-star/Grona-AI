@@ -441,14 +441,14 @@ const FooterLarge16 = () => {
         <footer className="bg-primary py-12 md:pt-16">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex flex-col gap-8 md:items-center">
-                    <GronaLogo className="h-8 w-min shrink-0" />
+                    <GronaLogo className="h-[47px] w-min shrink-0" />
                     <nav>
                         <ul className="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-[repeat(6,max-content)]">
                             {[
                                 { title: "Overview", href: "#" },
                                 { title: "Features", href: "#" },
                                 { title: "Pricing", href: "#" },
-                                { title: "Careers", href: "#" },
+                                { title: "Blog", href: "#" },
                                 { title: "Help", href: "#" },
                                 { title: "Privacy", href: "/privacy" },
                             ].map((item) => (
