@@ -1168,7 +1168,7 @@ const FooterLarge03 = () => {
                                 <ul className="mt-4 flex flex-col gap-3">
                                     {category.items.map((item) => (
                                         <li key={item.label}>
-                                            <Button color="link-color" size="lg" href={item.href} iconTrailing={item.badge} className="gap-1">
+                                            <Button color="link-color" size="lg" href={item.href}>
                                                 {item.label}
                                             </Button>
                                         </li>

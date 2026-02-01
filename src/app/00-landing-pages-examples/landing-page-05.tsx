@@ -784,7 +784,6 @@ const FooterLarge05Brand = () => {
                                                 color="link-color"
                                                 size="lg"
                                                 href={item.href}
-                                                iconTrailing={item.badge}
                                             >
                                                 {item.label}
                                             </Button>
