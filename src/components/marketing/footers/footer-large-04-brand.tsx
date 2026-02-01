@@ -5,8 +5,7 @@ import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
 import { UntitledLogo } from "@/components/foundations/logo/untitledui-logo";
 
-const footerNavList = [
-];
+const footerNavList: { label: string; items: { label: string; href: string }[] }[] = [];
 
 export const FooterLarge04Brand = () => {
     return (
@@ -30,7 +29,6 @@ export const FooterLarge04Brand = () => {
                                                     color="link-color"
                                                     size="lg"
                                                     href={item.href}
-                                                    iconTrailing={item.badge}
                                                 >
                                                     {item.label}
                                                 </Button>

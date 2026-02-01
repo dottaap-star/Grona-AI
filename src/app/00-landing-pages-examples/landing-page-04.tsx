@@ -616,9 +616,7 @@ const CTAScreenMockup03 = () => {
 };
 
 const FooterLarge04 = () => {
-    const navList = [
-
-    ];
+    const navList: { title: string; items: { label: string; href: string }[] }[] = [];
 
     return (
         <footer className="bg-secondary py-12 md:pt-16">
