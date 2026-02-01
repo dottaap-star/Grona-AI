@@ -604,7 +604,6 @@ const CardVertical = () => {
                         <Button color="secondary" size="xl">
                             Learn more
                         </Button>
-                        <Button size="xl">Get started</Button>
                     </div>
                 </div>
             </div>

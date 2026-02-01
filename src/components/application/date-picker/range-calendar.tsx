@@ -5,7 +5,7 @@ import { Fragment, useContext, useState } from "react";
 import type { CalendarDate } from "@internationalized/date";
 import { ChevronLeft, ChevronRight } from "@untitledui/icons";
 import { useDateFormatter } from "react-aria";
-import type { RangeCalendarProps as AriaRangeCalendarProps, DateValue } from "react-aria-components";
+import type { RangeCalendarProps as AriaRangeCalendarProps, DateValue, RangeValue } from "react-aria-components";
 import {
     CalendarGrid as AriaCalendarGrid,
     CalendarGridBody as AriaCalendarGridBody,
@@ -47,7 +47,7 @@ const RangeCalendarTitle = ({ part }: { part: "start" | "end" }) => {
         : formatter.format(context.visibleRange.end.toDate(context.timeZone));
 };
 
-const MobilePresetButton = ({ value, children, ...props }: HTMLAttributes<HTMLButtonElement> & { value: { start: DateValue; end: DateValue } }) => {
+const MobilePresetButton = ({ value, children, ...props }: HTMLAttributes<HTMLButtonElement> & { value: RangeValue<DateValue> }) => {
     const context = useContext(RangeCalendarStateContext);
 
     return (
@@ -70,7 +70,7 @@ interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
     /** The dates to highlight. */
     highlightedDates?: DateValue[];
     /** The date presets to display. */
-    presets?: Record<string, { label: string; value: { start: DateValue; end: DateValue } }>;
+    presets?: Record<string, { label: string; value: RangeValue<DateValue> }>;
 }
 
 export const RangeCalendar = ({ presets, ...props }: RangeCalendarProps) => {
