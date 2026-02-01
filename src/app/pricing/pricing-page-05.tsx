@@ -581,8 +581,6 @@ const SocialProofFullWidth = () => {
                     <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-6">
                         <img alt="Aruhma" src="/assets/images/homepage/aruhma.svg" className="h-9 md:h-12" />
                         <img alt="Growth Rocks" src="/assets/images/homepage/growthrocks.svg" className="h-9 md:h-12" />
-                        <img alt="TechMateTech" src="/assets/images/homepage/techmatetech.svg" className="h-9 md:h-12" />
-                        <img alt="Web Summit" src="/assets/images/homepage/websummit.webp" className="h-9 md:h-12 -mx-10 scale-[1.8]" />
                     </div>
                 </div>
             </div>

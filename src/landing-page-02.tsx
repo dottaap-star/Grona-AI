@@ -135,16 +135,6 @@ const logos = [
         imageUrl: "/assets/images/homepage/growthrocks.svg",
         darkModeImageUrl: "/assets/images/homepage/growthrocks.svg",
     },
-    {
-        name: "TechMateTech",
-        imageUrl: "/assets/images/homepage/techmatetech.svg",
-        darkModeImageUrl: "/assets/images/homepage/techmatetech.svg",
-    },
-    {
-        name: "Web Summit",
-        imageUrl: "/assets/images/homepage/websummit.webp",
-        darkModeImageUrl: "/assets/images/homepage/websummit.webp",
-    },
 ];
 
 const SocialProofFullWidthMasked = () => {
