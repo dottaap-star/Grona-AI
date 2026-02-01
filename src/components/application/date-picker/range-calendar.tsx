@@ -57,7 +57,8 @@ const MobilePresetButton = ({ value, children, ...props }: HTMLAttributes<HTMLBu
             size="sm"
             color="link-color"
             onClick={() => {
-                context?.setValue(value);
+                // Type assertion needed due to version mismatch between react-aria packages
+                context?.setValue(value as any);
                 context?.setFocusedDate(value.start as CalendarDate);
             }}
         >
