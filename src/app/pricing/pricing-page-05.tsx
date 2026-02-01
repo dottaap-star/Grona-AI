@@ -12,24 +12,46 @@ import { GronaLogo } from "@/components/foundations/logo/grona-logo";
 import { Header } from "@/components/marketing/header-navigation/header";
 import { cx } from "@/utils/cx";
 
-type Tier = { name: string; canChatToSales?: boolean; highlighted?: boolean; badge?: string; href?: string; priceMonthly: number; description: string };
+type Tier = {
+    name: string;
+    canChatToSales?: boolean;
+    highlighted?: boolean;
+    badge?: string;
+    href?: string;
+    priceLabel: string;
+    priceSubtext?: string;
+    description: string;
+};
 
 const tiers: Tier[] = [
-    { name: "Basic", badge: "Popular", href: "#", priceMonthly: 10, description: "Basic features for up to 10 employees with everything you need." },
     {
-        name: "Business",
-        highlighted: true,
-        canChatToSales: true,
+        name: "Starter",
         href: "#",
-        priceMonthly: 20,
-        description: "Advanced features and reporting, better workflows and automation.",
+        priceLabel: "Free",
+        description: "Perfect for small teams testing AI optimization.",
+    },
+    {
+        name: "Growth",
+        highlighted: true,
+        badge: "Popular",
+        href: "#",
+        priceLabel: "$25",
+        priceSubtext: "/mo",
+        description: "For growing businesses scaling conversion efforts.",
+    },
+    {
+        name: "Scale",
+        href: "#",
+        priceLabel: "$40",
+        priceSubtext: "/mo",
+        description: "Advanced features for high-traffic websites.",
     },
     {
         name: "Enterprise",
         canChatToSales: true,
         href: "#",
-        priceMonthly: 40,
-        description: "Personalized service and enterprise security for large teams.",
+        priceLabel: "Custom",
+        description: "Custom solutions for large organizations.",
     },
 ];
 
@@ -37,161 +59,124 @@ type Section = { name: string; features: { name: string; tooltip: { title: strin
 
 const sections: Section[] = [
     {
-        name: "Overview",
+        name: "Optimization Power",
         features: [
             {
-                name: "Basic features",
+                name: "Active optimizations",
                 tooltip: {
-                    title: "Core platform tools",
-                    description: "Access to essential tools required to manage your workspace and start using the platform.",
+                    title: "Concurrent optimizations",
+                    description: "The number of optimization experiments you can run at the same time.",
                 },
-                tiers: { Basic: true, Business: true, Enterprise: true },
+                tiers: { Starter: "1", Growth: "3", Scale: "10", Enterprise: "Unlimited" },
             },
             {
-                name: "Users",
+                name: "Monthly pageviews",
                 tooltip: {
-                    title: "Manage team members",
-                    description: "Add, remove, and manage users with control over access and permissions",
+                    title: "Traffic allowance",
+                    description: "The total monthly pageviews supported by your plan.",
                 },
-                tiers: { Basic: "10", Business: "20", Enterprise: "Unlimited" },
-            },
-            {
-                name: "Individual data",
-                tooltip: {
-                    title: "User-level insights",
-                    description: "View data and activity specific to individual users in your workspace.",
-                },
-                tiers: { Basic: "20 GB", Business: "40 GB", Enterprise: "Unlimited" },
-            },
-            {
-                name: "Support",
-                tooltip: {
-                    title: "Customer support access",
-                    description: "Includes access to our help center, email support, and in-app assistance during business hours.",
-                },
-                tiers: { Basic: true, Business: true, Enterprise: true },
-            },
-            {
-                name: "Automated workflows",
-                tooltip: {
-                    title: "Streamline recurring tasks",
-                    description: "Set up workflows that automate repetitive actions to save time and reduce manual effort.",
-                },
-                tiers: { Business: true, Enterprise: true },
-            },
-            {
-                name: "200+ integrations",
-                tooltip: {
-                    title: "Connect your tools",
-                    description: "Integrate with 200+ apps like Slack, Google Workspace, and Salesforce for a seamless workflow.",
-                },
-                tiers: { Business: true, Enterprise: true },
+                tiers: { Starter: "1k", Growth: "15k", Scale: "30k", Enterprise: "Unlimited" },
             },
         ],
     },
     {
-        name: "Reporting and analytics",
+        name: "AI Agents & Generators",
         features: [
             {
-                name: "Analytics",
+                name: "Primary analysis capability",
                 tooltip: {
-                    title: "Platform usage insights",
-                    description: "Monitor trends, usage patterns, and key metrics across your account.",
+                    title: "Optimization intelligence",
+                    description: "The depth of AI-driven analysis used to surface optimization opportunities.",
                 },
-                tiers: { Basic: "Basic", Business: "Advanced", Enterprise: "Advanced" },
+                tiers: {
+                    Starter: "Basic issue detection",
+                    Growth: "Drop-off pattern analysis",
+                    Scale: "Full multi-agent optimization loop",
+                    Enterprise: "Dedicated AI agents",
+                },
             },
             {
-                name: "Export reports",
+                name: "Variant generation",
                 tooltip: {
-                    title: "Downloadable reporting",
-                    description: "Export reports as CSV or PDF files for offline analysis and sharing.",
+                    title: "AI variant creation",
+                    description: "The types of variants the AI can generate for experiments.",
                 },
-                tiers: { Basic: true, Business: true, Enterprise: true },
+                tiers: {
+                    Starter: false,
+                    Growth: "Copy/CTA generator",
+                    Scale: "Copy + Layout + Offer variations",
+                    Enterprise: "Custom AI model fine-tuning",
+                },
             },
             {
-                name: "Scheduled reports",
+                name: "Monthly AI credits",
                 tooltip: {
-                    title: "Automated report delivery",
-                    description: "Set up reports to be generated and emailed at regular intervals.",
+                    title: "AI processing allowance",
+                    description: "Credits consumed during analysis, generation, optimization loops, and personalization.",
                 },
-                tiers: { Basic: true, Business: true, Enterprise: true },
-            },
-            {
-                name: "API Access",
-                tooltip: {
-                    title: "Build with our API",
-                    description: "Use our REST API to programmatically interact with data, users, and workflows.",
-                },
-                tiers: { Business: true, Enterprise: true },
-            },
-            {
-                name: "Advanced reports",
-                tooltip: {
-                    title: "Deeper analytics tools",
-                    description: "Create custom visualizations, filters, and drilldowns for more complex reporting needs.",
-                },
-                tiers: { Business: true, Enterprise: true },
-            },
-            {
-                name: "Saved reports",
-                tooltip: {
-                    title: "Quick access to key data",
-                    description: "Save and reuse frequently used report configurations for fast insights.",
-                },
-                tiers: { Business: true, Enterprise: true },
-            },
-            {
-                name: "Customer properties",
-                tooltip: {
-                    title: "Track customer attributes",
-                    description: "Define and manage custom data points for each customer in your system.",
-                },
-                tiers: { Enterprise: true },
-            },
-            {
-                name: "Custom fields",
-                tooltip: {
-                    title: "Flexible data structure",
-                    description: "Add custom fields to users, reports, or properties to tailor the platform to your needs.",
-                },
-                tiers: { Enterprise: true },
+                tiers: { Starter: "500", Growth: "1500", Scale: "3500", Enterprise: "Unlimited" },
             },
         ],
     },
     {
-        name: "User access",
+        name: "Personalization",
         features: [
             {
-                name: "SSO/SAML authentication",
+                name: "Personalization level",
                 tooltip: {
-                    title: "Enterprise-grade login",
-                    description: "Enable secure, single sign-on (SSO) with identity providers using SAML 2.0.",
+                    title: "Targeted experiences",
+                    description: "The sophistication of audience segmentation and personalization.",
                 },
-                tiers: { Basic: true, Business: true, Enterprise: true },
+                tiers: {
+                    Starter: "None",
+                    Growth: "Basic (new/returning)",
+                    Scale: "Advanced (UTM, Geo, Device, Behavioral)",
+                    Enterprise: "Predictive + custom segments",
+                },
+            },
+        ],
+    },
+    {
+        name: "Integrations + Support",
+        features: [
+            {
+                name: "Integrations",
+                tooltip: {
+                    title: "Connected tools",
+                    description: "Supported integrations for analytics, CRM, and product workflows.",
+                },
+                tiers: {
+                    Starter: "Visual no-code editor",
+                    Growth: "GA4 + Clarity + HubSpot",
+                    Scale: "GA4 + Clarity + HubSpot",
+                    Enterprise: "All integrations",
+                },
             },
             {
-                name: "Advanced permissions",
+                name: "Support level",
                 tooltip: {
-                    title: "Granular access control",
-                    description: "Control who can view, edit, or manage specific areas and features within the platform.",
+                    title: "Response times",
+                    description: "Support availability and response time targets by plan.",
                 },
-                tiers: { Business: true, Enterprise: true },
+                tiers: {
+                    Starter: "Email (72h)",
+                    Growth: "Priority email/chat (24–48h)",
+                    Scale: "Priority chat (<12h)",
+                    Enterprise: "SLA + priority support",
+                },
             },
             {
-                name: "Audit log",
+                name: "Account management",
                 tooltip: {
-                    title: "Track account activity",
-                    description: "Keep a detailed history of user actions and changes across your organization.",
+                    title: "Success support",
+                    description: "Additional success resources and account management options.",
                 },
-                tiers: { Enterprise: true },
-            },
-            {
-                name: "Data history",
-                tooltip: {
-                    title: "Access historical records",
-                    description: "View changes and trends over time with historical data access.",
+                tiers: {
+                    Starter: false,
+                    Growth: false,
+                    Scale: "Multi-device consistency",
+                    Enterprise: "Dedicated account manager",
                 },
-                tiers: { Enterprise: true },
             },
         ],
     },
@@ -199,34 +184,52 @@ const sections: Section[] = [
 
 const faqsExtended = [
     {
-        question: "Is there a free trial available?",
-        answer: "Yes, you can try us for free for 30 days. If you want, we'll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+        question: "What are AI Credits and how are they used?",
+        answer:
+            "AI Credits are used when Grona analyzes a page for drop-offs, generates copy, layout, or offer variants, runs optimization cycles, or applies personalization logic. A typical optimization loop uses 120–180 credits depending on page complexity.",
         icon: Heart,
     },
     {
-        question: "Can I change my plan later?",
-        answer: "Of course. Our pricing scales with your company. Chat to our friendly team to find a solution that works for you.",
+        question: "Can I change plans at any time?",
+        answer:
+            "Yes. You can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades apply at the start of your next billing cycle. Unused AI credits don’t roll over when changing plans.",
         icon: SwitchHorizontal01,
     },
     {
-        question: "What is your cancellation policy?",
-        answer: "We understand that things change. You can cancel your plan at any time and we'll refund you the difference already paid.",
+        question: "What happens if I exceed my AI credits?",
+        answer:
+            "If you run out of AI credits, your existing optimizations continue running, but you won’t be able to generate new variants until your credits reset or you upgrade your plan. We’ll notify you when you reach 80% of your limit.",
         icon: SlashCircle01,
     },
     {
-        question: "Can other info be added to an invoice?",
-        answer: "Yes, you can try us for free for 30 days. If you want, we'll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+        question: "Is there a free plan?",
+        answer:
+            "Yes. The Starter plan is completely free with 500 AI credits per month. No credit card required. You can upgrade any time to unlock more credits and advanced features.",
         icon: File05,
     },
     {
-        question: "How does billing work?",
-        answer: "Plans are per workspace, not per account. You can upgrade one workspace, and still have any number of free workspaces.",
+        question: "What integrations do you support?",
+        answer:
+            "Grona integrates with Shopify, WooCommerce, Webflow, WordPress, Wix, Squarespace, and BigCommerce, plus analytics tools like GA4, Clarity, and HubSpot. For other tools, you can integrate via JavaScript snippet or email support@grona.ai.",
         icon: CreditCardRefresh,
     },
     {
-        question: "How do I change my account email?",
-        answer: "You can change the email address associated with your account by going to untitled.com/account from a laptop or desktop.",
+        question: "How does the autonomous optimization loop work?",
+        answer:
+            "Grona monitors your site, detects optimization opportunities, generates AI-powered variants, runs A/B tests, analyzes results, and automatically implements winning changes. This cycle runs continuously to improve conversion rate over time.",
         icon: Mail01,
+    },
+    {
+        question: "Is there a setup fee or long-term contract?",
+        answer:
+            "No setup fees. All plans are month-to-month with no long-term contracts required. You can cancel anytime. Annual plans offer a discount but are commitment-free—you can switch to monthly billing at your next renewal.",
+        icon: CreditCardRefresh,
+    },
+    {
+        question: "What kind of results can I expect?",
+        answer:
+            "Most teams see measurable conversion improvements after 4–5 optimization cycles (typically 2–4 weeks). Many customers achieve 25–30% higher conversion rates within 2–3 months, depending on traffic and industry.",
+        icon: Heart,
     },
 ];
 
@@ -268,9 +271,9 @@ const PricingLargeTable01 = () => {
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                     <span className="text-sm font-semibold text-brand-secondary md:text-md">Pricing</span>
 
-                    <h2 className="mt-3 text-display-md font-semibold text-primary md:text-display-lg">Compare our plans and find yours</h2>
+                    <h2 className="mt-3 text-display-md font-semibold text-primary md:text-display-lg">Choose the right plan for your optimization needs</h2>
                     <p className="mt-4 text-lg text-tertiary md:mt-6 md:text-xl">
-                        Simple, transparent pricing that grows with you. Try any plan free for 30 days.
+                        Start free or scale with Growth, Scale, or Enterprise plans.
                     </p>
                     <Tabs className="w-full md:w-auto">
                         <TabList
@@ -301,13 +304,12 @@ const PricingLargeTable01 = () => {
                                     )}
                                 </p>
                                 <p className="mt-4">
-                                    <span className="text-display-lg font-semibold text-primary">${tier.priceMonthly}</span>
-                                    <span className="ml-1.5 pb-2 text-md font-medium text-tertiary">per month</span>
+                                    <span className="text-display-lg font-semibold text-primary">{tier.priceLabel}</span>
+                                    {tier.priceSubtext && (
+                                        <span className="ml-1.5 pb-2 text-md font-medium text-tertiary">{tier.priceSubtext}</span>
+                                    )}
                                 </p>
                                 <p className="mt-4 text-sm text-tertiary">{tier.description}</p>
-                                <div className="mt-6 flex flex-col gap-3">
-                                    <Button size="xl">Get started</Button>
-                                </div>
                             </div>
 
                             {sections.map((section) => (
@@ -353,7 +355,6 @@ const PricingLargeTable01 = () => {
                             ))}
 
                             <div className="mt-8 flex flex-col gap-3 px-4">
-                                <Button size="xl">Get started</Button>
                                 {tier.canChatToSales && (
                                     <Button color="secondary" size="xl">
                                         Chat to sales
@@ -395,13 +396,14 @@ const PricingLargeTable01 = () => {
                                         <div className="flex h-full flex-col justify-between">
                                             <div className="flex flex-col">
                                                 <p>
-                                                    <span className="text-display-lg font-semibold text-primary">${tier.priceMonthly}</span>
-                                                    <span className="ml-1.5 pb-2 text-md font-medium text-tertiary">per month</span>
+                                                    <span className="text-display-lg font-semibold text-primary">{tier.priceLabel}</span>
+                                                    {tier.priceSubtext && (
+                                                        <span className="ml-1.5 pb-2 text-md font-medium text-tertiary">{tier.priceSubtext}</span>
+                                                    )}
                                                 </p>
                                                 <p className="mt-4 text-sm text-tertiary">{tier.description}</p>
                                             </div>
                                             <div className="mt-6 flex flex-col gap-3">
-                                                <Button size="xl">Get started</Button>
                                                 <Button color="secondary" size="xl">
                                                     Chat to sales
                                                 </Button>
