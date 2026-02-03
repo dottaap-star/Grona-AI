@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[40191,["/grona-ai/_next/static/chunks/d2133d10465fe239.js","/grona-ai/_next/static/chunks/062e6d2f7f335759.js","/grona-ai/_next/static/chunks/da78f47d4f516203.js","/grona-ai/_next/static/chunks/e484bd21b090cd10.js"],"default"]
+3:I[97367,["/grona-ai/_next/static/chunks/ff1a16fafef87110.js","/grona-ai/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"3uizkR50Xh4FfUDTbGB34","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/grona-ai/_next/static/chunks/062e6d2f7f335759.js","async":true}],["$","script","script-1",{"src":"/grona-ai/_next/static/chunks/da78f47d4f516203.js","async":true}],["$","script","script-2",{"src":"/grona-ai/_next/static/chunks/e484bd21b090cd10.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

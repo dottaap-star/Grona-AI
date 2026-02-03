@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../../../../output-video"
+		},
+		{
+			"path": "../../../../grona-video"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../grona-backup"
+		},
+		{
+			"path": "../../../../logs"
+		},
+		{
+			"path": "../../../../grona-node-js"
+		},
+		{
+			"path": "../../../../grona-backend"
+		},
+		{
+			"path": "../../../../grona-frontend"
+		}
+	]
+}

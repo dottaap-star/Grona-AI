@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[99768,["/grona-ai/_next/static/chunks/d2133d10465fe239.js"],"RouteProvider"]
+3:I[7808,["/grona-ai/_next/static/chunks/d2133d10465fe239.js"],"Theme"]
+4:I[39756,["/grona-ai/_next/static/chunks/ff1a16fafef87110.js","/grona-ai/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+5:I[37457,["/grona-ai/_next/static/chunks/ff1a16fafef87110.js","/grona-ai/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+6:I[29306,["/grona-ai/_next/static/chunks/d2133d10465fe239.js","/grona-ai/_next/static/chunks/1c676557bc13c2d1.js","/grona-ai/_next/static/chunks/e484bd21b090cd10.js"],"default"]
+:HL["/grona-ai/_next/static/chunks/7b987e8f60b282b6.css","style"]
+:HL["/grona-ai/_next/static/chunks/527972b852b05743.css","style"]
+0:{"buildId":"3uizkR50Xh4FfUDTbGB34","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/grona-ai/_next/static/chunks/7b987e8f60b282b6.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/grona-ai/_next/static/chunks/527972b852b05743.css","precedence":"next"}],["$","script","script-0",{"src":"/grona-ai/_next/static/chunks/d2133d10465fe239.js","async":true}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_2fe1ab3d-module__-T-KAq__variable bg-primary antialiased","children":["$","$L2",null,{"children":["$","$L3",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}],"notFound":[["$","$L6",null,{}],[]]}]}]}]}]}]]}],"loading":null,"isPartial":false}

@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[47257,["/grona-ai/_next/static/chunks/ff1a16fafef87110.js","/grona-ai/_next/static/chunks/247eb132b7f7b574.js"],"ClientPageRoot"]
+3:I[5980,["/grona-ai/_next/static/chunks/d2133d10465fe239.js","/grona-ai/_next/static/chunks/40831d78b31d7f12.js","/grona-ai/_next/static/chunks/8566d1b88f72fb51.js","/grona-ai/_next/static/chunks/3afe5388bbcade1d.js","/grona-ai/_next/static/chunks/ed8b9213d51b3cb7.js","/grona-ai/_next/static/chunks/0b3cb3189e79a5a2.js","/grona-ai/_next/static/chunks/416f17c6634df9d2.js"],"HomeScreen"]
+6:I[97367,["/grona-ai/_next/static/chunks/ff1a16fafef87110.js","/grona-ai/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"buildId":"3uizkR50Xh4FfUDTbGB34","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/grona-ai/_next/static/chunks/40831d78b31d7f12.js","async":true}],["$","script","script-1",{"src":"/grona-ai/_next/static/chunks/8566d1b88f72fb51.js","async":true}],["$","script","script-2",{"src":"/grona-ai/_next/static/chunks/3afe5388bbcade1d.js","async":true}],["$","script","script-3",{"src":"/grona-ai/_next/static/chunks/ed8b9213d51b3cb7.js","async":true}],["$","script","script-4",{"src":"/grona-ai/_next/static/chunks/0b3cb3189e79a5a2.js","async":true}],["$","script","script-5",{"src":"/grona-ai/_next/static/chunks/416f17c6634df9d2.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+4:{}
+5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
+8:null

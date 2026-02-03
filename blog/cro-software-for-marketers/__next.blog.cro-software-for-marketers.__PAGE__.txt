@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[2316,["/grona-ai/_next/static/chunks/d2133d10465fe239.js","/grona-ai/_next/static/chunks/30bac573d37c5bb9.js","/grona-ai/_next/static/chunks/f5e554cb5e5b53e6.js","/grona-ai/_next/static/chunks/9af71a825ecf83df.js","/grona-ai/_next/static/chunks/b5579b44e01062c3.js","/grona-ai/_next/static/chunks/6a01c2d3be3415e7.js"],"default"]
+3:I[97367,["/grona-ai/_next/static/chunks/ff1a16fafef87110.js","/grona-ai/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"3uizkR50Xh4FfUDTbGB34","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/grona-ai/_next/static/chunks/30bac573d37c5bb9.js","async":true}],["$","script","script-1",{"src":"/grona-ai/_next/static/chunks/f5e554cb5e5b53e6.js","async":true}],["$","script","script-2",{"src":"/grona-ai/_next/static/chunks/9af71a825ecf83df.js","async":true}],["$","script","script-3",{"src":"/grona-ai/_next/static/chunks/b5579b44e01062c3.js","async":true}],["$","script","script-4",{"src":"/grona-ai/_next/static/chunks/6a01c2d3be3415e7.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
