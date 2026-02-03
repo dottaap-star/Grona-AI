@@ -164,7 +164,7 @@ const HeroScreenWithURLInput = () => {
                                 const url = formData.get("website-url") as string;
                                 if (!url) return;
                                 const normalizedUrl = normalizeUrl(url);
-                                window.location.href = `https://app.grona.ai/campaigns/edit/6966b3c40d27b3a250a105ec?url=${encodeURIComponent(normalizedUrl)}`;
+                                window.location.href = `https://app.grona.ai/try/edit/newCampaign?url=${encodeURIComponent(normalizedUrl)}`;
                             }}
                             className="w-full max-w-2xl"
                         >
