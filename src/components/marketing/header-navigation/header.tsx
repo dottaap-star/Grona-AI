@@ -56,7 +56,7 @@ export const Header = ({ isFloating, className }: HeaderProps) => {
                     </div>
 
                     {/* Desktop buttons */}
-                    <div className={cx("flex items-center max-md:hidden", isFloating ? "gap-[22px]" : "gap-3")}>
+                    <div className={cx("flex items-center max-md:hidden", isFloating ? "gap-[22px] pr-5" : "gap-3")}>
                         <Button color="link-gray" size={isFloating ? "md" : "lg"} href="/pricing">
                             Pricing
                         </Button>
