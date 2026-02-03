@@ -14,6 +14,7 @@ import { SectionDivider } from "@/components/shared-assets/section-divider";
 import { useClipboard } from "@/hooks/use-clipboard";
 import { cx } from "@/utils/cx";
 import { isReactComponent } from "@/utils/is-react-component";
+import { withBasePath } from "@/utils/base-path";
 
 type Article = {
     id: string;
@@ -191,7 +192,7 @@ const HeroSection = () => {
                     </p>
 
                     <div className="mt-8 flex items-center gap-3 md:mt-12">
-                        <img src="/assets/images/blogs/author.jpeg" className="size-12 rounded-full object-cover" alt="Grona Team" />
+                        <img src={withBasePath("/assets/images/blogs/author.jpeg")} className="size-12 rounded-full object-cover" alt="Grona Team" />
                         <div>
                             <p className="text-md font-semibold text-primary">Grona Team</p>
                             <p className="text-md text-tertiary">Published 14 Jan 2026</p>
@@ -201,7 +202,7 @@ const HeroSection = () => {
 
                 <img
                     className="mt-16 h-100 w-full object-cover md:mt-0 md:h-180 md:w-140 md:flex-shrink-0"
-                    src="/assets/images/blogs/feature-cro.png"
+                    src={withBasePath("/assets/images/blogs/feature-cro.png")}
                     alt="CRO Software Dashboard"
                 />
             </div>

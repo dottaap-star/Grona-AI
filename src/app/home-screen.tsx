@@ -40,6 +40,7 @@ import { Header } from "@/components/marketing/header-navigation/header";
 import { FeaturesTabsMockup07 } from "@/components/marketing/features/features-tabs-mockup-07";
 import { SectionDivider } from "@/components/shared-assets/section-divider";
 import { cx } from "@/utils/cx";
+import { withBasePath } from "@/utils/base-path";
 
 const HeroScreenWithURLInput = () => {
     const [typewriterPlaceholder, setTypewriterPlaceholder] = useState("");
@@ -456,9 +457,9 @@ const ROICalculatorSection = () => {
 
 const SocialProofFullWidth = () => {
     const logos = [
-        { alt: "Aruhma", src: "/assets/images/homepage/aruhma.svg", className: "h-7 md:h-9" },
-        { alt: "Growth Rocks", src: "/assets/images/homepage/growthrocks.svg", className: "h-6 md:h-8" },
-        { alt: "Growth Rocks WebP", src: "/assets/images/homepage/growth-rocks.webp", className: "h-8 md:h-10" },
+        { alt: "Aruhma", src: withBasePath("/assets/images/homepage/aruhma.svg"), className: "h-7 md:h-9" },
+        { alt: "Growth Rocks", src: withBasePath("/assets/images/homepage/growthrocks.svg"), className: "h-6 md:h-8" },
+        { alt: "Growth Rocks WebP", src: withBasePath("/assets/images/homepage/growth-rocks.webp"), className: "h-8 md:h-10" },
     ];
 
     return (
@@ -1194,9 +1195,6 @@ const FooterLarge01 = () => {
                     <div className="flex flex-col gap-6 md:gap-8 max-w-xs">
                         <GronaLogo />
                         <p className="text-md text-tertiary">Smarter Websites. Higher Sales.</p>
-                        <Button color="link-color" size="lg" href="#waitlist-form" className="w-fit">
-                            Join the private beta →
-                        </Button>
                     </div>
 
                     <nav>

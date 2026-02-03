@@ -3,6 +3,7 @@
 import type { HTMLAttributes } from "react";
 import Image from "next/image";
 import { cx } from "@/utils/cx";
+import { withBasePath } from "@/utils/base-path";
 
 interface GronaLogoProps extends HTMLAttributes<HTMLDivElement> {
     /**
@@ -18,7 +19,7 @@ export const GronaLogo = ({ minimal = false, className, ...props }: GronaLogoPro
         return (
             <div {...props} className={cx("flex h-8 w-8 items-center justify-center", className)}>
                 <Image
-                    src="/g_favicon.svg"
+                    src={withBasePath("/g_favicon.svg")}
                     alt="Grona"
                     width={32}
                     height={32}
@@ -32,7 +33,7 @@ export const GronaLogo = ({ minimal = false, className, ...props }: GronaLogoPro
         <div {...props} className={cx("flex h-[47px] md:h-[50px] w-max items-center justify-start", className)}>
             {/* Logo for both mobile and desktop */}
             <Image
-                src="/assets/logo/Light_logo (green).svg"
+                src={withBasePath("/assets/logo/Light_logo (green).svg")}
                 alt="Grona"
                 width={500}
                 height={500}

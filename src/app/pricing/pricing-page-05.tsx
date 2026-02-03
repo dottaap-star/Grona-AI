@@ -11,6 +11,7 @@ import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
 import { GronaLogo } from "@/components/foundations/logo/grona-logo";
 import { Header } from "@/components/marketing/header-navigation/header";
 import { cx } from "@/utils/cx";
+import { withBasePath } from "@/utils/base-path";
 
 type Tier = {
     name: string;
@@ -581,8 +582,8 @@ const SocialProofFullWidth = () => {
                 <div className="flex flex-col gap-8">
                     <p className="text-center text-md font-medium text-tertiary">Join 4,000+ companies already growing</p>
                     <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-6">
-                        <img alt="Aruhma" src="/assets/images/homepage/aruhma.svg" className="h-9 md:h-12" />
-                        <img alt="Growth Rocks" src="/assets/images/homepage/growthrocks.svg" className="h-9 md:h-12" />
+                        <img alt="Aruhma" src={withBasePath("/assets/images/homepage/aruhma.svg")} className="h-9 md:h-12" />
+                        <img alt="Growth Rocks" src={withBasePath("/assets/images/homepage/growthrocks.svg")} className="h-9 md:h-12" />
                     </div>
                 </div>
             </div>
