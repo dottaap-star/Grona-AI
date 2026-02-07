@@ -10,7 +10,6 @@ import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-ic
 import { UntitledLogo } from "@/components/foundations/logo/untitledui-logo";
 import { RatingBadge } from "@/components/foundations/rating-badge";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
-import { Header } from "@/components/marketing/header-navigation/header";
 import { SectionDivider } from "@/components/shared-assets/section-divider";
 import { cx } from "@/utils/cx";
 
@@ -73,8 +72,6 @@ const HeroScreenMockup01 = () => {
                 className="pointer-events-none absolute top-0 left-1/2 z-0 max-w-none -translate-x-1/2 md:hidden dark:brightness-[0.2]"
                 alt="Grid pattern background"
             />
-
-            <Header />
 
             <section className="relative overflow-hidden py-16 md:py-24">
                 <div className="mx-auto w-full max-w-container px-4 md:px-8">
@@ -467,29 +464,6 @@ const MetricsSimpleCenteredText = () => {
     );
 };
 
-const CTACardHorizontal = () => {
-    return (
-        <section className="bg-primary py-16 md:py-24">
-            <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="flex flex-col gap-x-8 gap-y-8 rounded-2xl bg-secondary px-6 py-10 lg:flex-row lg:p-16">
-                    <div className="flex max-w-3xl flex-1 flex-col">
-                        <h2 className="text-display-sm font-semibold text-primary md:text-display-md">
-                            <span className="hidden md:inline">Start your 30-day free trial</span>
-                            <span className="md:hidden">Start your free trial</span>
-                        </h2>
-                        <p className="mt-4 text-lg text-tertiary md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Untitled.</p>
-                    </div>
-                    <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start">
-                        <Button color="secondary" size="xl">
-                            Learn more
-                        </Button>
-                        <Button size="xl">Get started</Button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
 
 const reviews = [
     {
@@ -769,7 +743,6 @@ const FooterLarge02 = () => {
             <div className="bg-secondary_alt py-10 md:py-12">
                 <div className="mx-auto max-w-container px-4 md:px-8">
                     <div className="flex flex-col-reverse justify-between gap-6 md:flex-row">
-                        <p className="text-md text-quaternary">© 2077 Untitled UI. All rights reserved.</p>
                         <ul className="flex gap-6">
                             {footerSocials.map(({ label, icon: Icon, href }) => (
                                 <li key={label}>
@@ -807,8 +780,6 @@ const LandingPage02 = () => {
             <FeaturesIntegrationsIcons02 />
 
             <MetricsSimpleCenteredText />
-
-            <CTACardHorizontal />
 
             <TestimonialSimpleCentered03 />
 

@@ -36,7 +36,7 @@ import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { GronaLogo } from "@/components/foundations/logo/grona-logo";
-import { Header } from "@/components/marketing/header-navigation/header";
+import { HeaderWithNavigation as Header } from "@/components/marketing/header-navigation/header-with-navigation";
 import { FeaturesTabsMockup07 } from "@/components/marketing/features/features-tabs-mockup-07";
 import { SectionDivider } from "@/components/shared-assets/section-divider";
 import { cx } from "@/utils/cx";
@@ -1155,7 +1155,7 @@ const FAQAccordion01 = () => {
                         <h4 className="text-xl font-semibold text-primary">Still have questions?</h4>
                         <p className="mt-2 text-md text-tertiary md:text-lg">Can't find the answer you're looking for? Chat with our friendly team.</p>
                     </div>
-                    <Button size="xl">Get in touch</Button>
+                    <Button size="xl" href="mailto:hello@grona.ai">Get in touch</Button>
                 </div>
             </div>
         </section>
@@ -1187,7 +1187,7 @@ const footerNavList = [
     },
 ];
 
-const FooterLarge01 = () => {
+export const FooterLarge01 = () => {
     return (
         <footer className="bg-primary py-12 md:py-14">
             <div className="mx-auto max-w-container px-4 md:px-8">
@@ -1236,15 +1236,13 @@ export const HomeScreen = () => {
             
             <HeroScreenWithURLInput />
 
-            <ROICalculatorSection />
+            <SocialProofFullWidth />
 
             <FeaturesTabsMockup07 />
 
-            <SocialProofFullWidth />
-
             <HowItWorksSection />
 
-            <SocialCards03 />
+            <ROICalculatorSection />
 
             <FAQAccordion01 />
 
