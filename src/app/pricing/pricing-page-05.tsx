@@ -63,7 +63,7 @@ const getDisplayPrice = (tier: Tier, billingPeriod: "monthly" | "annually"): { l
 
     // Annual: 2 months free = pay for 10 months, show per-month equivalent
     const annualPerMonth = (tier.monthlyPrice * 10) / 12;
-    return { label: `$${annualPerMonth.toFixed(2)}`, subtext: "/mo" };
+    return { label: `$${annualPerMonth.toFixed(1)}`, subtext: "/mo" };
 };
 
 type Section = { name: string; features: { name: string; tooltip: { title: string; description: string }; tiers: Record<string, boolean | string> }[] };
@@ -246,31 +246,25 @@ const faqsExtended = [
 
 const footerNavList = [
     {
-        label: "Company",
+        label: "Product",
         items: [
-            { label: "About us", href: "/about-us" },
-            { label: "Features", href: "#" },
+            { label: "How it works", href: "#how-it-works" },
+            { label: "Features", href: "/features" },
             { label: "Pricing", href: "/pricing" },
-            { label: "Blog", href: "#" },
         ],
     },
     {
-        label: "Social",
+        label: "Company",
         items: [
-            { label: "Twitter", href: "#" },
-            { label: "LinkedIn", href: "#" },
-            { label: "Facebook", href: "#" },
-            { label: "GitHub", href: "#" },
-            { label: "AngelList", href: "#" },
-            { label: "Dribbble", href: "#" },
+            { label: "Contact", href: "mailto:hello@grona.ai" },
+            { label: "LinkedIn", href: "https://linkedin.com/company/grona-ai" },
         ],
     },
     {
         label: "Legal",
         items: [
-            { label: "Terms", href: "/terms" },
-            { label: "Privacy", href: "/privacy" },
-            { label: "Contact", href: "#" },
+            { label: "Privacy Policy", href: "/privacy" },
+            { label: "Terms & Conditions", href: "/terms" },
         ],
     },
 ];
@@ -289,12 +283,6 @@ const PricingLargeTable01 = () => {
                         Start free or scale with Growth, Scale, or Enterprise plans.
                     </p>
 
-                    {/* Promotional Banner */}
-                    <div className="mt-8 w-full max-w-md rounded-xl bg-gradient-to-r from-orange-500 to-red-500 px-4 py-3 text-center md:mt-10">
-                        <p className="text-sm font-semibold text-white md:text-md">
-                            Get 2 months FREE when you choose annual
-                        </p>
-                    </div>
 
                     <Tabs
                         className="w-full md:w-auto"
@@ -305,12 +293,12 @@ const PricingLargeTable01 = () => {
                             type="button-border"
                             size="md"
                             items={[
-                                { id: "monthly", label: "Monthly billing" },
+                                { id: "monthly", label: "Monthly" },
                                 {
                                     id: "annually",
                                     label: (
                                         <span className="inline-flex items-center gap-2">
-                                            Annual billing
+                                            Annual
                                             <Badge size="sm" type="pill-color" color="success">
                                                 Save 2 months
                                             </Badge>
@@ -630,34 +618,41 @@ const SocialProofFullWidth = () => {
 
 const FooterLarge01 = () => {
     return (
-        <footer className="bg-brand-section py-12 md:pt-16">
+        <footer className="bg-primary py-12 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <nav>
-                    <ul className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
-                        {footerNavList.map((category) => (
-                            <li key={category.label}>
-                                <h4 className="text-sm font-semibold text-quaternary_on-brand">{category.label}</h4>
-                                <ul className="mt-4 flex flex-col gap-3">
-                                    {category.items.map((item) => (
-                                        <li key={item.label}>
-                                            <Button
-                                                className="gap-1 text-footer-button-fg hover:text-footer-button-fg_hover"
-                                                color="link-color"
-                                                size="lg"
-                                                href={item.href}
-                                            >
-                                                {item.label}
-                                            </Button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-                <div className="mt-12 flex flex-col justify-between gap-6 border-t border-brand_alt pt-8 md:mt-16 md:flex-row md:items-center">
-                    <GronaLogo className="dark-mode" />
-                    <p className="text-md text-quaternary_on-brand">© {new Date().getFullYear()} Grona Ltd. All rights reserved.</p>
+                <div className="flex flex-col gap-12 md:gap-16 lg:flex-row lg:justify-between">
+                    <div className="flex flex-col gap-6 md:gap-8 max-w-xs">
+                        <GronaLogo />
+                        <p className="text-md text-tertiary">Smarter Websites. Higher Sales.</p>
+                        <a href="#waitlist-form" className="text-md font-bold text-primary hover:text-brand transition-colors inline-flex items-center gap-1.5">
+                            Join the private beta →
+                        </a>
+                    </div>
+
+                    <nav>
+                        <ul className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:gap-12">
+                            {footerNavList.map((category) => (
+                                <li key={category.label}>
+                                    <h4 className="text-sm font-semibold text-quaternary">{category.label}</h4>
+                                    <ul className="mt-4 flex flex-col gap-3">
+                                        {category.items.map((item) => (
+                                            <li key={item.label}>
+                                                <Button color="link-gray" size="lg" href={item.href} className="gap-1 p-0">
+                                                    {item.label}
+                                                </Button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+
+                <div className="mt-12 border-t border-secondary pt-8 md:mt-16 text-center">
+                    <p className="text-md text-quaternary">
+                        © {new Date().getFullYear()} grona.ai — Built for teams that never stop testing.
+                    </p>
                 </div>
             </div>
         </footer>
