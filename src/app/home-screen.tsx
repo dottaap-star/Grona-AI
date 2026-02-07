@@ -1189,10 +1189,10 @@ const footerNavList = [
 
 const FooterLarge01 = () => {
     return (
-        <footer className="bg-primary py-12 md:py-24">
+        <footer className="bg-primary py-12 md:py-14">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex flex-col gap-12 md:gap-16 lg:flex-row lg:justify-between">
-                    <div className="flex flex-col gap-6 md:gap-8 max-w-xs">
+                    <div className="flex flex-col gap-3 max-w-xs">
                         <GronaLogo />
                         <p className="text-md text-tertiary">Smarter Websites. Higher Sales.</p>
                     </div>
@@ -1219,7 +1219,9 @@ const FooterLarge01 = () => {
 
                 <div className="mt-12 border-t border-secondary pt-8 md:mt-16 text-center">
                     <p className="text-md text-quaternary">
-                        © {new Date().getFullYear()} grona.ai — Built for teams that never stop testing.
+                        Built for teams that never stop testing.
+                        <br />
+                        © {new Date().getFullYear()} grona.ai
                     </p>
                 </div>
             </div>

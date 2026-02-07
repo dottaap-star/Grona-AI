@@ -599,34 +599,16 @@ const FAQAccordion01 = () => {
     );
 };
 
-const SocialProofFullWidth = () => {
-    return (
-        <section className="bg-primary py-16 md:py-24">
-            <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="flex flex-col gap-8">
-                    <p className="text-center text-md font-medium text-tertiary">Join 4,000+ companies already growing</p>
-                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-6">
-                        <img alt="Aruhma" src={withBasePath("/assets/images/homepage/aruhma.svg")} className="h-9 md:h-12" />
-                        <img alt="Growth Rocks" src={withBasePath("/assets/images/homepage/growthrocks.svg")} className="h-9 md:h-12" />
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
 
 
 const FooterLarge01 = () => {
     return (
-        <footer className="bg-primary py-12 md:py-24">
+        <footer className="bg-primary py-12 md:py-14">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex flex-col gap-12 md:gap-16 lg:flex-row lg:justify-between">
-                    <div className="flex flex-col gap-6 md:gap-8 max-w-xs">
+                    <div className="flex flex-col gap-3 max-w-xs">
                         <GronaLogo />
                         <p className="text-md text-tertiary">Smarter Websites. Higher Sales.</p>
-                        <a href="#waitlist-form" className="text-md font-bold text-primary hover:text-brand transition-colors inline-flex items-center gap-1.5">
-                            Join the private beta →
-                        </a>
                     </div>
 
                     <nav>
@@ -651,7 +633,9 @@ const FooterLarge01 = () => {
 
                 <div className="mt-12 border-t border-secondary pt-8 md:mt-16 text-center">
                     <p className="text-md text-quaternary">
-                        © {new Date().getFullYear()} grona.ai — Built for teams that never stop testing.
+                        Built for teams that never stop testing.
+                        <br />
+                        © {new Date().getFullYear()} grona.ai
                     </p>
                 </div>
             </div>
@@ -668,7 +652,6 @@ const PricingPage05 = () => {
 
             <FAQAccordion01 />
 
-            <SocialProofFullWidth />
 
 
             <FooterLarge01 />
