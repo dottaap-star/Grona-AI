@@ -19,8 +19,7 @@ type Tier = {
     highlighted?: boolean;
     badge?: string;
     href?: string;
-    priceLabel: string;
-    priceSubtext?: string;
+    monthlyPrice?: number;
     description: string;
 };
 
@@ -28,7 +27,6 @@ const tiers: Tier[] = [
     {
         name: "Starter",
         href: "#",
-        priceLabel: "Free",
         description: "Perfect for small teams testing AI optimization.",
     },
     {
@@ -36,25 +34,37 @@ const tiers: Tier[] = [
         highlighted: true,
         badge: "Popular",
         href: "#",
-        priceLabel: "$25",
-        priceSubtext: "/mo",
+        monthlyPrice: 25,
         description: "For growing businesses scaling conversion efforts.",
     },
     {
         name: "Scale",
         href: "#",
-        priceLabel: "$40",
-        priceSubtext: "/mo",
+        monthlyPrice: 40,
         description: "Advanced features for high-traffic websites.",
     },
     {
         name: "Enterprise",
         canChatToSales: true,
         href: "#",
-        priceLabel: "Custom",
         description: "Custom solutions for large organizations.",
     },
 ];
+
+const getDisplayPrice = (tier: Tier, billingPeriod: "monthly" | "annually"): { label: string; subtext: string } => {
+    if (!tier.monthlyPrice) {
+        if (tier.canChatToSales) return { label: "Custom", subtext: "" };
+        return { label: "Free", subtext: "" };
+    }
+
+    if (billingPeriod === "monthly") {
+        return { label: `$${tier.monthlyPrice}`, subtext: "/mo" };
+    }
+
+    // Annual: 2 months free = pay for 10 months, show per-month equivalent
+    const annualPerMonth = (tier.monthlyPrice * 10) / 12;
+    return { label: `$${annualPerMonth.toFixed(2)}`, subtext: "/mo" };
+};
 
 type Section = { name: string; features: { name: string; tooltip: { title: string; description: string }; tiers: Record<string, boolean | string> }[] };
 
@@ -63,7 +73,7 @@ const sections: Section[] = [
         name: "Optimization Power",
         features: [
             {
-                name: "Active optimizations",
+                name: "Active campaigns",
                 tooltip: {
                     title: "Concurrent optimizations",
                     description: "The number of optimization experiments you can run at the same time.",
@@ -266,6 +276,8 @@ const footerNavList = [
 ];
 
 const PricingLargeTable01 = () => {
+    const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annually">("annually");
+
     return (
         <section className="bg-primary">
             <div className="mx-auto max-w-container px-4 py-16 md:px-8 md:py-24">
@@ -276,15 +288,37 @@ const PricingLargeTable01 = () => {
                     <p className="mt-4 text-lg text-tertiary md:mt-6 md:text-xl">
                         Start free or scale with Growth, Scale, or Enterprise plans.
                     </p>
-                    <Tabs className="w-full md:w-auto">
+
+                    {/* Promotional Banner */}
+                    <div className="mt-8 w-full max-w-md rounded-xl bg-gradient-to-r from-orange-500 to-red-500 px-4 py-3 text-center md:mt-10">
+                        <p className="text-sm font-semibold text-white md:text-md">
+                            Get 2 months FREE when you choose annual
+                        </p>
+                    </div>
+
+                    <Tabs
+                        className="w-full md:w-auto"
+                        selectedKey={billingPeriod}
+                        onSelectionChange={(key) => setBillingPeriod(key as "monthly" | "annually")}
+                    >
                         <TabList
                             type="button-border"
                             size="md"
                             items={[
                                 { id: "monthly", label: "Monthly billing" },
-                                { id: "annually", label: "Annual billing" },
+                                {
+                                    id: "annually",
+                                    label: (
+                                        <span className="inline-flex items-center gap-2">
+                                            Annual billing
+                                            <Badge size="sm" type="pill-color" color="success">
+                                                Save 2 months
+                                            </Badge>
+                                        </span>
+                                    ),
+                                },
                             ]}
-                            className="mt-8 w-full md:mt-12 md:w-auto [&_[role=tab]]:flex-1"
+                            className="mt-4 w-full md:mt-6 md:w-auto [&_[role=tab]]:flex-1"
                         />
                     </Tabs>
                 </div>
@@ -305,10 +339,17 @@ const PricingLargeTable01 = () => {
                                     )}
                                 </p>
                                 <p className="mt-4">
-                                    <span className="text-display-lg font-semibold text-primary">{tier.priceLabel}</span>
-                                    {tier.priceSubtext && (
-                                        <span className="ml-1.5 pb-2 text-md font-medium text-tertiary">{tier.priceSubtext}</span>
-                                    )}
+                                    {(() => {
+                                        const price = getDisplayPrice(tier, billingPeriod);
+                                        return (
+                                            <>
+                                                <span className="text-display-lg font-semibold text-primary">{price.label}</span>
+                                                {price.subtext && (
+                                                    <span className="ml-1.5 pb-2 text-md font-medium text-tertiary">{price.subtext}</span>
+                                                )}
+                                            </>
+                                        );
+                                    })()}
                                 </p>
                                 <p className="mt-4 text-sm text-tertiary">{tier.description}</p>
                             </div>
@@ -355,13 +396,6 @@ const PricingLargeTable01 = () => {
                                 </table>
                             ))}
 
-                            <div className="mt-8 flex flex-col gap-3 px-4">
-                                {tier.canChatToSales && (
-                                    <Button color="secondary" size="xl">
-                                        Chat to sales
-                                    </Button>
-                                )}
-                            </div>
                         </section>
                     ))}
                 </div>
@@ -397,17 +431,19 @@ const PricingLargeTable01 = () => {
                                         <div className="flex h-full flex-col justify-between">
                                             <div className="flex flex-col">
                                                 <p>
-                                                    <span className="text-display-lg font-semibold text-primary">{tier.priceLabel}</span>
-                                                    {tier.priceSubtext && (
-                                                        <span className="ml-1.5 pb-2 text-md font-medium text-tertiary">{tier.priceSubtext}</span>
-                                                    )}
+                                                    {(() => {
+                                                        const price = getDisplayPrice(tier, billingPeriod);
+                                                        return (
+                                                            <>
+                                                                <span className="text-display-lg font-semibold text-primary">{price.label}</span>
+                                                                {price.subtext && (
+                                                                    <span className="ml-1.5 pb-2 text-md font-medium text-tertiary">{price.subtext}</span>
+                                                                )}
+                                                            </>
+                                                        );
+                                                    })()}
                                                 </p>
                                                 <p className="mt-4 text-sm text-tertiary">{tier.description}</p>
-                                            </div>
-                                            <div className="mt-6 flex flex-col gap-3">
-                                                <Button color="secondary" size="xl">
-                                                    Chat to sales
-                                                </Button>
                                             </div>
                                         </div>
                                     </td>
@@ -591,26 +627,6 @@ const SocialProofFullWidth = () => {
     );
 };
 
-const CardVertical = () => {
-    return (
-        <section className="bg-primary pb-16 md:pb-24">
-            <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="flex flex-col items-center rounded-2xl bg-secondary px-6 py-10 text-center lg:p-16">
-                    <h2 className="text-display-sm font-semibold text-primary xl:text-display-md">
-                        <span className="hidden md:inline">Start your 30-day free trial</span>
-                        <span className="md:hidden">Start your free trial</span>
-                    </h2>
-                    <p className="mt-4 text-lg text-tertiary md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Untitled.</p>
-                    <div className="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-center">
-                        <Button color="secondary" size="xl">
-                            Learn more
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
 
 const FooterLarge01 = () => {
     return (
@@ -659,7 +675,6 @@ const PricingPage05 = () => {
 
             <SocialProofFullWidth />
 
-            <CardVertical />
 
             <FooterLarge01 />
         </div>
