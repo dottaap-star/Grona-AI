@@ -12,10 +12,10 @@ const MobileMenu = () => {
             <Button color="link-gray" size="lg" href="#how-it-works">
                 How it works
             </Button>
-            <Button color="link-gray" size="lg" href="/features">
+            <Button color="link-gray" size="lg" href="https://www.grona.ai/features">
                 Features
             </Button>
-            <Button color="link-gray" size="lg" href="/pricing">
+            <Button color="link-gray" size="lg" href="https://www.grona.ai/pricing">
                 Pricing
             </Button>
             <div className="h-px bg-secondary my-2" />
@@ -57,7 +57,7 @@ export const HeaderWithNavigation = ({ isFloating, className }: HeaderProps) => 
                     <div className="flex items-center gap-8">
                         <a
                             aria-label="Go to homepage"
-                            href="/"
+                            href="https://www.grona.ai"
                             className="rounded-xs outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2"
                         >
                             <GronaLogo />
@@ -68,10 +68,10 @@ export const HeaderWithNavigation = ({ isFloating, className }: HeaderProps) => 
                             <a href="#how-it-works" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
                                 How it works
                             </a>
-                            <a href="/features" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
+                            <a href="https://www.grona.ai/features" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
                                 Features
                             </a>
-                            <a href="/pricing" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
+                            <a href="https://www.grona.ai/pricing" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
                                 Pricing
                             </a>
                         </nav>

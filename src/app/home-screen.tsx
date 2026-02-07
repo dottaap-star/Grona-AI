@@ -1167,8 +1167,8 @@ const footerNavList = [
         label: "Product",
         items: [
             { label: "How it works", href: "#how-it-works" },
-            { label: "Features", href: "/features" },
-            { label: "Pricing", href: "/pricing" },
+            { label: "Features", href: "https://www.grona.ai/features" },
+            { label: "Pricing", href: "https://www.grona.ai/pricing" },
         ],
     },
     {
@@ -1181,8 +1181,8 @@ const footerNavList = [
     {
         label: "Legal",
         items: [
-            { label: "Privacy Policy", href: "/privacy" },
-            { label: "Terms & Conditions", href: "/terms" },
+            { label: "Privacy Policy", href: "https://www.grona.ai/privacy" },
+            { label: "Terms & Conditions", href: "https://www.grona.ai/terms" },
         ],
     },
 ];
