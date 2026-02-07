@@ -12,9 +12,9 @@ const MobileMenu = () => {
             <Button color="link-gray" size="lg" href="#how-it-works">
                 How it works
             </Button>
-            <Button color="link-gray" size="lg" href="https://www.grona.ai/features">
+            {/* <Button color="link-gray" size="lg" href="https://www.grona.ai/features">
                 Features
-            </Button>
+            </Button> */}
             <Button color="link-gray" size="lg" href="https://www.grona.ai/pricing">
                 Pricing
             </Button>
@@ -68,9 +68,9 @@ export const HeaderWithNavigation = ({ isFloating, className }: HeaderProps) => 
                             <a href="#how-it-works" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
                                 How it works
                             </a>
-                            <a href="https://www.grona.ai/features" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
+                            {/* <a href="https://www.grona.ai/features" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
                                 Features
-                            </a>
+                            </a> */}
                             <a href="https://www.grona.ai/pricing" className="text-sm font-semibold text-tertiary hover:text-primary transition-colors">
                                 Pricing
                             </a>
