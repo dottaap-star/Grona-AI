@@ -77,7 +77,7 @@ const HeroScreenMockup01 = () => {
                 <div className="mx-auto w-full max-w-container px-4 md:px-8">
                     <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
                         <h1 className="text-display-md font-semibold text-primary md:text-display-lg lg:text-display-xl">
-                            Beautiful analytics to grow smarter{" "}
+                            Your AI research team
                         </h1>
                         <p className="mt-4 max-w-3xl text-lg text-tertiary md:mt-6 md:text-xl">
                             Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000

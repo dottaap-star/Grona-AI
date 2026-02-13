@@ -1,7 +1,7 @@
 "use client";
 
 import { type FC, Fragment, type HTMLAttributes, useState } from "react";
-import { ChartBreakoutSquare, CheckCircle, MessageChatCircle, PlayCircle, ZapFast } from "@untitledui/icons";
+import { CheckCircle, FileSearch02, TrendUp01, Target04, Users01, ZapFast } from "@untitledui/icons";
 import { Collection, Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Badge } from "@/components/base/badges/badges";
@@ -77,18 +77,11 @@ const HeroScreenMockup01 = () => {
                 <div className="mx-auto w-full max-w-container px-4 md:px-8">
                     <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
                         <h1 className="text-display-md font-semibold text-primary md:text-display-lg lg:text-display-xl">
-                            Beautiful analytics to grow smarter{" "}
+                            Your AI research team
                         </h1>
                         <p className="mt-4 max-w-3xl text-lg text-tertiary md:mt-6 md:text-xl">
-                            Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000
-                            startups.
+                            Chat with AI to analyze traffic, competitors, ads, and pages. Get actionable insights without switching between a dozen tools.
                         </p>
-                        <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-12">
-                            <Button iconLeading={PlayCircle} color="secondary" size="xl">
-                                Demo
-                            </Button>
-                            <Button size="xl">Sign up</Button>
-                        </div>
                     </div>
                 </div>
 
@@ -218,49 +211,65 @@ const AlternateImageMockup: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
     );
 };
 
+const ChatBubble = ({ text }: { text: string }) => (
+    <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm text-secondary">
+        <span className="text-tertiary">&quot;</span>
+        <span>{text}</span>
+        <span className="text-tertiary">&quot;</span>
+    </div>
+);
+
+const ChatExamples = ({ examples }: { examples: string[] }) => (
+    <div className="mt-6 flex flex-wrap gap-2">
+        {examples.map((example) => (
+            <ChatBubble key={example} text={example} />
+        ))}
+    </div>
+);
+
 const FeaturesAlternatingLayout01 = () => {
     return (
         <section className="flex flex-col gap-12 overflow-hidden bg-primary py-16 sm:gap-16 md:gap-20 md:py-24 lg:gap-24">
             <div className="mx-auto w-full max-w-container px-4 md:px-8">
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                     <span className="text-sm font-semibold text-brand-secondary md:text-md">Features</span>
-                    <h2 className="mt-3 text-display-sm font-semibold text-primary md:text-display-md">Beautiful analytics to grow smarter</h2>
+                    <h2 className="mt-3 text-display-sm font-semibold text-primary md:text-display-md">Everything you need to outperform competitors</h2>
                     <p className="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
-                        Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups.
+                        AI-powered insights for traffic, competitors, ads, and pages. All in one conversation.
                     </p>
                 </div>
             </div>
 
             <div className="mx-auto flex w-full max-w-container flex-col gap-12 px-4 sm:gap-16 md:gap-20 md:px-8 lg:gap-24">
+                {/* Section 1: Business & Page Analysis */}
                 <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2 lg:gap-24">
                     <div className="max-w-xl flex-1 self-center">
-                        <FeaturedIcon icon={MessageChatCircle} size="lg" color="brand" theme="light" />
-                        <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">Share team inboxes</h2>
+                        <FeaturedIcon icon={FileSearch02} size="lg" color="brand" theme="light" />
+                        <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">Understand your business and optimize every page</h2>
                         <p className="mt-2 text-md text-tertiary md:mt-4 md:text-lg">
-                            Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.
+                            Get dual insights in one conversation. Business Analysis reveals who you&apos;re targeting and if your messaging matches. Page Analysis audits individual pages for structure, conversion points, and user journey alignment.
                         </p>
                         <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
                             {[
-                                "Leverage automation to move fast",
-                                "Always give customers a human to chat to",
-                                "Automate customer support and close leads faster",
+                                "Target audience identification & messaging-market fit",
+                                "User journey stage mapping & conversion point identification",
+                                "Structure benchmarking & CTA effectiveness scoring",
                             ].map((feat) => (
                                 <CheckItemText key={feat} size="md" iconStyle="outlined" color="primary" text={feat} />
                             ))}
                         </ul>
+                        <ChatExamples examples={["Who is my website targeting?", "Analyze my homepage", "Does my pricing page match my target audience?"]} />
                     </div>
 
                     <div className="relative w-full flex-1 lg:h-128">
                         <AlternateImageMockup className="lg:left-0">
-                            {/* Light mode image (hidden in dark mode) */}
                             <img
-                                alt="Dashboard mockup showing application interface"
+                                alt="Business and page analysis dashboard"
                                 src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-light-01.webp"
                                 className="size-full object-contain lg:w-auto lg:max-w-none dark:hidden"
                             />
-                            {/* Dark mode image (hidden in light mode) */}
                             <img
-                                alt="Dashboard mockup showing application interface"
+                                alt="Business and page analysis dashboard"
                                 src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-dark-01.webp"
                                 className="size-full object-contain not-dark:hidden lg:w-auto lg:max-w-none"
                             />
@@ -268,35 +277,35 @@ const FeaturesAlternatingLayout01 = () => {
                     </div>
                 </div>
 
+                {/* Section 2: Traffic Analysis */}
                 <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2 lg:gap-24">
                     <div className="max-w-xl flex-1 self-center lg:order-last">
-                        <FeaturedIcon icon={ZapFast} size="lg" color="brand" theme="light" />
-                        <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">Deliver instant answers</h2>
+                        <FeaturedIcon icon={TrendUp01} size="lg" color="brand" theme="light" />
+                        <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">Know exactly where your visitors come from</h2>
                         <p className="mt-2 text-md text-tertiary md:mt-4 md:text-lg">
-                            An all-in-one customer service platform that helps you balance everything your customers need to be happy.
+                            Get a complete breakdown of your traffic sources, from organic search to paid ads and social media. Understand trends, geographic distribution, and device preferences to make smarter marketing decisions.
                         </p>
                         <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
                             {[
-                                "Keep your customers in the loop with live chat",
-                                "Embed help articles right on your website",
-                                "Customers never have to leave the page to find an answer",
+                                "Traffic source breakdown (organic, paid, direct, social, referral)",
+                                "Traffic trends over time & geographic visitor distribution",
+                                "Device, browser insights & traffic quality indicators",
                             ].map((feat) => (
                                 <CheckItemText key={feat} size="md" iconStyle="outlined" color="primary" text={feat} />
                             ))}
                         </ul>
+                        <ChatExamples examples={["Where is most of my traffic coming from?", "Has my organic traffic grown this month?", "What devices do my visitors use?"]} />
                     </div>
 
                     <div className="relative w-full flex-1 lg:h-128">
                         <AlternateImageMockup className="lg:right-0">
-                            {/* Light mode image (hidden in dark mode) */}
                             <img
-                                alt="Dashboard mockup showing application interface"
+                                alt="Traffic analysis dashboard"
                                 src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-light-01.webp"
                                 className="size-full object-contain lg:w-auto lg:max-w-none dark:hidden"
                             />
-                            {/* Dark mode image (hidden in light mode) */}
                             <img
-                                alt="Dashboard mockup showing application interface"
+                                alt="Traffic analysis dashboard"
                                 src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-dark-01.webp"
                                 className="size-full object-contain not-dark:hidden lg:w-auto lg:max-w-none"
                             />
@@ -304,35 +313,71 @@ const FeaturesAlternatingLayout01 = () => {
                     </div>
                 </div>
 
+                {/* Section 3: Ads Intelligence */}
                 <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2 lg:gap-24">
                     <div className="max-w-xl flex-1 self-center">
-                        <FeaturedIcon icon={ChartBreakoutSquare} size="lg" color="brand" theme="light" />
-                        <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">Manage your team with reports</h2>
+                        <FeaturedIcon icon={Target04} size="lg" color="brand" theme="light" />
+                        <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">Decode winning ad strategies across platforms</h2>
                         <p className="mt-2 text-md text-tertiary md:mt-4 md:text-lg">
-                            Measure what matters with Untitled's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.
+                            Analyze what&apos;s working in your paid campaigns and your competitors&apos;. Our AI examines Google Ads and Facebook Ads to identify winning themes, CTA patterns, and creative approaches across thousands of variations.
                         </p>
                         <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
                             {[
-                                "Filter, export, and drilldown on the data quickly",
-                                "Save, schedule, and automate reports to your inbox",
-                                "Connect the tools you already use with 100+ integrations",
+                                "Google Ads: ad copy themes, keyword-message alignment, CTA patterns",
+                                "Facebook Ads: creative themes, hooks, visual trends, audience messaging",
+                                "Works for your ads AND competitors' ads",
                             ].map((feat) => (
                                 <CheckItemText key={feat} size="md" iconStyle="outlined" color="primary" text={feat} />
                             ))}
                         </ul>
+                        <ChatExamples examples={["What themes are working in my Google ads?", "Show me my competitor's Facebook ad strategy", "Analyze the CTAs in our paid campaigns"]} />
                     </div>
 
                     <div className="relative w-full flex-1 lg:h-128">
                         <AlternateImageMockup className="lg:left-0">
-                            {/* Light mode image (hidden in dark mode) */}
                             <img
-                                alt="Dashboard mockup showing application interface"
+                                alt="Ads intelligence dashboard"
                                 src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-light-01.webp"
                                 className="size-full object-contain lg:w-auto lg:max-w-none dark:hidden"
                             />
-                            {/* Dark mode image (hidden in light mode) */}
                             <img
-                                alt="Dashboard mockup showing application interface"
+                                alt="Ads intelligence dashboard"
+                                src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-dark-01.webp"
+                                className="size-full object-contain not-dark:hidden lg:w-auto lg:max-w-none"
+                            />
+                        </AlternateImageMockup>
+                    </div>
+                </div>
+
+                {/* Section 4: Competitor Analysis */}
+                <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2 lg:gap-24">
+                    <div className="max-w-xl flex-1 self-center lg:order-last">
+                        <FeaturedIcon icon={Users01} size="lg" color="brand" theme="light" />
+                        <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">Run any analysis on your competition</h2>
+                        <p className="mt-2 text-md text-tertiary md:mt-4 md:text-lg">
+                            Everything you can do for your business, you can do for competitors. Run business analysis, page audits, traffic breakdowns, and ad intelligence. See side-by-side comparisons and identify gaps in your strategy.
+                        </p>
+                        <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
+                            {[
+                                "All tools available for competitor analysis",
+                                "Side-by-side comparisons & gap identification",
+                                "Benchmark against multiple competitors at once",
+                            ].map((feat) => (
+                                <CheckItemText key={feat} size="md" iconStyle="outlined" color="primary" text={feat} />
+                            ))}
+                        </ul>
+                        <ChatExamples examples={["How does my homepage compare to [competitor]?", "What traffic sources is [competitor] using?", "Analyze [competitor's] Google ads"]} />
+                    </div>
+
+                    <div className="relative w-full flex-1 lg:h-128">
+                        <AlternateImageMockup className="lg:right-0">
+                            <img
+                                alt="Competitor analysis dashboard"
+                                src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-light-01.webp"
+                                className="size-full object-contain lg:w-auto lg:max-w-none dark:hidden"
+                            />
+                            <img
+                                alt="Competitor analysis dashboard"
                                 src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-dark-01.webp"
                                 className="size-full object-contain not-dark:hidden lg:w-auto lg:max-w-none"
                             />
