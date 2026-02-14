@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     description: "Improve your website by chatting with AI. Chat-first CRO tool that helps you convert more visitors—no coding required.",
     icons: {
         icon: [
-            { url: "/g_favicon.svg", type: "image/svg+xml" },
-            { url: "/g_favicon.png", type: "image/png", sizes: "32x32" },
+            { url: "https://grona.ai/g_favicon.svg", type: "image/svg+xml" },
+            { url: "https://grona.ai/g_favicon.png", type: "image/png", sizes: "32x32" },
         ],
-        apple: "/g_favicon.png",
+        apple: "https://grona.ai/g_favicon.png",
     },
 };
 
